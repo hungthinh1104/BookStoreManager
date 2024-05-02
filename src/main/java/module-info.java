@@ -10,6 +10,8 @@ module com.bookstoremanager {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.bookstoremanager to javafx.fxml;
-    exports com.bookstoremanager;
+    opens application.bookstoremanager to javafx.fxml;
+    exports application.bookstoremanager;
+    exports application.bookstoremanager.controller;
+    opens application.bookstoremanager.controller to javafx.fxml;
 }
