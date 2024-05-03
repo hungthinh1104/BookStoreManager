@@ -1,4 +1,4 @@
-package application.bookstoremanager;
+package application.bookstoremanager.controller;
 
 public class LoginWindow {
 

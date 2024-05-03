@@ -1,4 +1,4 @@
-package application.bookstoremanager.Main;
+package application.bookstoremanager;
 
 import application.bookstoremanager.classdb.*;
 import javafx.application.Application;
@@ -11,13 +11,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main extends Application {
+public class Main  extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/LoginWindow.fxml"));
-            Scene scene = new Scene(loader.load(), 320, 240);
+            Scene scene = new Scene(loader.load());
             stage.setTitle("Bookstore Manager Login");
             stage.setScene(scene);
             stage.show();
