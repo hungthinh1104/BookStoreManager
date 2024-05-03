@@ -90,8 +90,8 @@ public class LoginWindow implements Initializable {
     protected void Login() {
         String usernamelg = username.getText();
         String passwordlg = password.getText();
-        if(usernamelg != null && !usernamelg.equals("")) {
-            if(passwordlg != null && !passwordlg.equals("")) {
+        if(usernamelg != null && !usernamelg.isEmpty()) {
+            if(passwordlg != null && !passwordlg.isEmpty()) {
                 CheckCorrectAccount(usernamelg, passwordlg);
             }
             else {
@@ -99,7 +99,7 @@ public class LoginWindow implements Initializable {
             }
         }
         else {
-            if(passwordlg != null && !passwordlg.equals("")) {
+            if(passwordlg != null && !passwordlg.isEmpty()) {
                 messageError.setText("Vui lòng nhập tài khoản!");
             }
             else {
