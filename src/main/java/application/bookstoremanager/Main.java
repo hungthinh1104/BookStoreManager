@@ -28,11 +28,6 @@ public class Main  extends Application {
     }
 
     public static void main(String[] args) {
-        Connection conn = DatabaseUtil.getConnection();
-        if(conn != null) {
-            List<Nguoidung> nguoidungs = DatabaseUtil.getAllNguoidung(conn);
-            System.out.println(nguoidungs.getFirst().getPhanQuyen().getQuyenHan());
-        }
         launch();
     }
 }

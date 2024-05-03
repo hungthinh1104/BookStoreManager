@@ -1,5 +1,7 @@
 package application.bookstoremanager.controller;
 
+import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.classdb.Nguoidung;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,7 +15,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
 import java.util.Base64;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LoginWindow implements Initializable {
@@ -74,15 +78,27 @@ public class LoginWindow implements Initializable {
 
     @FXML
     protected void CheckCorrectAccount(String username, String password) {
-        String ktusername = "admin";
-        String ktpassword = "123";
-        if(username.equals(ktusername) && HashPassword(password).equals(HashPassword(ktpassword))) {
-            messageError.setText("Đăng nhập thành công");
-            LoginSuccess();
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                List<Nguoidung> users = DatabaseUtil.getAllNguoidung(conn);
+                boolean flag = users.stream().anyMatch(user ->user.getTenDangNhap().equals(username) && user.getMatKhau().equals(password));
+                if(flag) {
+                    messageError.setText("Đăng nhập thành công");
+                    LoginSuccess();
+                }
+                else {
+                    messageError.setText("Tài khoản hoặc mât khẩu không chính xác");
+                }
+            }
+            else{
+                messageError.setText("Lỗi Database");
+            }
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        else {
-            messageError.setText("Tài khoản hoặc mât khẩu không chính xác");
-        }
+
     }
 
 
@@ -108,8 +124,5 @@ public class LoginWindow implements Initializable {
             }
         }
     }
-
-
-
 
 }
