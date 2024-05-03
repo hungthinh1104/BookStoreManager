@@ -9,6 +9,7 @@ module com.bookstoremanager {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.sql;
 
     opens com.bookstoremanager to javafx.fxml;
     exports com.bookstoremanager;

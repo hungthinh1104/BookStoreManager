@@ -1,11 +1,15 @@
 package application.bookstoremanager.Main;
 
+import application.bookstoremanager.classdb.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Application {
 
@@ -24,6 +28,11 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        Connection conn = DatabaseUtil.getConnection();
+        if(conn != null) {
+            List<Nguoidung> nguoidungs = DatabaseUtil.getAllNguoidung(conn);
+            System.out.println(nguoidungs.getFirst().getPhanQuyen().getQuyenHan());
+        }
         launch();
     }
 }
