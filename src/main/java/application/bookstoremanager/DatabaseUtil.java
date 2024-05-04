@@ -5,6 +5,7 @@ import application.bookstoremanager.classdb.*;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DatabaseUtil {
@@ -39,8 +40,9 @@ public class DatabaseUtil {
         return theLoai;
     }
 
-    public static Sach getSachById(List<Sach> sach, int idSach){
+    public static Sach getSachById(Connection conn, int idSach){
         Sach theSach = null;
+        List<Sach> sach = getAllSach(conn);
         for(Sach item : sach){
             if(item.getMaSach() == idSach){
                 theSach = item;
@@ -81,8 +83,26 @@ public class DatabaseUtil {
         return sach;
     }
 
-    public static Phieunhapsach getPhieunhapsachById(List<Phieunhapsach> pnss, int idPhieunhapsach){
+    public static void createSach(String tenSach, int maTheLoai,String tacGia, Connection conn){
+        try{
+            String sql = "INSERT INTO sach(TenSach, MaTheLoai, TacGia) VALUES (?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, tenSach);
+            pstmt.setInt(2, maTheLoai);
+            pstmt.setString(3, tacGia);
+
+            pstmt.executeUpdate();
+            System.out.println("Thêm mới sách thành công!");
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static Phieunhapsach getPhieunhapsachById(Connection conn, int idPhieunhapsach){
         Phieunhapsach pns = null;
+        List<Phieunhapsach> pnss = getAllPhieunhapsach(conn);
         for(Phieunhapsach item : pnss){
             if(item.getMaPhieuNhap() == idPhieunhapsach){
                 pns = item;
@@ -110,6 +130,31 @@ public class DatabaseUtil {
         }
         return pns;
     }
+
+    public static int createPhieunhapsach(LocalDate ngayNhap, Connection conn){
+        int idPhieunhap = 0;
+        try{
+            String sql = "INSERT INTO phieunhapsach(NgayNhap) VALUES (?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            java.sql.Date sqlDate = java.sql.Date.valueOf(ngayNhap);
+            pstmt.setDate(1, sqlDate);
+
+            pstmt.executeUpdate();
+
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()){
+                idPhieunhap = rs.getInt(1);
+            }
+            System.out.println("Thêm mới phiếu nhập sách thành công! id:" + idPhieunhap);
+            pstmt.close();
+            rs.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return idPhieunhap;
+    }
+
     public static List<CtPhieunhapsach> getAllCtPhieunhapsach(Connection conn){
         List<CtPhieunhapsach> ctpns = new ArrayList<CtPhieunhapsach>();
         try {
@@ -122,10 +167,8 @@ public class DatabaseUtil {
                 int idMaSach = resultSet.getInt(3);
                 int soLuongNhap = resultSet.getInt(4);
                 double donGiaNhap = resultSet.getDouble(5);
-                List<Sach> sachs = getAllSach(conn);
-                Sach sach = getSachById(sachs,idMaSach);
-                List<Phieunhapsach> pnss = getAllPhieunhapsach(conn);
-                Phieunhapsach pns = getPhieunhapsachById(pnss,idPhieuNhap);
+                Sach sach = getSachById(conn,idMaSach);
+                Phieunhapsach pns = getPhieunhapsachById(conn,idPhieuNhap);
                 CtPhieunhapsach ct = new CtPhieunhapsach(id,idPhieuNhap,idMaSach,soLuongNhap,donGiaNhap,pns,sach);
                 ctpns.add(ct);
             }
@@ -135,6 +178,31 @@ public class DatabaseUtil {
         }
         return ctpns;
     }
+
+    public static List<CtPhieunhapsach> getCtPhieunhapsachByIdPhieunhapsach(Connection conn, int idPhieunhapsach){
+        List<CtPhieunhapsach> ctPhieunhapsachList = new ArrayList<CtPhieunhapsach>();
+        List<CtPhieunhapsach> ctpns = getAllCtPhieunhapsach(conn);
+        for(CtPhieunhapsach item : ctpns){
+            if(item.getMaPhieuNhap() == idPhieunhapsach){
+                ctPhieunhapsachList.add(item);
+            }
+        }
+        return ctPhieunhapsachList;
+    }
+
+//    public static void createListCtPhieunhapsach(Connection conn, List<Sach> listSach, int maPhieuNhap){
+//        for(Sach sach : listSach){
+//            try{
+//                String sql = "INSERT INTO ct_phieunhapsach(MaPhieuNhap, MaSach, SoLuongNhap, DonGiaNhap) VALUES (?, ?, ?, ?)";
+//                PreparedStatement pstmt = conn.prepareStatement(sql);
+//
+//                pstmt.executeUpdate();
+//                pstmt.close();
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     public static Thamso getThamso(Connection conn){
         Thamso thamso = null;
@@ -158,8 +226,9 @@ public class DatabaseUtil {
         return thamso;
     }
 
-    public static Khachhang getKhachhangById(List<Khachhang> khs, int idKhachhang){
+    public static Khachhang getKhachhangById(Connection conn, int idKhachhang){
         Khachhang kh = null;
+        List<Khachhang> khs = getAllKhachhang(conn);
         for(Khachhang item : khs){
             if(item.getMaKhachHang() == idKhachhang){
                 kh = item;
@@ -188,8 +257,25 @@ public class DatabaseUtil {
         return khs;
     }
 
-    public static Hoadon getHoadonById(List<Hoadon> hoadons, int idHoadon){
+    public static void createKhachhang(Connection conn, String hoTen, String sdt){
+        try{
+            String sql = "INSERT INTO khachhang(HoTen, SoDienThoai) VALUES (?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, hoTen);
+            pstmt.setString(2, sdt);
+
+            pstmt.executeUpdate();
+            System.out.println("Thêm mới Khách hàng thành công!");
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static Hoadon getHoadonById(Connection conn, int idHoadon){
         Hoadon hoadon = null;
+        List<Hoadon> hoadons = getAllHoadon(conn);
         for(Hoadon item : hoadons){
             if(item.getMaHoaDon() == idHoadon){
                 hoadon = item;
@@ -210,8 +296,7 @@ public class DatabaseUtil {
                 LocalDate ngayLap = resultSet.getDate(2).toLocalDate();
                 int maKhachHang = resultSet.getInt(3);
                 double tongTien = resultSet.getDouble(4);
-                List<Khachhang> khs = getAllKhachhang(conn);
-                Khachhang kh = getKhachhangById(khs,maKhachHang);
+                Khachhang kh = getKhachhangById(conn,maKhachHang);
                 Hoadon hoadon = new Hoadon(id,ngayLap,maKhachHang,tongTien,kh);
                 hoadons.add(hoadon);
             }
@@ -219,6 +304,31 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
         return hoadons;
+    }
+
+    public static int createHoadon(LocalDate ngayLap, int maKhachHang, Connection conn){
+        int idHoaDon = 0;
+        try{
+            String sql = "INSERT INTO hoadon(NgayLap, MaKhachHang) VALUES (?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            java.sql.Date sqlDate = java.sql.Date.valueOf(ngayLap);
+            pstmt.setDate(1, sqlDate);
+            pstmt.setInt(2, maKhachHang);
+
+            pstmt.executeUpdate();
+
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()){
+                idHoaDon = rs.getInt(1);
+            }
+            System.out.println("Thêm mới hóa đơn thành công! id:" + idHoaDon);
+            pstmt.close();
+            rs.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return idHoaDon;
     }
 
     public static List<CtHoadon> getAllCtHoadon(Connection conn){
@@ -234,10 +344,8 @@ public class DatabaseUtil {
                 int soLuong = resultSet.getInt(4);
                 double donGiaBan = resultSet.getDouble(5);
                 double thanhTien = resultSet.getDouble(6);
-                List<Hoadon> hoadons = getAllHoadon(conn);
-                Hoadon hoadon = getHoadonById(hoadons,idHoaDon);
-                List<Sach> sachs = getAllSach(conn);
-                Sach sach = getSachById(sachs,idSach);
+                Hoadon hoadon = getHoadonById(conn,idHoaDon);
+                Sach sach = getSachById(conn,idSach);
                 CtHoadon ctHoadon = new CtHoadon(id, idHoaDon,idSach,soLuong,donGiaBan,thanhTien,hoadon,sach);
                 ctHoadonList.add(ctHoadon);
             }
@@ -247,8 +355,20 @@ public class DatabaseUtil {
         return ctHoadonList;
     }
 
-    public static Dondathang getDondathangById(List<Dondathang> dondathangs, int idDonHang){
+    public static List<CtHoadon> getCtHoaDonByIdHoadon(Connection conn, int idHoadon){
+        List<CtHoadon> ctHoadonList = new ArrayList<CtHoadon>();
+        List<CtHoadon> cthd = getAllCtHoadon(conn);
+        for(CtHoadon item : cthd){
+            if(item.getMaHoaDon() == idHoadon){
+                ctHoadonList.add(item);
+            }
+        }
+        return ctHoadonList;
+    }
+
+    public static Dondathang getDondathangById(Connection conn, int idDonHang){
         Dondathang dondathang = null;
+        List<Dondathang> dondathangs = getAllDondathang(conn);
         for(Dondathang item : dondathangs){
             if(item.getMaDonHang() == idDonHang){
                 dondathang = item;
@@ -268,8 +388,7 @@ public class DatabaseUtil {
                 int id = resultSet.getInt(1);
                 int maKhachHang = resultSet.getInt(2);
                 double tongTienCoc = resultSet.getDouble(3);
-                List<Khachhang> khs = getAllKhachhang(conn);
-                Khachhang kh = getKhachhangById(khs,maKhachHang);
+                Khachhang kh = getKhachhangById(conn,maKhachHang);
                 Dondathang dondathang = new Dondathang(id,maKhachHang,tongTienCoc,kh);
                 dondathangList.add(dondathang);
             }
@@ -277,6 +396,29 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
         return dondathangList;
+    }
+
+    public static int createDondathang( int maKhachHang, Connection conn){
+        int idDondathang = 0;
+        try{
+            String sql = "INSERT INTO dondathang(MaKhachHang) VALUES (?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            pstmt.setInt(1, maKhachHang);
+
+            pstmt.executeUpdate();
+
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()){
+                idDondathang = rs.getInt(1);
+            }
+            System.out.println("Thêm mới đơn đặt hàng thành công! id:" + idDondathang);
+            pstmt.close();
+            rs.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return idDondathang;
     }
 
     public static List<CtDondathang> getAllCtDondathang(Connection conn){
@@ -289,15 +431,24 @@ public class DatabaseUtil {
                 int id = resultSet.getInt(1);
                 int idDonHang = resultSet.getInt(2);
                 int idSach = resultSet.getInt(3);
-                List<Dondathang> dondathangList = getAllDondathang(conn);
-                Dondathang dondathang = getDondathangById(dondathangList,idDonHang);
-                List<Sach> sachs = getAllSach(conn);
-                Sach sach = getSachById(sachs,idSach);
+                Dondathang dondathang = getDondathangById(conn,idDonHang);
+                Sach sach = getSachById(conn,idSach);
                 CtDondathang ctDondathang = new CtDondathang(id, idDonHang,idSach,dondathang,sach);
                 ctDondathangList.add(ctDondathang);
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return ctDondathangList;
+    }
+
+    public static List<CtDondathang> getCtDondathangByIdDondathang(Connection conn, int idDondathang){
+        List<CtDondathang> ctDondathangList = new ArrayList<CtDondathang>();
+        List<CtDondathang> ctdh = getAllCtDondathang(conn);
+        for(CtDondathang item : ctdh){
+            if(item.getMaDonHang() == idDondathang){
+                ctDondathangList.add(item);
+            }
         }
         return ctDondathangList;
     }
