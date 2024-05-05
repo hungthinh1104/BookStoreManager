@@ -25,7 +25,7 @@
 }
 
 .selected-pane {
-  -fx-background-color: #252945; /* Màu nền của pane được chọn trong dark mode */
+  -fx-background-color: #252945;
   -fx-background-radius: 6;
 }
 

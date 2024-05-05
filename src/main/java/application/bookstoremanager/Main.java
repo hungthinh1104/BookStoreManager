@@ -13,7 +13,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         try {
             // Corrected path: Replace "Card1" with the actual subfolder name
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card2/Card.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/Sidebar/Sidebar.fxml"));
             Scene scene = new Scene(loader.load());
             stage.setTitle("Bookstore Manager");
             stage.setScene(scene);

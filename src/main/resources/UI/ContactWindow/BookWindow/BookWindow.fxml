@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" styleClass="outside-pane" stylesheets="@BookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="1000.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="702.0" layoutY="12.0" prefHeight="51.0" prefWidth="278.0" spacing="20.0" styleClass="light-radius-box-border">
+               <children>
+                  <Circle fill="#ffeeee" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="drop-shadow" />
+                  <Label styleClass="name-text" stylesheets="@BookWindow.css" text="Dịp Hưng Thịnh" textFill="WHITE" />
+                  <FontIcon iconLiteral="fas-angle-down" iconSize="15" styleClass="default-icon" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="23.0" layoutY="18.0" prefHeight="42.0" prefWidth="434.0" spacing="20.0" styleClass="light-radius-box-border">
+               <children>
+                  <FontIcon fill="#393b3ea3" iconLiteral="fas-search" iconSize="30" strokeWidth="0.0" styleClass="default-icon" tabSize="0" />
+                  <TextField prefHeight="26.0" prefWidth="327.0" styleClass="light-radius-box-border" />
+               </children>
+            </HBox>
+            <Line endX="37.20001220703125" endY="7.62939453125E-6" layoutX="614.0" layoutY="38.0" startX="-100.0" styleClass="line" />
+            <GridPane alignment="CENTER" layoutX="69.0" layoutY="86.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="99.0" prefWidth="342.0" styleClass="light-radius-box-border">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="170.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="170.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton layoutX="24.0" layoutY="5.0" mnemonicParsing="false" styleClass="choose-text" text="Nhà xuất bản" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <RadioButton layoutX="24.0" layoutY="5.0" mnemonicParsing="false" styleClass="choose-text" text="Nhà xuất bản" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <RadioButton layoutX="24.0" layoutY="5.0" mnemonicParsing="false" styleClass="choose-text" text="Nhà xuất bản" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <RadioButton layoutX="24.0" layoutY="5.0" mnemonicParsing="false" styleClass="choose-text" text="Nhà xuất bản" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <RadioButton layoutX="24.0" layoutY="5.0" mnemonicParsing="false" styleClass="choose-text" text="Nhà xuất bản" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <RadioButton layoutX="24.0" layoutY="5.0" mnemonicParsing="false" styleClass="choose-text" text="Nhà xuất bản" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <ComboBox layoutX="507.0" layoutY="87.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+      <HBox prefHeight="580.0" prefWidth="1000.0">
+         <children>
+            <AnchorPane prefHeight="580.0" prefWidth="850.0">
+               <children>
+                  <ScrollPane layoutX="15.0" layoutY="15.0" prefHeight="550.0" prefWidth="770.0">
+                     <content>
+                        <TreeTableView prefHeight="535.0" prefWidth="884.0">
+                          <columns>
+                            <TreeTableColumn prefWidth="75.0" text="C1" />
+                            <TreeTableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TreeTableView>
+                     </content>
+                  </ScrollPane>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="250.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="50.0" layoutY="84.0" prefHeight="200.0" prefWidth="100.0" spacing="40.0" styleClass="light-radius-box-square">
+                     <children>
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                     </children>
+                  </VBox>
+                  <Label layoutX="61.0" layoutY="76.0" styleClass="text-label" text="Chức năng" />
+                  <VBox alignment="CENTER" layoutX="25.0" layoutY="318.0" prefHeight="222.8" prefWidth="150.0" spacing="40.0" styleClass="light-radius-box-square">
+                     <children>
+                        <ImageView fitHeight="199.04" fitWidth="134.0" pickOnBounds="true" preserveRatio="true" styleClass="drop-shadow">
+                           <image>
+                              <Image url="@../MainWindow/BookCard/Card1/Image/1.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
