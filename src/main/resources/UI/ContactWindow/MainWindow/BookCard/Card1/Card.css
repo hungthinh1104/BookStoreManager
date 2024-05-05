@@ -25,5 +25,12 @@
   -fx-text-fill: #E04244;
   -fx-font-family: "Cambria Math";
   -fx-font-weight: 400;
-  -fx-font-size: 15;
+  -fx-font-size: 20;
+}
+
+.default-text {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Light";
+  -fx-font-weight: 400;
+  -fx-font-size: 13;
 }

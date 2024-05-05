@@ -1,8 +1,8 @@
 .outside-pane {
-  -fx-background-color: white;
+  -fx-background-color: linear-gradient(to bottom, #E0EFFC, white);
   -fx-border-color: lightgrey;
-  -fx-border-radius: 5;
-  -fx-background-radius: 5;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
 }
 
 .book-text {
@@ -10,20 +10,24 @@
   -fx-font-family: "Inter Medium";
   -fx-font-weight: 400;
   -fx-font-size: 13;
-}
-
-.star-empty {
-  -fx-fill: white;
-
-}
-
-.star-fill {
-  -fx-fill: #E0D777;
+  -fx-alignment: center;
 }
 
 .price {
   -fx-text-fill: #E04244;
   -fx-font-family: "Cambria Math";
   -fx-font-weight: 400;
-  -fx-font-size: 15;
+  -fx-font-size: 20;
+}
+
+.default-text {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Tight Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 13;
+}
+
+.line {
+  -fx-background-color: lightgrey;
+  -fx-opacity: 0.5;
 }

@@ -6,26 +6,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0"
-      prefWidth="1000.0" spacing="5.0" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/22"
-      xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="5.0" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <Label text="Mới ">
       <VBox.margin>
-         <Insets left="10.0"/>
+         <Insets left="10.0" />
       </VBox.margin>
    </Label>
    <ScrollPane prefHeight="196.0" prefWidth="200.0">
-      <HBox prefHeight="180.0" prefWidth="1046.0"/>
-   </ScrollPane>
-   <Label text="Gợi ý cho bạn:">
+      <HBox prefHeight="180.0" prefWidth="1046.0" />
       <VBox.margin>
-         <Insets left="10.0"/>
+         <Insets left="10.0" right="10.0" />
+      </VBox.margin>
+   </ScrollPane>
+   <Label text="Sản phẩm">
+      <VBox.margin>
+         <Insets left="10.0" />
       </VBox.margin>
    </Label>
-   <ScrollPane prefHeight="508.0" prefWidth="1000.0">
+   <ScrollPane prefHeight="483.0" prefWidth="1000.0">
       <VBox prefHeight="600.0" prefWidth="984.0">
-         <HBox prefHeight="300.0" prefWidth="984.0"/>
-         <HBox prefHeight="300.0" prefWidth="984.0"/>
+         <HBox prefHeight="300.0" prefWidth="984.0" />
+         <HBox prefHeight="300.0" prefWidth="984.0" />
       </VBox>
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" />
+      </VBox.margin>
    </ScrollPane>
 </VBox>

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="170.0" prefWidth="325.0" styleClass="outside-pane" stylesheets="@Card.css"
-            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard.Card">
-    <ImageView fitHeight="151.0" fitWidth="121.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="/UI/ContactWindow/MainWindow/Card1/Imagejpg" />
+<AnchorPane prefHeight="280.0" prefWidth="233.5" styleClass="outside-pane" stylesheets="@Card.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitHeight="151.0" fitWidth="121.0" layoutX="67.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@Image/1.jpg" />
     </ImageView>
-    <Label layoutX="125.0" layoutY="8.0" lineSpacing="2.0" prefHeight="68.0" prefWidth="190.0" styleClass="book-text" text="Mom's Story: A Memory and Keepsake Journal for My Family" wrapText="true" />
-    <Label layoutX="125.0" layoutY="103.0" styleClass="price" text="12000" />
-    <HBox layoutX="125.0" layoutY="78.0" prefHeight="16.0" prefWidth="88.0" spacing="1.0">
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
-        <FontIcon iconLiteral="fas-star-half-alt" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
-    </HBox>
+    <Label layoutX="18.0" layoutY="164.0" lineSpacing="2.0" prefHeight="49.0" prefWidth="198.0" styleClass="book-text" text="Mom's Story: A Memory and Keepsake Journal for My Family" textAlignment="CENTER" wrapText="true" />
+    <Label layoutX="22.0" layoutY="252.0" styleClass="default-text" text="12000đ" />
+   <Line endX="100.0" layoutX="116.0" layoutY="225.0" startX="-100.0" styleClass="line" />
+   <Label layoutX="104.0" layoutY="251.0" styleClass="default-text" text="1500" />
+   <Label layoutX="164.0" layoutY="230.0" styleClass="default-text" text="Doanh số" />
+   <Label layoutX="22.0" layoutY="230.0" styleClass="default-text" text="Giá bán" />
+   <Label layoutX="101.0" layoutY="230.0" styleClass="default-text" text="Đã bán" />
+   <Label layoutX="175.0" layoutY="251.0" styleClass="default-text" text="Label" />
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </AnchorPane>
