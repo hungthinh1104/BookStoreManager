@@ -1,0 +1,52 @@
+.box-outside {
+  -fx-background-color: #111827;
+  -fx-background-radius: 7 0 0 7;
+  -fx-border-color: #111827;
+}
+
+.logo {
+  -fx-fill: white;
+}
+
+.default-icon {
+  -fx-fill: white;
+}
+
+.default-pane {
+  -fx-background-color: #111827;
+  -fx-background-radius: 6;
+}
+
+.default-text {
+  -fx-text-fill: white;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 15;
+}
+
+.selected-pane {
+  -fx-background-color: #252945; /* Màu nền của pane được chọn trong dark mode */
+  -fx-background-radius: 6;
+}
+
+.search{
+  -fx-background-color: #1F2937;
+  -fx-prompt-text-fill: white;
+}
+
+.search-pane {
+  -fx-background-color: #1F2937;
+  -fx-border-color: #4B5563;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+}
+
+.border-right {
+  -fx-border-width: 0 1 0 0;
+  -fx-border-color: #4B5563;
+}
+
+.border-bottom {
+  -fx-border-width: 0 0 1 0;
+  -fx-border-color: #4B5563;
+}

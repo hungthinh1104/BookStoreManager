@@ -1,0 +1,52 @@
+.box-outside {
+  -fx-background-color: white;
+  -fx-background-radius: 7 0 0 7;
+  -fx-border-color: white;
+}
+
+.logo {
+  -fx-fill: #574FE6;
+}
+
+.default-icon {
+  -fx-fill: #4B5563;
+}
+
+.default-pane {
+  -fx-background-color: white;
+  -fx-background-radius: 6 ;
+}
+
+.default-text {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 15;
+}
+
+.selected-pane {
+  -fx-background-color: #F3F4F6;
+  -fx-background-radius: 6 ;
+}
+
+.search{
+  -fx-background-color: white;
+  -fx-prompt-text-fill: #9BA0A9;
+}
+
+.search-pane {
+  -fx-background-color: white;
+  -fx-border-color: lightgrey;
+  -fx-background-radius: 10;
+  -fx-border-radius: 10;
+}
+
+.border-right {
+  -fx-border-width: 0 1 0 0;
+  -fx-border-color: lightgrey;
+}
+
+.border-bottom {
+  -fx-border-width: 0 0 1 0;
+  -fx-border-color: lightgrey;
+}
