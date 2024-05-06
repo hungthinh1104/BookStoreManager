@@ -19,13 +19,13 @@
   -fx-background-radius: 10;
 }
 
-.text-label {
+.default-text {
   -fx-background-color: white;
   -fx-background-radius: white;
   -fx-text-fill: #4B5563;
   -fx-font-family: "Inter Medium";
-  -fx-font-weight: 400;
-  -fx-font-size: 13px;
+  -fx-font-weight: 300;
+  -fx-font-size: 14px;
 }
 
 .choose-text {
@@ -45,4 +45,22 @@
 
 .outside-pane {
   -fx-background-color: white;
+}
+
+.function-button {
+  -fx-background-color: #2196F3;
+  -fx-background-radius: 5;
+  -fx-text-fill: white;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 13px;
+}
+
+.book-input-button {
+  -fx-background-color: #4CAF50;
+  -fx-background-radius: 5;
+  -fx-text-fill: white;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 15px;
 }
