@@ -5,16 +5,7 @@ Label {
   -fx-font-size: 14px;
 }
 
-TextField {
-  -fx-text-fill: #4B5563;
-  -fx-font-family: "Inter Medium";
-  -fx-font-weight: 300;
-  -fx-font-size: 14px;
-  -fx-background-color: #f2f2f2;
-  -fx-background-radius: 5px;
-}
-
-ComboBox {
+.input-side {
   -fx-text-fill: #4B5563;
   -fx-font-family: "Inter Medium";
   -fx-font-weight: 300;

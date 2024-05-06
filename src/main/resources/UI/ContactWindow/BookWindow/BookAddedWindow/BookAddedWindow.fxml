@@ -12,17 +12,17 @@
 <VBox stylesheets="@BookAddedWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
 
    <Label text="Tên sách:" />
-   <TextField fx:id="txtBookName" />
+   <TextField fx:id="txtBookName" styleClass="input-side" />
 
    <Label text="Thể loại:" />
-   <ComboBox fx:id="cmbGenre" prefHeight="28.0" prefWidth="116.0">
+   <ComboBox fx:id="cmbGenre" prefHeight="28.0" prefWidth="116.0" styleClass="input-side">
    </ComboBox>
 
    <Label text="Tác giả:" />
-   <TextField fx:id="txtAuthor" />
+   <TextField fx:id="txtAuthor" styleClass="input-side" />
 
-   <HBox spacing="10" stylesheets="@BookAddedWindow.css">
-      <VBox alignment="CENTER" prefHeight="150.0" prefWidth="68.0" spacing="20.0">
+   <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@BookAddedWindow.css">
+      <VBox alignment="CENTER" prefHeight="150.0" prefWidth="68.0" spacing="15.0">
          <children>
             <Label text="Ảnh sách:" />
             <Button prefHeight="69.0" prefWidth="68.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true" />
