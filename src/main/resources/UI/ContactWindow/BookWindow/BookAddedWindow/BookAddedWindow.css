@@ -1,0 +1,57 @@
+Label {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 300;
+  -fx-font-size: 14px;
+}
+
+TextField {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 300;
+  -fx-font-size: 14px;
+  -fx-background-color: #f2f2f2;
+  -fx-background-radius: 5px;
+}
+
+ComboBox {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 300;
+  -fx-font-size: 14px;
+  -fx-background-color: #f2f2f2;
+  -fx-background-radius: 5px;
+}
+
+Button {
+  -fx-font-size: 14px;
+  -fx-background-color: #4CAF50;
+  -fx-text-fill: white;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+}
+
+Button:hover {
+  -fx-background-color: #45a049;
+  -fx-font-size: 14px;
+  -fx-text-fill: white;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+}
+
+Button:pressed {
+  -fx-background-color: #317e3b;
+  -fx-font-size: 14px;
+  -fx-text-fill: white;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+}
+
+.outside-pane {
+  -fx-background-color: white;
+  -fx-background-radius: 10;
+  -fx-padding: 10;
+  -fx-spacing: 5px;
+  -fx-border-color: lightgrey;
+  -fx-border-radius: 10;
+}

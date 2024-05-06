@@ -33,10 +33,20 @@ Button {
 
 Button:hover {
     -fx-background-color: #45a049;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
 Button:pressed {
     -fx-background-color: #317e3b;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
 .light-radius-box-square {
