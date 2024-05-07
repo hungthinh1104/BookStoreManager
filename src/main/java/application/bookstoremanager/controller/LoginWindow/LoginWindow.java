@@ -1,4 +1,4 @@
-package application.bookstoremanager.controller;
+package application.bookstoremanager.controller.LoginWindow;
 
 import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Nguoidung;

@@ -30,26 +30,23 @@
             <Label text="Đơn giá nhập:" />
             <TextField fx:id="priceTextField" />
         </HBox>
-      <HBox prefHeight="0.0" prefWidth="278.0" spacing="10.0">
-         <children>
-              <Button text="Tạo phiếu nhập" />
-            <Button prefHeight="22.0" prefWidth="100.0" text="Sửa phiếu nhập" />
-         </children>
-      </HBox>
+        <HBox prefHeight="0.0" prefWidth="278.0" spacing="10.0">
+            <Button text="Tạo phiếu nhập"/>
+            <Button prefHeight="22.0" prefWidth="100.0" text="Sửa phiếu nhập"/>
+        </HBox>
       <styleClass>
          <String fx:value="light-radius-box-square" />
          <String fx:value="big-outside-pane" />
       </styleClass>
     </VBox>
-   <ScrollPane layoutX="369.0" layoutY="31.0" prefHeight="275.0" prefWidth="250.0" styleClass="light-radius-box-square">
-      <content>
-         <VBox alignment="TOP_CENTER" prefWidth="245.0" spacing="1.0">
-            <padding>
-               <Insets top="2.0" />
-            </padding>
-         </VBox>
-      </content>
-   </ScrollPane>
+    <ScrollPane layoutX="369.0" layoutY="31.0" prefHeight="275.0" prefWidth="250.0"
+                styleClass="light-radius-box-square">
+        <VBox alignment="TOP_CENTER" prefWidth="245.0" spacing="1.0">
+           <padding>
+               <Insets top="2.0"/>
+           </padding>
+        </VBox>
+    </ScrollPane>
    <Label layoutX="379.0" layoutY="19.0" styleClass="default-text" text="Danh sách nhập" />
      <Button layoutX="412.0" layoutY="322.0" text="Xem chi tiết" />
 </AnchorPane>
