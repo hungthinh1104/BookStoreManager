@@ -20,6 +20,7 @@ public class DatabaseUtil {
             return null;
         }
     }
+
     public static List<Theloai> getAllTheLoai(Connection conn){
         List<Theloai> theLoai = new ArrayList<Theloai>();
         try {
@@ -100,6 +101,45 @@ public class DatabaseUtil {
         }
     }
 
+    public static boolean deleteSachById(Connection conn, int idSach ){
+        List<CtHoadon> ctHoadon = getAllCtHoadon(conn);
+        List<CtDondathang> ctDondathang = getAllCtDondathang(conn);
+        List<CtPhieunhapsach> ctPhieunhapsach = getAllCtPhieunhapsach(conn);
+        int count = 0;
+        for (CtPhieunhapsach thePhieunhapsach : ctPhieunhapsach) {
+            if(thePhieunhapsach.getMaSach() == idSach ){
+                ++count;
+                break;
+            }
+        }
+        for (CtHoadon theHoadon : ctHoadon) {
+            if(theHoadon.getMaSach() == idSach ){
+                ++count;
+                break;
+            }
+        }
+        for(CtDondathang theDondathang : ctDondathang){
+            if(theDondathang.getMaSach() == idSach ){
+                ++count;
+                break;
+            }
+        }
+        if(count == 0){
+            try{
+                String deleteSql = "DELETE FROM sach WHERE MaSach = ?";
+                PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
+                deleteStmt.setInt(1, idSach);
+                deleteStmt.executeUpdate();
+                return true;
+            }catch (Exception e){
+                e.printStackTrace();
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
     public static Phieunhapsach getPhieunhapsachById(Connection conn, int idPhieunhapsach){
         Phieunhapsach pns = null;
         List<Phieunhapsach> pnss = getAllPhieunhapsach(conn);
@@ -153,6 +193,23 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
         return idPhieunhap;
+    }
+
+    public static boolean deletePhieunhapsachById(Connection conn, int idPhieunhapsach ){
+        try{
+            String deleteSqlct = "DELETE FROM ct_phieunhapsach WHERE MaPhieuNhap = ?";
+            String deleteSql = "DELETE FROM phieunhapsach WHERE MaPhieuNhap = ?";
+            PreparedStatement deleteStmtct = conn.prepareStatement(deleteSqlct);
+            PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
+            deleteStmtct.setInt(1, idPhieunhapsach);
+            deleteStmt.setInt(1, idPhieunhapsach);
+            deleteStmtct.executeUpdate();
+            deleteStmt.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static List<CtPhieunhapsach> getAllCtPhieunhapsach(Connection conn){
@@ -273,6 +330,38 @@ public class DatabaseUtil {
         }
     }
 
+    public static boolean deleteKhachById(Connection conn, int idKhachHang ){
+        List<Hoadon> hoadons = getAllHoadon(conn);
+        List<Dondathang> dondathangs = getAllDondathang(conn);
+        int count = 0;
+        for(Hoadon hoadon : hoadons){
+            if (hoadon.getMaKhachHang() == idKhachHang){
+                ++count;
+                break;
+            }
+        }
+        for(Dondathang dondathang : dondathangs){
+            if (dondathang.getMaKhachHang() == idKhachHang){
+                ++count;
+                break;
+            }
+        }
+        if(count == 0){
+            try{
+                String deleteSql = "DELETE FROM khachhang WHERE MaKhachHang = ?";
+                PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
+                deleteStmt.setInt(1, idKhachHang);
+                deleteStmt.executeUpdate();
+                return true;
+            }catch (Exception e){
+                e.printStackTrace();
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
     public static Hoadon getHoadonById(Connection conn, int idHoadon){
         Hoadon hoadon = null;
         List<Hoadon> hoadons = getAllHoadon(conn);
@@ -329,6 +418,23 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
         return idHoaDon;
+    }
+
+    public static boolean deleteHoadonById(Connection conn, int idHoadon ){
+        try{
+            String deleteSqlct = "DELETE FROM ct_hoadon WHERE MaHoaDon = ?";
+            String deleteSql = "DELETE FROM hoadon WHERE MaHoaDon = ?";
+            PreparedStatement deleteStmtct = conn.prepareStatement(deleteSqlct);
+            PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
+            deleteStmtct.setInt(1, idHoadon);
+            deleteStmt.setInt(1, idHoadon);
+            deleteStmtct.executeUpdate();
+            deleteStmt.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static List<CtHoadon> getAllCtHoadon(Connection conn){
@@ -419,6 +525,23 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
         return idDondathang;
+    }
+
+    public static boolean deleteDondathangById(Connection conn, int idDonhang ){
+        try{
+            String deleteSqlct = "DELETE FROM ct_dondathang WHERE MaDonHang = ?";
+            String deleteSql = "DELETE FROM dondathang WHERE MaDonHang = ?";
+            PreparedStatement deleteStmtct = conn.prepareStatement(deleteSqlct);
+            PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
+            deleteStmtct.setInt(1, idDonhang);
+            deleteStmt.setInt(1, idDonhang);
+            deleteStmtct.executeUpdate();
+            deleteStmt.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static List<CtDondathang> getAllCtDondathang(Connection conn){
