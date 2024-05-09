@@ -1,0 +1,38 @@
+.background {
+    -fx-background-color: linear-gradient(to top, #f0f0f0, #dcdcdc);
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight:400;
+    -fx-font-family: "Inter Tight Medium";
+}
+
+.default-text {
+    -fx-font-size: 13px;
+    -fx-font-weight: 300;
+    -fx-font-family: "Inter Tight Medium";
+}
+
+.search-button, .action-button {
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+.search-button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+.search-button:hover {
+    -fx-background-color: derive(#007bff, 20%);
+}
+
+.action-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+}
+
+.action-button:hover {
+    -fx-background-color: derive(#28a745, 20%);
+}

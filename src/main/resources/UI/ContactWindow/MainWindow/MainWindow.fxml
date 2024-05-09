@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="5.0" styleClass="outside-pane" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <Label text="Mới ">
+      <VBox.margin>
+         <Insets left="10.0" top="10.0" />
+      </VBox.margin>
+   </Label>
+   <ScrollPane prefHeight="196.0" prefWidth="200.0" styleClass="light-radius-box-border">
+      <HBox alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="1046.0" spacing="10.0" styleClass="light-radius-border" />
+      <VBox.margin>
+         <Insets left="10.0" right="10.0" />
+      </VBox.margin>
+   </ScrollPane>
+   <Label text="Sản phẩm">
+      <VBox.margin>
+         <Insets left="10.0" />
+      </VBox.margin>
+   </Label>
+   <ScrollPane prefHeight="494.0" prefWidth="979.0" styleClass="light-radius-box-border">
+      <VBox prefHeight="600.0" prefWidth="960.0">
+         <HBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="960.0" spacing="5.0" />
+         <HBox alignment="BOTTOM_LEFT" prefHeight="300.0" prefWidth="960.0" spacing="5.0" />
+      </VBox>
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" />
+      </VBox.margin>
+   </ScrollPane>
+</VBox>

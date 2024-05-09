@@ -1,0 +1,27 @@
+.outside-pane {
+  -fx-background-color: linear-gradient(to bottom, #E4F1FC, white);
+  -fx-border-color: lightgrey;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
+}
+
+.book-text {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 13;
+  -fx-alignment: center;
+}
+
+.default-text {
+  -fx-text-fill: #4B5563;
+  -fx-font-family: "Inter Tight Medium";
+  -fx-font-weight: 400;
+  -fx-font-size: 13;
+}
+
+.line {
+  -fx-background-color: lightgrey;
+  -fx-opacity: 0.5;
+}

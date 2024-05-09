@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="50.0" prefWidth="245.0" styleClass="default-pane" stylesheets="@DetailPane.css"
+            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="UI.ContactWindow.BookWindow.BookInputWindow.DetailPane.DetailPane">
+   <Label layoutX="33.0" layoutY="3.0" prefHeight="43.0" prefWidth="155.0" styleClass="book-text" text="Tên sách"
+          wrapText="true"/>
+   <Label layoutX="5.0" layoutY="8.0" styleClass="default-text" text="STT"/>
+   <Label layoutX="194.0" layoutY="15.0" prefHeight="18.0" prefWidth="45.0" styleClass="default-text" text="Số lượng"/>
+   <FontIcon iconLiteral="far-window-close" layoutX="9.0" layoutY="41.0" strokeWidth="0.0" styleClass="default-icon"/>
+</AnchorPane>

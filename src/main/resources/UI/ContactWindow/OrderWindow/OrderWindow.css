@@ -1,0 +1,22 @@
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field, .combo-box {
+    -fx-font-size: 14px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 25px;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 35px;
+}
+
+.table-view {
+    -fx-pref-width: 800px;
+    -fx-pref-height: 400px;
+}

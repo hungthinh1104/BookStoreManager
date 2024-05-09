@@ -13,26 +13,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class Main  extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/LoginWindow.fxml"));
             Scene scene = new Scene(loader.load());
-            stage.setTitle("Bookstore Manager Login");
+            stage.setTitle("Bookstore Manager");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            // Handle FXML loading exception
-            System.err.println("Error loading FXML file: " + e.getMessage());
+            e.printStackTrace();
+            System.out.println("Error loading FXML file: " + e.getMessage());
         }
     }
 
     public static void main(String[] args) {
         Connection conn = DatabaseUtil.getConnection();
         try{
-
+            String hoten = "Nguyễn Thị Mơ";
+            String sdt = "0987652134";
+            DatabaseUtil.createKhachhang(conn, hoten, sdt);
         }catch (Exception e){
             e.printStackTrace();
         }

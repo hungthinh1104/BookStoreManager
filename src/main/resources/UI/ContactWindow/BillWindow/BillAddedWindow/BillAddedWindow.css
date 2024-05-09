@@ -1,0 +1,95 @@
+.outside-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-spacing: 10;
+    -fx-alignment: top center;
+    -fx-padding: 20;
+}
+
+.inside-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 20;
+    -fx-padding: 10;
+}
+
+.into-side-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 20;
+    -fx-padding: 10;
+}
+
+.save-button {
+    -fx-background-color: #2F60F5;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13;
+    -fx-font-weight: 300;
+}
+
+.cancel-button {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: #2F60F5;
+    -fx-border-radius: 20;
+    -fx-text-fill: #2F60F5;
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13;
+    -fx-font-weight: 300;
+}
+
+.header-text {
+    -fx-text-fill: black;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 20px;
+}
+
+.inside-header-text {
+    -fx-text-fill: black;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 15px;
+    -fx-underline: true;
+}
+
+.inside-category-text {
+    -fx-text-fill: black;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 13px;
+}
+
+.drop-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
+}
+
+.line {
+    -fx-stroke: lightgrey;
+}
+
+.payment-text{
+    -fx-text-fill: black;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 15px;
+}
+
+.add-button {
+    -fx-background-color: #2F60F5;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13;
+    -fx-font-weight: 300;
+}
+
+.trash-icon {
+    -fx-fill: #FC4100;
+}

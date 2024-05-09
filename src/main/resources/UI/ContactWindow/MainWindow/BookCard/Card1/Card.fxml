@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="170.0" prefWidth="325.0" styleClass="outside-pane" stylesheets="@Card.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitHeight="151.0" fitWidth="121.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@Image/1.jpg" />
+    </ImageView>
+    <Label layoutX="125.0" layoutY="8.0" lineSpacing="2.0" prefHeight="68.0" prefWidth="190.0" styleClass="book-text" text="Mom's Story: A Memory and Keepsake Journal for My Family" wrapText="true" />
+    <Label layoutX="125.0" layoutY="104.0" styleClass="price" text="12000đ" />
+    <HBox layoutX="125.0" layoutY="78.0" prefHeight="16.0" prefWidth="88.0" spacing="1.0">
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star-half-alt" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+    </HBox>
+   <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="137.0" prefHeight="20.0" prefWidth="104.0" spacing="7.0">
+      <children>
+         <Circle fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+         <Label prefHeight="19.0" prefWidth="77.0" styleClass="default-text" text="Còn hàng" />
+      </children>
+   </HBox>
+   <Label layoutX="220.0" layoutY="79.0" styleClass="default-text" text="550" />
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>
