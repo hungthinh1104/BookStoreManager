@@ -26,12 +26,14 @@
     -fx-border-color: #F3F4F6;
 }
 
-.hover-icon {
+.icon:hover {
     -fx-fill: #F34539;
+    -fx-opacity: 1;
 }
 
-.default-icon {
+.icon {
     -fx-fill: #4B5563;
+    -fx-opacity: 0.9;
 }
 
 

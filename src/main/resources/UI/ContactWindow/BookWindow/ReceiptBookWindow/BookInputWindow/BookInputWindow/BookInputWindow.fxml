@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="493.0" prefWidth="700.0" styleClass="big-outside-pane"
+            stylesheets="@BookInputWindow.css" xmlns="http://javafx.com/javafx/22">
+    <VBox layoutX="21.0" layoutY="19.0" prefHeight="456.0" prefWidth="378.0">
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Ngày nhập:"/>
+            <DatePicker fx:id="datePicker"/>
+        </HBox>
+        <Line endX="254.0928955078125" endY="-1.6569154262542725" startX="-100.0" styleClass="line"/>
+        <HBox prefHeight="177.0" prefWidth="367.0" spacing="10.0">
+            <Label text="Chọn sách:"/>
+            <ListView fx:id="bookListView" prefHeight="178.0" prefWidth="277.0" styleClass="list"/>
+        </HBox>
+        <HBox spacing="18.0">
+            <Label text="Số lượng:"/>
+            <TextField fx:id="quantityTextField"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Đơn giá nhập:"/>
+            <TextField fx:id="priceTextField"/>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="356.0" spacing="10.0">
+            <Button prefHeight="25.0" prefWidth="100.0" styleClass="add" text="Thêm"/>
+        </HBox>
+        <styleClass>
+            <String fx:value="light-radius-box-square"/>
+            <String fx:value="outside-pane"/>
+        </styleClass>
+    </VBox>
+    <ScrollPane layoutX="421.0" layoutY="19.0" prefHeight="408.0" prefWidth="258.0"
+                styleClass="light-radius-box-square">
+        <VBox alignment="TOP_CENTER" prefWidth="244.0" spacing="1.0">
+            <padding>
+                <Insets top="2.0"/>
+            </padding>
+        </VBox>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </ScrollPane>
+    <Label layoutX="432.0" layoutY="10.0" styleClass="default-text" text="Danh sách nhập"/>
+    <Button layoutX="500.0" layoutY="441.0" prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy"/>
+</AnchorPane>

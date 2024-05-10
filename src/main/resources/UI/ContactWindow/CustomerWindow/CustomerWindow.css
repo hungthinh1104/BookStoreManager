@@ -1,38 +1,53 @@
 .background {
-    -fx-background-color: linear-gradient(to top, #f0f0f0, #dcdcdc);
+    -fx-background-color: white;
 }
 
 .title {
-    -fx-font-size: 24px;
-    -fx-font-weight:400;
-    -fx-font-family: "Inter Tight Medium";
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-text-fill: #E78895;
+    -fx-font-size: 22;
 }
 
 .default-text {
-    -fx-font-size: 13px;
-    -fx-font-weight: 300;
-    -fx-font-family: "Inter Tight Medium";
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
 }
 
-.search-button, .action-button {
-    -fx-background-radius: 5;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
-}
-
+/* Search button */
 .search-button {
-    -fx-background-color: #007bff;
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 10;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
 }
 
 .search-button:hover {
-    -fx-background-color: derive(#007bff, 20%);
+    -fx-background-color: #45a049;
+}
+
+.search-button:pressed {
+    -fx-background-color: #388E3C;
 }
 
 .action-button {
-    -fx-background-color: #28a745;
+    -fx-background-color: #2196F3;
+    -fx-font-family: "Inter Medium";
     -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
 }
 
 .action-button:hover {
-    -fx-background-color: derive(#28a745, 20%);
+    -fx-background-color: #1E88E5;
+}
+
+.action-button:pressed {
+    -fx-background-color: #1976D2;
 }

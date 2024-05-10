@@ -73,7 +73,7 @@
     -fx-stroke: lightgrey;
 }
 
-.payment-text{
+.payment-text {
     -fx-text-fill: black;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
@@ -81,10 +81,10 @@
 }
 
 .add-button {
-    -fx-background-color: #2F60F5;
+    -fx-background-color: #F5F7FE;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
-    -fx-text-fill: white;
+    -fx-text-fill: #2F60F5;
     -fx-font-family: "Inter Medium";
     -fx-font-size: 13;
     -fx-font-weight: 300;
@@ -92,4 +92,12 @@
 
 .trash-icon {
     -fx-fill: #FC4100;
+}
+
+.input-side {
+    -fx-text-fill: black;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 5;
+    -fx-background-color: white;
+    -fx-background-radius: 5;
 }

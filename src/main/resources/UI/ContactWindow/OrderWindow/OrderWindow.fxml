@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="780.0" prefWidth="1000.0" stylesheets="@OrderWindow.css"
+      xmlns="http://javafx.com/javafx/22">
 
-<VBox prefHeight="780.0" prefWidth="1000.0" stylesheets="@OrderWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="Tên khách hàng:"/>
+    <TextField fx:id="txtCustomerName"/>
 
-    <Label text="Tên khách hàng:" />
-    <TextField fx:id="txtCustomerName" />
-
-    <Label text="Số điện thoại:" />
-    <TextField fx:id="txtPhoneNumber" />
+    <Label text="Số điện thoại:"/>
+    <TextField fx:id="txtPhoneNumber"/>
 
     <HBox>
-        <Label text="Chọn sách:" />
-        <ComboBox fx:id="cmbBooks" />
-        <TextField fx:id="txtQuantity" promptText="Số lượng" />
-        <Label fx:id="lblDeposit" />
+        <Label text="Chọn sách:"/>
+        <ComboBox fx:id="cmbBooks"/>
+        <TextField fx:id="txtQuantity" promptText="Số lượng"/>
+        <Label fx:id="lblDeposit"/>
     </HBox>
 
-    <Button text="Tạo đơn đặt hàng" />
+    <Button text="Tạo đơn đặt hàng"/>
 
     <TableView fx:id="tableOrders">
         <!-- Các cột dữ liệu của bảng -->

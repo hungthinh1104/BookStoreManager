@@ -1,37 +1,37 @@
 .outside-pane {
-  -fx-background-color: white;
-  -fx-border-color: lightgrey;
-  -fx-border-radius: 5;
-  -fx-background-radius: 5;
-  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
+    -fx-background-color: white;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
 }
 
 .book-text {
-  -fx-text-fill: #4B5563;
-  -fx-font-family: "Inter Medium";
-  -fx-font-weight: 400;
-  -fx-font-size: 13;
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 13;
 }
 
 .star-empty {
-  -fx-fill: white;
+    -fx-fill: white;
 
 }
 
 .star-fill {
-  -fx-fill: #E0D777;
+    -fx-fill: #E0D777;
 }
 
 .price {
-  -fx-text-fill: #E04244;
-  -fx-font-family: "Cambria Math";
-  -fx-font-weight: 400;
-  -fx-font-size: 20;
+    -fx-text-fill: #E04244;
+    -fx-font-family: "Cambria Math";
+    -fx-font-weight: 400;
+    -fx-font-size: 20;
 }
 
 .default-text {
-  -fx-text-fill: #4B5563;
-  -fx-font-family: "Inter Light";
-  -fx-font-weight: 400;
-  -fx-font-size: 13;
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Light";
+    -fx-font-weight: 400;
+    -fx-font-size: 13;
 }

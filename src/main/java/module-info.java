@@ -13,4 +13,8 @@ module com.bookstoremanager {
 
     opens application.bookstoremanager to javafx.fxml;
     exports application.bookstoremanager;
+    exports application.bookstoremanager.controller.LoginWindow;
+    opens application.bookstoremanager.controller.LoginWindow to javafx.fxml;
+    exports application.bookstoremanager.controller.Sidebar;
+    opens application.bookstoremanager.controller.Sidebar to javafx.fxml;
 }

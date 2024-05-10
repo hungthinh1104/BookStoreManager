@@ -1,147 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
-
-<HBox prefWidth="1350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="350.0" styleClass="box-outside">
-         <VBox alignment="TOP_CENTER" prefHeight="780.0" prefWidth="80.0" styleClass="border-right">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+<?import java.net.URL?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" prefWidth="1350.0">
+    <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0"
+          prefWidth="350.0" styleClass="box-outside">
+        <VBox alignment="TOP_CENTER" prefHeight="780.0" prefWidth="80.0" styleClass="border-right">
             <VBox alignment="CENTER" prefHeight="447.0" prefWidth="78.0" spacing="25.0">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-               <FontIcon iconLiteral="far-building" iconSize="35" strokeWidth="0.0" styleClass="logo">
-                  <VBox.margin>
-                     <Insets top="20.0" />
-                  </VBox.margin>
-               </FontIcon>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="selected-pane">
-                     <FontIcon iconLiteral="fas-home" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
-                     <FontIcon iconLiteral="fas-book" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
-                     <FontIcon iconLiteral="fas-user" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
-                     <FontIcon iconLiteral="fas-money-check-alt" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
-                     <FontIcon iconLiteral="fas-shopping-cart" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
-                     <FontIcon iconLiteral="fas-chart-pie" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
-               <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
-                  <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
-                     <FontIcon iconLiteral="fas-cog" iconSize="15" layoutX="7.0" layoutY="20.0" styleClass="default-icon" />
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </Pane>
+                <VBox.margin>
+                    <Insets top="5.0"/>
+                </VBox.margin>
+                <FontIcon iconLiteral="far-building" iconSize="35" strokeWidth="0.0" styleClass="logo">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                </FontIcon>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="selected-pane">
+                        <FontIcon iconLiteral="fas-home" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
+                        <FontIcon iconLiteral="fas-book" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
+                        <FontIcon iconLiteral="fas-user" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
+                        <FontIcon iconLiteral="fas-money-check-alt" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
+                        <FontIcon iconLiteral="fas-shopping-cart" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
+                        <FontIcon iconLiteral="fas-chart-pie" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
+                <Pane disable="true" prefHeight="30.0" prefWidth="78.0">
+                    <AnchorPane layoutX="23.0" prefHeight="30.0" prefWidth="30.0" styleClass="default-pane">
+                        <FontIcon iconLiteral="fas-cog" iconSize="15" layoutX="7.0" layoutY="20.0"
+                                  styleClass="default-icon"/>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </AnchorPane>
+                </Pane>
             </VBox>
-         </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="780.0" prefWidth="270.0" styleClass="border-right">
+        </VBox>
+        <VBox alignment="TOP_CENTER" prefHeight="780.0" prefWidth="270.0" styleClass="border-right">
             <AnchorPane prefHeight="81.0" prefWidth="266.0" styleClass="border-bottom">
-               <HBox alignment="CENTER" layoutX="31.0" layoutY="27.0" prefHeight="19.0" prefWidth="206.0" styleClass="search-pane">
-                  <children>
-                     <FontIcon fill="#c15050" iconLiteral="fas-search" iconSize="15" strokeWidth="0.0" styleClass="default-icon" tabSize="0">
+                <HBox alignment="CENTER" layoutX="31.0" layoutY="27.0" prefHeight="19.0" prefWidth="206.0"
+                      styleClass="search-pane">
+                    <FontIcon fill="#c15050" iconLiteral="fas-search" iconSize="15" strokeWidth="0.0"
+                              styleClass="default-icon" tabSize="0">
                         <HBox.margin>
-                           <Insets left="3.0" right="4.0" />
+                            <Insets left="3.0" right="4.0"/>
                         </HBox.margin>
-                     </FontIcon>
-                     <TextField alignment="CENTER" focusTraversable="false" prefHeight="26.0" prefWidth="156.0" promptText="Tìm kiếm" styleClass="search" />
-                  </children>
-               </HBox>
+                    </FontIcon>
+                    <TextField alignment="CENTER" focusTraversable="false" prefHeight="26.0" prefWidth="156.0"
+                               promptText="Tìm kiếm" styleClass="search"/>
+                </HBox>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="selected-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Trang chủ" />
-                  <FontIcon iconLiteral="fas-home" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="selected-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Trang chủ"/>
+                    <FontIcon iconLiteral="fas-home" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Sách" />
-                  <FontIcon iconLiteral="fas-book" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="default-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Sách"/>
+                    <FontIcon iconLiteral="fas-book" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Khách hàng" />
-                  <FontIcon iconLiteral="fas-user" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="default-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Khách hàng"/>
+                    <FontIcon iconLiteral="fas-user" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Hóa đơn" />
-                  <FontIcon iconLiteral="fas-money-check-alt" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="default-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Hóa đơn"/>
+                    <FontIcon iconLiteral="fas-money-check-alt" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Đặt hàng" />
-                  <FontIcon iconLiteral="fas-shopping-cart" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="default-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Đặt hàng"/>
+                    <FontIcon iconLiteral="fas-shopping-cart" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Thống kê" />
-                  <FontIcon iconLiteral="fas-chart-pie" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="default-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Thống kê"/>
+                    <FontIcon iconLiteral="fas-chart-pie" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Cài đặt" />
-                  <FontIcon iconLiteral="fas-cog" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
-               </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0"
+                            styleClass="default-pane">
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Cài đặt"/>
+                    <FontIcon iconLiteral="fas-cog" iconSize="17" layoutX="20.0" layoutY="25.0"
+                              styleClass="default-icon"/>
+                </AnchorPane>
             </AnchorPane>
-         </VBox>
-         <stylesheets>
-            <URL value="@Sidebar.css_Dark.css" />
-            <URL value="@Sidebar.css" />
-         </stylesheets>
-      </HBox>
-   </children>
+        </VBox>
+        <stylesheets>
+            <URL value="@Sidebar.css_Dark.css"/>
+            <URL value="@Sidebar.css"/>
+        </stylesheets>
+    </HBox>
 </HBox>

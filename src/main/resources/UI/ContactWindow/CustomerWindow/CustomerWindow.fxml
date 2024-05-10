@@ -15,50 +15,45 @@
 
     <top>
         <VBox spacing="10.0">
-            <Label styleClass="title" text="Quản lý Khách hàng" />
+            <Label styleClass="title" text="Khách hàng" />
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                 <Label styleClass="default-text" text="Tìm kiếm:" />
                 <TextField fx:id="txtSearchName" prefWidth="200" promptText="Tên khách hàng" styleClass="default-text" />
                 <TextField fx:id="txtSearchPhone" prefWidth="200" promptText="Số điện thoại" styleClass="default-text" />
                 <Button text="Tìm kiếm">
-               <styleClass>
-                  <String fx:value="search-button" />
-                  <String fx:value="default-text" />
-               </styleClass></Button>
+                    <styleClass>
+                        <String fx:value="search-button" />
+                        <String fx:value="default-text" />
+                    </styleClass>
+                </Button>
             </HBox>
         </VBox>
     </top>
 
     <center>
-        <TableView fx:id="customerTable" prefHeight="500" prefWidth="960" BorderPane.alignment="CENTER">
+        <TableView fx:id="customerTable" prefHeight="613.0" prefWidth="970.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn prefWidth="300" text="Tên" />
                 <TableColumn prefWidth="300" text="Số điện thoại" />
             </columns>
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </BorderPane.margin>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
         </TableView>
     </center>
 
     <bottom>
         <HBox spacing="10.0">
             <Button text="Thêm">
-            <styleClass>
-               <String fx:value="action-button" />
-               <String fx:value="default-text" />
-            </styleClass></Button>
-            <Button text="Sửa">
-            <styleClass>
-               <String fx:value="action-button" />
-               <String fx:value="default-text" />
-            </styleClass></Button>
-            <Button text="Xóa">
-            <styleClass>
-               <String fx:value="action-button" />
-               <String fx:value="default-text" />
-            </styleClass></Button>
+                <styleClass>
+                    <String fx:value="action-button" />
+                    <String fx:value="default-text" />
+                </styleClass>
+            </Button>
         </HBox>
     </bottom>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
 
 </BorderPane>

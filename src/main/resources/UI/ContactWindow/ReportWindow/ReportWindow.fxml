@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
-<VBox prefHeight="780.0" prefWidth="1000.0" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <Label text="Thống kê thu, chi theo tháng, năm" />
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="780.0" prefWidth="1000.0" stylesheets="@ReportWindow.css"
+      xmlns="http://javafx.com/javafx/22">
+    <Label text="Thống kê thu, chi theo tháng, năm"/>
     <HBox spacing="10">
-        <TextField fx:id="txtMonth" promptText="Tháng" />
-        <TextField fx:id="txtYear" promptText="Năm" />
-        <Button text="Xem thống kê" />
+        <TextField fx:id="txtMonth" promptText="Tháng"/>
+        <TextField fx:id="txtYear" promptText="Năm"/>
+        <Button text="Xem thống kê"/>
     </HBox>
 
-    <Label text="Top 5 sách bán chạy nhất" />
+    <Label text="Top 5 sách bán chạy nhất"/>
     <TableView fx:id="tableBestSellingBooks">
         <!-- Các cột dữ liệu của bảng -->
     </TableView>
 
-    <Label text="Top 5 khách hàng chi nhiều nhất" />
+    <Label text="Top 5 khách hàng chi nhiều nhất"/>
     <TableView fx:id="tableTopSpendingCustomers">
         <!-- Các cột dữ liệu của bảng -->
     </TableView>
 
-    <Label text="Báo cáo tồn" />
+    <Label text="Báo cáo tồn"/>
     <TableView fx:id="tableInventoryReport">
         <!-- Các cột dữ liệu của bảng -->
     </TableView>

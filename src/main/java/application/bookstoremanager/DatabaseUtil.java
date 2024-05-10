@@ -5,23 +5,23 @@ import application.bookstoremanager.classdb.*;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DatabaseUtil {
     public static Connection getConnection() {
-        try{
-            var url = "jdbc:mysql://localhost:3306/quanlynhasach";
+        try {
+            var url = "jdbc:mysql://localhost:3307/quanlynhasach";
             var user = "root";
             var pass = "";
-            return DriverManager.getConnection(url,user,pass);
-        }catch(SQLException e){
+            return DriverManager.getConnection(url, user, pass);
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public static List<Theloai> getAllTheLoai(Connection conn){
+
+    public static List<Theloai> getAllTheLoai(Connection conn) {
         List<Theloai> theLoai = new ArrayList<Theloai>();
         try {
             Statement statement = conn.createStatement();
@@ -41,11 +41,11 @@ public class DatabaseUtil {
         return theLoai;
     }
 
-    public static Sach getSachById(Connection conn, int idSach){
+    public static Sach getSachById(Connection conn, int idSach) {
         Sach theSach = null;
         List<Sach> sach = getAllSach(conn);
-        for(Sach item : sach){
-            if(item.getMaSach() == idSach){
+        for (Sach item : sach) {
+            if (item.getMaSach() == idSach) {
                 theSach = item;
                 break;
             }
@@ -53,7 +53,7 @@ public class DatabaseUtil {
         return theSach;
     }
 
-    public static List<Sach> getAllSach(Connection conn){
+    public static List<Sach> getAllSach(Connection conn) {
         List<Sach> sach = new ArrayList<Sach>();
         try {
             Statement statement = conn.createStatement();
@@ -74,7 +74,7 @@ public class DatabaseUtil {
                         break;
                     }
                 }
-                Sach s = new Sach(id,name,idTheloai,tacGia,soLuong,donGia, timThay);
+                Sach s = new Sach(id, name, idTheloai, tacGia, soLuong, donGia, timThay);
                 sach.add(s);
             }
 
@@ -84,8 +84,8 @@ public class DatabaseUtil {
         return sach;
     }
 
-    public static void createSach(String tenSach, int maTheLoai,String tacGia, Connection conn){
-        try{
+    public static void createSach(String tenSach, int maTheLoai, String tacGia, Connection conn) {
+        try {
             String sql = "INSERT INTO sach(TenSach, MaTheLoai, TacGia) VALUES (?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -96,55 +96,55 @@ public class DatabaseUtil {
             pstmt.executeUpdate();
             System.out.println("Thêm mới sách thành công!");
             pstmt.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static boolean deleteSachById(Connection conn, int idSach ){
+    public static boolean deleteSachById(Connection conn, int idSach) {
         List<CtHoadon> ctHoadon = getAllCtHoadon(conn);
         List<CtDondathang> ctDondathang = getAllCtDondathang(conn);
         List<CtPhieunhapsach> ctPhieunhapsach = getAllCtPhieunhapsach(conn);
         int count = 0;
         for (CtPhieunhapsach thePhieunhapsach : ctPhieunhapsach) {
-            if(thePhieunhapsach.getMaSach() == idSach ){
+            if (thePhieunhapsach.getMaSach() == idSach) {
                 ++count;
                 break;
             }
         }
         for (CtHoadon theHoadon : ctHoadon) {
-            if(theHoadon.getMaSach() == idSach ){
+            if (theHoadon.getMaSach() == idSach) {
                 ++count;
                 break;
             }
         }
-        for(CtDondathang theDondathang : ctDondathang){
-            if(theDondathang.getMaSach() == idSach ){
+        for (CtDondathang theDondathang : ctDondathang) {
+            if (theDondathang.getMaSach() == idSach) {
                 ++count;
                 break;
             }
         }
-        if(count == 0){
-            try{
+        if (count == 0) {
+            try {
                 String deleteSql = "DELETE FROM sach WHERE MaSach = ?";
                 PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
                 deleteStmt.setInt(1, idSach);
                 deleteStmt.executeUpdate();
                 return true;
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 return false;
             }
-        }else{
+        } else {
             return false;
         }
     }
 
-    public static Phieunhapsach getPhieunhapsachById(Connection conn, int idPhieunhapsach){
+    public static Phieunhapsach getPhieunhapsachById(Connection conn, int idPhieunhapsach) {
         Phieunhapsach pns = null;
         List<Phieunhapsach> pnss = getAllPhieunhapsach(conn);
-        for(Phieunhapsach item : pnss){
-            if(item.getMaPhieuNhap() == idPhieunhapsach){
+        for (Phieunhapsach item : pnss) {
+            if (item.getMaPhieuNhap() == idPhieunhapsach) {
                 pns = item;
                 break;
             }
@@ -152,7 +152,7 @@ public class DatabaseUtil {
         return pns;
     }
 
-    public static List<Phieunhapsach> getAllPhieunhapsach(Connection conn){
+    public static List<Phieunhapsach> getAllPhieunhapsach(Connection conn) {
         List<Phieunhapsach> pns = new ArrayList<Phieunhapsach>();
         try {
             Statement statement = conn.createStatement();
@@ -161,7 +161,7 @@ public class DatabaseUtil {
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 LocalDate ngayNhap = resultSet.getDate(2).toLocalDate();
-                Phieunhapsach pn =  new Phieunhapsach(id, ngayNhap);
+                Phieunhapsach pn = new Phieunhapsach(id, ngayNhap);
                 pns.add(pn);
             }
 
@@ -171,9 +171,9 @@ public class DatabaseUtil {
         return pns;
     }
 
-    public static int createPhieunhapsach(LocalDate ngayNhap, Connection conn){
+    public static int createPhieunhapsach(LocalDate ngayNhap, Connection conn) {
         int idPhieunhap = 0;
-        try{
+        try {
             String sql = "INSERT INTO phieunhapsach(NgayNhap) VALUES (?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
@@ -183,20 +183,20 @@ public class DatabaseUtil {
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();
-            if(rs.next()){
+            if (rs.next()) {
                 idPhieunhap = rs.getInt(1);
             }
             System.out.println("Thêm mới phiếu nhập sách thành công! id:" + idPhieunhap);
             pstmt.close();
             rs.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return idPhieunhap;
     }
 
-    public static boolean deletePhieunhapsachById(Connection conn, int idPhieunhapsach ){
-        try{
+    public static boolean deletePhieunhapsachById(Connection conn, int idPhieunhapsach) {
+        try {
             String deleteSqlct = "DELETE FROM ct_phieunhapsach WHERE MaPhieuNhap = ?";
             String deleteSql = "DELETE FROM phieunhapsach WHERE MaPhieuNhap = ?";
             PreparedStatement deleteStmtct = conn.prepareStatement(deleteSqlct);
@@ -206,13 +206,13 @@ public class DatabaseUtil {
             deleteStmtct.executeUpdate();
             deleteStmt.executeUpdate();
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public static List<CtPhieunhapsach> getAllCtPhieunhapsach(Connection conn){
+    public static List<CtPhieunhapsach> getAllCtPhieunhapsach(Connection conn) {
         List<CtPhieunhapsach> ctpns = new ArrayList<CtPhieunhapsach>();
         try {
             Statement statement = conn.createStatement();
@@ -224,9 +224,9 @@ public class DatabaseUtil {
                 int idMaSach = resultSet.getInt(3);
                 int soLuongNhap = resultSet.getInt(4);
                 double donGiaNhap = resultSet.getDouble(5);
-                Sach sach = getSachById(conn,idMaSach);
-                Phieunhapsach pns = getPhieunhapsachById(conn,idPhieuNhap);
-                CtPhieunhapsach ct = new CtPhieunhapsach(id,idPhieuNhap,idMaSach,soLuongNhap,donGiaNhap,pns,sach);
+                Sach sach = getSachById(conn, idMaSach);
+                Phieunhapsach pns = getPhieunhapsachById(conn, idPhieuNhap);
+                CtPhieunhapsach ct = new CtPhieunhapsach(id, idPhieuNhap, idMaSach, soLuongNhap, donGiaNhap, pns, sach);
                 ctpns.add(ct);
             }
 
@@ -236,11 +236,11 @@ public class DatabaseUtil {
         return ctpns;
     }
 
-    public static List<CtPhieunhapsach> getCtPhieunhapsachByIdPhieunhapsach(Connection conn, int idPhieunhapsach){
+    public static List<CtPhieunhapsach> getCtPhieunhapsachByIdPhieunhapsach(Connection conn, int idPhieunhapsach) {
         List<CtPhieunhapsach> ctPhieunhapsachList = new ArrayList<CtPhieunhapsach>();
         List<CtPhieunhapsach> ctpns = getAllCtPhieunhapsach(conn);
-        for(CtPhieunhapsach item : ctpns){
-            if(item.getMaPhieuNhap() == idPhieunhapsach){
+        for (CtPhieunhapsach item : ctpns) {
+            if (item.getMaPhieuNhap() == idPhieunhapsach) {
                 ctPhieunhapsachList.add(item);
             }
         }
@@ -261,7 +261,7 @@ public class DatabaseUtil {
 //        }
 //    }
 
-    public static Thamso getThamso(Connection conn){
+    public static Thamso getThamso(Connection conn) {
         Thamso thamso = null;
         List<Thamso> tss = new ArrayList<Thamso>();
         try {
@@ -273,7 +273,7 @@ public class DatabaseUtil {
                 int tonToiThieu = resultSet.getInt(3);
                 float tiLe = resultSet.getFloat(4);
                 double tienCoc = resultSet.getDouble(5);
-                Thamso ts = new Thamso(nhapToiThieu,tonToiDa, tonToiThieu, tiLe, tienCoc);
+                Thamso ts = new Thamso(nhapToiThieu, tonToiDa, tonToiThieu, tiLe, tienCoc);
                 tss.add(ts);
             }
             thamso = tss.getFirst();
@@ -283,11 +283,11 @@ public class DatabaseUtil {
         return thamso;
     }
 
-    public static Khachhang getKhachhangById(Connection conn, int idKhachhang){
+    public static Khachhang getKhachhangById(Connection conn, int idKhachhang) {
         Khachhang kh = null;
         List<Khachhang> khs = getAllKhachhang(conn);
-        for(Khachhang item : khs){
-            if(item.getMaKhachHang() == idKhachhang){
+        for (Khachhang item : khs) {
+            if (item.getMaKhachHang() == idKhachhang) {
                 kh = item;
                 break;
             }
@@ -295,7 +295,7 @@ public class DatabaseUtil {
         return kh;
     }
 
-    public static List<Khachhang> getAllKhachhang(Connection conn){
+    public static List<Khachhang> getAllKhachhang(Connection conn) {
         List<Khachhang> khs = new ArrayList<Khachhang>();
         try {
             Statement statement = conn.createStatement();
@@ -314,8 +314,8 @@ public class DatabaseUtil {
         return khs;
     }
 
-    public static void createKhachhang(Connection conn, String hoTen, String sdt){
-        try{
+    public static void createKhachhang(Connection conn, String hoTen, String sdt) {
+        try {
             String sql = "INSERT INTO khachhang(HoTen, SoDienThoai) VALUES (?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -325,48 +325,48 @@ public class DatabaseUtil {
             pstmt.executeUpdate();
             System.out.println("Thêm mới Khách hàng thành công!");
             pstmt.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static boolean deleteKhachById(Connection conn, int idKhachHang ){
+    public static boolean deleteKhachById(Connection conn, int idKhachHang) {
         List<Hoadon> hoadons = getAllHoadon(conn);
         List<Dondathang> dondathangs = getAllDondathang(conn);
         int count = 0;
-        for(Hoadon hoadon : hoadons){
-            if (hoadon.getMaKhachHang() == idKhachHang){
+        for (Hoadon hoadon : hoadons) {
+            if (hoadon.getMaKhachHang() == idKhachHang) {
                 ++count;
                 break;
             }
         }
-        for(Dondathang dondathang : dondathangs){
-            if (dondathang.getMaKhachHang() == idKhachHang){
+        for (Dondathang dondathang : dondathangs) {
+            if (dondathang.getMaKhachHang() == idKhachHang) {
                 ++count;
                 break;
             }
         }
-        if(count == 0){
-            try{
+        if (count == 0) {
+            try {
                 String deleteSql = "DELETE FROM khachhang WHERE MaKhachHang = ?";
                 PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
                 deleteStmt.setInt(1, idKhachHang);
                 deleteStmt.executeUpdate();
                 return true;
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 return false;
             }
-        }else{
+        } else {
             return false;
         }
     }
 
-    public static Hoadon getHoadonById(Connection conn, int idHoadon){
+    public static Hoadon getHoadonById(Connection conn, int idHoadon) {
         Hoadon hoadon = null;
         List<Hoadon> hoadons = getAllHoadon(conn);
-        for(Hoadon item : hoadons){
-            if(item.getMaHoaDon() == idHoadon){
+        for (Hoadon item : hoadons) {
+            if (item.getMaHoaDon() == idHoadon) {
                 hoadon = item;
                 break;
             }
@@ -374,7 +374,7 @@ public class DatabaseUtil {
         return hoadon;
     }
 
-    public static List<Hoadon> getAllHoadon(Connection conn){
+    public static List<Hoadon> getAllHoadon(Connection conn) {
         List<Hoadon> hoadons = new ArrayList<Hoadon>();
         try {
             Statement statement = conn.createStatement();
@@ -385,8 +385,8 @@ public class DatabaseUtil {
                 LocalDate ngayLap = resultSet.getDate(2).toLocalDate();
                 int maKhachHang = resultSet.getInt(3);
                 double tongTien = resultSet.getDouble(4);
-                Khachhang kh = getKhachhangById(conn,maKhachHang);
-                Hoadon hoadon = new Hoadon(id,ngayLap,maKhachHang,tongTien,kh);
+                Khachhang kh = getKhachhangById(conn, maKhachHang);
+                Hoadon hoadon = new Hoadon(id, ngayLap, maKhachHang, tongTien, kh);
                 hoadons.add(hoadon);
             }
         } catch (Exception e) {
@@ -395,9 +395,9 @@ public class DatabaseUtil {
         return hoadons;
     }
 
-    public static int createHoadon(LocalDate ngayLap, int maKhachHang, Connection conn){
+    public static int createHoadon(LocalDate ngayLap, int maKhachHang, Connection conn) {
         int idHoaDon = 0;
-        try{
+        try {
             String sql = "INSERT INTO hoadon(NgayLap, MaKhachHang) VALUES (?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
@@ -408,20 +408,20 @@ public class DatabaseUtil {
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();
-            if(rs.next()){
+            if (rs.next()) {
                 idHoaDon = rs.getInt(1);
             }
             System.out.println("Thêm mới hóa đơn thành công! id:" + idHoaDon);
             pstmt.close();
             rs.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return idHoaDon;
     }
 
-    public static boolean deleteHoadonById(Connection conn, int idHoadon ){
-        try{
+    public static boolean deleteHoadonById(Connection conn, int idHoadon) {
+        try {
             String deleteSqlct = "DELETE FROM ct_hoadon WHERE MaHoaDon = ?";
             String deleteSql = "DELETE FROM hoadon WHERE MaHoaDon = ?";
             PreparedStatement deleteStmtct = conn.prepareStatement(deleteSqlct);
@@ -431,13 +431,13 @@ public class DatabaseUtil {
             deleteStmtct.executeUpdate();
             deleteStmt.executeUpdate();
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public static List<CtHoadon> getAllCtHoadon(Connection conn){
+    public static List<CtHoadon> getAllCtHoadon(Connection conn) {
         List<CtHoadon> ctHoadonList = new ArrayList<CtHoadon>();
         try {
             Statement statement = conn.createStatement();
@@ -450,9 +450,9 @@ public class DatabaseUtil {
                 int soLuong = resultSet.getInt(4);
                 double donGiaBan = resultSet.getDouble(5);
                 double thanhTien = resultSet.getDouble(6);
-                Hoadon hoadon = getHoadonById(conn,idHoaDon);
-                Sach sach = getSachById(conn,idSach);
-                CtHoadon ctHoadon = new CtHoadon(id, idHoaDon,idSach,soLuong,donGiaBan,thanhTien,hoadon,sach);
+                Hoadon hoadon = getHoadonById(conn, idHoaDon);
+                Sach sach = getSachById(conn, idSach);
+                CtHoadon ctHoadon = new CtHoadon(id, idHoaDon, idSach, soLuong, donGiaBan, thanhTien, hoadon, sach);
                 ctHoadonList.add(ctHoadon);
             }
         } catch (Exception e) {
@@ -461,22 +461,22 @@ public class DatabaseUtil {
         return ctHoadonList;
     }
 
-    public static List<CtHoadon> getCtHoaDonByIdHoadon(Connection conn, int idHoadon){
+    public static List<CtHoadon> getCtHoaDonByIdHoadon(Connection conn, int idHoadon) {
         List<CtHoadon> ctHoadonList = new ArrayList<CtHoadon>();
         List<CtHoadon> cthd = getAllCtHoadon(conn);
-        for(CtHoadon item : cthd){
-            if(item.getMaHoaDon() == idHoadon){
+        for (CtHoadon item : cthd) {
+            if (item.getMaHoaDon() == idHoadon) {
                 ctHoadonList.add(item);
             }
         }
         return ctHoadonList;
     }
 
-    public static Dondathang getDondathangById(Connection conn, int idDonHang){
+    public static Dondathang getDondathangById(Connection conn, int idDonHang) {
         Dondathang dondathang = null;
         List<Dondathang> dondathangs = getAllDondathang(conn);
-        for(Dondathang item : dondathangs){
-            if(item.getMaDonHang() == idDonHang){
+        for (Dondathang item : dondathangs) {
+            if (item.getMaDonHang() == idDonHang) {
                 dondathang = item;
                 break;
             }
@@ -484,7 +484,7 @@ public class DatabaseUtil {
         return dondathang;
     }
 
-    public static List<Dondathang> getAllDondathang(Connection conn){
+    public static List<Dondathang> getAllDondathang(Connection conn) {
         List<Dondathang> dondathangList = new ArrayList<Dondathang>();
         try {
             Statement statement = conn.createStatement();
@@ -494,8 +494,8 @@ public class DatabaseUtil {
                 int id = resultSet.getInt(1);
                 int maKhachHang = resultSet.getInt(2);
                 double tongTienCoc = resultSet.getDouble(3);
-                Khachhang kh = getKhachhangById(conn,maKhachHang);
-                Dondathang dondathang = new Dondathang(id,maKhachHang,tongTienCoc,kh);
+                Khachhang kh = getKhachhangById(conn, maKhachHang);
+                Dondathang dondathang = new Dondathang(id, maKhachHang, tongTienCoc, kh);
                 dondathangList.add(dondathang);
             }
         } catch (Exception e) {
@@ -504,9 +504,9 @@ public class DatabaseUtil {
         return dondathangList;
     }
 
-    public static int createDondathang( int maKhachHang, Connection conn){
+    public static int createDondathang(int maKhachHang, Connection conn) {
         int idDondathang = 0;
-        try{
+        try {
             String sql = "INSERT INTO dondathang(MaKhachHang) VALUES (?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
@@ -515,20 +515,20 @@ public class DatabaseUtil {
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();
-            if(rs.next()){
+            if (rs.next()) {
                 idDondathang = rs.getInt(1);
             }
             System.out.println("Thêm mới đơn đặt hàng thành công! id:" + idDondathang);
             pstmt.close();
             rs.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return idDondathang;
     }
 
-    public static boolean deleteDondathangById(Connection conn, int idDonhang ){
-        try{
+    public static boolean deleteDondathangById(Connection conn, int idDonhang) {
+        try {
             String deleteSqlct = "DELETE FROM ct_dondathang WHERE MaDonHang = ?";
             String deleteSql = "DELETE FROM dondathang WHERE MaDonHang = ?";
             PreparedStatement deleteStmtct = conn.prepareStatement(deleteSqlct);
@@ -538,13 +538,13 @@ public class DatabaseUtil {
             deleteStmtct.executeUpdate();
             deleteStmt.executeUpdate();
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public static List<CtDondathang> getAllCtDondathang(Connection conn){
+    public static List<CtDondathang> getAllCtDondathang(Connection conn) {
         List<CtDondathang> ctDondathangList = new ArrayList<CtDondathang>();
         try {
             Statement statement = conn.createStatement();
@@ -554,9 +554,9 @@ public class DatabaseUtil {
                 int id = resultSet.getInt(1);
                 int idDonHang = resultSet.getInt(2);
                 int idSach = resultSet.getInt(3);
-                Dondathang dondathang = getDondathangById(conn,idDonHang);
-                Sach sach = getSachById(conn,idSach);
-                CtDondathang ctDondathang = new CtDondathang(id, idDonHang,idSach,dondathang,sach);
+                Dondathang dondathang = getDondathangById(conn, idDonHang);
+                Sach sach = getSachById(conn, idSach);
+                CtDondathang ctDondathang = new CtDondathang(id, idDonHang, idSach, dondathang, sach);
                 ctDondathangList.add(ctDondathang);
             }
         } catch (Exception e) {
@@ -565,18 +565,18 @@ public class DatabaseUtil {
         return ctDondathangList;
     }
 
-    public static List<CtDondathang> getCtDondathangByIdDondathang(Connection conn, int idDondathang){
+    public static List<CtDondathang> getCtDondathangByIdDondathang(Connection conn, int idDondathang) {
         List<CtDondathang> ctDondathangList = new ArrayList<CtDondathang>();
         List<CtDondathang> ctdh = getAllCtDondathang(conn);
-        for(CtDondathang item : ctdh){
-            if(item.getMaDonHang() == idDondathang){
+        for (CtDondathang item : ctdh) {
+            if (item.getMaDonHang() == idDondathang) {
                 ctDondathangList.add(item);
             }
         }
         return ctDondathangList;
     }
 
-    public static List<Phanquyen> getAllPhanquyen(Connection conn){
+    public static List<Phanquyen> getAllPhanquyen(Connection conn) {
         List<Phanquyen> phanquyens = new ArrayList<Phanquyen>();
         try {
             Statement statement = conn.createStatement();
@@ -594,7 +594,7 @@ public class DatabaseUtil {
         return phanquyens;
     }
 
-    public static List<Nguoidung> getAllNguoidung(Connection conn){
+    public static List<Nguoidung> getAllNguoidung(Connection conn) {
         List<Nguoidung> nguoidungList = new ArrayList<Nguoidung>();
         try {
             Statement statement = conn.createStatement();
@@ -606,13 +606,13 @@ public class DatabaseUtil {
                 int maPhanQuyen = resultSet.getInt(3);
                 List<Phanquyen> phanquyenList = getAllPhanquyen(conn);
                 Phanquyen phanquyen = null;
-                for(Phanquyen item : phanquyenList){
-                    if(item.getMaPhanQuyen() == maPhanQuyen){
+                for (Phanquyen item : phanquyenList) {
+                    if (item.getMaPhanQuyen() == maPhanQuyen) {
                         phanquyen = item;
                         break;
                     }
                 }
-                Nguoidung nguoidung = new Nguoidung(tenDangNhap,matKhau,maPhanQuyen,phanquyen);
+                Nguoidung nguoidung = new Nguoidung(tenDangNhap, matKhau, maPhanQuyen, phanquyen);
                 nguoidungList.add(nguoidung);
             }
         } catch (Exception e) {

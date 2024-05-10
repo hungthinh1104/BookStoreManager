@@ -1,10 +1,10 @@
 package application.bookstoremanager.classdb;
 
 public class Nguoidung {
-    private String tenDangNhap;
-    private String matKhau;
-    private Integer maPhanQuyen;
-    private Phanquyen phanQuyen;
+    private final String tenDangNhap;
+    private final String matKhau;
+    private final Integer maPhanQuyen;
+    private final Phanquyen phanQuyen;
 
     public Nguoidung(String tenDangNhap, String matKhau, Integer maPhanQuyen, Phanquyen phanQuyen) {
         this.tenDangNhap = tenDangNhap;
@@ -12,14 +12,20 @@ public class Nguoidung {
         this.maPhanQuyen = maPhanQuyen;
         this.phanQuyen = phanQuyen;
     }
+
     public String getTenDangNhap() {
         return this.tenDangNhap;
     }
+
     public String getMatKhau() {
         return this.matKhau;
     }
+
     public Integer getMaPhanQuyen() {
         return this.maPhanQuyen;
     }
-    public Phanquyen getPhanQuyen() {return this.phanQuyen;}
+
+    public Phanquyen getPhanQuyen() {
+        return this.phanQuyen;
+    }
 }

@@ -1,0 +1,127 @@
+.light-border {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.header-text {
+    -fx-text-fill: #42A5F5;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 18px;
+    -fx-underline: false;
+}
+
+.header-text-selected {
+    -fx-text-fill: #0D47A1;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 18px;
+}
+
+
+.line-selected {
+    -fx-stroke: #0D47A1;
+    -fx-stroke-width: 2;
+}
+
+.line {
+    -fx-stroke: #BBDEFB;
+    -fx-stroke-width: 2;
+}
+
+.drop-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
+}
+
+.outside-pane {
+    -fx-background-color: white;
+}
+
+.function-button {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 5;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 13px;
+}
+
+.add-button {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-text-fill: #2196F3;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 15px;
+}
+
+.search-side {
+    -fx-border-radius: 10;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 10;
+    -fx-background-color: white;
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: black;
+    -fx-font-size: 13;
+}
+
+.search-side:hover {
+    -fx-border-radius: 10;
+    -fx-border-color: #42A5F5;
+    -fx-background-radius: 10;
+    -fx-background-color: white;
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: black;
+    -fx-font-size: 13;
+}
+
+.icon {
+    -fx-fill: #757575;
+}
+
+.book-contain {
+    -fx-background-radius: 10;
+    -fx-background-color: #F5F5F5;
+}
+
+.filter-side {
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 10;
+    -fx-font-weight: 400;
+    -fx-font-size: 13;
+    -fx-font-family: Inter;
+    -fx-text-fill: #616161;
+}
+
+.book-text {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-text-fill: #F2C18D;
+    -fx-font-size: 22;
+}
+
+.header-table-text {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-font-size: 15;
+}
+
+.header-table-contain {
+    -fx-background-radius: 10;
+    -fx-background-color: #52A198;
+}
+
+.inside-table {
+    -fx-background-color: white;
+}
+
+.information-text {
+    -fx-font-weight: 400;
+    -fx-font-size: 13;
+    -fx-font-family: Inter;
+    -fx-text-fill: #616161;
+}
