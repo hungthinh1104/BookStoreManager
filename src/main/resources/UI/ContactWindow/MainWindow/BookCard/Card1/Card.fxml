@@ -14,15 +14,14 @@
     <ImageView fitHeight="138.0" fitWidth="90.0" layoutX="13.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@Image/1.jpg"/>
     </ImageView>
-    <Label layoutX="115.0" layoutY="8.0" lineSpacing="2.0" prefHeight="63.0" prefWidth="173.0" styleClass="book-text"
-           text="Mom's Story: A Memory and Keepsake Journal for My Family" wrapText="true"/>
-    <Label layoutX="114.0" layoutY="97.0" styleClass="price" text="12000đ"/>
-    <HBox layoutX="114.0" layoutY="74.0" prefHeight="16.0" prefWidth="88.0" spacing="1.0">
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill"/>
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill"/>
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill"/>
-        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill"/>
-        <FontIcon iconLiteral="fas-star-half-alt" iconSize="15" strokeWidth="0.0" styleClass="star-fill"/>
+    <Label layoutX="125.0" layoutY="8.0" lineSpacing="2.0" prefHeight="68.0" prefWidth="190.0" styleClass="book-text" text="Mom's Story: A Memory and Keepsake Journal for My Family" wrapText="true" />
+    <Label layoutX="125.0" layoutY="104.0" styleClass="price" text="12000đ" />
+    <HBox layoutX="125.0" layoutY="78.0" prefHeight="16.0" prefWidth="88.0" spacing="1.0">
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
+        <FontIcon iconLiteral="fas-star-half-alt" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
     </HBox>
     <HBox alignment="CENTER_LEFT" layoutX="115.0" layoutY="122.0" prefHeight="20.0" prefWidth="104.0" spacing="7.0">
         <children>
