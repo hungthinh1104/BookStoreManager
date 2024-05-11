@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="170.0" prefWidth="325.0" styleClass="outside-pane" stylesheets="@Card.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="170.0" prefWidth="325.0" styleClass="outside-pane" stylesheets="@Card.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard.Card1">
     <ImageView fitHeight="151.0" fitWidth="121.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@Image/1.jpg" />
     </ImageView>
@@ -28,7 +28,7 @@
          <Label prefHeight="19.0" prefWidth="77.0" styleClass="default-text" text="Còn hàng" />
       </children>
    </HBox>
-   <Label layoutX="220.0" layoutY="79.0" styleClass="default-text" text="550" />
+   <Label fx:id="rate" layoutX="220.0" layoutY="79.0" styleClass="default-text" text="550" />
    <cursor>
       <Cursor fx:constant="HAND" />
    </cursor>

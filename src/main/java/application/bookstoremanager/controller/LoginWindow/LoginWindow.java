@@ -65,7 +65,7 @@ public class LoginWindow implements Initializable {
     @FXML
     protected void LoginSuccess() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/TMP.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/Sidebar/Sidebar.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage) MainPane.getScene().getWindow();
             stage.setScene(scene);
@@ -82,7 +82,7 @@ public class LoginWindow implements Initializable {
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
                 List<Nguoidung> users = DatabaseUtil.getAllNguoidung(conn);
-                boolean flag = users.stream().anyMatch(user ->user.getTenDangNhap().equals(username) && user.getMatKhau().equals(password));
+                boolean flag = users.stream().anyMatch(user ->user.getTenDangNhap().equals(username) && user.getMatKhau().equals(HashPassword(password)));
                 if(flag) {
                     messageError.setText("Đăng nhập thành công");
                     LoginSuccess();

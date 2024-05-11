@@ -6,14 +6,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="5.0" styleClass="outside-pane" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="5.0" styleClass="outside-pane" stylesheets="@MainWindow.css"
+      xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.MainWindow.MainWindow">
    <Label text="Mới ">
       <VBox.margin>
          <Insets left="10.0" top="10.0" />
       </VBox.margin>
    </Label>
    <ScrollPane prefHeight="196.0" prefWidth="200.0" styleClass="light-radius-box-border">
-      <HBox alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="1046.0" spacing="10.0" styleClass="light-radius-border" />
+      <HBox fx:id="newFeedArea" alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="1046.0" spacing="10.0" styleClass="light-radius-border" />
       <VBox.margin>
          <Insets left="10.0" right="10.0" />
       </VBox.margin>
