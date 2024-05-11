@@ -69,7 +69,7 @@ public class LoginWindow implements Initializable {
     @FXML
     protected void LoginSuccess() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/TMP.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/Sidebar/Sidebar.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage) MainPane.getScene().getWindow();
             stage.setScene(scene);
