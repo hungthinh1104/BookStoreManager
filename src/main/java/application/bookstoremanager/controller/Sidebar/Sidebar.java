@@ -68,7 +68,7 @@ public class Sidebar implements Initializable {
     @FXML
     protected void btnBookOnClick() {
         try {
-            Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/BookWindow/BookWindow.fxml")));
+            Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/BookWindow/SearchBookWindow/SearchBookWindow.fxml")));
             MainContainer.getChildren().removeLast();
             MainContainer.getChildren().add(newContent);
             preButton.setStyle("-fx-background-color: white; -fx-background-radius: 6 ;");
