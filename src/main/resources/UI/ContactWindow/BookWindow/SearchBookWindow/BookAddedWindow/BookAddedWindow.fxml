@@ -19,10 +19,8 @@
 
     <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@BookAddedWindow.css">
         <VBox alignment="CENTER" prefHeight="150.0" prefWidth="68.0" spacing="15.0">
-            <children>
-                <Label text="Ảnh sách:"/>
-                <Button prefHeight="69.0" prefWidth="68.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true"/>
-            </children>
+            <Label text="Ảnh sách:"/>
+            <Button prefHeight="69.0" prefWidth="68.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true"/>
         </VBox>
         <ImageView fx:id="imgBook" fitHeight="149" fitWidth="100"/>
     </HBox>

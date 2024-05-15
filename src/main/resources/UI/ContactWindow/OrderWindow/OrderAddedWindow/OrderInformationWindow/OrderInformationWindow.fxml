@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <HBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="48.0" prefWidth="782.0" spacing="20.0"
-      styleClass="into-side-pane" stylesheets="@../BillAddedWindow.css" xmlns="http://javafx.com/javafx/22">
+      styleClass="into-side-pane" stylesheets="@../OrderAddedWindow.css" xmlns="http://javafx.com/javafx/22">
     <TextField prefHeight="26.0" prefWidth="137.0" styleClass="input-side"/>
     <ComboBox prefHeight="26.0" prefWidth="134.0" styleClass="input-side"/>
     <TextField prefHeight="26.0" prefWidth="172.0" styleClass="input-side"/>

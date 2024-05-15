@@ -8,8 +8,8 @@
             fx:controller="UI.ContactWindow.BookWindow.BookInputWindow.DetailPane.DetailPane">
     <Label layoutX="7.0" layoutY="4.0" prefHeight="43.0" prefWidth="162.0" styleClass="book-text" text="Tên sách"
            wrapText="true"/>
-    <Label alignment="CENTER" layoutX="181.0" layoutY="8.0" prefHeight="18.0" prefWidth="50.0" styleClass="default-text"
+    <Label alignment="CENTER" layoutX="181.0" layoutY="8.0" prefHeight="18.0" prefWidth="58.0" styleClass="default-text"
            text="Số lượng" textAlignment="CENTER"/>
-    <FontIcon iconLiteral="far-window-close" layoutX="199.0" layoutY="41.0" strokeWidth="0.0" styleClass="icon"
+    <FontIcon iconLiteral="far-window-close" layoutX="204.0" layoutY="41.0" strokeWidth="0.0" styleClass="icon" text=""
               wrappingWidth="12.79998779296875"/>
 </AnchorPane>
