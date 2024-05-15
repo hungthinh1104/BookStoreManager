@@ -29,7 +29,6 @@
         </padding>
         <styleClass>
             <String fx:value="light-border" />
-            <String fx:value="change-password-form" />
         </styleClass>
         <Label text="Tài khoản" />
         <HBox alignment="CENTER" prefHeight="132.0" prefWidth="938.0">
