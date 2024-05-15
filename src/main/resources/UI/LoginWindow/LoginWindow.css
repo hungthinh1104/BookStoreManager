@@ -1,20 +1,61 @@
+
 .body-text {
-    -fx-font-family: "System", Regular; /* Default font */
+    -fx-font-family: "System", Regular;
     -fx-opacity: 0.98;
 }
 
-.light-radius-border {
-
-    -fx-border-radius: 10;
-    -fx-background-radius: 10;
-}
-
 .light-radius-box-border {
-    -fx-border-color: lightgrey;
-    -fx-border-radius: 10;
-    -fx-background-color: white;
+    -fx-background-color: #FDF9F4;
+    -fx-background-radius: 20;
 }
 
 .drop-shadow {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
+}
+
+.text-field {
+    -fx-background-color: #FDF9F4;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10 5 10;
+}
+
+/* Style for buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:pressed {
+    -fx-background-color: #317e3b;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Header text style */
+.header-text {
+    -fx-font-family: "Microsoft Sans Serif";
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6e3434;
+}
+
+.icon {
+    -fx-fill: #4CAF50; /* Màu chính */
+}
+
+.icon:hover {
+    -fx-fill: #45a049; /* Màu khi di chuột qua */
 }
