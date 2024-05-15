@@ -20,11 +20,11 @@
         <Button prefHeight="20.0" text="Xem thống kê" />
     </HBox>
     <HBox prefHeight="322.0" prefWidth="960.0" spacing="10.0">
-        <VBox>
+        <VBox spacing="5.0">
             <Label prefHeight="27.0" prefWidth="321.0" text="Top 5 khách hàng chi tiêu nhiều nhất" />
             <TableView fx:id="tableBestSellingBooks1" />
         </VBox>
-        <VBox>
+        <VBox spacing="5.0">
             <Label text="Top 5 sách bán chạy nhất" />
             <TableView fx:id="tableBestSellingBooks">
                 <!-- Các cột dữ liệu của bảng -->

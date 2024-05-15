@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@RegulationWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <VBox prefHeight="35.0" prefWidth="1001.0">
+        <VBox.margin>
+            <Insets />
+        </VBox.margin>
+        <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
+            <Label styleClass="header-text" text="Cài đặt" />
+            <Label styleClass="header-text-selected" text="Thay đổi quy định" />
+        </HBox>
+        <Line endX="44.185733795166016" endY="3.075599579460686E-6" startX="-100.0" styleClass="line-selected">
+         <VBox.margin>
+            <Insets left="85.0" />
+         </VBox.margin></Line>
+        <Line endX="894.98583984375" endY="0.4284057915210724" startX="-100.0" styleClass="line" />
+    </VBox>
+</VBox>

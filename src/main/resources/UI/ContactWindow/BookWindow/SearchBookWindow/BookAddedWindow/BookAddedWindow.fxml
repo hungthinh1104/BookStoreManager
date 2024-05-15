@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import java.lang.String?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" stylesheets="@BookAddedWindow.css" xmlns="http://javafx.com/javafx/22">
 
-    <Label text="Tên sách:"/>
-    <TextField fx:id="txtBookName" styleClass="input-side"/>
+<VBox prefHeight="376.0" prefWidth="226.0" spacing="10.0" stylesheets="@BookAddedWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
 
-    <Label text="Thể loại:"/>
+    <Label text="Tên sách:" />
+    <TextField fx:id="txtBookName" styleClass="input-side" />
+
+    <Label text="Thể loại:" />
     <ComboBox fx:id="cmbGenre" prefHeight="28.0" prefWidth="116.0" styleClass="input-side">
     </ComboBox>
 
-    <Label text="Tác giả:"/>
-    <TextField fx:id="txtAuthor" styleClass="input-side"/>
+    <Label text="Tác giả:" />
+    <TextField fx:id="txtAuthor" styleClass="input-side" />
 
     <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@BookAddedWindow.css">
-        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="68.0" spacing="15.0">
-            <Label text="Ảnh sách:"/>
-            <Button prefHeight="69.0" prefWidth="68.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true"/>
+        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="94.0" spacing="10.0">
+            <Label text="Ảnh sách:" />
+            <Button prefHeight="30.0" prefWidth="84.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true" />
         </VBox>
-        <ImageView fx:id="imgBook" fitHeight="149" fitWidth="100"/>
+      <AnchorPane styleClass="image-pane">
+         <children>
+              <ImageView fx:id="imgBook" fitHeight="143.0" fitWidth="94.0" layoutX="3.0" layoutY="4.0" />
+         </children>
+      </AnchorPane>
     </HBox>
+   <HBox alignment="CENTER" spacing="30.0">
+      <children>
+         <Button mnemonicParsing="false" text="Thêm sách" />
+         <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="74.0" styleClass="button1" text="Hủy" />
+      </children>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+   </HBox>
     <styleClass>
-        <String fx:value="outside-pane"/>
-        <String fx:value="light-radius-box-square"/>
+        <String fx:value="outside-pane" />
+        <String fx:value="light-radius-box-square" />
     </styleClass>
 </VBox>

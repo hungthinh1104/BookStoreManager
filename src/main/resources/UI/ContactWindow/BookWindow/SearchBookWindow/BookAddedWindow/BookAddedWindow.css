@@ -14,7 +14,7 @@ Label {
     -fx-background-radius: 5px;
 }
 
-Button {
+.button {
     -fx-font-size: 14px;
     -fx-background-color: #4CAF50;
     -fx-text-fill: white;
@@ -22,7 +22,7 @@ Button {
     -fx-background-radius: 5px;
 }
 
-Button:hover {
+.button:hover {
     -fx-background-color: #45a049;
     -fx-font-size: 14px;
     -fx-text-fill: white;
@@ -30,13 +30,40 @@ Button:hover {
     -fx-background-radius: 5px;
 }
 
-Button:pressed {
+.button:pressed {
     -fx-background-color: #317e3b;
     -fx-font-size: 14px;
     -fx-text-fill: white;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
+
+.button1 {
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+    -fx-text-fill: red;
+    -fx-border-color: red;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 5px;
+}
+
+.button1:hover {
+    -fx-background-color: white;
+    -fx-text-fill: red;
+    -fx-border-color: red;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 5px;
+}
+
+.button1:pressed {
+    -fx-background-color: white;
+    -fx-text-fill: red;
+    -fx-border-color: red;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 5px;
+}
+
 
 .outside-pane {
     -fx-background-color: white;
@@ -45,4 +72,9 @@ Button:pressed {
     -fx-spacing: 5px;
     -fx-border-color: lightgrey;
     -fx-border-radius: 10;
+}
+
+.image-pane {
+    -fx-background-color: #F1F1F1;
+    -fx-background-border: 10;
 }
