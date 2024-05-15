@@ -32,23 +32,17 @@
             <String fx:value="change-password-form" />
         </styleClass>
         <Label text="Tài khoản" />
-      <HBox alignment="CENTER" prefHeight="132.0" prefWidth="938.0">
-         <children>
+        <HBox alignment="CENTER" prefHeight="132.0" prefWidth="938.0">
             <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="159.0" spacing="10.0">
-               <children>
-                     <Label styleClass="choose-text" text="Mật khẩu cũ:" />
-                     <Label styleClass="choose-text" text="Mật khẩu mới:" />
-                     <Label styleClass="choose-text" text="Nhập lại mật khẩu mới:" />
-               </children>
+                <Label styleClass="choose-text" text="Mật khẩu cũ:"/>
+                <Label styleClass="choose-text" text="Mật khẩu mới:"/>
+                <Label styleClass="choose-text" text="Nhập lại mật khẩu mới:"/>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-               <children>
-                     <TextField styleClass="information-text" />
-                     <TextField styleClass="information-text" />
-                     <TextField styleClass="information-text" />
-               </children>
+                <TextField styleClass="information-text"/>
+                <TextField styleClass="information-text"/>
+                <TextField styleClass="information-text"/>
             </VBox>
-         </children>
-      </HBox>
+        </HBox>
     </VBox>
 </VBox>

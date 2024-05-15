@@ -91,46 +91,51 @@
     <ScrollPane prefHeight="462.0" prefWidth="960.0" styleClass="light-border">
         <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="953.0" spacing="5.0" styleClass="inside-table">
             <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
-         <children>
-            <AnchorPane prefHeight="30.0" prefWidth="950.0" styleClass="border" stylesheets="@BookTableRow/BookTableRow.css">
-               <children>
-                  <Label alignment="CENTER" layoutX="42.0" prefHeight="30.0" prefWidth="93.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="156.0" layoutY="2.0" prefHeight="30.0" prefWidth="172.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="333.0" prefHeight="30.0" prefWidth="93.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="451.0" prefHeight="30.0" prefWidth="145.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="613.0" prefHeight="30.0" prefWidth="108.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="740.0" prefHeight="30.0" prefWidth="129.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <FontIcon iconLiteral="fas-trash-alt" layoutX="925.0" layoutY="20.0" strokeWidth="0.0" styleClass="icon" />
-                  <FontIcon iconLiteral="fas-pen" layoutX="899.0" layoutY="20.0" strokeWidth="0.0" styleClass="icon" text="" />
-               </children>
+            <AnchorPane prefHeight="30.0" prefWidth="950.0" styleClass="border"
+                        stylesheets="@BookTableRow/BookTableRow.css">
+                <Label alignment="CENTER" layoutX="42.0" prefHeight="30.0" prefWidth="93.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER" layoutX="156.0" layoutY="2.0" prefHeight="30.0" prefWidth="172.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER" layoutX="333.0" prefHeight="30.0" prefWidth="93.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER" layoutX="451.0" prefHeight="30.0" prefWidth="145.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER" layoutX="613.0" prefHeight="30.0" prefWidth="108.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER" layoutX="740.0" prefHeight="30.0" prefWidth="129.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <FontIcon iconLiteral="fas-trash-alt" layoutX="925.0" layoutY="20.0" strokeWidth="0.0"
+                          styleClass="icon"/>
+                <FontIcon iconLiteral="fas-pen" layoutX="899.0" layoutY="20.0" strokeWidth="0.0" styleClass="icon"
+                          text=""/>
             </AnchorPane>
-         </children>
         </VBox>
     </ScrollPane>
 </VBox>
