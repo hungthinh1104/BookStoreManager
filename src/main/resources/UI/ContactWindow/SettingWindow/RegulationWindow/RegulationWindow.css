@@ -119,9 +119,66 @@
     -fx-background-color: white;
 }
 
+/* Styles for text fields */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* Styles for information text */
 .information-text {
     -fx-font-weight: 400;
-    -fx-font-size: 13;
-    -fx-font-family: Inter;
+    -fx-font-size: 15;
+    -fx-font-family: "Inter Medium";
     -fx-text-fill: #616161;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+/* Styles for choose text */
+.choose-text {
+    -fx-font-weight: 400;
+    -fx-font-size: 15;
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: #616161;
+}
+
+/* Styles for account text */
+.account-text {
+    -fx-font-weight: 400;
+    -fx-font-size: 18;
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: black;
+}
+
+/* Styles for buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:pressed {
+    -fx-background-color: #317e3b;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Drop shadow effect */
+.drop-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
 }
