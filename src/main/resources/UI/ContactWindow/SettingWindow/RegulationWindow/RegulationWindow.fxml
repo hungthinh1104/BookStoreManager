@@ -30,29 +30,31 @@
 
     <!-- Form Section -->
     <VBox spacing="10.0" styleClass="light-border">
+      <HBox alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="183.0" spacing="20.0">
+               <children>
+                     <Label styleClass="choose-text" text="Số lượng nhập tối thiểu:" />
+                     <Label styleClass="choose-text" text="Số lượng tồn tối đa:" />
+                     <Label styleClass="choose-text" text="Số lượng tồn tối thiểu:" />
+                     <Label styleClass="choose-text" text="Tỷ lệ tính đơn giá bán:" />
+                     <Label styleClass="choose-text" text="Tiền cọc:" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="15.0">
+               <children>
+                     <TextField fx:id="minQuantityInput" editable="false" promptText="Số lượng nhập tối thiểu" styleClass="information-text" />
+                     <TextField fx:id="maxStockInput" editable="false" promptText="Số lượng tồn tối đa" styleClass="information-text" />
+                     <TextField fx:id="minStockInput" editable="false" promptText="Số lượng tồn tối thiểu" styleClass="information-text" />
+                     <TextField fx:id="priceRateInput" editable="false" promptText="Tỷ lệ tính đơn giá bán" styleClass="information-text" />
+                     <TextField fx:id="depositInput" editable="false" promptText="Tiền cọc" styleClass="information-text" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
         <HBox spacing="10.0">
-            <Label styleClass="choose-text" text="Số lượng nhập tối thiểu:" />
-            <TextField fx:id="minQuantityInput" editable="false" promptText="Số lượng nhập tối thiểu" styleClass="text-field" />
-        </HBox>
-        <HBox spacing="10.0">
-            <Label styleClass="choose-text" text="Số lượng tồn tối đa:" />
-            <TextField fx:id="maxStockInput" editable="false" promptText="Số lượng tồn tối đa" styleClass="text-field" />
-        </HBox>
-        <HBox spacing="10.0">
-            <Label styleClass="choose-text" text="Số lượng tồn tối thiểu:" />
-            <TextField fx:id="minStockInput" editable="false" promptText="Số lượng tồn tối thiểu" styleClass="text-field" />
-        </HBox>
-        <HBox spacing="10.0">
-            <Label styleClass="choose-text" text="Tỷ lệ tính đơn giá bán:" />
-            <TextField fx:id="priceRateInput" editable="false" promptText="Tỷ lệ tính đơn giá bán" styleClass="text-field" />
-        </HBox>
-        <HBox spacing="10.0">
-            <Label styleClass="choose-text" text="Tiền cọc:" />
-            <TextField fx:id="depositInput" editable="false" promptText="Tiền cọc" styleClass="text-field" />
-        </HBox>
-        <HBox spacing="10.0">
-            <Button onAction="#handleEdit" styleClass="button" text="Sửa Đổi" />
-            <Button onAction="#handleConfirm" styleClass="button" text="Xác Nhận" />
+            <Button onAction="#handleEdit" styleClass="drop-shadow" text="Sửa Đổi" />
+            <Button onAction="#handleConfirm" styleClass="drop-shadow" text="Xác Nhận" />
         </HBox>
       <padding>
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

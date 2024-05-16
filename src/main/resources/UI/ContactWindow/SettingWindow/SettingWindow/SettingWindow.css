@@ -41,7 +41,7 @@
 
 .information-text {
     -fx-font-weight: 400;
-    -fx-font-size: 15;
+    -fx-font-size: 13;
     -fx-font-family: "Inter Medium";
     -fx-text-fill: #616161;
     -fx-border-color: lightgrey;
@@ -62,4 +62,32 @@
     -fx-font-size: 18;
     -fx-font-family: "Inter Medium";
     -fx-text-fill: black;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 300;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.button:hover {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 300;
+    -fx-background-color: #45a049;
+    -fx-text-fill: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.button:pressed {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 300;
+    -fx-background-color: #317e3b;
+    -fx-text-fill: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
 }
