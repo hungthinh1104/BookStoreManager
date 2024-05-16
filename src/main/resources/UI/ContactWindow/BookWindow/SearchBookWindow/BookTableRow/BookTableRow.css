@@ -8,3 +8,10 @@
     -fx-font-family: Inter;
     -fx-text-fill: #616161;
 }
+
+.border {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: lightgrey;
+}

@@ -4,7 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity"
       prefHeight="780.0" prefWidth="1000.0" spacing="5.0" styleClass="outside-pane"
       stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/22">
     <Label styleClass="head-text" text="Mới">

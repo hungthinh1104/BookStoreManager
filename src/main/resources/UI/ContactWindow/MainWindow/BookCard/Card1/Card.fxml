@@ -24,10 +24,8 @@
         <FontIcon iconLiteral="fas-star-half-alt" iconSize="15" strokeWidth="0.0" styleClass="star-fill" />
     </HBox>
     <HBox alignment="CENTER_LEFT" layoutX="115.0" layoutY="122.0" prefHeight="20.0" prefWidth="104.0" spacing="7.0">
-        <children>
-            <Circle fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Label prefHeight="19.0" prefWidth="77.0" styleClass="default-text" text="Còn hàng"/>
-        </children>
+        <Circle fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE"/>
+        <Label prefHeight="19.0" prefWidth="77.0" styleClass="default-text" text="Còn hàng"/>
     </HBox>
     <Label layoutX="216.0" layoutY="74.0" styleClass="default-text" text="550"/>
     <cursor>

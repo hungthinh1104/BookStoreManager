@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="23.0" prefWidth="800.0" spacing="30.0"
+      styleClass="into-side-pane" stylesheets="@OrderInformationWindow.css" xmlns="http://javafx.com/javafx/22">
+    <Label alignment="CENTER" prefHeight="18.0" prefWidth="155.0" styleClass="default-text" text="Label"/>
+    <Label alignment="CENTER" prefHeight="18.0" prefWidth="106.0" styleClass="default-text" text="Label"/>
+    <Label alignment="CENTER" prefHeight="18.0" prefWidth="145.0" styleClass="default-text" text="Label"/>
+    <Label alignment="CENTER" prefHeight="18.0" prefWidth="99.0" styleClass="default-text" text="Label"/>
+    <Label alignment="CENTER" prefHeight="18.0" prefWidth="83.0" styleClass="default-text" text="Money"
+           textAlignment="CENTER"/>
+</HBox>
