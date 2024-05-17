@@ -6,10 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -44,7 +41,7 @@ public class LoginWindow implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         password.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
-                Login();
+               Login();
             }
         });
         username.setOnKeyPressed(event -> {
@@ -65,11 +62,10 @@ public class LoginWindow implements Initializable {
             return null;
         }
     }
-
     @FXML
     protected void LoginSuccess() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/TMP.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/Sidebar/Sidebar.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage) MainPane.getScene().getWindow();
             stage.setScene(scene);
@@ -82,22 +78,24 @@ public class LoginWindow implements Initializable {
 
     @FXML
     protected void CheckCorrectAccount(String username, String password) {
-        try {
+        try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
                 List<Nguoidung> users = DatabaseUtil.getAllNguoidung(conn);
-                boolean flag = users.stream().anyMatch(user -> user.getTenDangNhap().equals(username) && user.getMatKhau().equals(password));
-                if (flag) {
+                boolean flag = users.stream().anyMatch(user ->user.getTenDangNhap().equals(username) && user.getMatKhau().equals(HashPassword(password)));
+                if(flag) {
                     messageError.setText("Đăng nhập thành công");
                     LoginSuccess();
-                } else {
+                }
+                else {
                     messageError.setText("Tài khoản hoặc mât khẩu không chính xác");
                 }
-            } else {
+            }
+            else{
                 messageError.setText("Lỗi Database");
             }
             conn.close();
-        } catch (Exception e) {
+        }catch (Exception e){
             e.printStackTrace();
         }
 
@@ -108,16 +106,19 @@ public class LoginWindow implements Initializable {
     protected void Login() {
         String usernamelg = username.getText();
         String passwordlg = password.getText();
-        if (usernamelg != null && !usernamelg.isEmpty()) {
-            if (passwordlg != null && !passwordlg.isEmpty()) {
+        if(usernamelg != null && !usernamelg.isEmpty()) {
+            if(passwordlg != null && !passwordlg.isEmpty()) {
                 CheckCorrectAccount(usernamelg, passwordlg);
-            } else {
+            }
+            else {
                 messageError.setText("Vui lòng nhập mật khẩu!");
             }
-        } else {
-            if (passwordlg != null && !passwordlg.isEmpty()) {
+        }
+        else {
+            if(passwordlg != null && !passwordlg.isEmpty()) {
                 messageError.setText("Vui lòng nhập tài khoản!");
-            } else {
+            }
+            else {
                 messageError.setText("Vui lòng nhập tài khoản và mật khẩu!");
 
             }
