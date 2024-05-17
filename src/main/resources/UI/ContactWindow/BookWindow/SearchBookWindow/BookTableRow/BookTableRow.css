@@ -1,17 +1,39 @@
-.icon {
-    -fx-fill: #757575;
+.header-table-text {
+    -fx-font-weight: 400;
+    -fx-font-size: 13;
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: #616161;
+
+    -fx-background-color: white;
 }
 
 .information-text {
+    -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-font-size: 13;
-    -fx-font-family: Inter;
-    -fx-text-fill: #616161;
+    -fx-text-fill: Black;
+    -fx-font-size: 12;
+    -fx-background-color: white;
+    -fx-border-radius: 10;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 10;
 }
 
-.border {
+.inside-table {
     -fx-background-color: white;
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
+}
+
+.book-contain {
+    -fx-background-radius: 10;
+    -fx-background-color: #F5F5F5;
+}
+
+.light-border {
     -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.icon {
+    -fx-fill: #757575;
 }

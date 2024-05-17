@@ -39,15 +39,6 @@
     -fx-background-color: white;
 }
 
-.function-button {
-    -fx-background-color: #2196F3;
-    -fx-background-radius: 5;
-    -fx-text-fill: white;
-    -fx-font-family: "Inter Medium";
-    -fx-font-weight: 400;
-    -fx-font-size: 13px;
-}
-
 .add-button {
     -fx-background-color: white;
     -fx-background-radius: 15;
@@ -104,24 +95,25 @@
 }
 
 .header-table-text {
-    -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-text-fill: white;
-    -fx-font-size: 15;
-}
+    -fx-font-size: 13;
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: #616161;
 
-.header-table-contain {
-    -fx-background-radius: 10;
-    -fx-background-color: #52A198;
-}
-
-.inside-table {
     -fx-background-color: white;
 }
 
 .information-text {
+    -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-font-size: 13;
-    -fx-font-family: Inter;
-    -fx-text-fill: #616161;
+    -fx-text-fill: Black;
+    -fx-font-size: 12;
+    -fx-background-color: white;
+    -fx-border-radius: 10;
+    -fx-border-color: lightgrey;
+    -fx-background-radius: 10;
+}
+
+.inside-table {
+    -fx-background-color: white;
 }
