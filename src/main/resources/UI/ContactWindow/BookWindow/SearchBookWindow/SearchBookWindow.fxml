@@ -47,7 +47,7 @@
                     <Image url="@../../MainWindow/BookCard/Card1/Image/1.jpg" />
                 </ImageView>
             </VBox>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" text="Thêm sách">
+            <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#btnAddBook_OnAction" prefHeight="40.0" prefWidth="146.0" text="Thêm sách">
                 <styleClass>
                     <String fx:value="add-button" />
                     <String fx:value="drop-shadow" />
