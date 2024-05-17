@@ -56,3 +56,7 @@
     -fx-font-weight: 400;
     -fx-font-size: 13px;
 }
+
+.icon {
+    -fx-fill: #757575;
+}

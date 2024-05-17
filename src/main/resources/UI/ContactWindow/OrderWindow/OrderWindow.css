@@ -1,22 +1,62 @@
-
-.label {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
+.name-text {
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 18px;
 }
 
-.text-field, .combo-box {
-    -fx-font-size: 14px;
-    -fx-pref-width: 200px;
-    -fx-pref-height: 25px;
+.light-radius-box-border {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 15;
+    -fx-background-color: white;
+    -fx-background-radius: 15;
 }
 
-.button {
-    -fx-font-size: 14px;
-    -fx-pref-width: 150px;
-    -fx-pref-height: 35px;
+.light-radius-box-square {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
 }
 
-.table-view {
-    -fx-pref-width: 800px;
-    -fx-pref-height: 400px;
+.default-text {
+    -fx-background-color: white;
+    -fx-background-radius: white;
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 300;
+    -fx-font-size: 14px;
+}
+
+.choose-text {
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 15px;
+}
+
+.line {
+    -fx-stroke: lightgrey;
+}
+
+.drop-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
+}
+
+.outside-pane {
+    -fx-background-color: white;
+}
+
+
+.add-button {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 5;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 13px;
+}
+
+.icon {
+    -fx-fill: #757575;
 }

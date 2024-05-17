@@ -15,9 +15,9 @@
 <?import javafx.scene.shape.Line?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.4000000000001" prefWidth="1030.8" spacing="10.0" styleClass="outside-pane" stylesheets="@SearchBookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@SearchBookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
     </padding>
     <VBox prefHeight="35.0" prefWidth="1001.0">
         <VBox.margin>
@@ -28,16 +28,16 @@
             <Label styleClass="header-text" text="Phiếu nhập sách" />
         </HBox>
         <Line endX="26.492889404296875" endY="2.300739197380608E-6" startX="-100.0" styleClass="line-selected" />
-        <Line endX="894.98583984375" endY="0.4284057915210724" startX="-100.0" styleClass="line" />
+        <Line endX="866.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />
     </VBox>
     <HBox prefHeight="145.0" prefWidth="991.0" spacing="250.0">
         <HBox alignment="CENTER" prefHeight="148.0" prefWidth="410.0" spacing="30.0">
             <AnchorPane>
                 <HBox layoutX="6.0" layoutY="60.0" spacing="10.0">
                     <ComboBox prefHeight="30.0" prefWidth="160.0" promptText="Thể loại" styleClass="filter-side" />
-                    <ComboBox prefHeight="30.0" prefWidth="160.0" promptText="Tác giả" styleClass="filter-side" />
+                    <ComboBox editable="true" prefHeight="30.0" prefWidth="160.0" promptText="Tác giả" styleClass="filter-side" />
                 </HBox>
-                <TextField fx:id="searchText" alignment="CENTER" layoutX="7.0" layoutY="18.0" prefHeight="30.0" prefWidth="327.0" promptText="Tìm kiếm " styleClass="search-side" />
+                <TextField alignment="CENTER" layoutX="7.0" layoutY="18.0" prefHeight="30.0" prefWidth="327.0" promptText="Tìm kiếm " styleClass="search-side" />
                 <FontIcon fill="#393b3ea3" iconLiteral="fas-search" iconSize="18" layoutX="24.0" layoutY="41.0" strokeWidth="0.0" styleClass="icon" tabSize="0" />
             </AnchorPane>
         </HBox>
@@ -57,12 +57,12 @@
     </HBox>
     <Label styleClass="book-text" text="Sách" />
     <AnchorPane prefHeight="42.0" prefWidth="991.0" styleClass="header-table-contain">
-        <Label layoutX="20.0" layoutY="5.0" styleClass="header-table-text" text="STT">
+        <Label layoutX="44.0" prefHeight="29.0" prefWidth="106.0" styleClass="header-table-text" text="Mã sách">
             <padding>
                 <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
             </padding>
         </Label>
-        <Label layoutX="160.0" layoutY="5.0" styleClass="header-table-text" text="Tên sách">
+        <Label layoutX="197.0" styleClass="header-table-text" text="Tên sách">
             <padding>
                 <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
             </padding>
@@ -72,7 +72,7 @@
                 <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
             </padding>
         </Label>
-        <Label layoutX="462.0" layoutY="5.0" styleClass="header-table-text" text="Tác giả">
+        <Label layoutX="478.0" styleClass="header-table-text" text="Tác giả">
             <padding>
                 <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
             </padding>
@@ -88,44 +88,50 @@
             </padding>
         </Label>
     </AnchorPane>
-    <ScrollPane prefHeight="506.0" prefWidth="991.0" styleClass="light-border">
-        <VBox fx:id="BookContainer" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="972.0" spacing="5.0" styleClass="inside-table">
+    <ScrollPane prefHeight="462.0" prefWidth="960.0" styleClass="light-border">
+        <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="953.0" spacing="5.0" styleClass="inside-table">
             <padding>
-                <Insets top="5.0" />
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
-            <AnchorPane fx:id="tagSach" prefHeight="30.0" prefWidth="972.0">
-                <Label fx:id="STT" alignment="CENTER" layoutX="7.0" prefHeight="30.0" prefWidth="93.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+            <AnchorPane prefHeight="30.0" prefWidth="950.0" styleClass="border"
+                        stylesheets="@BookTableRow/BookTableRow.css">
+                <Label alignment="CENTER" layoutX="42.0" prefHeight="30.0" prefWidth="93.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="tenSach" alignment="CENTER" layoutX="161.0" prefHeight="30.0" prefWidth="93.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label alignment="CENTER" layoutX="156.0" layoutY="2.0" prefHeight="30.0" prefWidth="172.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="theLoai" alignment="CENTER" layoutX="332.0" prefHeight="30.0" prefWidth="93.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label alignment="CENTER" layoutX="333.0" prefHeight="30.0" prefWidth="93.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="tacGia" alignment="CENTER" layoutX="459.0" prefHeight="30.0" prefWidth="93.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label alignment="CENTER" layoutX="451.0" prefHeight="30.0" prefWidth="145.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <padding>
+                <Label alignment="CENTER" layoutX="613.0" prefHeight="30.0" prefWidth="108.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="soLuong" alignment="CENTER" layoutX="607.0" prefHeight="30.0" prefWidth="124.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label alignment="CENTER" layoutX="740.0" prefHeight="30.0" prefWidth="129.0"
+                       styleClass="information-text" text="Label" textAlignment="CENTER">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="donGia" alignment="CENTER" layoutX="755.0" prefHeight="30.0" prefWidth="109.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-                    <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </padding>
-                </Label>
-                <FontIcon iconLiteral="fas-trash-alt" layoutX="940.0" layoutY="19.0" strokeWidth="0.0" styleClass="icon" />
-                <FontIcon iconLiteral="fas-pen" layoutX="914.0" layoutY="19.0" strokeWidth="0.0" styleClass="icon" text="" />
+                <FontIcon iconLiteral="fas-trash-alt" layoutX="925.0" layoutY="20.0" strokeWidth="0.0"
+                          styleClass="icon"/>
+                <FontIcon iconLiteral="fas-pen" layoutX="899.0" layoutY="20.0" strokeWidth="0.0" styleClass="icon"
+                          text=""/>
             </AnchorPane>
         </VBox>
     </ScrollPane>
