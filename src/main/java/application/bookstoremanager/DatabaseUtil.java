@@ -2,11 +2,23 @@ package application.bookstoremanager;
 
 import application.bookstoremanager.classdb.*;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+//    Cách lấy ảnh
+//    BufferedImage img = null;
+//    try {
+//        ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
+//        img = ImageIO.read(bis);
+//    } catch ( IOException e) {
+//        e.printStackTrace();
+//    }
 
 public class DatabaseUtil {
     public static Connection getConnection() {
@@ -74,7 +86,8 @@ public class DatabaseUtil {
                         break;
                     }
                 }
-                Sach s = new Sach(id,name,idTheloai,tacGia,soLuong,donGia, timThay);
+                byte[] hinhAnh =  resultSet.getBytes(7);
+                Sach s = new Sach(id,name,idTheloai,tacGia,soLuong,donGia, timThay, hinhAnh);
                 sach.add(s);
             }
 
