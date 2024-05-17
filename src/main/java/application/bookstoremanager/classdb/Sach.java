@@ -8,8 +8,10 @@ public class Sach {
     private final Integer soLuongTon;
     private final Double donGia;
     private final Theloai theLoai;
+    private byte[] hinhAnh;
 
-    public Sach(Integer maSach, String tenSach, Integer maTheLoai, String tacGia, Integer soLuongTon, Double donGia, Theloai theLoai) {
+    public Sach(Integer maSach, String tenSach, Integer maTheLoai, String tacGia,
+                Integer soLuongTon, Double donGia, Theloai theLoai, byte[] hinhAnh) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.maTheLoai = maTheLoai;
@@ -17,6 +19,7 @@ public class Sach {
         this.soLuongTon = soLuongTon;
         this.donGia = donGia;
         this.theLoai = theLoai;
+        this.hinhAnh = hinhAnh;
     }
 
     public Integer getMaSach() {
@@ -45,5 +48,9 @@ public class Sach {
 
     public Theloai getTheLoai() {
         return this.theLoai;
+    }
+
+    public byte[] getHinhAnh() {
+        return this.hinhAnh;
     }
 }
