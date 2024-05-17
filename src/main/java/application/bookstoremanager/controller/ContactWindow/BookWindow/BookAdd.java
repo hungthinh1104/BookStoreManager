@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class BookAdd implements Initializable {
@@ -78,7 +79,10 @@ public class BookAdd implements Initializable {
     protected void btnThemOnAction() {
         Connection conn = DatabaseUtil.getConnection();
         try{
-            DatabaseUtil.createSach(TenSach.getText(), selectedTL.getMaTheLoai(), TacGia.getText(), conn);
+            if(conn != null && !Objects.equals(TenSach.getText(), "") && !Objects.equals(TacGia.getText(), "")
+                    && selectedTL.getMaTheLoai() != null && TenSach.getText() != null && TacGia.getText() != null) {
+                DatabaseUtil.createSach(TenSach.getText(), selectedTL.getMaTheLoai(), TacGia.getText(), conn);
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
