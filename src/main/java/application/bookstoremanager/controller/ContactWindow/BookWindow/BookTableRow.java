@@ -4,7 +4,15 @@ import application.bookstoremanager.classdb.Sach;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import org.kordamp.ikonli.javafx.FontIcon;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -13,22 +21,25 @@ import java.util.ResourceBundle;
 public class BookTableRow implements Initializable {
 
     @FXML
-    private Label DonGia;
+    private ImageView AnhSach;
 
     @FXML
-    private Label STT;
+    private TextField DonGia;
 
     @FXML
-    private Label SoLuong;
+    private FontIcon Edit;
 
     @FXML
-    private Label TacGia;
+    private TextField SoLuong;
 
     @FXML
-    private Label TenSach;
+    private TextField TacGia;
 
     @FXML
-    private Label TheLoai;
+    private TextField TenSach;
+
+    @FXML
+    private TextField TheLoai;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -36,7 +47,14 @@ public class BookTableRow implements Initializable {
     }
 
     public void setData(Integer _STT, Sach book) {
-        STT.setText(_STT.toString());
+        byte[] imageBytes = book.getHinhAnh();
+        if (imageBytes != null && imageBytes.length > 0) {
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageBytes);
+            Image img = new Image(byteArrayInputStream);
+            AnhSach.setImage(img);
+        } else {
+            System.err.println("Error: Image data is null or empty.");
+        }
         DonGia.setText(formatCurrency(book.getDonGia()));
         TenSach.setText(book.getTenSach());
         SoLuong.setText(book.getSoLuongTon().toString());

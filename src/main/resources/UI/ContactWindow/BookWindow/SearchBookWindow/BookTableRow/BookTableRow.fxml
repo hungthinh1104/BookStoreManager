@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="174.0" prefWidth="943.0" stylesheets="@BookTableRow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="174.0" prefWidth="953.0" stylesheets="@BookTableRow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow">
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
@@ -33,34 +33,33 @@
          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <TextField editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
+         <TextField fx:id="TenSach" editable="false" layoutX="14.0" layoutY="13.0" prefHeight="40.0" prefWidth="483.0" styleClass="information-text" />
          <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="62.0" styleClass="header-table-text" text="Tên sách" textAlignment="CENTER" />
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-         <TextField editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
-         <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="62.0" styleClass="header-table-text" text="Mã sách" textAlignment="CENTER" />
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-         <TextField editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
+         <TextField fx:id="TacGia" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
          <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Tác giả" textAlignment="CENTER" />
       </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <TextField editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
-         <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="80.0" styleClass="header-table-text" text="Số lượng tồn" textAlignment="CENTER" />
+         <children>
+            <TextField fx:id="TheLoai" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
+            <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Thể loại" textAlignment="CENTER" />
+         </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
-         <TextField editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
-         <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Thể loại" textAlignment="CENTER" />
+         <TextField fx:id="SoLuong" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
+         <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="80.0" styleClass="header-table-text" text="Số lượng tồn" textAlignment="CENTER" />
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-         <TextField editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
+         <TextField fx:id="DonGia" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
          <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Đơn giá" textAlignment="CENTER" />
       </AnchorPane>
    </GridPane>
    <VBox alignment="CENTER" layoutX="14.0" layoutY="18.0" prefHeight="138.0" prefWidth="108.0" styleClass="book-contain">
-      <ImageView fitHeight="125.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" styleClass="drop-shadow">
+      <ImageView fx:id="AnhSach" fitHeight="125.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" styleClass="drop-shadow">
          <Image url="@../../../MainWindow/BookCard/Card1/Image/1.jpg" />
       </ImageView>
    </VBox>
-   <FontIcon iconLiteral="fas-pen" layoutX="906.0" layoutY="91.0" strokeWidth="0.0" styleClass="icon" text="" />
+   <FontIcon fx:id="Edit" iconLiteral="fas-pen" layoutX="906.0" layoutY="91.0" strokeWidth="0.0" styleClass="icon" text="" />
 </AnchorPane>
