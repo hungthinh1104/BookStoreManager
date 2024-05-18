@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="32.0" prefWidth="372.0" styleClass="light-border" stylesheets="@../ReceiptBookWindow.css"
+            xmlns="http://javafx.com/javafx/22">
+    <Label alignment="CENTER" layoutX="30.0" prefHeight="30.0" prefWidth="124.0" styleClass="information-text"
+           text="Label" textAlignment="CENTER">
+        <padding>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label alignment="CENTER" layoutX="183.0" prefHeight="30.0" prefWidth="118.0" styleClass="information-text"
+           text="Label" textAlignment="CENTER">
+        <padding>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <FontIcon iconLiteral="fas-pen" layoutX="325.0" layoutY="20.0" strokeWidth="0.0" styleClass="icon" text=""/>
+</AnchorPane>

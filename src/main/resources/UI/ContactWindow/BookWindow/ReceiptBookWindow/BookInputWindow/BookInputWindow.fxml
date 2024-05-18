@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="493.0" prefWidth="700.0" styleClass="big-outside-pane" stylesheets="@BookInputWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox layoutX="21.0" layoutY="19.0" prefHeight="456.0" prefWidth="378.0">
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Ngày nhập:" />
+            <DatePicker fx:id="datePicker" prefHeight="30.0" prefWidth="189.0" />
+        </HBox>
+        <Line endX="254.0928955078125" endY="-1.6569154262542725" startX="-100.0" styleClass="line" />
+        <HBox prefHeight="177.0" prefWidth="367.0" spacing="10.0">
+            <Label text="Chọn sách:" />
+            <ListView fx:id="bookListView" prefHeight="178.0" prefWidth="277.0" styleClass="list" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="18.0">
+            <Label text="Số lượng:" />
+            <TextField fx:id="quantityTextField" prefHeight="30.0" prefWidth="245.0" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label prefHeight="43.0" prefWidth="67.0" text="Đơn giá nhập:" wrapText="true" />
+            <TextField fx:id="priceTextField" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="356.0" spacing="10.0">
+            <Button prefHeight="25.0" prefWidth="100.0" styleClass="add" text="Thêm" />
+        </HBox>
+        <styleClass>
+            <String fx:value="light-radius-box-square" />
+            <String fx:value="outside-pane" />
+        </styleClass>
+    </VBox>
+    <ScrollPane layoutX="432.0" layoutY="28.0" prefHeight="403.0" prefWidth="335.0" styleClass="light-radius-box-square">
+        <VBox alignment="TOP_CENTER" minHeight="392.0" minWidth="310.0" spacing="1.0" styleClass="inside">
+            <padding>
+                <Insets top="2.0" />
+            </padding>
+        </VBox>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+    </ScrollPane>
+    <Label layoutX="432.0" layoutY="10.0" styleClass="default-text" text="Danh sách nhập" />
+    <HBox alignment="CENTER" layoutX="478.0" layoutY="442.0" spacing="20.0">
+        <Button prefHeight="33.0" prefWidth="124.0" styleClass="add" text="Thêm danh sách"/>
+        <Button prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy"/>
+    </HBox>
+</AnchorPane>
