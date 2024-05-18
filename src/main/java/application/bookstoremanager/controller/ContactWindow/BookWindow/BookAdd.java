@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.awt.image.BufferedImage;
 
@@ -92,7 +93,10 @@ public class BookAdd implements Initializable {
     protected void btnThemOnAction() {
         Connection conn = DatabaseUtil.getConnection();
         try{
-            DatabaseUtil.createSach(TenSach.getText(), selectedTL.getMaTheLoai(), TacGia.getText(), imageBytes, conn);
+            if(conn != null && !Objects.equals(TenSach.getText(), "") && !Objects.equals(TacGia.getText(), "")
+                    && selectedTL.getMaTheLoai() != null && TenSach.getText() != null && TacGia.getText() != null) {
+                DatabaseUtil.createSach(TenSach.getText(), selectedTL.getMaTheLoai(), TacGia.getText(),imageBytes, conn);
+            }
         }catch (Exception e){
             e.printStackTrace();
         }

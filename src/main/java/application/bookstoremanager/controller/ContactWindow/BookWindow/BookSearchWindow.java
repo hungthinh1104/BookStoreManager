@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -90,7 +91,11 @@ public class BookSearchWindow implements Initializable {
             Stage stage = new Stage();
             Scene scene = new Scene(parent);
             stage.setScene(scene);
-            stage.show();
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner((Stage) btnAddBook.getScene().getWindow());
+            stage.showAndWait();
+            System.out.println("load data");
+            LoadData(searchText.getText());
         } catch (IOException e) {
             e.printStackTrace();
         }
