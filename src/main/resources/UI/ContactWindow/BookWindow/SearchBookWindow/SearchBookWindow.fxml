@@ -32,8 +32,8 @@
         <HBox alignment="CENTER" prefHeight="148.0" prefWidth="410.0" spacing="30.0">
             <AnchorPane>
                 <HBox layoutX="6.0" layoutY="60.0" spacing="10.0">
-                    <ComboBox prefHeight="30.0" prefWidth="160.0" promptText="Thể loại" styleClass="filter-side" />
-                    <ComboBox editable="true" prefHeight="30.0" prefWidth="160.0" promptText="Tác giả" styleClass="filter-side" />
+                    <ComboBox fx:id="cbTheLoai" prefHeight="30.0" prefWidth="160.0" promptText="Thể loại" styleClass="filter-side" />
+               <TextField fx:id="searchTG" alignment="CENTER" prefHeight="30.0" prefWidth="160.0" promptText="Tác giả" styleClass="search-side" />
                 </HBox>
                 <TextField fx:id="searchText" alignment="CENTER" layoutX="7.0" layoutY="18.0" prefHeight="30.0" prefWidth="327.0" promptText="Tìm kiếm " styleClass="search-side" />
                 <FontIcon fill="#393b3ea3" iconLiteral="fas-search" iconSize="18" layoutX="24.0" layoutY="41.0" strokeWidth="0.0" styleClass="icon" tabSize="0" />
