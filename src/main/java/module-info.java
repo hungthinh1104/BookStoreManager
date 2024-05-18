@@ -11,6 +11,7 @@ module com.bookstoremanager {
     requires eu.hansolo.tilesfx;
     requires java.sql;
     requires java.desktop;
+    requires javafx.swing;
 
     opens application.bookstoremanager to javafx.fxml;
     exports application.bookstoremanager;

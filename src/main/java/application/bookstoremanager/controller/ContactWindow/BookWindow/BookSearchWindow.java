@@ -50,7 +50,7 @@ public class BookSearchWindow implements Initializable {
         });
     }
 
-    private void LoadData(String search) {
+    public void LoadData(String search) {
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
@@ -86,8 +86,9 @@ public class BookSearchWindow implements Initializable {
         System.out.println("btnAddBook_OnAction");
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/SearchBookWindow/BookAddedWindow/BookAddedWindow.fxml"));
-            Scene scene = new Scene(loader.load());
+            Parent parent = loader.load();
             Stage stage = new Stage();
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

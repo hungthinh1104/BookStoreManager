@@ -97,14 +97,15 @@ public class DatabaseUtil {
         return sach;
     }
 
-    public static void createSach(String tenSach, int maTheLoai,String tacGia, Connection conn){
+    public static void createSach(String tenSach, int maTheLoai,String tacGia, byte[] image, Connection conn){
         try{
-            String sql = "INSERT INTO sach(TenSach, MaTheLoai, TacGia) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO sach(TenSach, MaTheLoai, TacGia, HinhAnh) VALUES (?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
             pstmt.setString(1, tenSach);
             pstmt.setInt(2, maTheLoai);
             pstmt.setString(3, tacGia);
+            pstmt.setBytes(4, image);
 
             pstmt.executeUpdate();
             System.out.println("Thêm mới sách thành công!");

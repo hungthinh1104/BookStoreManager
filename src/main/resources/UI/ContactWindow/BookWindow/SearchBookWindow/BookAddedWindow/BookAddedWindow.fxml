@@ -26,7 +26,7 @@
     <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@BookAddedWindow.css">
         <VBox alignment="CENTER" prefHeight="150.0" prefWidth="94.0" spacing="10.0">
             <Label text="Ảnh sách:" />
-            <Button prefHeight="30.0" prefWidth="84.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="btnChonAnh" onAction="#btnChonAnhOnAction" prefHeight="30.0" prefWidth="84.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true" />
         </VBox>
         <AnchorPane styleClass="image-pane">
             <ImageView fx:id="imgBook" fitHeight="143.0" fitWidth="94.0" layoutX="3.0" layoutY="4.0" />
