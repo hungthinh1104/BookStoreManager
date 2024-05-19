@@ -5,12 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="73.0" prefWidth="300.0" stylesheets="@DetailPane.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="UI.ContactWindow.BookWindow.BookInputWindow.DetailPane.DetailPane">
-    <Label layoutX="7.0" layoutY="4.0" prefHeight="65.0" prefWidth="162.0" styleClass="book-text" text="Tên sách" wrapText="true" />
+<AnchorPane prefHeight="73.0" prefWidth="300.0" stylesheets="@DetailPane.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.ReceiptBook.DetailPane">
+    <Label fx:id="TenSach" layoutX="7.0" layoutY="4.0" prefHeight="65.0" prefWidth="162.0" styleClass="book-text" text="Tên sách" wrapText="true" />
     <FontIcon iconLiteral="far-window-close" layoutX="279.0" layoutY="41.0" strokeWidth="0.0" styleClass="icon" text="" wrappingWidth="12.79998779296875" />
-   <Label alignment="CENTER" layoutX="178.0" layoutY="38.0" prefHeight="24.0" prefWidth="98.0" styleClass="default-text" text="Đơn giá nhập" textAlignment="CENTER" />
-   <Label alignment="CENTER" layoutX="178.0" layoutY="12.0" prefHeight="24.0" prefWidth="98.0" styleClass="default-text" text="Số lượng" textAlignment="CENTER" />
+   <Label fx:id="DonGia" alignment="CENTER" layoutX="178.0" layoutY="38.0" prefHeight="24.0" prefWidth="98.0" styleClass="default-text" text="Đơn giá nhập" textAlignment="CENTER" />
+   <Label fx:id="SoLuong" alignment="CENTER" layoutX="178.0" layoutY="12.0" prefHeight="24.0" prefWidth="98.0" styleClass="default-text" text="Số lượng" textAlignment="CENTER" />
    <styleClass>
       <String fx:value="default-pane" />
       <String fx:value="light-border" />
