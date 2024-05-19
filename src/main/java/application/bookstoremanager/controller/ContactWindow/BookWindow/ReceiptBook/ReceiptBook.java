@@ -50,6 +50,7 @@ public class ReceiptBook implements Initializable {
     private DatePicker searchDate;
 
     private int SelectedPNS;
+    private AnchorPane PreSelectedPNS;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -68,6 +69,8 @@ public class ReceiptBook implements Initializable {
             if (conn != null) {
                 List<Phieunhapsach> PNList = DatabaseUtil.getAllPhieunhapsach(conn);
                 PNSContainer.getChildren().clear();
+                SelectedPNS = -1;
+                System.out.println("Before: " + SelectedPNS);
                 for(Phieunhapsach pns: PNList) {
                     if(date != null && !pns.getNgayNhap().equals(date)) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/ReceiptBookWindow/BookTableRow/BookTableRow.fxml"));
@@ -75,8 +78,15 @@ public class ReceiptBook implements Initializable {
                     newContent.setOnMouseClicked(this::handleAnchorPaneClick);
                     BookTableRow controller = loader.getController();
                     controller.setData(pns);
+                    if(SelectedPNS == -1) {
+                        SelectedPNS = pns.getMaPhieuNhap();
+                        newContent.setStyle("-fx-background-color: #F8F8F8;");
+                        PreSelectedPNS = (AnchorPane) newContent;
+                    }
                     PNSContainer.getChildren().add(newContent);
                 }
+                System.out.println("After: " + SelectedPNS);
+                LoadDataPNSDetail(SelectedPNS);
             }
             assert conn != null;
             conn.close();
@@ -88,10 +98,17 @@ public class ReceiptBook implements Initializable {
         AnchorPane clickedAnchorPane = (AnchorPane) event.getSource();
         Label label = (Label) clickedAnchorPane.lookup("#MaPNS");
         System.out.println("AnchorPane được nhấp vào: " + label.getText());
+        PreSelectedPNS.setStyle("-fx-background-color: white;");
+        clickedAnchorPane.setStyle("-fx-background-color: #F8F8F8;");
+        PreSelectedPNS = clickedAnchorPane;
         SelectedPNS = Integer.parseInt(label.getText());
         LoadDataPNSDetail(SelectedPNS);
     }
     private void LoadDataPNSDetail(int id) {
+        if(id == -1) {
+            CTPNS.getChildren().clear();
+            return;
+        }
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
