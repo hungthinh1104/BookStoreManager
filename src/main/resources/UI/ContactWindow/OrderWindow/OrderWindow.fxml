@@ -37,27 +37,27 @@
     </HBox>
     <VBox prefHeight="612.0" prefWidth="528.0" spacing="5.0">
         <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">
-            <Label alignment="CENTER" layoutX="14.0" styleClass="choose-text" text="Mã đặt hàng">
+            <Label alignment="CENTER" layoutX="14.0" styleClass="header-table-text" text="Mã đặt hàng">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="151.0" styleClass="choose-text" text="Mã khách hàng">
+            <Label alignment="CENTER" layoutX="151.0" styleClass="header-table-text" text="Mã khách hàng">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="347.0" styleClass="choose-text" text="Tên khách hàng">
+            <Label alignment="CENTER" layoutX="347.0" styleClass="header-table-text" text="Tên khách hàng">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="557.0" styleClass="choose-text" text="Ngày lập">
+            <Label alignment="CENTER" layoutX="557.0" styleClass="header-table-text" text="Ngày lập">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="706.0" styleClass="choose-text" text="Trạng thái">
+            <Label alignment="CENTER" layoutX="706.0" styleClass="header-table-text" text="Trạng thái">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
