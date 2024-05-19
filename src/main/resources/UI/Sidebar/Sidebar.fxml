@@ -108,20 +108,20 @@
                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane fx:id="btnCustomer" layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" onMouseClicked="#btnCustomerOnClick" styleClass="default-text" text="Khách hàng" />
+               <AnchorPane fx:id="btnCustomer" layoutX="27.0" layoutY="14.0" onMouseClicked="#btnCustomerOnClick" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
+                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Khách hàng" />
                   <FontIcon iconLiteral="fas-user" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane fx:id="btnBill" layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" onMouseClicked="#btnBillOnClick" styleClass="default-text" text="Hóa đơn" />
+               <AnchorPane fx:id="btnBill" layoutX="27.0" layoutY="14.0" onMouseClicked="#btnBillOnClick" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
+                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Hóa đơn" />
                   <FontIcon iconLiteral="fas-money-check-alt" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
                </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
-               <AnchorPane fx:id="btnOrder" layoutX="27.0" layoutY="14.0" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                  <Label layoutX="72.0" layoutY="8.0" onMouseClicked="#btnOrderOnClick" styleClass="default-text" text="Đặt hàng" />
+               <AnchorPane fx:id="btnOrder" layoutX="27.0" layoutY="14.0" onMouseClicked="#btnOrderOnClick" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
+                  <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Đặt hàng" />
                   <FontIcon iconLiteral="fas-shopping-cart" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
                </AnchorPane>
             </AnchorPane>

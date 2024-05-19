@@ -138,7 +138,7 @@ public class Sidebar implements Initializable {
     @FXML
     protected void btnSettingOnClick() {
         try {
-            Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/SettingWindow/SettingWindow.fxml")));
+            Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/SettingWindow/SettingWindow/SettingWindow.fxml")));
             MainContainer.getChildren().removeLast();
             MainContainer.getChildren().add(newContent);
             preButton.setStyle("-fx-background-color: white; -fx-background-radius: 6 ;");

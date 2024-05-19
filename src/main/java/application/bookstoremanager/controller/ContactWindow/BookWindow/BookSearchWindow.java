@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -48,6 +49,9 @@ public class BookSearchWindow implements Initializable {
 
     @FXML
     private TextField searchTG;
+
+    @FXML
+    private VBox MainBookConTainer;
 
     @FXML
     private ComboBox<String> cbTheLoai;
@@ -140,6 +144,20 @@ public class BookSearchWindow implements Initializable {
             stage.showAndWait();
             System.out.println("load data");
             LoadData(searchText.getText(), selectedTL, searchTG.getText());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void btnChangeToPNS_OnAction() {
+        System.out.println("btnChangeToPNS_OnAction");
+        try {
+            Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/BookWindow/ReceiptBookWindow/ReceiptBookWindow.fxml")));
+            Parent pane = MainBookConTainer.getParent();
+            HBox anchorPane = (HBox) pane;
+            anchorPane.getChildren().removeLast();
+            anchorPane.getChildren().add(newContent);
         } catch (IOException e) {
             e.printStackTrace();
         }

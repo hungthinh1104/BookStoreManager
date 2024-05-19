@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@SettingWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="MainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@SettingWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.SettingWindow.SettingWindow">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -19,7 +19,7 @@
         </VBox.margin>
         <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
             <Label styleClass="header-text-selected" text="Tài khoản" />
-            <Label styleClass="header-text" text="Thay đổi quy định" />
+            <Label onMouseClicked="#btnChangeToOtherPage_OnAction" styleClass="header-text" text="Thay đổi quy định" />
         </HBox>
         <Line endX="-19.014251708984375" endY="3.075599579460686E-6" startX="-100.0" styleClass="line-selected" />
         <Line endX="854.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />
@@ -46,8 +46,8 @@
             </VBox>
         </HBox>
         <HBox spacing="10.0">
-            <Button onAction="#handleEdit" styleClass="drop-shadow" text="Sửa Đổi" />
-            <Button onAction="#handleConfirm" styleClass="drop-shadow" text="Xác Nhận" />
+            <Button styleClass="drop-shadow" text="Sửa Đổi" />
+            <Button styleClass="drop-shadow" text="Xác Nhận" />
         </HBox>
     </VBox>
 </VBox>
