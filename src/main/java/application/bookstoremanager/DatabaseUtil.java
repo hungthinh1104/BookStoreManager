@@ -277,19 +277,20 @@ public class DatabaseUtil {
         return ctPhieunhapsachList;
     }
 
-//    public static void createListCtPhieunhapsach(Connection conn, List<Sach> listSach, int maPhieuNhap){
-//        for(Sach sach : listSach){
-//            try{
-//                String sql = "INSERT INTO ct_phieunhapsach(MaPhieuNhap, MaSach, SoLuongNhap, DonGiaNhap) VALUES (?, ?, ?, ?)";
-//                PreparedStatement pstmt = conn.prepareStatement(sql);
-//
-//                pstmt.executeUpdate();
-//                pstmt.close();
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    public static void createCtPhieunhapsach(Connection conn, int maSach, int maPhieuNhap,int soLuongNhap, double donGiaNhap){
+        try{
+            String sql = "INSERT INTO ct_phieunhapsach(MaPhieuNhap, MaSach, SoLuongNhap, DonGiaNhap) VALUES (?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(2, maSach);
+            pstmt.setInt(1, maPhieuNhap);
+            pstmt.setInt(3, soLuongNhap);
+            pstmt.setDouble(4, donGiaNhap);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public static Thamso getThamso(Connection conn){
         Thamso thamso = null;

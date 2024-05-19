@@ -25,7 +25,7 @@
             <Label styleClass="header-text-selected" text="Tìm kiếm sách" />
             <Label styleClass="header-text" text="Phiếu nhập sách" />
         </HBox>
-        <Line endX="26.492889404296875" endY="2.300739197380608E-6" startX="-100.0" styleClass="line-selected" />
+        <Line endX="12.185791015625" endY="2.300739197380608E-6" startX="-100.0" styleClass="line-selected" />
         <Line endX="865.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />
     </VBox>
     <HBox prefHeight="110.0" prefWidth="991.0" spacing="250.0">

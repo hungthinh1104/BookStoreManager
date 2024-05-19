@@ -23,6 +23,12 @@ public class DetailPaneForMain {
     @FXML
     private Label TenSach;
 
+    @FXML
+    private Label TacGia;
+
+    @FXML
+    private Label TheLoai;
+
     public void setData(CtPhieunhapsach PNS) {
         SoLuong.setText("Số lượng: " + PNS.getSoLuongNhap().toString());
         DonGia.setText("Đơn giá: " + PNS.getDonGiaNhap().toString());
@@ -33,6 +39,8 @@ public class DetailPaneForMain {
                 for (Sach sach : SachList) {
                     if(sach.getMaSach().equals(PNS.getMaSach())){
                         TenSach.setText(sach.getTenSach());
+                        TacGia.setText(sach.getTacGia());
+                        TheLoai.setText(sach.getTheLoai().getTenTheLoai());
                         break;
                     }
                 }
