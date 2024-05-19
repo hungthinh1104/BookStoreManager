@@ -47,12 +47,12 @@
     <HBox prefHeight="641.0" prefWidth="960.0" spacing="20.0">
         <VBox prefHeight="641.0" prefWidth="402.0" spacing="5.0">
             <AnchorPane prefHeight="31.0" prefWidth="384.0" styleClass="header-table-contain">
-                <Label layoutX="15.0" layoutY="1.0" styleClass="header-table-text" text="Mã phiếu nhập">
+                <Label layoutX="11.0" layoutY="1.0" styleClass="header-table-text" text="Mã phiếu nhập">
                     <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label layoutX="184.0" styleClass="header-table-text" text="Ngày nhập">
+                <Label layoutX="180.0" styleClass="header-table-text" text="Ngày nhập">
                     <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                     </padding>
@@ -64,12 +64,12 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                     <AnchorPane prefHeight="32.0" prefWidth="372.0" styleClass="light-border" stylesheets="@ReceiptBookWindow.css">
-                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="124.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="7.0" prefHeight="30.0" prefWidth="131.0" styleClass="information-text" text="Label" textAlignment="CENTER">
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
                         </Label>
-                        <Label alignment="CENTER" layoutX="164.0" prefHeight="30.0" prefWidth="118.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="169.0" prefHeight="30.0" prefWidth="124.0" styleClass="information-text" text="Label" textAlignment="CENTER">
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
@@ -81,7 +81,7 @@
         </VBox>
         <VBox alignment="CENTER" spacing="10.0">
             <Label styleClass="book-text" text="Chi tiết phiếu nhập " />
-         <VBox fx:id="CTPNS" prefHeight="600.0" prefWidth="548.0" />
+         <VBox fx:id="CTPNS" prefHeight="600.0" prefWidth="548.0" styleClass="light-border" />
         </VBox>
     </HBox>
 </VBox>

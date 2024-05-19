@@ -69,8 +69,8 @@
             <Label layoutX="548.0" styleClass="inside-category-text" text="Số lượng*" />
             <Label layoutX="388.0" styleClass="inside-category-text" text="Thông tin thêm" />
         </AnchorPane>
-        <ScrollPane prefHeight="289.0" prefWidth="838.0" styleClass="into-side-pane">
-            <VBox prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white;">
+        <ScrollPane prefHeight="270.0" prefWidth="838.0" styleClass="into-side-pane">
+            <VBox maxHeight="12000.0" minHeight="248.0" prefWidth="800.0" style="-fx-background-color: white;">
                 <HBox alignment="CENTER" prefHeight="38.0" prefWidth="800.0" spacing="20.0" styleClass="into-side-pane">
                     <VBox.margin>
                         <Insets />

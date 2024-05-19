@@ -60,7 +60,7 @@
         <AnchorPane>
             <Label layoutX="101.0" styleClass="inside-category-text" text="Tên sách*" />
             <Label layoutX="266.0" styleClass="inside-category-text" text="Thể loại*" />
-            <Label layoutX="698.0" styleClass="inside-category-text" text="Tổng tiền" />
+            <Label layoutX="696.0" styleClass="inside-category-text" text="Tổng tiền" />
             <Label layoutX="573.0" styleClass="inside-category-text" text="Số lượng*" />
             <Label layoutX="419.0" layoutY="-1.0" styleClass="inside-category-text" text="Trạng thái" />
         </AnchorPane>

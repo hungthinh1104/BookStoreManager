@@ -35,6 +35,13 @@
     -fx-font-size: 15px;
 }
 
+.header-table-text {
+    -fx-text-fill: #2F60F5;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 15px;
+}
+
 .line {
     -fx-stroke: lightgrey;
 }
