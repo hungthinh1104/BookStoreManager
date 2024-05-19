@@ -125,7 +125,7 @@ public class BookAdd implements Initializable {
                 BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
 
                 // Compress image
-                BufferedImage resizedImage = resizeImage(bufferedImage, 800, 800);
+                BufferedImage resizedImage = resizeImage(bufferedImage, 800, 1200);
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 ImageIO.write(resizedImage, "png", baos);
                 baos.flush();

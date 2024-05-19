@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 //    Cách lấy ảnh
+//    byte[] imageBytes = sach.getHinhAnh();
 //    BufferedImage img = null;
 //    try {
 //        ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
@@ -314,7 +315,7 @@ public class DatabaseUtil {
 
     public static void updateThamso(Connection conn, Thamso thamso){
         try{
-            String updateQuery = "UPDATE sach SET SoLuongNhapToiThieu = ?, SoLuongTonToiDa = ?," +
+            String updateQuery = "UPDATE thamso SET SoLuongNhapToiThieu = ?, SoLuongTonToiDa = ?," +
                     "SoLuongTonToiThieu = ?, TiLeTinhDonGiaBan = ?, TienCoc = ? ";
             PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
             preparedStatement.setInt(1, thamso.getSoLuongNhapToiThieu());
