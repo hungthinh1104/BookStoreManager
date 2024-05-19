@@ -74,7 +74,7 @@
     -fx-font-size: 14px;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #2196F3;
     -fx-text-fill: white;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
@@ -83,7 +83,7 @@
 .button:hover {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
-    -fx-background-color: #45a049;
+    -fx-background-color: #1E88E5;
     -fx-text-fill: white;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
@@ -92,11 +92,12 @@
 .button:pressed {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
-    -fx-background-color: #317e3b;
+    -fx-background-color: #1565C0;
     -fx-text-fill: white;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
 }
+
 
 .drop-shadow {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);

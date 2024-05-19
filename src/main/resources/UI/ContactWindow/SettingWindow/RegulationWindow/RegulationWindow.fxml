@@ -20,9 +20,9 @@
             <Label onMouseClicked="#btnChangeToOtherPage_OnAction" styleClass="header-text" text="Tài khoản" />
             <Label styleClass="header-text-selected" text="Thay đổi quy định" />
         </HBox>
-        <Line endX="44.185733795166016" endY="3.075599579460686E-6" startX="-100.0" styleClass="line-selected">
+        <Line endX="48.185733795166016" endY="3.075599579460686E-6" startX="-100.0" styleClass="line-selected">
             <VBox.margin>
-                <Insets left="85.0" />
+                <Insets left="104.0" />
             </VBox.margin>
         </Line>
         <Line endX="856.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />
@@ -53,8 +53,8 @@
          </children>
       </HBox>
         <HBox spacing="10.0">
-            <Button fx:id="btnedit" onAction="#btnEdit_OnAction" styleClass="drop-shadow" text="Cập Nhật" />
-            <Button fx:id="btnconfirm" onAction="#btnconfirmOnAction" styleClass="drop-shadow" text="Xác Nhận" />
+            <Button fx:id="btnedit" onAction="#btnEdit_OnAction" prefHeight="33.0" prefWidth="100.0" styleClass="drop-shadow" text="Cập Nhật" />
+            <Button fx:id="btnconfirm" onAction="#btnconfirmOnAction" prefHeight="33.0" prefWidth="100.0" styleClass="drop-shadow" text="Xác Nhận" />
         </HBox>
       <padding>
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
