@@ -24,7 +24,7 @@
             <Label onMouseClicked="#btnChangeToTKS_OnAction" styleClass="header-text" text="Tìm kiếm sách" />
             <Label styleClass="header-text-selected" text="Phiếu nhập sách" />
         </HBox>
-        <Line endX="47.38582229614258" endY="3.075599579460686E-6" startX="-100.0" styleClass="line-selected">
+        <Line endX="47.38582229614258" endY="3.075599579460686E-6" startX="162.77159118652344" startY="5.412101927504409E-6" styleClass="line-selected">
             <VBox.margin>
                 <Insets left="140.0" />
             </VBox.margin>
@@ -32,8 +32,8 @@
         <Line endX="868.5858154296875" endY="1.6863031387329102" startX="-100.0" styleClass="line" />
     </VBox>
     <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="960.0">
-        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="410.0" spacing="30.0">
-            <AnchorPane prefHeight="41.0" prefWidth="334.0">
+        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="421.0" spacing="30.0">
+            <AnchorPane prefHeight="41.0" prefWidth="331.0">
             <DatePicker fx:id="searchDate" layoutX="65.0" layoutY="8.0" prefHeight="29.0" prefWidth="204.0" styleClass="search-side" />
             </AnchorPane>
         </HBox>
@@ -52,7 +52,7 @@
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label layoutX="180.0" styleClass="header-table-text" text="Ngày nhập">
+                <Label layoutX="194.0" styleClass="header-table-text" text="Ngày nhập">
                     <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                     </padding>
@@ -81,7 +81,11 @@
         </VBox>
         <VBox alignment="CENTER" spacing="10.0">
             <Label styleClass="book-text" text="Chi tiết phiếu nhập " />
-         <VBox fx:id="CTPNS" prefHeight="600.0" prefWidth="548.0" styleClass="light-border" />
+         <ScrollPane prefHeight="690.0" prefWidth="550.0">
+            <content>
+               <VBox fx:id="CTPNS" prefHeight="600.0" prefWidth="533.0" styleClass="light-border" />
+            </content>
+         </ScrollPane>
         </VBox>
     </HBox>
 </VBox>
