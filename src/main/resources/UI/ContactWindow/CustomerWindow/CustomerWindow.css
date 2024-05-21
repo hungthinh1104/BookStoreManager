@@ -18,7 +18,6 @@
     -fx-padding: 5px;
 }
 
-/* Search button */
 .search-button {
     -fx-background-color: #4CAF50;
     -fx-background-radius: 10;
@@ -50,4 +49,28 @@
 
 .action-button:pressed {
     -fx-background-color: #1976D2;
+}
+
+.table-header {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-text-fill: black;
+    -fx-font-size: 14;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+}
+
+.light-border {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.information-text {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-text-fill: Black;
+    -fx-font-size: 12;
 }

@@ -41,10 +41,6 @@
                 <Label styleClass="inside-category-text" text="Ngày hóa đơn*" />
                 <Label alignment="CENTER" prefHeight="10.0" prefWidth="88.0" styleClass="default-text" text="Label" />
             </VBox>
-            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="130.0" spacing="10.0">
-                <Label styleClass="inside-category-text" text="Hiệu lực tới" />
-                <Label alignment="CENTER" prefHeight="10.0" prefWidth="88.0" styleClass="default-text" text="Label" />
-            </VBox>
             <VBox alignment="CENTER" prefHeight="54.0" prefWidth="120.0" spacing="10.0">
                 <Label styleClass="inside-category-text" text="Số hóa đơn*" />
                 <Label alignment="CENTER" prefHeight="10.0" prefWidth="88.0" styleClass="default-text" text="Label" />

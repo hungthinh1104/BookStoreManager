@@ -12,26 +12,33 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="your.package.ReportWindowController">
     <Label text="Thống kê thu, chi theo tháng, năm" />
     <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
-      <ComboBox prefWidth="150.0" promptText="Tháng" />
-      <ComboBox prefWidth="150.0" promptText="Năm" />
-        <Button prefHeight="20.0" text="Xem thống kê" />
+        <ComboBox prefWidth="150.0" promptText="Tháng" />
+        <ComboBox prefWidth="150.0" promptText="Năm" />
+        <Button prefHeight="20.0" text="Xem thống kê" onAction="#handleViewStats" />
     </HBox>
     <HBox prefHeight="322.0" prefWidth="960.0" spacing="10.0">
         <VBox spacing="5.0">
             <Label prefHeight="27.0" prefWidth="321.0" text="Top 5 khách hàng chi tiêu nhiều nhất" />
-            <TableView fx:id="tableBestSellingBooks1" />
+            <TableView>
+                <columns>
+                    <TableColumn prefWidth="150.0" text="Khách hàng" />
+                    <TableColumn prefWidth="150.0" text="Chi tiêu" />
+                </columns>
+            </TableView>
         </VBox>
         <VBox spacing="5.0">
             <Label text="Top 5 sách bán chạy nhất" />
-            <TableView fx:id="tableBestSellingBooks">
-                <!-- Các cột dữ liệu của bảng -->
+            <TableView>
+                <columns>
+                    <TableColumn prefWidth="150.0" text="Tên sách" />
+                    <TableColumn prefWidth="150.0" text="Số lượng bán" />
+                </columns>
             </TableView>
         </VBox>
     </HBox>
-
     <Label text="Doanh thu" />
     <HBox spacing="10.0">
         <BarChart prefHeight="150.0" prefWidth="883.0">
@@ -44,38 +51,37 @@
         </BarChart>
         <TableView prefHeight="281.0" prefWidth="475.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="Tên sách" />
-                <TableColumn prefWidth="75.0" text="Số lượng bán ra" />
-                <TableColumn prefWidth="75.0" text="Thành tiền" />
+                <TableColumn prefWidth="150.0" text="Tên sách" />
+                <TableColumn prefWidth="150.0" text="Số lượng bán ra" />
+                <TableColumn prefWidth="150.0" text="Thành tiền" />
             </columns>
-           <columnResizePolicy>
-               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-           </columnResizePolicy>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
         </TableView>
     </HBox>
-
     <Label text="Báo cáo tồn" />
     <HBox spacing="10.0">
         <BarChart prefHeight="150.0" prefWidth="883.0">
-           <xAxis>
-               <CategoryAxis side="BOTTOM" />
-           </xAxis>
-           <yAxis>
-               <NumberAxis side="LEFT" />
-           </yAxis>
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
         </BarChart>
         <TableView prefHeight="281.0" prefWidth="475.0">
-           <columns>
-               <TableColumn prefWidth="75.0" text="Tên sách" />
-               <TableColumn prefWidth="75.0" text="Tồn đầu tháng" />
-               <TableColumn prefWidth="75.0" text="Tồn cuối tháng" />
-           </columns>
-           <columnResizePolicy>
-               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-           </columnResizePolicy>
+            <columns>
+                <TableColumn prefWidth="150.0" text="Tên sách" />
+                <TableColumn prefWidth="150.0" text="Tồn đầu tháng" />
+                <TableColumn prefWidth="150.0" text="Tồn cuối tháng" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
         </TableView>
     </HBox>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
 </VBox>
