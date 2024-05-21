@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox fx:id="MainBookConTainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btnChangeToPNS_OnAction" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@SearchBookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow">
+<VBox fx:id="MainBookConTainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@SearchBookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow">
     <padding>
         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
     </padding>
@@ -23,7 +23,7 @@
         </VBox.margin>
         <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
             <Label styleClass="header-text-selected" text="Tìm kiếm sách" />
-            <Label styleClass="header-text" text="Phiếu nhập sách" />
+            <Label onMouseClicked="#btnChangeToPNS_OnAction" styleClass="header-text" text="Phiếu nhập sách" />
         </HBox>
         <Line endX="12.185791015625" endY="2.300739197380608E-6" startX="-100.0" styleClass="line-selected" />
         <Line endX="865.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />

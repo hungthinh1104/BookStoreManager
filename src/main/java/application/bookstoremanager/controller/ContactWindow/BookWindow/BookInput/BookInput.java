@@ -86,7 +86,7 @@ public class BookInput implements Initializable {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/ReceiptBookWindow/BookTableRow/BookTableInputRow.fxml"));
                     Parent newContent3 = loader.load();
                     BookInputTableRow book = loader.getController();
-                    book.setData(sach);
+                    if(book != null) book.setData(sach);
                     BookContainer.getChildren().add(newContent3);
                     newContent3.setOnMouseClicked(this::handleAnchorPaneClick);
                     if(isFirstLoad) isUsed.put(sach.getMaSach(), false);

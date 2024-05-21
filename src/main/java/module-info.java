@@ -31,6 +31,10 @@ module com.bookstoremanager {
     opens application.bookstoremanager.controller.ContactWindow.SettingWindow to javafx.fxml;
     exports application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput;
     opens application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.ReportWindow;
+    opens application.bookstoremanager.controller.ContactWindow.ReportWindow to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.CustomerWindow;
+    opens application.bookstoremanager.controller.ContactWindow.CustomerWindow to javafx.fxml;
 
     exports application.bookstoremanager.classdb;
     opens application.bookstoremanager.classdb to javafx.fxml;
