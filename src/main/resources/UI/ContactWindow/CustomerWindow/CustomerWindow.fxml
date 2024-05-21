@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="780" prefWidth="1000" styleClass="background" stylesheets="@CustomerWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="780" prefWidth="1000" styleClass="background" stylesheets="@CustomerWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.CustomerWindow">
 
     <top>
         <VBox prefHeight="65.0" prefWidth="970.0" spacing="10.0">
             <Label styleClass="title" text="Khách hàng" />
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                 <Label styleClass="default-text" text="Tìm kiếm:" />
-                <TextField fx:id="txtSearchName" prefWidth="200" promptText="Tên khách hàng" styleClass="default-text" />
-                <TextField fx:id="txtSearchPhone" prefWidth="200" promptText="Số điện thoại" styleClass="default-text" />
-                <Button text="Tìm kiếm">
+                <TextField fx:id="searchTKH" prefWidth="200" promptText="Tên khách hàng" styleClass="default-text" />
+                <TextField fx:id="searchSDT" prefWidth="200" promptText="Số điện thoại" styleClass="default-text" />
+                <Button fx:id="btnTimKiem" onAction="#btnTimKiemOnAction" text="Tìm kiếm">
                     <styleClass>
                         <String fx:value="search-button" />
                         <String fx:value="default-text" />
@@ -32,7 +32,7 @@
 
     <bottom>
         <HBox spacing="10.0">
-            <Button text="Thêm">
+            <Button fx:id="ThemKh" onAction="#btnThemKhOnAction" text="Thêm">
                 <styleClass>
                     <String fx:value="action-button" />
                     <String fx:value="default-text" />
@@ -65,7 +65,7 @@
                </VBox.margin></HBox>
             <ScrollPane prefHeight="552.0" prefWidth="960.0" styleClass="light-border">
                <content>
-                  <VBox maxHeight="12000.0" maxWidth="935.0" minHeight="529.0" minWidth="962.0" spacing="5.0" styleClass="background">
+                  <VBox fx:id="CustomerContainer" maxHeight="12000.0" maxWidth="935.0" minHeight="529.0" minWidth="962.0" spacing="5.0" styleClass="background">
                      <padding>
                         <Insets top="2.0" />
                      </padding>

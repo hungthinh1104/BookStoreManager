@@ -12,12 +12,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="your.package.ReportWindowController">
+<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportWindow">
     <Label text="Thống kê thu, chi theo tháng, năm" />
     <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
         <ComboBox prefWidth="150.0" promptText="Tháng" />
         <ComboBox prefWidth="150.0" promptText="Năm" />
-        <Button prefHeight="20.0" text="Xem thống kê" onAction="#handleViewStats" />
+        <Button prefHeight="20.0" text="Xem thống kê"  />
     </HBox>
     <HBox prefHeight="322.0" prefWidth="960.0" spacing="10.0">
         <VBox spacing="5.0">
