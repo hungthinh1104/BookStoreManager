@@ -21,7 +21,7 @@
 
 .default-text {
     -fx-background-color: white;
-    -fx-background-radius: white;
+    -fx-background-radius: 10;
     -fx-text-fill: #4B5563;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
@@ -66,4 +66,22 @@
 
 .icon {
     -fx-fill: #757575;
+}
+
+.not-enough {
+    -fx-background-color: #F9A9A3;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 14px;
+}
+
+.enough {
+    -fx-background-color: #9AD5CF;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 14px;
 }

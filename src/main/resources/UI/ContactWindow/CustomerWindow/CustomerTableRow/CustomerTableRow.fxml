@@ -3,10 +3,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-
-<AnchorPane prefHeight="26.0" prefWidth="962.0" stylesheets="@CustomerTableRow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.CustomerTableRow">
-    <Label fx:id="MaKhachHang" layoutX="20.0" prefHeight="38.0" prefWidth="269.0" styleClass="information-text" text="Label" />
-    <Label fx:id="TenKhachHang" layoutX="332.0" prefHeight="38.0" prefWidth="286.0" styleClass="information-text" text="Label" />
-    <Label fx:id="SoDienThoai" layoutX="662.0" prefHeight="38.0" prefWidth="267.0" styleClass="information-text" text="Label" />
-    <FontIcon iconLiteral="fas-ellipsis-h" layoutX="940.0" layoutY="23.0" strokeWidth="0.0" />
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="26.0" prefWidth="962.0" styleClass="light-border"
+            stylesheets="@CustomerTableRow.css" xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.CustomerTableRow">
+    <Label fx:id="MaKhachHang" alignment="CENTER" layoutX="20.0" prefHeight="38.0" prefWidth="269.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+    <Label fx:id="TenKhachHang" alignment="CENTER" layoutX="332.0" prefHeight="38.0" prefWidth="286.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+    <Label fx:id="SoDienThoai" alignment="CENTER" layoutX="662.0" prefHeight="38.0" prefWidth="267.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+    <FontIcon iconLiteral="fas-ellipsis-h" layoutX="940.0" layoutY="23.0" strokeWidth="0.0"/>
 </AnchorPane>

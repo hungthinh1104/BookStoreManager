@@ -3,7 +3,7 @@
     -fx-background-radius: 20;
     -fx-spacing: 10;
     -fx-alignment: top center;
-    -fx-padding: 20;
+    -fx-padding: 15;
 }
 
 .inside-pane {
@@ -19,7 +19,7 @@
     -fx-background-radius: 20;
     -fx-border-color: lightgrey;
     -fx-border-radius: 20;
-    -fx-padding: 10;
+    -fx-padding: 5;
 }
 
 .cancel-button {

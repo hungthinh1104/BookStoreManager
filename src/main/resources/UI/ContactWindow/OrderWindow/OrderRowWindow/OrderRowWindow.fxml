@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-
-<AnchorPane prefHeight="32.0" prefWidth="932.0" styleClass="light-radius-box-border" stylesheets="@OrderRowWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label alignment="CENTER" layoutX="15.0" prefHeight="30.0" prefWidth="103.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </Label>
-      <Label alignment="CENTER" layoutX="159.0" prefHeight="30.0" prefWidth="119.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </Label>
-      <Label alignment="CENTER" layoutX="318.0" prefHeight="30.0" prefWidth="200.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </Label>
-      <FontIcon iconLiteral="fas-trash-alt" layoutX="897.0" layoutY="21.0" strokeWidth="0.0" styleClass="icon" />
-      <FontIcon iconLiteral="fas-pen" layoutX="869.0" layoutY="21.0" strokeWidth="0.0" styleClass="icon" />
-      <Label alignment="CENTER" layoutX="694.0" prefHeight="30.0" prefWidth="125.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </Label>
-      <Label alignment="CENTER" layoutX="547.0" prefHeight="30.0" prefWidth="109.0" styleClass="information-text" text="Label" textAlignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </Label>
-      <FontIcon iconLiteral="fas-ellipsis-h" layoutX="838.0" layoutY="21.0" strokeWidth="0.0" styleClass="icon" />
-   </children>
+<AnchorPane prefHeight="42.0" prefWidth="931.0" styleClass="light-radius-box-border"
+            stylesheets="@OrderRowWindow.css" xmlns="http://javafx.com/javafx/22">
+    <Label alignment="CENTER" layoutX="14.0" layoutY="6.0" prefHeight="30.0" prefWidth="132.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label alignment="CENTER" layoutX="166.0" layoutY="6.0" prefHeight="30.0" prefWidth="135.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label alignment="CENTER" layoutX="319.0" layoutY="6.0" prefHeight="30.0" prefWidth="236.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <FontIcon iconLiteral="fas-pen" layoutX="893.0" layoutY="26.0" strokeWidth="0.0" styleClass="icon"/>
+    <Label alignment="CENTER" layoutX="724.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0" styleClass="not-enough"
+           text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label alignment="CENTER" layoutX="573.0" layoutY="6.0" prefHeight="30.0" prefWidth="136.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <FontIcon iconLiteral="fas-ellipsis-h" layoutX="862.0" layoutY="26.0" strokeWidth="0.0" styleClass="icon"/>
 </AnchorPane>

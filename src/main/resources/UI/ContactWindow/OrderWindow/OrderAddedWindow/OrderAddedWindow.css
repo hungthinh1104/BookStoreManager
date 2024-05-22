@@ -3,7 +3,7 @@
     -fx-background-radius: 20;
     -fx-spacing: 10;
     -fx-alignment: top center;
-    -fx-padding: 20;
+    -fx-padding: 15;
 }
 
 .inside-pane {
@@ -100,4 +100,13 @@
     -fx-border-radius: 5;
     -fx-background-color: white;
     -fx-background-radius: 5;
+}
+
+.default-text {
+    -fx-background-color: white;
+    -fx-background-radius: white;
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 300;
+    -fx-font-size: 13px;
 }

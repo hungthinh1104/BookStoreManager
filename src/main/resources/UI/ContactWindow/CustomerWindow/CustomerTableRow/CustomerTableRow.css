@@ -8,6 +8,6 @@
 .information-text {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-text-fill: Black;
-    -fx-font-size: 12;
+    -fx-text-fill: #4B5563;
+    -fx-font-size: 13;
 }

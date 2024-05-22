@@ -1,91 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-
-<VBox fx:id="MainBookConTainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@ReceiptBookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.ReceiptBook.ReceiptBook">
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="MainBookConTainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0"
+      styleClass="outside-pane" stylesheets="@ReceiptBookWindow.css" xmlns="http://javafx.com/javafx/22"
+      fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.ReceiptBook.ReceiptBook">
     <padding>
-        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
     </padding>
     <VBox prefHeight="35.0" prefWidth="1001.0">
         <VBox.margin>
-            <Insets />
+            <Insets/>
         </VBox.margin>
         <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
-            <Label onMouseClicked="#btnChangeToTKS_OnAction" styleClass="header-text" text="Tìm kiếm sách" />
-            <Label styleClass="header-text-selected" text="Phiếu nhập sách" />
+            <Label onMouseClicked="#btnChangeToTKS_OnAction" styleClass="header-text" text="Tìm kiếm sách"/>
+            <Label styleClass="header-text-selected" text="Phiếu nhập sách"/>
         </HBox>
-        <Line endX="17.385822296142578" endY="3.075599579460686E-6" startX="140.9716033935547" startY="4.649162292480469E-6" styleClass="line-selected">
+        <Line endX="17.385822296142578" endY="3.075599579460686E-6" startX="155.9716033935547"
+              startY="4.649162292480469E-6" styleClass="line-selected">
             <VBox.margin>
-                <Insets left="129.0" />
+                <Insets left="144.0"/>
             </VBox.margin>
         </Line>
-        <Line endX="868.5858154296875" endY="1.6863031387329102" startX="-100.0" styleClass="line" />
+        <Line endX="868.5858154296875" endY="1.6863031387329102" startX="-100.0" styleClass="line"/>
     </VBox>
     <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="960.0">
         <HBox alignment="CENTER" prefHeight="46.0" prefWidth="421.0" spacing="30.0">
             <AnchorPane prefHeight="41.0" prefWidth="331.0">
-            <DatePicker fx:id="searchDate" layoutX="65.0" layoutY="8.0" prefHeight="29.0" prefWidth="204.0" styleClass="search-side" />
+                <DatePicker fx:id="searchDate" layoutX="65.0" layoutY="8.0" prefHeight="29.0" prefWidth="204.0"
+                            styleClass="search-side"/>
             </AnchorPane>
         </HBox>
-        <Button fx:id="btnNhanSach" mnemonicParsing="false" onAction="#btnAddBook_OnAction" prefHeight="40.0" prefWidth="146.0" text="Nhập sách">
+        <Button fx:id="btnNhanSach" mnemonicParsing="false" onAction="#btnAddBook_OnAction" prefHeight="40.0"
+                prefWidth="146.0" text="Nhập sách">
             <styleClass>
-                <String fx:value="add-button" />
-                <String fx:value="drop-shadow" />
+                <String fx:value="add-button"/>
+                <String fx:value="drop-shadow"/>
             </styleClass>
         </Button>
     </HBox>
     <HBox prefHeight="641.0" prefWidth="960.0" spacing="20.0">
         <VBox prefHeight="641.0" prefWidth="402.0" spacing="5.0">
-            <AnchorPane prefHeight="31.0" prefWidth="384.0" styleClass="header-table-contain">
+            <AnchorPane prefHeight="31.0" prefWidth="384.0" styleClass="light-border">
                 <Label layoutX="11.0" layoutY="1.0" styleClass="header-table-text" text="Mã phiếu nhập">
                     <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
                     </padding>
                 </Label>
-                <Label layoutX="181.0" styleClass="header-table-text" text="Ngày nhập">
+                <Label layoutX="179.0" styleClass="header-table-text" text="Ngày nhập">
                     <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
                     </padding>
                 </Label>
+                <VBox.margin>
+                    <Insets right="15.0"/>
+                </VBox.margin>
             </AnchorPane>
             <ScrollPane prefHeight="606.0" prefWidth="527.0" styleClass="light-border">
-                <VBox fx:id="PNSContainer" alignment="TOP_CENTER" minHeight="603.0" minWidth="382.0" spacing="5.0" styleClass="inside-table">
+                <VBox fx:id="PNSContainer" alignment="TOP_CENTER" minHeight="603.0" minWidth="382.0" spacing="5.0"
+                      styleClass="inside-table">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </padding>
-                    <AnchorPane prefHeight="32.0" prefWidth="372.0" styleClass="light-border" stylesheets="@ReceiptBookWindow.css">
-                        <Label alignment="CENTER" layoutX="7.0" prefHeight="30.0" prefWidth="131.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                    <AnchorPane prefHeight="32.0" prefWidth="372.0" styleClass="light-border"
+                                stylesheets="@ReceiptBookWindow.css">
+                        <Label alignment="CENTER" layoutX="9.0" prefHeight="30.0" prefWidth="124.0"
+                               styleClass="information-text" text="Label" textAlignment="CENTER">
                             <padding>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                             </padding>
                         </Label>
-                        <Label alignment="CENTER" layoutX="169.0" prefHeight="30.0" prefWidth="124.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="169.0" prefHeight="30.0" prefWidth="124.0"
+                               styleClass="information-text" text="Label" textAlignment="CENTER">
                             <padding>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                             </padding>
                         </Label>
-                        <FontIcon iconLiteral="fas-pen" layoutX="325.0" layoutY="20.0" strokeWidth="0.0" styleClass="icon" text="" />
+                        <FontIcon iconLiteral="fas-pen" layoutX="325.0" layoutY="20.0" strokeWidth="0.0"
+                                  styleClass="icon" text=""/>
                     </AnchorPane>
                 </VBox>
             </ScrollPane>
         </VBox>
         <VBox alignment="CENTER" spacing="10.0">
-            <Label styleClass="book-text" text="Chi tiết phiếu nhập " />
-         <ScrollPane prefHeight="690.0" prefWidth="550.0">
-            <content>
-               <VBox fx:id="CTPNS" prefHeight="600.0" prefWidth="533.0" styleClass="light-border" />
-            </content>
-         </ScrollPane>
+            <Label styleClass="book-text" text="Chi tiết phiếu nhập "/>
+            <ScrollPane prefHeight="690.0" prefWidth="550.0">
+                <VBox fx:id="CTPNS" maxHeight="12000.0" minHeight="605.0" prefWidth="534.0" styleClass="light-border"/>
+            </ScrollPane>
         </VBox>
     </HBox>
 </VBox>
