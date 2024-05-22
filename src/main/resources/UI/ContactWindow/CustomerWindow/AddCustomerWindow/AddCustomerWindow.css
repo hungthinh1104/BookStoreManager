@@ -64,7 +64,7 @@
 
 .cancel-button:hover {
     -fx-background-color: lightgray;
-    -fx-text-fill: darkred /* Change text color on hover */
+    -fx-text-fill: darkred;
 }
 
 .cancel-button:pressed {

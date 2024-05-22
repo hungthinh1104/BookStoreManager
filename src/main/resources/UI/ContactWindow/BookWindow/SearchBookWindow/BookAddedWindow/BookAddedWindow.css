@@ -78,3 +78,11 @@ Label {
     -fx-background-color: #F1F1F1;
     -fx-background-border: 10;
 }
+
+.error-text {
+    -fx-background-color: white;
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+    -fx-font-family: "Inter";
+    -fx-font-weight: 300;
+}

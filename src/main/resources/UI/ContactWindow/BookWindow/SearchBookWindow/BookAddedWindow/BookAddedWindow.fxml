@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="225.0" prefWidth="413.0" spacing="10.0"
-      stylesheets="@BookAddedWindow.css" xmlns="http://javafx.com/javafx/22"
-      fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookAdd">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="225.0" prefWidth="413.0" spacing="10.0" stylesheets="@BookAddedWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookAdd">
     <HBox alignment="CENTER" spacing="20.0">
         <VBox prefHeight="150.0" prefWidth="173.0">
-            <Label text="Tên sách:"/>
-            <TextField fx:id="TenSach" styleClass="input-side"/>
+            <Label text="Tên sách:" />
+            <TextField fx:id="TenSach" styleClass="input-side" />
 
-            <Label text="Thể loại:"/>
+            <Label text="Thể loại:" />
             <ComboBox fx:id="TheLoai" prefHeight="28.0" prefWidth="203.0" styleClass="input-side">
             </ComboBox>
 
-            <Label text="Tác giả:"/>
-            <TextField fx:id="TacGia" styleClass="input-side"/>
+            <Label text="Tác giả:" />
+            <TextField fx:id="TacGia" styleClass="input-side" />
         </VBox>
 
         <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@BookAddedWindow.css">
             <VBox alignment="CENTER" prefHeight="150.0" prefWidth="94.0" spacing="10.0">
-                <Label text="Ảnh sách:"/>
-                <Button fx:id="btnChonAnh" onAction="#btnChonAnhOnAction" prefHeight="30.0" prefWidth="84.0"
-                        text="Chọn ảnh" textAlignment="CENTER" wrapText="true"/>
+                <Label text="Ảnh sách:" />
+                <Button fx:id="btnChonAnh" onAction="#btnChonAnhOnAction" prefHeight="30.0" prefWidth="84.0" text="Chọn ảnh" textAlignment="CENTER" wrapText="true" />
             </VBox>
             <AnchorPane styleClass="image-pane">
-                <ImageView fx:id="imgBook" fitHeight="143.0" fitWidth="94.0" layoutX="2.0" layoutY="4.0"/>
+                <ImageView fx:id="imgBook" fitHeight="143.0" fitWidth="94.0" layoutX="2.0" layoutY="4.0" />
             </AnchorPane>
         </HBox>
     </HBox>
+   <Label styleClass="error-text" text="ERROR">
+      <VBox.margin>
+         <Insets left="20.0" />
+      </VBox.margin>
+   </Label>
     <HBox alignment="CENTER" spacing="30.0">
         <VBox.margin>
-            <Insets top="10.0"/>
+            <Insets top="10.0" />
         </VBox.margin>
-        <Button fx:id="btnThem" mnemonicParsing="false" onAction="#btnThemOnAction" text="Thêm sách"/>
-        <Button fx:id="btnHuy" mnemonicParsing="false" onAction="#btnHuyOnAction" prefHeight="34.0" prefWidth="74.0"
-                styleClass="button1" text="Hủy"/>
+        <Button fx:id="btnThem" mnemonicParsing="false" onAction="#btnThemOnAction" text="Thêm sách" />
+        <Button fx:id="btnHuy" mnemonicParsing="false" onAction="#btnHuyOnAction" prefHeight="34.0" prefWidth="74.0" styleClass="button1" text="Hủy" />
     </HBox>
     <styleClass>
-        <String fx:value="outside-pane"/>
-        <String fx:value="light-radius-box-square"/>
+        <String fx:value="outside-pane" />
+        <String fx:value="light-radius-box-square" />
     </styleClass>
 </VBox>

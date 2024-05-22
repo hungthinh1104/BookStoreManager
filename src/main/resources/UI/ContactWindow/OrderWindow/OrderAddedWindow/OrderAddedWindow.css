@@ -110,3 +110,11 @@
     -fx-font-weight: 300;
     -fx-font-size: 13px;
 }
+
+.error-text {
+    -fx-background-color: white;
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+    -fx-font-family: "Inter";
+    -fx-font-weight: 300;
+}
