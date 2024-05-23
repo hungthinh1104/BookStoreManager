@@ -15,7 +15,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -86,6 +89,7 @@ public class BillWindow implements Initializable {
                     if(searchDate != null && !searchDate.isEmpty() && !hd.getNgayLap().toString().equals(searchDate)) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BillWindow/BillRowWindow/BillRowWindow.fxml"));
                     Parent newContent3 = loader.load();
+                    newContent3.setOnMouseClicked(this::handleAnchorPaneClick);
                     BillRowTable book = loader.getController();
                     book.setData(hd);
                     BillContainer.getChildren().add(newContent3);
@@ -108,6 +112,27 @@ public class BillWindow implements Initializable {
             stage.setScene(scene);
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner((Stage) btnTaoHoaDon.getScene().getWindow());
+            stage.showAndWait();
+            System.out.println("load data");
+            LoadData(seachTenKH.getText(),searchDate.getValue() == null ? "" : searchDate.getValue().toString(), searchSDT.getText());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void handleAnchorPaneClick(MouseEvent event) {
+        AnchorPane clickedAnchorPane = (AnchorPane) event.getSource();
+        Label label = (Label) clickedAnchorPane.lookup("#MaHD");
+        System.out.println("AnchorPane được nhấp vào: " + label.getText());
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BillWindow/BillPropertiesWindow/BillPropertiesWindow.fxml"));
+            Parent parent = loader.load();
+            BillProperties bill = loader.getController();
+            bill.setData(Integer.parseInt(label.getText()));
+            Stage stage = new Stage();
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner((Stage)btnTaoHoaDon.getScene().getWindow());
             stage.showAndWait();
             System.out.println("load data");
             LoadData(seachTenKH.getText(),searchDate.getValue() == null ? "" : searchDate.getValue().toString(), searchSDT.getText());

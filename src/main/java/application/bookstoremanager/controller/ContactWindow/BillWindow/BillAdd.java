@@ -301,8 +301,6 @@ public class BillAdd implements Initializable {
 
     @FXML
     private void setBtnThemHD_OnAction(ActionEvent event) {
-        System.out.println("Before: " + NgayLap.getValue().isBefore(LocalDate.now()));
-        System.out.println("Equals: " + NgayLap.getValue().equals(LocalDate.now()));
         if(NgayLap == null || Objects.equals(NgayLap.toString(), "")) {
             showErrorDialog("Thông tin không hợp lệ", "Vui lòng chọn ngày lập phù hợp");
             return;

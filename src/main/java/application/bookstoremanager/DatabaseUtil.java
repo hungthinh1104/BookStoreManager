@@ -460,8 +460,9 @@ public class DatabaseUtil {
                 LocalDate ngayLap = resultSet.getDate(2).toLocalDate();
                 int maKhachHang = resultSet.getInt(3);
                 double tongTien = resultSet.getDouble(4);
+                int giamGia = resultSet.getInt(5);
                 Khachhang kh = getKhachhangById(conn,maKhachHang);
-                Hoadon hoadon = new Hoadon(id,ngayLap,maKhachHang,tongTien,kh);
+                Hoadon hoadon = new Hoadon(id,ngayLap,maKhachHang,tongTien,kh,giamGia);
                 hoadons.add(hoadon);
             }
         } catch (Exception e) {
