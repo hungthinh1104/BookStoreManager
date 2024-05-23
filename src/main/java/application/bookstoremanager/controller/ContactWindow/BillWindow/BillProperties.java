@@ -89,8 +89,8 @@ public class BillProperties implements Initializable {
                 MaHD.setText(HD.getMaHoaDon().toString());
                 NgayLap.setText(HD.getNgayLap().toString());
                 Khachhang khachhang = DatabaseUtil.getKhachhangById(conn, HD.getMaKhachHang());
-                TenKH.setText(khachhang.getHoTen());
-                SDT.setText(khachhang.getSoDienThoai());
+                TenKH.setText(khachhang == null ? "" : khachhang.getHoTen());
+                SDT.setText(khachhang == null ? "" : khachhang.getSoDienThoai());
                 GiamGia.setText(formatCurrency(HD.getGiamGia()));
                 TongTien.setText(formatCurrency(HD.getTongTien()));
                 ThanhToan.setText(formatCurrency(HD.getTongTien() - HD.getGiamGia()));
