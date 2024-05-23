@@ -457,15 +457,40 @@ public class DatabaseUtil {
         return hoadons;
     }
 
-    public static int createHoadon(LocalDate ngayLap, int maKhachHang, Connection conn){
+    public static int createHoadon(LocalDate ngayLap, int maKhachHang, double giamGia, Connection conn){
         int idHoaDon = 0;
         try{
-            String sql = "INSERT INTO hoadon(NgayLap, MaKhachHang) VALUES (?, ?)";
+            String sql = "INSERT INTO hoadon(NgayLap, MaKhachHang, GiamGia) VALUES (?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             java.sql.Date sqlDate = java.sql.Date.valueOf(ngayLap);
             pstmt.setDate(1, sqlDate);
             pstmt.setInt(2, maKhachHang);
+            pstmt.setDouble(3, giamGia);
+
+            pstmt.executeUpdate();
+
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()){
+                idHoaDon = rs.getInt(1);
+            }
+            System.out.println("Thêm mới hóa đơn thành công! id:" + idHoaDon);
+            pstmt.close();
+            rs.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return idHoaDon;
+    }
+
+    public static int createHoadonForNull(LocalDate ngayLap, Connection conn){
+        int idHoaDon = 0;
+        try{
+            String sql = "INSERT INTO hoadon(NgayLap) VALUES (?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            java.sql.Date sqlDate = java.sql.Date.valueOf(ngayLap);
+            pstmt.setDate(1, sqlDate);
 
             pstmt.executeUpdate();
 
