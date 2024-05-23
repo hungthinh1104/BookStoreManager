@@ -15,6 +15,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -66,5 +67,11 @@ public class BookTableRow implements Initializable {
         NumberFormat numberFormat = NumberFormat.getInstance(new Locale("vi", "VN"));
         numberFormat.setMaximumFractionDigits(1);
         return numberFormat.format(value);
+    }
+    public static double parseCurrency(String value) throws ParseException {
+        if(value == null || value.isEmpty()) return 0;
+        NumberFormat numberFormat = NumberFormat.getInstance(new Locale("vi", "VN"));
+        numberFormat.setMaximumFractionDigits(1);
+        return numberFormat.parse(value).doubleValue();
     }
 }

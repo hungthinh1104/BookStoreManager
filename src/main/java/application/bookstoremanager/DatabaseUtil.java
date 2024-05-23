@@ -425,7 +425,7 @@ public class DatabaseUtil {
 
     public static void updateKhachhang(Connection conn, Khachhang khachhang){
         try{
-            String updateQuery = "UPDATE khachhang SET HoTen = ?, SoDienThoai = ?,TichhDiem = ? WHERE MaKhachHang = ?";
+            String updateQuery = "UPDATE khachhang SET HoTen = ?, SoDienThoai = ?,TichDiem = ? WHERE MaKhachHang = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
             preparedStatement.setString(1, khachhang.getHoTen());
             preparedStatement.setString(2, khachhang.getSoDienThoai());
