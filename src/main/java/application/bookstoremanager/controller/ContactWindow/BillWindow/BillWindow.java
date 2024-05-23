@@ -84,8 +84,8 @@ public class BillWindow implements Initializable {
                 BillContainer.getChildren().clear();
                 for(Hoadon hd : billList) {
                     Khachhang kh = DatabaseUtil.getKhachhangById(conn, hd.getMaKhachHang());
-                    if(searchTen != null && !searchTen.isEmpty() && !removeDiacritics(kh.getHoTen().toLowerCase()).contains(removeDiacritics(searchTen.toLowerCase()))) continue;
-                    if(searchSDT != null && kh != null && !searchSDT.isEmpty() && !removeDiacritics(kh.getSoDienThoai().toLowerCase()).contains(removeDiacritics(searchSDT.toLowerCase()))) continue;
+                    if( searchTen != null && !searchTen.isEmpty() && (kh == null || !removeDiacritics(kh.getHoTen().toLowerCase()).contains(removeDiacritics(searchTen.toLowerCase())))) continue;
+                    if(searchSDT != null && !searchSDT.isEmpty() && (kh == null || !removeDiacritics(kh.getSoDienThoai().toLowerCase()).contains(removeDiacritics(searchSDT.toLowerCase())))) continue;
                     if(searchDate != null && !searchDate.isEmpty() && !hd.getNgayLap().toString().equals(searchDate)) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BillWindow/BillRowWindow/BillRowWindow.fxml"));
                     Parent newContent3 = loader.load();
