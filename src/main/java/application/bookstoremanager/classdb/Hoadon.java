@@ -8,13 +8,15 @@ public class Hoadon {
     private final Integer maKhachHang;
     private final Double tongTien;
     private final Khachhang khachHang;
+    private final Integer giamGia;
 
-    public Hoadon(Integer maHoaDon, LocalDate ngayLap, Integer maKhachHang, Double tongTien, Khachhang khachHang) {
+    public Hoadon(Integer maHoaDon, LocalDate ngayLap, Integer maKhachHang, Double tongTien, Khachhang khachHang, Integer giamGia) {
         this.maHoaDon = maHoaDon;
         this.ngayLap = ngayLap;
         this.maKhachHang = maKhachHang;
         this.tongTien = tongTien;
         this.khachHang = khachHang;
+        this.giamGia = giamGia;
     }
 
     public Integer getMaHoaDon() {
@@ -32,6 +34,8 @@ public class Hoadon {
     public Double getTongTien() {
         return this.tongTien;
     }
+
+    public Integer getGiamGia() { return this.giamGia; }
 
     public Khachhang getKhachHang() {
         return this.khachHang;
