@@ -19,9 +19,13 @@ public class CustomerTableRow {
     @FXML
     private Label TenKhachHang;
 
+    @FXML
+    private  Label TichDiem;
+
     public void setData(Khachhang khachhang) {
         MaKhachHang.setText(khachhang.getMaKhachHang().toString());
         SoDienThoai.setText(khachhang.getSoDienThoai());
         TenKhachHang.setText(khachhang.getHoTen());
+        TichDiem.setText(khachhang.getTichDiem().toString());
     }
 }
