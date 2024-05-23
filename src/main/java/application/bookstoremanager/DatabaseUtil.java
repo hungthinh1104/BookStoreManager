@@ -534,6 +534,20 @@ public class DatabaseUtil {
         return ctHoadonList;
     }
 
+    public static void createCtHoadon(Connection conn, int maSach, int maHoadon,int soLuong){
+        try{
+            String sql = "INSERT INTO ct_hoadon(MaHoaDon, MaSach, SoLuong) VALUES (?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(2, maSach);
+            pstmt.setInt(1, maHoadon);
+            pstmt.setInt(3, soLuong);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public static Dondathang getDondathangById(Connection conn, int idDonHang){
         Dondathang dondathang = null;
         List<Dondathang> dondathangs = getAllDondathang(conn);
