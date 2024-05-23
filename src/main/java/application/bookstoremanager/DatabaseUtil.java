@@ -342,6 +342,18 @@ public class DatabaseUtil {
         return kh;
     }
 
+    public static Khachhang getKhachhangBySdt(Connection conn, String sdt ){
+        Khachhang kh = null;
+        List<Khachhang> khs = getAllKhachhang(conn);
+        for(Khachhang item : khs){
+            if(item.getSoDienThoai().equals(sdt) ){
+                kh = item;
+                break;
+            }
+        }
+        return kh;
+    }
+
     public static List<Khachhang> getAllKhachhang(Connection conn){
         List<Khachhang> khs = new ArrayList<Khachhang>();
         try {
@@ -413,11 +425,12 @@ public class DatabaseUtil {
 
     public static void updateKhachhang(Connection conn, Khachhang khachhang){
         try{
-            String updateQuery = "UPDATE khachhang SET HoTen = ?, SoDienThoai = ? WHERE MaKhachHang = ?";
+            String updateQuery = "UPDATE khachhang SET HoTen = ?, SoDienThoai = ?,TichhDiem = ? WHERE MaKhachHang = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
             preparedStatement.setString(1, khachhang.getHoTen());
             preparedStatement.setString(2, khachhang.getSoDienThoai());
-            preparedStatement.setInt(3, khachhang.getMaKhachHang());
+            preparedStatement.setInt(4, khachhang.getMaKhachHang());
+            preparedStatement.setInt(3, khachhang.getTichDiem());
             preparedStatement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
