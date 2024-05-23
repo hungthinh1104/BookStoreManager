@@ -1,15 +1,6 @@
-.into-side-pane {
-    -fx-background-color: white;
-    -fx-background-radius: 20;
+.light-border {
     -fx-border-color: lightgrey;
-    -fx-border-radius: 20;
-    -fx-padding: 10;
-}
-
-.input-side {
-    -fx-text-fill: black;
-    -fx-border-color: lightgrey;
-    -fx-border-radius: 5;
+    -fx-border-radius: 10;
     -fx-background-color: white;
-    -fx-background-radius: 5;
+    -fx-background-radius: 10;
 }

@@ -103,9 +103,15 @@
 }
 
 .header-table-text {
-    -fx-text-fill: #2F60F5;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-font-size: 15;
+}
+
+.header-table-contain {
+    -fx-background-radius: 10;
+    -fx-background-color: #52A198;
     -fx-font-size: 15px;
 }
 

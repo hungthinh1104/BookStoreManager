@@ -26,7 +26,7 @@ public class AddCustomer {
         Connection conn = DatabaseUtil.getConnection();
         try {
             if (conn != null && !Objects.equals(TenKH.getText(), "") && !Objects.equals(SDT.getText(), "")) {
-                DatabaseUtil.createKhachhang(conn, TenKH.getText(), SDT.getText());
+//                DatabaseUtil.createKhachhang(conn, TenKH.getText(), SDT.getText());
             } else {
                 System.out.println("Có giá trị null");
             }

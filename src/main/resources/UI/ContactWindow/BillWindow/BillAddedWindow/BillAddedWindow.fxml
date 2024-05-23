@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -11,86 +12,130 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" spacing="10.0" styleClass="outside-pane"
-      stylesheets="@BillAddedWindow.css" xmlns="http://javafx.com/javafx/22">
-    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="860.0" spacing="10.0">
-        <Label styleClass="header-text" text="Thêm hoá đơn mới">
-            <HBox.margin>
-                <Insets />
-            </HBox.margin>
-        </Label>
-        <Pane prefHeight="28.0" prefWidth="430.0" />
-        <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="109.0" styleClass="cancel-button" text="Hủy">
-            <HBox.margin>
-                <Insets />
-            </HBox.margin>
-        </Button>
-        <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="109.0" styleClass="save-button" text="Lưu" />
-    </HBox>
-    <VBox spacing="5.0" styleClass="inside-pane">
-        <HBox prefHeight="6.0" prefWidth="818.0">
-            <Label styleClass="inside-header-text" text="Thông tin cơ bản">
-                <HBox.margin>
-                    <Insets left="10.0" />
-                </HBox.margin>
+<AnchorPane prefHeight="659.0" prefWidth="1142.0" styleClass="outside-pane" stylesheets="@BillAddedWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput.BookInput">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <VBox layoutX="14.0" layoutY="17.0" prefHeight="621.0" prefWidth="646.0">
+         <styleClass>
+            <String fx:value="light-radius-box-square" />
+            <String fx:value="outside-pane" />
+         </styleClass>
+         <children>
+            <HBox prefHeight="26.0" prefWidth="624.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="106.0" text="Ngày lập:" />
+                  <DatePicker fx:id="datePicker" prefHeight="34.0" prefWidth="145.0" styleClass="datePicker" />
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="252.0" spacing="10.0" styleClass="light-radius-box-square">
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <FontIcon iconLiteral="fas-search" strokeWidth="0.0" styleClass="icon" />
+                        <TextField fx:id="searchBook1" prefHeight="18.0" prefWidth="208.0" promptText="Tìm kiếm" styleClass="search-side" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" prefHeight="25.0" prefWidth="624.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="114.0" text="Tên khách hàng:" />
+                  <TextField alignment="BASELINE_LEFT" prefHeight="27.0" prefWidth="178.0" styleClass="textField" />
+                  <Label text="Số điện thoại:">
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="27.0" prefWidth="186.0" styleClass="textField" />
+               </children>
+            </HBox>
+            <Line endX="518.8928833007812" endY="6.878376098029548E-6" startX="-100.0" styleClass="line" />
+            <Pane prefHeight="41.0" prefWidth="624.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="206.0" layoutY="-5.0" prefHeight="36.0" prefWidth="252.0" spacing="10.0" styleClass="light-radius-box-square">
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <FontIcon iconLiteral="fas-search" strokeWidth="0.0" styleClass="icon" />
+                        <TextField fx:id="searchBook" prefHeight="24.0" prefWidth="208.0" promptText="Tìm kiếm" styleClass="search-side" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER_LEFT" prefHeight="246.0" prefWidth="624.0" spacing="10.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Label text="Chọn sách:" />
+                  <ScrollPane prefHeight="362.0" prefWidth="543.0" style="-fx-background-color: transparent;" styleClass="light-border">
+                     <content>
+                        <VBox fx:id="BookContainer" maxHeight="12000.0" minHeight="238.0" minWidth="522.0" prefHeight="238.0" prefWidth="522.0" spacing="5.0" style="-fx-background-color: transparent; -fx-border-radius: 10;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="474.0" spacing="16.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="60.0" text="Số lượng:" />
+                  <TextField fx:id="SoLuong" prefHeight="30.0" prefWidth="245.0" styleClass="textField" />
+                  <Label prefHeight="43.0" prefWidth="89.0" text="Đơn giá bán:" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="121.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="DonGia" prefHeight="30.0" prefWidth="152.0" styleClass="textField" />
+               </children>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="624.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="108.0" text="Sử dụng tích điểm:" />
+                  <ComboBox editable="true" prefHeight="31.0" prefWidth="150.0" promptText="Không" visibleRowCount="2">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <Label prefHeight="6.0" prefWidth="37.0" styleClass="error-text" text="ERROR">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
             </Label>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="53.0" prefWidth="818.0" spacing="40.0">
-            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="156.0" spacing="10.0">
-                <Label styleClass="inside-category-text" text="Tên khách hàng*" />
-                <TextField prefHeight="26.0" prefWidth="115.0" styleClass="input-side" />
+            <HBox alignment="CENTER" prefHeight="8.0" prefWidth="624.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnThemSach" onAction="#setBtnThemSach_OnAction" prefHeight="25.0" prefWidth="100.0" styleClass="add" text="Thêm" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ScrollPane layoutX="684.0" layoutY="15.0" prefHeight="526.0" prefWidth="434.0" styleClass="light-radius-box-square">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <content>
+            <VBox fx:id="DanhSachNhap" alignment="TOP_CENTER" minHeight="516.0" minWidth="330.0" prefHeight="516.0" prefWidth="408.0" spacing="5.0" style="-fx-background-color: transparent;" styleClass="inside">
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="130.0" spacing="10.0">
-                <Label styleClass="inside-category-text" text="Ngày hóa đơn*" />
-                <DatePicker prefHeight="27.0" prefWidth="127.0" styleClass="input-side" />
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="120.0" spacing="10.0">
-                <Label styleClass="inside-category-text" text="Mã hóa đơn*" />
-                <TextField prefHeight="26.0" prefWidth="115.0" styleClass="input-side" />
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="120.0" spacing="10.0">
-                <Label styleClass="inside-category-text" text="Tổng tiền" />
-                <Label alignment="CENTER" prefHeight="34.0" prefWidth="107.0" styleClass="default-text" text="Money" textAlignment="CENTER" />
-            </VBox>
-        </HBox>
-    </VBox>
-    <VBox prefHeight="487.0" prefWidth="870.0" spacing="10.0" styleClass="inside-pane">
-        <Label styleClass="inside-header-text" text="Thông tin hóa đơn">
-            <VBox.margin>
-                <Insets left="10.0" />
-            </VBox.margin>
-        </Label>
-        <AnchorPane>
-            <Label layoutX="79.0" styleClass="inside-category-text" text="Tên sách*" />
-            <Label layoutX="236.0" styleClass="inside-category-text" text="Thể loại" />
-            <Label layoutX="585.0" styleClass="inside-category-text" text="Đơn giá" />
-            <Label layoutX="478.0" styleClass="inside-category-text" text="Số lượng" />
-            <Label layoutX="362.0" styleClass="inside-category-text" text="Tác giả" />
-            <Label layoutX="686.0" styleClass="inside-category-text" text="Thành tiền" />
-        </AnchorPane>
-        <ScrollPane prefHeight="366.0" prefWidth="848.0" styleClass="into-side-pane">
-            <VBox maxHeight="12000.0" minHeight="346.0" prefWidth="813.0" style="-fx-background-color: white;">
-                <HBox alignment="CENTER" prefHeight="48.0" prefWidth="782.0" spacing="15.0" styleClass="into-side-pane">
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <TextField prefHeight="27.0" prefWidth="155.0" styleClass="input-side" />
-                    <ComboBox prefHeight="27.0" prefWidth="106.0" styleClass="input-side" />
-                    <TextField prefHeight="27.0" prefWidth="118.0" styleClass="input-side" />
-                    <TextField prefHeight="27.0" prefWidth="86.0" styleClass="input-side" />
-                    <TextField prefHeight="27.0" prefWidth="91.0" styleClass="input-side" />
-                    <Label alignment="CENTER" prefHeight="27.0" prefWidth="97.0" styleClass="default-text" text="Money" textAlignment="CENTER" />
-                    <FontIcon iconLiteral="far-trash-alt" strokeWidth="0.0" styleClass="trash-icon" />
-                </HBox>
-            </VBox>
-        </ScrollPane>
-        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="88.0" styleClass="add-button" text="Thêm" />
-    </VBox>
-   <Label styleClass="error-text" text="ERROR">
-      <VBox.margin>
-         <Insets left="20.0" />
-      </VBox.margin>
-   </Label>
-</VBox>
+         </content>
+      </ScrollPane>
+      <Label layoutX="716.0" layoutY="6.0" styleClass="default-text" text="Danh sách bán" />
+      <Button fx:id="btnThemPhieu" layoutX="715.0" layoutY="602.0" onAction="#btnThemPhieu_OnAction" prefHeight="34.0" prefWidth="138.0" styleClass="add" text="Tạo hóa đơn" />
+      <Button fx:id="btnHuy" layoutX="982.0" layoutY="602.0" prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy" />
+      <Label layoutX="843.0" layoutY="551.0" prefHeight="30.0" prefWidth="138.0" text="Tổng tiền:" />
+   </children>
+</AnchorPane>
