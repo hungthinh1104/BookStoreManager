@@ -340,7 +340,7 @@ public class BillAdd implements Initializable {
                         }
                     }
                     int idHD = DatabaseUtil.createHoadon(NgayLap.getValue(),kh.getMaKhachHang(),parseCurrency(GiamGia.getText()), conn);
-                    int tichDiem = kh.getTichDiem();
+                    double tichDiem = kh.getTichDiem();
                     if((int)parseCurrency(GiamGia.getText()) == 0) {
                         tichDiem += (int)(parseCurrency(TongTien.getText()) * 0.01);
                     }

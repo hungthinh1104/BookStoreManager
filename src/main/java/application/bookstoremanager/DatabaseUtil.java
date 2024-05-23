@@ -364,7 +364,7 @@ public class DatabaseUtil {
                 int id = resultSet.getInt(1);
                 String hoTen = resultSet.getString(2);
                 String sdt = resultSet.getString(3);
-                int tichDiem = resultSet.getInt(4);
+                double tichDiem = resultSet.getDouble(4);
                 Khachhang kh = new Khachhang(id, hoTen, sdt, tichDiem);
                 khs.add(kh);
             }
@@ -374,14 +374,14 @@ public class DatabaseUtil {
         return khs;
     }
 
-    public static void createKhachhang(Connection conn, String hoTen, String sdt, int tichDiem){
+    public static void createKhachhang(Connection conn, String hoTen, String sdt, double tichDiem){
         try{
             String sql = "INSERT INTO khachhang(HoTen, SoDienThoai, TichDiem) VALUES (?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
             pstmt.setString(1, hoTen);
             pstmt.setString(2, sdt);
-            pstmt.setInt(3, tichDiem);
+            pstmt.setDouble(3, tichDiem);
 
             pstmt.executeUpdate();
             System.out.println("Thêm mới Khách hàng thành công!");
@@ -430,7 +430,7 @@ public class DatabaseUtil {
             preparedStatement.setString(1, khachhang.getHoTen());
             preparedStatement.setString(2, khachhang.getSoDienThoai());
             preparedStatement.setInt(4, khachhang.getMaKhachHang());
-            preparedStatement.setInt(3, khachhang.getTichDiem());
+            preparedStatement.setDouble(3, khachhang.getTichDiem());
             preparedStatement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();

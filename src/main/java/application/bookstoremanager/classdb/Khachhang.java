@@ -4,9 +4,9 @@ public class Khachhang {
     private final Integer maKhachHang;
     private final String hoTen;
     private final String soDienThoai;
-    private final Integer tichDiem;
+    private final Double tichDiem;
 
-    public Khachhang(Integer maKhachHang, String hoTen, String soDienThoai, Integer tichDiem) {
+    public Khachhang(Integer maKhachHang, String hoTen, String soDienThoai, Double tichDiem) {
         this.maKhachHang = maKhachHang;
         this.hoTen = hoTen;
         this.soDienThoai = soDienThoai;
@@ -25,5 +25,5 @@ public class Khachhang {
         return this.soDienThoai;
     }
 
-    public Integer getTichDiem() {return this.tichDiem;}
+    public Double getTichDiem() {return this.tichDiem;}
 }
