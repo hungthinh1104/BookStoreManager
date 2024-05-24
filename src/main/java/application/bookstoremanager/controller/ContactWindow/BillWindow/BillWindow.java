@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -80,6 +81,7 @@ public class BillWindow implements Initializable {
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
                 List<Hoadon> billList = DatabaseUtil.getAllHoadon(conn);
+                Collections.reverse(billList);
                 System.out.println(searchDate);
                 BillContainer.getChildren().clear();
                 for(Hoadon hd : billList) {

@@ -15,10 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -30,6 +27,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow.removeDiacritics;
+import static application.bookstoremanager.controller.ContactWindow.BillWindow.BillAdd.showErrorDialog;
 
 public class BookInput implements Initializable {
 
@@ -75,6 +73,21 @@ public class BookInput implements Initializable {
             }
         });
         datePicker.setValue(LocalDate.now());
+        SoLuong.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change; // If the new text is numeric, accept the change
+            }
+            return null; // Otherwise, reject the change
+        }));
+        DonGia.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change; // If the new text is numeric, accept the change
+            }
+            return null; // Otherwise, reject the change
+        }));
+
     }
     public void LoadData(String search) {
         try{
@@ -149,8 +162,17 @@ public class BookInput implements Initializable {
 
     @FXML
     private void btnThemPhieu_OnAction(ActionEvent event) {
-        if(datePicker.getValue() == null || DanhSachNhap == null || DanhSachNhap.getChildren().isEmpty() ) {
-            System.out.println("Khong the them");
+        if(datePicker == null || Objects.equals(datePicker.toString(), "")) {
+            showErrorDialog("Thông tin không hợp lệ", "Vui lòng chọn ngày lập phù hợp");
+            return;
+        }
+        if(!datePicker.getValue().equals(LocalDate.now().minusDays(1)) && !datePicker.getValue().equals(LocalDate.now())) {
+            showErrorDialog("Thông tin không hợp lệ", "Ngày lập hoá đơn không được quá một ngày so với ngày hôm nay");
+            return;
+        }
+        if(DanhSachNhap.getChildren().size() <= 0) {
+            showErrorDialog("Thông tin không hợp lệ", "Không có sách được chọn");
+            return;
         }
         try{
             Connection conn = DatabaseUtil.getConnection();

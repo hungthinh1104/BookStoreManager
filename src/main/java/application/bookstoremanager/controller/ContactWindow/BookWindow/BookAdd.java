@@ -26,6 +26,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static application.bookstoremanager.controller.ContactWindow.BillWindow.BillAdd.showErrorDialog;
+
+
 public class BookAdd implements Initializable {
 
     @FXML
@@ -86,7 +89,22 @@ public class BookAdd implements Initializable {
                     && selectedTL != null && TenSach.getText() != null && TacGia.getText() != null && imageBytes != null) {
                 DatabaseUtil.createSach(TenSach.getText(), selectedTL.getMaTheLoai(), TacGia.getText(), imageBytes, conn);
             } else {
-                System.out.println("Có giá trị null");
+               if(Objects.equals(TenSach.getText(), "") || TenSach.getText() == null) {
+                   showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập tên sách");
+                   return;
+               }
+                if(Objects.equals(TacGia.getText(), "") || TacGia.getText() == null) {
+                    showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập tên tác giả");
+                    return;
+                }
+                if(selectedTL == null) {
+                    showErrorDialog("Thông tin không hợp lệ", "Vui lòng chọn thể loại");
+                    return;
+                }
+                if(imageBytes == null) {
+                    showErrorDialog("Thông tin không hợp lệ", "Vui lòng chọn ảnh");
+                    return;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
