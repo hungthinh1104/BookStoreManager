@@ -448,7 +448,7 @@ public class BillAdd implements Initializable {
         }
     }
 
-    public void showErrorDialog(String title, String message) {
+    public static void showErrorDialog(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null); // You can set a header text if you want
