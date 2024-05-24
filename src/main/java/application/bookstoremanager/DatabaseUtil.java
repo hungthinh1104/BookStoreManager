@@ -157,12 +157,13 @@ public class DatabaseUtil {
 
     public static void updateSach(Connection conn, Sach sach){
         try{
-            String updateQuery = "UPDATE sach SET TacGia = ?, TenSach = ?,MaTheLoai = ?  WHERE MaSach = ?";
+            String updateQuery = "UPDATE sach SET TacGia = ?, TenSach = ?,MaTheLoai = ?, SoLuongTon = ?  WHERE MaSach = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
             preparedStatement.setString(1, sach.getTacGia());
             preparedStatement.setString(2, sach.getTenSach());
             preparedStatement.setInt(3, sach.getMaTheLoai());
-            preparedStatement.setInt(4, sach.getMaSach());
+            preparedStatement.setInt(4, sach.getSoLuongTon());
+            preparedStatement.setInt(5, sach.getMaSach());
             preparedStatement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
