@@ -4,6 +4,7 @@ import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Dondathang;
 import application.bookstoremanager.classdb.Hoadon;
 import application.bookstoremanager.classdb.Khachhang;
+import application.bookstoremanager.controller.ContactWindow.BillWindow.BillProperties;
 import application.bookstoremanager.controller.ContactWindow.BillWindow.BillRowTable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,7 +16,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -24,6 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -74,6 +79,7 @@ public class OrderWindow implements Initializable {
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
                 List<Dondathang> orderList = DatabaseUtil.getAllDondathang(conn);
+                Collections.reverse(orderList);
                 System.out.println(searchDate);
                 OrderContainer.getChildren().clear();
                 for(Dondathang dh : orderList) {
@@ -82,7 +88,7 @@ public class OrderWindow implements Initializable {
                     if(searchDate != null && !searchDate.isEmpty() && !dh.getNgayLap().toString().equals(searchDate)) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/OrderWindow/OrderRowWindow/OrderRowWindow.fxml"));
                     Parent newContent3 = loader.load();
-//                    newContent3.setOnMouseClicked(this::handleAnchorPaneClick);
+                    newContent3.setOnMouseClicked(this::handleAnchorPaneClick);
                     OrderRow book = loader.getController();
                     book.setData(dh);
                     OrderContainer.getChildren().add(newContent3);
@@ -105,6 +111,27 @@ public class OrderWindow implements Initializable {
             stage.setScene(scene);
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner((Stage) btnTaoDHg.getScene().getWindow());
+            stage.showAndWait();
+            System.out.println("load data");
+            LoadData(searchTenKH.getText(),searchDate.getValue() == null ? "" : searchDate.getValue().toString(), searchSDT.getText());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void handleAnchorPaneClick(MouseEvent event) {
+        AnchorPane clickedAnchorPane = (AnchorPane) event.getSource();
+        Label label = (Label) clickedAnchorPane.lookup("#MaDH");
+        System.out.println("AnchorPane được nhấp vào: " + label.getText());
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/OrderWindow/OrderPropertiesWindow/OrderPropertiesWindow.fxml"));
+            Parent parent = loader.load();
+            OrderProperties order = loader.getController();
+            order.setData(Integer.parseInt(label.getText()));
+            Stage stage = new Stage();
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner((Stage)btnTaoDHg.getScene().getWindow());
             stage.showAndWait();
             System.out.println("load data");
             LoadData(searchTenKH.getText(),searchDate.getValue() == null ? "" : searchDate.getValue().toString(), searchSDT.getText());

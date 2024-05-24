@@ -1,6 +1,8 @@
 package application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput;
 
 import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.classdb.CtDondathang;
+import application.bookstoremanager.classdb.Dondathang;
 import application.bookstoremanager.classdb.Sach;
 import application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow;
 import application.bookstoremanager.controller.ContactWindow.BookWindow.ReceiptBook.DetailPane;
@@ -166,6 +168,27 @@ public class BookInput implements Initializable {
                         DatabaseUtil.createCtPhieunhapsach(conn, id, idPN, soLuong, donGia);
                     }
                 }
+
+                List<Dondathang> dhList = DatabaseUtil.getDonhangByTrangThai(conn,"Chưa đủ");
+                for (Dondathang dh : dhList) {
+                    boolean isDu = true;
+                    List<CtDondathang> ctList = DatabaseUtil.getCtDondathangByIdDondathang(conn,dh.getMaDonHang());
+                    for(CtDondathang ct : ctList) {
+                        Sach sach = DatabaseUtil.getSachById(conn, ct.getMaSach());
+                        if(Objects.equals(ct.getTrangThai(), "Chưa đủ")) {
+                            if((ct.getSoLuong() <= (sach.getSoLuongTon() - DatabaseUtil.getThamso(conn).getSoLuongTonToiThieu()))) {
+                                Sach newSach = new Sach(sach.getMaSach(), sach.getTenSach(), sach.getMaTheLoai(), sach.getTacGia(), sach.getSoLuongTon() - ct.getSoLuong(), sach.getDonGia(), sach.getTheLoai(), sach.getHinhAnh());
+                                DatabaseUtil.updateSach(conn, newSach);
+                                DatabaseUtil.updateCtDonHang(conn, dh.getMaDonHang(), "Đã đủ", sach.getMaSach());
+                            }
+                            else isDu = false;
+                        }
+                    }
+                    if(isDu) {
+                        DatabaseUtil.updateDonHang(conn,dh.getMaDonHang(), "Đã đủ");
+                    }
+                }
+
             }
             assert conn != null;
             conn.close();

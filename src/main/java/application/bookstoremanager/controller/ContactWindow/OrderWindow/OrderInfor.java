@@ -2,53 +2,44 @@ package application.bookstoremanager.controller.ContactWindow.OrderWindow;
 
 import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.CtDondathang;
-import application.bookstoremanager.classdb.Dondathang;
-import application.bookstoremanager.classdb.Hoadon;
-import application.bookstoremanager.classdb.Khachhang;
+import application.bookstoremanager.classdb.CtHoadon;
+import application.bookstoremanager.classdb.Sach;
+import application.bookstoremanager.classdb.Theloai;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.sql.Connection;
-import java.util.List;
-import java.util.Objects;
 
 import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
 
-public class OrderRow {
+public class OrderInfor {
 
     @FXML
-    private Label MaDH;
+    private Label SoLuong;
 
     @FXML
-    private Label NgayLap;
+    private Label TacGia;
 
     @FXML
-    private Label SDT;
+    private Label TenSach;
 
     @FXML
-    private Label TenKH;
-
-    @FXML
-    private Label TienCoc;
+    private Label TheLoai;
 
     @FXML
     private Label TrangThai;
 
-    public void setData(Dondathang order) {
-        MaDH.setText(order.getMaDonHang().toString());
-        NgayLap.setText(order.getNgayLap().toString());
-        TienCoc.setText(formatCurrency(order.getTongTienCoc()));
-        SDT.setText(order.getKhachHang().getSoDienThoai());
-        TenKH.setText(order.getKhachHang().getHoTen());
-        TrangThai.setText(order.getTrangThai());
-        switch (order.getTrangThai()) {
+    public void setData(CtDondathang ctorder) {
+        TenSach.setText(ctorder.getSach().getTenSach());
+        TacGia.setText(ctorder.getSach().getTacGia());
+        SoLuong.setText(ctorder.getSoLuong().toString());
+        TheLoai.setText(ctorder.getSach().getTheLoai().getTenTheLoai());
+        TrangThai.setText(ctorder.getTrangThai());
+        switch (ctorder.getTrangThai()) {
             case "Chưa đủ" -> TrangThai.setStyle("-fx-background-color: #f7603e;");
             case "Đã đủ" -> TrangThai.setStyle("-fx-background-color: #46bf34;");
             case "Đã thanh toán" -> TrangThai.setStyle("-fx-background-color: #287a02;");
             case null, default -> TrangThai.setStyle("-fx-background-color: #b00d02;");
         }
-
-
     }
-
 }

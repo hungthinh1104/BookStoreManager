@@ -703,9 +703,10 @@ public class DatabaseUtil {
                 Sach sach = getSachById(conn,idSach);
                 CtDondathang ctDondathang = new CtDondathang(id, idDonHang,idSach,dondathang,sach, soLuong, trangThai);
                 ctDondathangList.add(ctDondathang);
-                resultSet.close();
-                statement.close();
+
             }
+            resultSet.close();
+            statement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
