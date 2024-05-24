@@ -697,10 +697,13 @@ public class DatabaseUtil {
                 int idDonHang = resultSet.getInt(2);
                 int idSach = resultSet.getInt(3);
                 int soLuong = resultSet.getInt(4);
+                String trangThai = resultSet.getString(5);
                 Dondathang dondathang = getDondathangById(conn,idDonHang);
                 Sach sach = getSachById(conn,idSach);
-                CtDondathang ctDondathang = new CtDondathang(id, idDonHang,idSach,dondathang,sach, soLuong);
+                CtDondathang ctDondathang = new CtDondathang(id, idDonHang,idSach,dondathang,sach, soLuong, trangThai);
                 ctDondathangList.add(ctDondathang);
+                resultSet.close();
+                statement.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -728,6 +731,20 @@ public class DatabaseUtil {
             pstmt.setInt(3, soLuong);
             pstmt.executeUpdate();
             pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void updateCtDonHang(Connection conn, int idDonhang, String trangThai, int MaSach){
+        try{
+            String updateQuery = "UPDATE ct_dondathang SET TrangThai = ?  WHERE MaDonHang = ? AND MaSach = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
+            preparedStatement.setString(1,trangThai);
+            preparedStatement.setInt(2,idDonhang);
+            preparedStatement.setInt(3,MaSach);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
         }catch (Exception e){
             e.printStackTrace();
         }
