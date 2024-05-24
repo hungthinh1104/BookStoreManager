@@ -1,5 +1,5 @@
 .book-text {
-    -fx-text-fill: #4B5563;
+    /*-fx-text-fill: #4B5563;*/
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
     -fx-font-size: 12;

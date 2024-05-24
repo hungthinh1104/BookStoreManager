@@ -24,11 +24,11 @@
             <Label onMouseClicked="#btnChangeToTKS_OnAction" styleClass="header-text" text="Tìm kiếm sách" />
             <Label styleClass="header-text-selected" text="Phiếu nhập sách" />
         </HBox>
-        <Line endX="17.385822296142578" endY="3.075599579460686E-6" startX="155.9716033935547" startY="4.649162292480469E-6" styleClass="line-selected">
-            <VBox.margin>
-                <Insets left="144.0" />
-            </VBox.margin>
-        </Line>
+      <Line endX="100.0" startX="229.78579711914062" startY="2.312660171810421E-6" styleClass="line-selected">
+         <VBox.margin>
+            <Insets left="132.0" />
+         </VBox.margin>
+      </Line>
         <Line endX="868.5858154296875" endY="1.6863031387329102" startX="-100.0" styleClass="line" />
     </VBox>
     <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="960.0">

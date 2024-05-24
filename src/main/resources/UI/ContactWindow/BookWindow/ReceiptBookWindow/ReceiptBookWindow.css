@@ -123,7 +123,7 @@
     -fx-font-weight: 400;
     -fx-font-size: 13;
     -fx-font-family: Inter;
-    -fx-text-fill: #616161;
+    /*-fx-text-fill: #616161;*/
 }
 
 .list-view {

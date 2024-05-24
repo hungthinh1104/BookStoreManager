@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="40.0" prefWidth="960.0" styleClass="light-radius-box-border" stylesheets="@../BillWindow/BillRowWindow/BillRowWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillRowTable">
+   <children>
+      <Label fx:id="MaHD" alignment="CENTER" layoutX="14.0" layoutY="6.0" prefHeight="30.0" prefWidth="132.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="TenKH" alignment="CENTER" layoutX="145.0" layoutY="6.0" prefHeight="30.0" prefWidth="205.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="SDT" alignment="CENTER" layoutX="336.0" layoutY="6.0" prefHeight="30.0" prefWidth="182.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="TongTien" alignment="CENTER" layoutX="686.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="NgayLap" alignment="CENTER" layoutX="538.0" layoutY="6.0" prefHeight="30.0" prefWidth="136.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="TongTien1" alignment="CENTER" layoutX="814.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>
