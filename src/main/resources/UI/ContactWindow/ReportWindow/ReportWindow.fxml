@@ -18,7 +18,7 @@
       <children>
          <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
             <children>
-               <Label onMouseClicked="#btnChangeToTKS_OnAction" styleClass="header-text-selected" text="Doanh Thu" />
+               <Label styleClass="header-text-selected" text="Doanh Thu" />
                <Label styleClass="header-text" text="Báo Cáo Tồn" />
             </children>
          </HBox>
@@ -31,8 +31,8 @@
       </children>
    </VBox>
     <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
-        <ComboBox prefWidth="150.0" promptText="Tháng" />
-        <ComboBox prefWidth="150.0" promptText="Năm" />
+        <ComboBox fx:id="CBThang1" prefWidth="150.0" promptText="Tháng" />
+        <ComboBox fx:id="CBNam1" prefWidth="150.0" promptText="Năm" />
         <Button prefHeight="20.0" text="Xuất Excel">
          <HBox.margin>
             <Insets left="500.0" />
@@ -74,7 +74,7 @@
    </AnchorPane>
    <ScrollPane prefHeight="423.0" prefWidth="972.0" style="-fx-background-color: #fff;" styleClass="light-border">
       <content>
-         <VBox prefHeight="306.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
+         <VBox fx:id="BookContainer" prefHeight="306.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
       </content>
    </ScrollPane>
    <HBox prefHeight="100.0" prefWidth="200.0">
@@ -88,19 +88,14 @@
       </children>
    </HBox>
     <Label prefHeight="26.0" prefWidth="202.0" text="Biểu đồ lượng sách bán ra" />
-   <HBox prefHeight="100.0" prefWidth="200.0">
+   <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
       <children>
-         <ComboBox prefWidth="150.0" promptText="Tuần " />
-         <ComboBox prefWidth="150.0" promptText="Tháng">
-            <HBox.margin>
-               <Insets left="15.0" right="15.0" />
-            </HBox.margin>
-         </ComboBox>
-         <ComboBox prefWidth="150.0" promptText="Năm" />
+         <ComboBox fx:id="CBThang2" prefWidth="150.0" promptText="Tháng" />
+         <ComboBox fx:id="CBNam2" prefWidth="150.0" promptText="Năm" />
       </children>
    </HBox>
     <HBox spacing="10.0">
-        <BarChart prefHeight="288.0" prefWidth="972.0">
+        <BarChart fx:id="Chart" prefHeight="288.0" prefWidth="972.0">
             <xAxis>
                 <CategoryAxis side="BOTTOM" />
             </xAxis>
