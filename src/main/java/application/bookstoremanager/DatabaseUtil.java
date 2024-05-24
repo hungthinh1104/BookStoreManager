@@ -722,13 +722,14 @@ public class DatabaseUtil {
         return ctDondathangList;
     }
 
-    public static void createCtDondathang(Connection conn, int maSach, int maDonhang,int soLuong){
+    public static void createCtDondathang(Connection conn, int maSach, int maDonhang,int soLuong, String TrangThai){
         try{
-            String sql = "INSERT INTO ct_dondathang(MaCTDonHang, MaSach, SoLuong) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO ct_dondathang(MaDonHang, MaSach, SoLuong, TrangThai) VALUES (?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(2, maSach);
             pstmt.setInt(1, maDonhang);
             pstmt.setInt(3, soLuong);
+            pstmt.setString(4, TrangThai);
             pstmt.executeUpdate();
             pstmt.close();
         }catch (Exception e){
