@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="39.0" prefWidth="310.0" stylesheets="@DetailPane.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.DetailPaneOrder">
+    <Label fx:id="TenSach" layoutX="7.0" layoutY="4.0" prefHeight="48.0" prefWidth="179.0" styleClass="book-text" text="Tên sách" wrapText="true" />
+    <FontIcon fx:id="btnDelete" iconLiteral="far-window-close" layoutX="288.0" layoutY="32.0" onMouseClicked="#handleDeleteButtonClick" scaleX="1.5" scaleY="1.5" strokeWidth="0.0" styleClass="icon" text="" wrappingWidth="12.79998779296875" />
+    <Label fx:id="SoLuong" alignment="CENTER" layoutX="193.0" layoutY="15.0" prefHeight="24.0" prefWidth="79.0" styleClass="default-text" text="Số lượng" textAlignment="CENTER" />
+    <styleClass>
+        <String fx:value="default-pane" />
+        <String fx:value="light-border" />
+        <String fx:value="drop-shadow" />
+    </styleClass>
+</AnchorPane>

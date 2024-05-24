@@ -5,34 +5,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="42.0" prefWidth="950.0" styleClass="light-radius-box-border" stylesheets="@OrderRowWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <Label alignment="CENTER" layoutX="14.0" layoutY="6.0" prefHeight="30.0" prefWidth="132.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+<AnchorPane prefHeight="42.0" prefWidth="950.0" styleClass="light-radius-box-border" stylesheets="@OrderRowWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderRow">
+    <Label fx:id="MaDH" alignment="CENTER" layoutX="14.0" layoutY="6.0" prefHeight="30.0" prefWidth="132.0" styleClass="information-text" text="Label" textAlignment="CENTER">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label alignment="CENTER" layoutX="143.0" layoutY="6.0" prefHeight="30.0" prefWidth="179.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+    <Label fx:id="TenKH" alignment="CENTER" layoutX="143.0" layoutY="6.0" prefHeight="30.0" prefWidth="179.0" styleClass="information-text" text="Label" textAlignment="CENTER">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label alignment="CENTER" layoutX="308.0" layoutY="6.0" prefHeight="30.0" prefWidth="198.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+    <Label fx:id="SDT" alignment="CENTER" layoutX="308.0" layoutY="6.0" prefHeight="30.0" prefWidth="179.0" styleClass="information-text" text="Label" textAlignment="CENTER">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label alignment="CENTER" layoutX="788.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0" styleClass="not-enough" text="Label" textAlignment="CENTER">
+    <Label fx:id="TrangThai" alignment="CENTER" layoutX="788.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0" styleClass="not-enough" text="Label" textAlignment="CENTER">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label alignment="CENTER" layoutX="511.0" layoutY="6.0" prefHeight="30.0" prefWidth="163.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+    <Label fx:id="NgayLap" alignment="CENTER" layoutX="489.0" layoutY="6.0" prefHeight="30.0" prefWidth="163.0" styleClass="information-text" text="Label" textAlignment="CENTER">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
     <FontIcon iconLiteral="fas-ellipsis-h" layoutX="924.0" layoutY="26.0" strokeWidth="0.0" styleClass="icon" />
-   <Label alignment="CENTER" layoutX="649.0" layoutY="6.0" prefHeight="30.0" prefWidth="136.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+   <Label fx:id="TienCoc" alignment="CENTER" layoutX="649.0" layoutY="6.0" prefHeight="30.0" prefWidth="136.0" styleClass="information-text" text="Label" textAlignment="CENTER">
       <padding>
          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
       </padding>
