@@ -35,7 +35,7 @@
          <children>
             <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">
                <children>
-                  <Label alignment="CENTER" layoutX="2.0" prefHeight="30.0" prefWidth="116.0" styleClass="header-table-text" text="Mã hóa đơn">
+                  <Label alignment="CENTER" layoutX="2.0" prefHeight="31.0" prefWidth="130.0" styleClass="header-table-text" text="Mã hóa đơn">
                      <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                      </padding>

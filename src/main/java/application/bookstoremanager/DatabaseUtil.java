@@ -609,8 +609,9 @@ public class DatabaseUtil {
                 int id = resultSet.getInt(1);
                 int maKhachHang = resultSet.getInt(2);
                 double tongTienCoc = resultSet.getDouble(3);
+                LocalDate ngayLap = resultSet.getDate(4).toLocalDate();
                 Khachhang kh = getKhachhangById(conn,maKhachHang);
-                Dondathang dondathang = new Dondathang(id,maKhachHang,tongTienCoc,kh);
+                Dondathang dondathang = new Dondathang(id,maKhachHang,tongTienCoc,kh, ngayLap);
                 dondathangList.add(dondathang);
             }
         } catch (Exception e) {
@@ -619,14 +620,15 @@ public class DatabaseUtil {
         return dondathangList;
     }
 
-    public static int createDondathang( int maKhachHang, Connection conn){
+    public static int createDondathang( int maKhachHang, Connection conn, LocalDate ngayLap){
         int idDondathang = 0;
         try{
-            String sql = "INSERT INTO dondathang(MaKhachHang) VALUES (?)";
+            String sql = "INSERT INTO dondathang(MaKhachHang, NgayLap) VALUES (?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             pstmt.setInt(1, maKhachHang);
-
+            java.sql.Date sqlDate = java.sql.Date.valueOf(ngayLap);
+            pstmt.setDate(2, sqlDate);
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();
