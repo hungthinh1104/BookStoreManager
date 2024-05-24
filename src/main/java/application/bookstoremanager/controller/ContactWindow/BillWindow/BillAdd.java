@@ -1,6 +1,8 @@
 package application.bookstoremanager.controller.ContactWindow.BillWindow;
 
 import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.classdb.CtDondathang;
+import application.bookstoremanager.classdb.Dondathang;
 import application.bookstoremanager.classdb.Khachhang;
 import application.bookstoremanager.classdb.Sach;
 import application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput.BookInputTableRow;
@@ -87,6 +89,8 @@ public class BillAdd implements Initializable {
     private AnchorPane PreSelectedBook;
     private double TongTienHT = 0.0;
     private double GiamGiaHT = 0.0;
+    private int idDHg = -1;
+    private int closeReason = 0;
     private List<Khachhang> KHList = new ArrayList<>();
 
     @Override
@@ -383,13 +387,65 @@ public class BillAdd implements Initializable {
             e.printStackTrace();
         }
         Stage stage = (Stage) btnThemHD.getScene().getWindow();
+        closeReason = 1;
         stage.close();
     }
 
     @FXML
     private void btnThemHD_OnAction(ActionEvent event) {
+//        if(idDHg != -1) {
+//            try{
+//                Connection conn = DatabaseUtil.getConnection();
+//                if (conn != null) {
+//                    List<CtDondathang> ctList = DatabaseUtil.getCtDondathangByIdDondathang(conn, idDHg);
+//                    for(CtDondathang ct : ctList) {
+//                        Sach sach = ct.getSach();
+//                        Sach newSach = new Sach(sach.getMaSach(), sach.getTenSach(), sach.getMaTheLoai(), sach.getTacGia(), sach.getSoLuongTon() - ct.getSoLuong(), sach.getDonGia(), sach.getTheLoai(), sach.getHinhAnh());
+//                        DatabaseUtil.updateSach(conn, newSach);
+//                    }
+//                }
+//                assert conn != null;
+//                conn.close();
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//
+//        }
         Stage stage = (Stage) btnThemHD.getScene().getWindow();
         stage.close();
+    }
+
+    public void LoadInitData(int idDH) {
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                idDHg = idDH;
+                Dondathang ddh = DatabaseUtil.getDondathangById(conn, idDHg);
+                TenKH.setText(ddh.getKhachHang().getHoTen());
+                SDTKH.setText(ddh.getKhachHang().getSoDienThoai());
+                List<CtDondathang> ctList = DatabaseUtil.getCtDondathangByIdDondathang(conn, idDH);
+                for (CtDondathang ct : ctList) {
+                    Sach sach = ct.getSach();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BillWindow/BillAddedWindow/BillInformationWindow/DetailPaneBill.fxml"));
+                    Parent newContent3 = loader.load();
+                    DetailPaneBill book = loader.getController();
+                    System.out.println("Don gia: " + sach.getDonGia() * DatabaseUtil.getThamso(conn).getTiLeTinhDonGiaBan());
+                    book.setData(sach, ct.getSoLuong().toString(), String.valueOf(sach.getDonGia() * DatabaseUtil.getThamso(conn).getTiLeTinhDonGiaBan()), this);
+                    DanhSachNhap.getChildren().add(newContent3);
+                    TongTienHT += sach.getDonGia() * DatabaseUtil.getThamso(conn).getTiLeTinhDonGiaBan() * ct.getSoLuong();
+                    TongTien.setText(formatCurrency(TongTienHT));
+                    GiamGia.setText(formatCurrency(Math.min(GiamGiaHT, TongTienHT)));
+                    ThanhToan.setText(formatCurrency(TongTienHT - Math.min(GiamGiaHT, TongTienHT)));
+                    newContent3.getProperties().put("controller", book);
+                    isUsed.put(sach.getMaSach(), true);
+                    LoadData(searchSach.getText());
+                }
+            }
+            assert conn != null;
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void showErrorDialog(String title, String message) {
@@ -398,6 +454,10 @@ public class BillAdd implements Initializable {
         alert.setHeaderText(null); // You can set a header text if you want
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public int getCloseReason() {
+        return closeReason;
     }
 
 }

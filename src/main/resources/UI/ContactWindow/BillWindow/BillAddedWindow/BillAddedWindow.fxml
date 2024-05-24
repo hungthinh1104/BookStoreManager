@@ -131,7 +131,7 @@
       </ScrollPane>
       <Label layoutX="716.0" layoutY="6.0" styleClass="default-text" text="Danh sách bán" />
       <Button fx:id="btnThemHD" layoutX="715.0" layoutY="602.0" onAction="#setBtnThemHD_OnAction" prefHeight="34.0" prefWidth="138.0" styleClass="add" text="Tạo hóa đơn" />
-      <Button fx:id="btnHuy" layoutX="982.0" layoutY="602.0" onAction="#btnThemHD_OnAction" prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy" />
+      <Button fx:id="btnThemHD_OnAction" layoutX="982.0" layoutY="602.0" onAction="#btnThemHD_OnAction" prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy" />
       <Label layoutX="910.0" layoutY="552.0" prefHeight="30.0" prefWidth="74.0" text="Thanh toán: " />
       <Label layoutX="910.0" layoutY="520.0" prefHeight="30.0" prefWidth="74.0" text="Giảm giá: " />
       <Label layoutX="910.0" layoutY="488.0" prefHeight="30.0" prefWidth="74.0" text="Tổng tiền:" />
