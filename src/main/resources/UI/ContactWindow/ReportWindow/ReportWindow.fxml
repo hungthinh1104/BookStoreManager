@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" style="-fx-background-color: #fff;" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportWindow">
+<VBox fx:id="MainContainer" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" style="-fx-background-color: #fff;" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportWindow">
    <VBox prefHeight="35.0" prefWidth="1001.0">
       <children>
          <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
             <children>
                <Label styleClass="header-text-selected" text="Doanh Thu" />
-               <Label styleClass="header-text" text="Báo Cáo Tồn" />
+               <Label onMouseClicked="#btnChangeToPNS_OnAction" styleClass="header-text" text="Báo Cáo Tồn" />
             </children>
          </HBox>
          <Line endX="100.0" startX="188.18577575683594" startY="6.127357664809097E-6" styleClass="line-selected">
@@ -33,7 +33,7 @@
     <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
         <ComboBox fx:id="CBThang1" prefWidth="150.0" promptText="Tháng" />
         <ComboBox fx:id="CBNam1" prefWidth="150.0" promptText="Năm" />
-        <Button prefHeight="20.0" text="Xuất Excel">
+        <Button fx:id="btnExportSach" onAction="#ExportSach" prefHeight="20.0" text="Xuất Excel">
          <HBox.margin>
             <Insets left="500.0" />
          </HBox.margin></Button>
@@ -87,7 +87,7 @@
          <Label prefHeight="26.0" prefWidth="206.0" text="Tổng doanh thu:" />
       </children>
    </HBox>
-    <Label prefHeight="26.0" prefWidth="202.0" text="Biểu đồ lượng sách bán ra" />
+    <Label prefHeight="26.0" prefWidth="202.0" text="Biểu đồ doanh thu" />
    <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
       <children>
          <ComboBox fx:id="CBThang2" prefWidth="150.0" promptText="Tháng" />

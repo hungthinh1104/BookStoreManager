@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" style="-fx-background-color: #fff;" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportWindow">
+<VBox fx:id="MainContainer" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" style="-fx-background-color: #fff;" stylesheets="@ReportWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.InventoryReport">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
@@ -19,7 +19,7 @@
          <children>
             <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
                <children>
-                  <Label onMouseClicked="#btnChangeToTKS_OnAction" styleClass="header-text" text="Doanh Thu" />
+                  <Label onMouseClicked="#btnChangeToPNS_OnAction" styleClass="header-text" text="Doanh Thu" />
                   <Label styleClass="header-text-selected" text="Báo Cáo Tồn" />
                </children>
             </HBox>
@@ -33,8 +33,8 @@
       </VBox>
       <HBox prefHeight="23.0" prefWidth="979.0" spacing="10">
          <children>
-            <ComboBox prefWidth="150.0" promptText="Tháng" />
-            <ComboBox prefWidth="150.0" promptText="Năm" />
+            <ComboBox fx:id="CBThang1" prefWidth="150.0" promptText="Tháng" />
+            <ComboBox fx:id="CBNam1" prefWidth="150.0" promptText="Năm" />
             <Button prefHeight="20.0" text="Xuất Excel">
                <HBox.margin>
                   <Insets left="500.0" />
@@ -78,17 +78,17 @@
       </AnchorPane>
       <ScrollPane prefHeight="306.0" prefWidth="972.0" style="-fx-background-color: #fff;" styleClass="light-border">
          <content>
-            <VBox prefHeight="232.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
+            <VBox fx:id="TonContainer" prefHeight="232.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
          </content>
       </ScrollPane>
       <HBox prefHeight="31.0" prefWidth="972.0">
          <children>
-            <ComboBox prefWidth="150.0" promptText="Tháng">
+            <ComboBox fx:id="CBThang2" prefWidth="150.0" promptText="Tháng">
                <HBox.margin>
                   <Insets right="15.0" />
                </HBox.margin>
             </ComboBox>
-            <ComboBox prefWidth="150.0" promptText="Năm" />
+            <ComboBox fx:id="CBNam2" prefWidth="150.0" promptText="Năm" />
          </children>
       </HBox>
       <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">
@@ -128,7 +128,7 @@
       <HBox spacing="10.0" />
       <ScrollPane prefHeight="306.0" prefWidth="972.0" style="-fx-background-color: #fff;" styleClass="light-border">
          <content>
-            <VBox prefHeight="231.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
+            <VBox fx:id="NhapContainer" prefHeight="231.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
          </content>
       </ScrollPane>
       <Label prefHeight="26.0" prefWidth="202.0" text="Tổng chi phí:">

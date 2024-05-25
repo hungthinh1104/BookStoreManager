@@ -12,6 +12,8 @@ module com.bookstoremanager {
     requires java.sql;
     requires java.desktop;
     requires javafx.swing;
+    requires org.apache.poi.poi;
+    requires org.apache.poi.ooxml;
 
     opens application.bookstoremanager to javafx.fxml;
     exports application.bookstoremanager;
