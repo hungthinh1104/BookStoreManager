@@ -35,7 +35,7 @@
          <children>
             <ComboBox fx:id="CBThang1" prefWidth="150.0" promptText="Tháng" />
             <ComboBox fx:id="CBNam1" prefWidth="150.0" promptText="Năm" />
-            <Button prefHeight="20.0" text="Xuất Excel">
+            <Button onAction="#ExportTonKho" prefHeight="20.0" text="Xuất Excel">
                <HBox.margin>
                   <Insets left="500.0" />
                </HBox.margin>
@@ -78,7 +78,7 @@
       </AnchorPane>
       <ScrollPane prefHeight="306.0" prefWidth="972.0" style="-fx-background-color: #fff;" styleClass="light-border">
          <content>
-            <VBox fx:id="TonContainer" prefHeight="232.0" prefWidth="962.0" style="-fx-background-color: #fff;" />
+            <VBox fx:id="TonContainer" prefWidth="962.0" style="-fx-background-color: #fff;" />
          </content>
       </ScrollPane>
       <HBox prefHeight="31.0" prefWidth="972.0">
@@ -89,6 +89,7 @@
                </HBox.margin>
             </ComboBox>
             <ComboBox fx:id="CBNam2" prefWidth="150.0" promptText="Năm" />
+            <Button onAction="#ExportNhapKho" prefHeight="20.0" text="Xuất Excel" />
          </children>
       </HBox>
       <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">

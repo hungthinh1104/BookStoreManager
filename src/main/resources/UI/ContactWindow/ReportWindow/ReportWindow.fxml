@@ -92,6 +92,7 @@
       <children>
          <ComboBox fx:id="CBThang2" prefWidth="150.0" promptText="Tháng" />
          <ComboBox fx:id="CBNam2" prefWidth="150.0" promptText="Năm" />
+         <Button fx:id="btnExportSach1" alignment="CENTER" contentDisplay="RIGHT" onAction="#ExportDoanhThu" prefHeight="20.0" text="Xuất Excel" />
       </children>
    </HBox>
     <HBox spacing="10.0">

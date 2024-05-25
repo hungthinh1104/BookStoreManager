@@ -60,6 +60,7 @@ public class ReportWindow implements Initializable {
 
     private List<Map.Entry<Integer, Double>> DoanhThuSach = new ArrayList<>();
     private Map<Integer, Integer> SoLuongSach = new TreeMap<>();;
+    private Map<Integer, Double> TongDoanhThu = new TreeMap<>();;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -156,7 +157,7 @@ public class ReportWindow implements Initializable {
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
-                Map<Integer, Double> mapDT = new TreeMap<>();;
+                Map<Integer, Double> mapDT = new TreeMap<>();
                 int cnt = 0;
                 if(month == 0) cnt = 12;
                 else cnt = getDaysInMonth(month, year);
@@ -172,6 +173,9 @@ public class ReportWindow implements Initializable {
                     }
                     mapDT.put(i, TongTien);
                 }
+                TongDoanhThu = mapDT;
+                System.out.println(TongDoanhThu.size());
+                System.out.println(mapDT.size());
                 Chart.getData().clear();
                 XYChart.Series<String, Number> series = new XYChart.Series<>();
                 for (Map.Entry<Integer, Double> entry : mapDT.entrySet()) {
@@ -179,7 +183,6 @@ public class ReportWindow implements Initializable {
                     series.getData().add(new XYChart.Data<>(label, entry.getValue()));
                 }
                 Chart.getData().add(series);
-
             }
             assert conn != null;
             conn.close();
@@ -236,7 +239,7 @@ public class ReportWindow implements Initializable {
             // Dòng 2: Tháng 5/2024
             Row row2 = sheet.createRow(1);
             Cell cell2 = row2.createCell(0);
-            cell2.setCellValue(CBThang1.getValue() + "/" + CBNam1.getValue());
+            cell2.setCellValue((getMonthNumber(CBThang1.getValue()) == 0 ? "" : CBThang1.getValue() + "/") + CBNam1.getValue());
             sheet.addMergedRegion(new CellRangeAddress(1, 1, 0, 5));
             cell2.setCellStyle(centeredStyle);
             // Dòng 3: STT, A, B, C, D, E
@@ -257,8 +260,136 @@ public class ReportWindow implements Initializable {
                 valueCell.setCellStyle(borderStyle);
             }
 
+            int sizee = DoanhThuSach.size();
+            Integer stt = 0;
+            for (Map.Entry<Integer, Double> entry : DoanhThuSach) {
+                Row row = sheet.createRow(stt+3);
+                Cell cell = row.createCell(0);
+                cell.setCellValue(++stt);
+                cell.setCellStyle(borderStyle);
+                try{
+                    Connection conn = DatabaseUtil.getConnection();
+                    if (conn != null) {
+                        Sach sach = DatabaseUtil.getSachById(conn, entry.getKey());
+                        Cell cell3 = row.createCell(1);
+                        cell3.setCellValue(sach.getTenSach());
+                        cell3.setCellStyle(borderStyle);
+
+                        Cell cell4 = row.createCell(2);
+                        cell4.setCellValue(sach.getTacGia());
+                        cell4.setCellStyle(borderStyle);
+
+                        Cell cell5 = row.createCell(3);
+                        cell5.setCellValue(sach.getTheLoai().getTenTheLoai());
+                        cell5.setCellStyle(borderStyle);
+
+                        Cell cell6 = row.createCell(4);
+                        cell6.setCellValue(SoLuongSach.get(entry.getKey()).toString());
+                        cell6.setCellStyle(borderStyle);
+
+                        Cell cell7 = row.createCell(5);
+                        cell7.setCellValue(entry.getValue().toString());
+                        cell7.setCellStyle(borderStyle);
+                    }
+                    assert conn != null;
+                    conn.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
             String downloadFolderPath = System.getProperty("user.home") + "/Downloads";
-            String nameExport = getMonthNumber(CBThang1.getValue()) != 0 ? "bao_cao_doanh_thu_sach_theo_thang_" +  getMonthNumber(CBThang1.getValue()) + "_" + CBNam1.getValue(): "bao_cao_doanh_thu_sach_theo_nam" + CBNam1.getValue();
+            String nameExport = getMonthNumber(CBThang1.getValue()) != 0 ? "bao_cao_doanh_thu_sach_thang_" +  getMonthNumber(CBThang1.getValue()) + "_" + CBNam1.getValue(): "bao_cao_doanh_thu_sach_nam" + CBNam1.getValue();
+            String excelFileName = nameExport + ".xlsx";
+            Path excelFilePath = Paths.get(downloadFolderPath, excelFileName);
+            int fileNumber = 1;
+            while (Files.exists(excelFilePath)) {
+                excelFileName = nameExport + " (" + fileNumber + ").xlsx";
+                excelFilePath = Paths.get(downloadFolderPath, excelFileName);
+                fileNumber++;
+            }
+            try (FileOutputStream outputStream = new FileOutputStream(excelFilePath.toString())) {
+                workbook.write(outputStream);
+                System.out.println("Xuất tệp Excel thành công vào thư mục Download!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void ExportDoanhThu() {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Bao cao doanh thu thanh");
+
+            CellStyle centeredStyle = workbook.createCellStyle();
+            centeredStyle.setAlignment(HorizontalAlignment.CENTER);
+            centeredStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+
+            // Đặt border cho dòng đã merge
+
+            // Tạo CellStyle cho tiêu đề và nội dung in đậm
+            CellStyle boldStyle = workbook.createCellStyle();
+            Font boldFont = workbook.createFont();
+            boldFont.setBold(true);
+            boldStyle.setFont(boldFont);
+            centeredStyle.setFont(boldFont);
+
+            sheet.setColumnWidth(0, 5000); // Độ rộng là 5000 đơn vị
+            sheet.setColumnWidth(1, 5000); // Độ rộng là 8000 đơn vị
+            // Tạo CellStyle cho viền
+            CellStyle boldBorderStyle = workbook.createCellStyle();
+            boldFont.setBold(true);
+            boldBorderStyle.setFont(boldFont);
+            boldBorderStyle.setBorderTop(BorderStyle.THIN);
+            boldBorderStyle.setBorderBottom(BorderStyle.THIN);
+            boldBorderStyle.setBorderLeft(BorderStyle.THIN);
+            boldBorderStyle.setBorderRight(BorderStyle.THIN);
+
+            CellStyle borderStyle = workbook.createCellStyle();
+            borderStyle.setBorderTop(BorderStyle.THIN);
+            borderStyle.setBorderBottom(BorderStyle.THIN);
+            borderStyle.setBorderLeft(BorderStyle.THIN);
+            borderStyle.setBorderRight(BorderStyle.THIN);
+
+            // Dòng 1: Bao cao doanh thu sach
+            Row row1 = sheet.createRow(0);
+            Cell cell1 = row1.createCell(0);
+            cell1.setCellValue("Báo cáo doanh thu " + (getMonthNumber(CBThang2.getValue()) == 0 ? "năm" : "tháng"));
+            sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 1));
+            cell1.setCellStyle(centeredStyle);
+            // Dòng 2: Tháng 5/2024
+            Row row2 = sheet.createRow(1);
+            Cell cell2 = row2.createCell(0);
+
+            cell2.setCellValue((getMonthNumber(CBThang2.getValue()) == 0 ? "Năm " : CBThang2.getValue() + "/") + CBNam2.getValue());
+            sheet.addMergedRegion(new CellRangeAddress(1, 1, 0, 1));
+            cell2.setCellStyle(centeredStyle);
+            // Dòng 3: STT, A, B, C, D, E
+            Row row3 = sheet.createRow(2);
+            String[] headers = {(getMonthNumber(CBThang2.getValue()) == 0 ? "Tháng" : "Ngày"), "Doanh thu"};
+            for (int i = 0; i < headers.length; i++) {
+                Cell headerCell = row3.createCell(i);
+                headerCell.setCellValue(headers[i]);
+                headerCell.setCellStyle(boldBorderStyle);
+            }
+
+            // Dòng 4: Các giá trị
+            Integer stt = -1;
+            for (Map.Entry<Integer, Double> entry : TongDoanhThu.entrySet()) {
+                Row row = sheet.createRow(++stt+3);
+                Cell cell = row.createCell(0);
+                cell.setCellValue(getMonthNumber(CBThang2.getValue()) != 0 ? entry.getKey() + "/" + getMonthNumber(CBThang2.getValue()) + "/" + CBNam2.getValue() : entry.getKey() + "/" + CBNam2.getValue());
+                cell.setCellStyle(borderStyle);
+
+                Cell cell3 = row.createCell(1);
+                cell3.setCellValue(entry.getValue());
+                cell3.setCellStyle(borderStyle);
+            }
+            String downloadFolderPath = System.getProperty("user.home") + "/Downloads";
+            String nameExport = getMonthNumber(CBThang2.getValue()) != 0 ? "bao_cao_doanh_thu_thang_" +  getMonthNumber(CBThang2.getValue()) + "_" + CBNam2.getValue(): "bao_cao_doanh_thu_nam" + CBNam2.getValue();
             String excelFileName = nameExport + ".xlsx";
             Path excelFilePath = Paths.get(downloadFolderPath, excelFileName);
             int fileNumber = 1;
