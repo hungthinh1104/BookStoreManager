@@ -11,9 +11,16 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.*;
@@ -45,6 +52,9 @@ public class InventoryReport implements Initializable {
     @FXML
     private VBox MainContainer;
 
+    private List<Map.Entry<Integer, Double>> ChiPhiNhap = new ArrayList<>();
+    Map<Integer, Integer> SoLuongNhap = new TreeMap<>();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         InitData();
@@ -54,8 +64,6 @@ public class InventoryReport implements Initializable {
 
     private void InitData() {
         LocalDate dateNow = LocalDate.now();
-        CBThang1.getItems().add("Tất cả");
-        CBThang2.getItems().add("Tất cả");
         CBThang1.setValue("Tháng " + LocalDate.now().getMonthValue());
         CBThang2.setValue("Tháng " + LocalDate.now().getMonthValue());
         CBNam1.setValue(String.valueOf(LocalDate.now().getYear()));
@@ -131,6 +139,8 @@ public class InventoryReport implements Initializable {
                 }
                 Integer stt = 0;
                 List<Map.Entry<Integer, Double>> list = new ArrayList<>(mapDT.entrySet());
+                ChiPhiNhap = list;
+                SoLuongNhap = mapSL;
                 // Sắp xếp List theo giá trị value giảm dần
                 Collections.sort(list, (entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
                 NhapContainer.getChildren().clear();
@@ -147,6 +157,256 @@ public class InventoryReport implements Initializable {
             assert conn != null;
             conn.close();
         }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void ExportTonKho() {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Bao cao sach ton kho");
+
+            CellStyle centeredStyle = workbook.createCellStyle();
+            centeredStyle.setAlignment(HorizontalAlignment.CENTER);
+            centeredStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+
+            // Đặt border cho dòng đã merge
+
+            // Tạo CellStyle cho tiêu đề và nội dung in đậm
+            CellStyle boldStyle = workbook.createCellStyle();
+            Font boldFont = workbook.createFont();
+            boldFont.setBold(true);
+            boldStyle.setFont(boldFont);
+            centeredStyle.setFont(boldFont);
+
+            sheet.setColumnWidth(0, 2000); // Độ rộng là 5000 đơn vị
+            sheet.setColumnWidth(1, 8000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(2, 6000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(3, 5000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(4, 4000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(5, 5000);
+            // Tạo CellStyle cho viền
+            CellStyle boldBorderStyle = workbook.createCellStyle();
+            boldFont.setBold(true);
+            boldBorderStyle.setFont(boldFont);
+            boldBorderStyle.setBorderTop(BorderStyle.THIN);
+            boldBorderStyle.setBorderBottom(BorderStyle.THIN);
+            boldBorderStyle.setBorderLeft(BorderStyle.THIN);
+            boldBorderStyle.setBorderRight(BorderStyle.THIN);
+
+            CellStyle borderStyle = workbook.createCellStyle();
+            borderStyle.setBorderTop(BorderStyle.THIN);
+            borderStyle.setBorderBottom(BorderStyle.THIN);
+            borderStyle.setBorderLeft(BorderStyle.THIN);
+            borderStyle.setBorderRight(BorderStyle.THIN);
+
+            // Dòng 1: Bao cao doanh thu sach
+            Row row1 = sheet.createRow(0);
+            Cell cell1 = row1.createCell(0);
+            cell1.setCellValue("Báo cáo sách tồn kho");
+            sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 5));
+            cell1.setCellStyle(centeredStyle);
+            // Dòng 2: Tháng 5/2024
+            Row row2 = sheet.createRow(1);
+            Cell cell2 = row2.createCell(0);
+            cell2.setCellValue((getMonthNumber(CBThang1.getValue()) == 0 ? "" : CBThang1.getValue() + "/") + CBNam1.getValue());
+            sheet.addMergedRegion(new CellRangeAddress(1, 1, 0, 5));
+            cell2.setCellStyle(centeredStyle);
+            // Dòng 3: STT, A, B, C, D, E
+            Row row3 = sheet.createRow(2);
+            String[] headers = {"STT", "Tên sách", "Tác giả", "Thể loại", "Tồn đầu tháng", "Tồn cuối tháng"};
+            for (int i = 0; i < headers.length; i++) {
+                Cell headerCell = row3.createCell(i);
+                headerCell.setCellValue(headers[i]);
+                headerCell.setCellStyle(boldBorderStyle);
+            }
+
+            // Dòng 4: Các giá trị
+            String[] values = {"1", "Value A", "Value B", "Value C", "Value D", "Value E"};
+            Row row4 = sheet.createRow(3);
+            for (int i = 0; i < values.length; i++) {
+                Cell valueCell = row4.createCell(i);
+                valueCell.setCellValue(values[i]);
+                valueCell.setCellStyle(borderStyle);
+            }
+
+            try{
+                Connection conn = DatabaseUtil.getConnection();
+                if (conn != null) {
+                    List<Baocaoton> bcList = DatabaseUtil.getBaocaotonByIdThangNam(conn, getMonthNumber(CBThang1.getValue()), Integer.parseInt(CBNam1.getValue()));
+                    Integer stt = 0;
+                    for (Baocaoton bc : bcList) {
+                        Sach sach = DatabaseUtil.getSachById(conn, bc.getMaSach());
+                        Row row = sheet.createRow(stt+3);
+                        Cell cell = row.createCell(0);
+                        cell.setCellValue(++stt);
+                        cell.setCellStyle(borderStyle);
+
+                        Cell cell3 = row.createCell(1);
+                        cell3.setCellValue(sach.getTenSach());
+                        cell3.setCellStyle(borderStyle);
+
+                        Cell cell4 = row.createCell(2);
+                        cell4.setCellValue(sach.getTacGia());
+                        cell4.setCellStyle(borderStyle);
+
+                        Cell cell5 = row.createCell(3);
+                        cell5.setCellValue(sach.getTheLoai().getTenTheLoai());
+                        cell5.setCellStyle(borderStyle);
+
+                        Cell cell6 = row.createCell(4);
+                        cell6.setCellValue(bc.getTonDau());
+                        cell6.setCellStyle(borderStyle);
+
+                        Cell cell7 = row.createCell(5);
+                        cell7.setCellValue(bc.getTonCuoi());
+                        cell7.setCellStyle(borderStyle);
+                    }
+                }
+                assert conn != null;
+                conn.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            String downloadFolderPath = System.getProperty("user.home") + "/Downloads";
+            String nameExport = getMonthNumber(CBThang1.getValue()) != 0 ? "bao_cao_sach_ton_kho_thang_" +  getMonthNumber(CBThang1.getValue()) + "_" + CBNam1.getValue(): "bao_cao_sach_ton_kho_nam" + CBNam1.getValue();
+            String excelFileName = nameExport + ".xlsx";
+            Path excelFilePath = Paths.get(downloadFolderPath, excelFileName);
+            int fileNumber = 1;
+            while (Files.exists(excelFilePath)) {
+                excelFileName = nameExport + " (" + fileNumber + ").xlsx";
+                excelFilePath = Paths.get(downloadFolderPath, excelFileName);
+                fileNumber++;
+            }
+            try (FileOutputStream outputStream = new FileOutputStream(excelFilePath.toString())) {
+                workbook.write(outputStream);
+                System.out.println("Xuất tệp Excel thành công vào thư mục Download!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void ExportNhapKho() {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Bao cao nhap sach");
+
+            CellStyle centeredStyle = workbook.createCellStyle();
+            centeredStyle.setAlignment(HorizontalAlignment.CENTER);
+            centeredStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+
+            // Đặt border cho dòng đã merge
+
+            // Tạo CellStyle cho tiêu đề và nội dung in đậm
+            CellStyle boldStyle = workbook.createCellStyle();
+            Font boldFont = workbook.createFont();
+            boldFont.setBold(true);
+            boldStyle.setFont(boldFont);
+            centeredStyle.setFont(boldFont);
+
+            sheet.setColumnWidth(0, 2000); // Độ rộng là 5000 đơn vị
+            sheet.setColumnWidth(1, 8000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(2, 6000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(3, 5000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(4, 4000); // Độ rộng là 8000 đơn vị
+            sheet.setColumnWidth(5, 5000);
+            // Tạo CellStyle cho viền
+            CellStyle boldBorderStyle = workbook.createCellStyle();
+            boldFont.setBold(true);
+            boldBorderStyle.setFont(boldFont);
+            boldBorderStyle.setBorderTop(BorderStyle.THIN);
+            boldBorderStyle.setBorderBottom(BorderStyle.THIN);
+            boldBorderStyle.setBorderLeft(BorderStyle.THIN);
+            boldBorderStyle.setBorderRight(BorderStyle.THIN);
+
+            CellStyle borderStyle = workbook.createCellStyle();
+            borderStyle.setBorderTop(BorderStyle.THIN);
+            borderStyle.setBorderBottom(BorderStyle.THIN);
+            borderStyle.setBorderLeft(BorderStyle.THIN);
+            borderStyle.setBorderRight(BorderStyle.THIN);
+
+            // Dòng 1: Bao cao doanh thu sach
+            Row row1 = sheet.createRow(0);
+            Cell cell1 = row1.createCell(0);
+            cell1.setCellValue("Báo cáo sách nhập sách");
+            sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 5));
+            cell1.setCellStyle(centeredStyle);
+            // Dòng 2: Tháng 5/2024
+            Row row2 = sheet.createRow(1);
+            Cell cell2 = row2.createCell(0);
+            cell2.setCellValue((getMonthNumber(CBThang2.getValue()) == 0 ? "" : CBThang2.getValue() + "/") + CBNam2.getValue());
+            sheet.addMergedRegion(new CellRangeAddress(1, 1, 0, 5));
+            cell2.setCellStyle(centeredStyle);
+            // Dòng 3: STT, A, B, C, D, E
+            Row row3 = sheet.createRow(2);
+            String[] headers = {"STT", "Tên sách", "Tác giả", "Thể loại", "Số lượng nhập", "Chi phí"};
+            for (int i = 0; i < headers.length; i++) {
+                Cell headerCell = row3.createCell(i);
+                headerCell.setCellValue(headers[i]);
+                headerCell.setCellStyle(boldBorderStyle);
+            }
+
+            // Dòng 4: Các giá trị
+            Integer stt = 0;
+            for (Map.Entry<Integer, Double> entry : ChiPhiNhap) {
+                Row row = sheet.createRow(stt+3);
+                Cell cell = row.createCell(0);
+                cell.setCellValue(++stt);
+                cell.setCellStyle(borderStyle);
+                try{
+                    Connection conn = DatabaseUtil.getConnection();
+                    if (conn != null) {
+                        Sach sach = DatabaseUtil.getSachById(conn, entry.getKey());
+                        Cell cell3 = row.createCell(1);
+                        cell3.setCellValue(sach.getTenSach());
+                        cell3.setCellStyle(borderStyle);
+
+                        Cell cell4 = row.createCell(2);
+                        cell4.setCellValue(sach.getTacGia());
+                        cell4.setCellStyle(borderStyle);
+
+                        Cell cell5 = row.createCell(3);
+                        cell5.setCellValue(sach.getTheLoai().getTenTheLoai());
+                        cell5.setCellStyle(borderStyle);
+
+                        Cell cell6 = row.createCell(4);
+                        cell6.setCellValue(SoLuongNhap.get(entry.getKey()).toString());
+                        cell6.setCellStyle(borderStyle);
+
+                        Cell cell7 = row.createCell(5);
+                        cell7.setCellValue(entry.getValue());
+                        cell7.setCellStyle(borderStyle);
+                    }
+                    assert conn != null;
+                    conn.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+
+            String downloadFolderPath = System.getProperty("user.home") + "/Downloads";
+            String nameExport = getMonthNumber(CBThang2.getValue()) != 0 ? "bao_cao_nhap_sach_thang_" +  getMonthNumber(CBThang2.getValue()) + "_" + CBNam2.getValue(): "bao_cao_nhap_sach_nam" + CBNam2.getValue();
+            String excelFileName = nameExport + ".xlsx";
+            Path excelFilePath = Paths.get(downloadFolderPath, excelFileName);
+            int fileNumber = 1;
+            while (Files.exists(excelFilePath)) {
+                excelFileName = nameExport + " (" + fileNumber + ").xlsx";
+                excelFilePath = Paths.get(downloadFolderPath, excelFileName);
+                fileNumber++;
+            }
+            try (FileOutputStream outputStream = new FileOutputStream(excelFilePath.toString())) {
+                workbook.write(outputStream);
+                System.out.println("Xuất tệp Excel thành công vào thư mục Download!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
