@@ -64,7 +64,7 @@
     -fx-text-fill: black;
 }
 
-.button {
+.button-modify {
     -fx-font-size: 14px;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
@@ -74,7 +74,7 @@
     -fx-background-radius: 10px;
 }
 
-.button:hover {
+.button-modify:hover {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
     -fx-background-color: #45a049;
@@ -83,11 +83,31 @@
     -fx-background-radius: 10px;
 }
 
-.button:pressed {
+.button-modify:pressed {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
     -fx-background-color: #317e3b;
     -fx-text-fill: white;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
+}
+
+.add-button {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-text-fill: #2196F3;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 15px;
+}
+
+.add-button:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #1976D2;
+}
+
+.add-button:pressed {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #0D47A1;
 }

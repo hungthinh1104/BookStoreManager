@@ -44,27 +44,27 @@
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="169.0" styleClass="header-table-text" text="Tên khách hàng">
+            <Label alignment="CENTER" layoutX="165.0" styleClass="header-table-text" text="Tên khách hàng">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="336.0" prefHeight="29.0" prefWidth="176.0" styleClass="header-table-text" text="Số điện thoại">
+            <Label alignment="CENTER" layoutX="337.0" prefHeight="29.0" prefWidth="176.0" styleClass="header-table-text" text="Số điện thoại">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="534.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Ngày lập">
+            <Label alignment="CENTER" layoutX="541.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Ngày lập">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="813.0" layoutY="1.0" styleClass="header-table-text" text="Trạng thái">
+            <Label alignment="CENTER" layoutX="814.0" layoutY="1.0" prefWidth="114.0" styleClass="header-table-text" text="Trạng thái">
                 <padding>
                     <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-         <Label alignment="CENTER" layoutX="677.0" layoutY="1.0" styleClass="header-table-text" text="Tổng tiền cọc">
+         <Label alignment="CENTER" layoutX="681.0" layoutY="1.0" styleClass="header-table-text" text="Tổng tiền cọc">
             <padding>
                <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
             </padding>
