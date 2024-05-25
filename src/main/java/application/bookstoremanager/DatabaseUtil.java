@@ -875,6 +875,7 @@ public class DatabaseUtil {
                     }
                 }
                 Baocaoton baocaoton = new Baocaoton(maBaocaoton,maSach,tonDau,tonCuoi,maThang,thangNam);
+                baoCaoList.add(baocaoton);
             }
             resultSet.close();
             statement.close();
@@ -897,5 +898,16 @@ public class DatabaseUtil {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public static List<Baocaoton> getBaocaotonByIdThangNam(Connection conn, int thang, int nam){
+        List<Baocaoton> baocaoList = new ArrayList<Baocaoton>();
+        List<Baocaoton> all = getAllBaocaoton(conn);
+        System.out.println(all.size());
+        for(Baocaoton item : all){
+            if(item.getThangNam().getNam() == nam && item.getThangNam().getThang() == thang){
+                baocaoList.add(item);
+            }
+        }
+        return baocaoList;
     }
 }

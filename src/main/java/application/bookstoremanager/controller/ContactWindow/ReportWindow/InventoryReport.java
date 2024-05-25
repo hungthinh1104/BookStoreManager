@@ -1,9 +1,7 @@
 package application.bookstoremanager.controller.ContactWindow.ReportWindow;
 
 import application.bookstoremanager.DatabaseUtil;
-import application.bookstoremanager.classdb.CtHoadon;
-import application.bookstoremanager.classdb.Hoadon;
-import application.bookstoremanager.classdb.Sach;
+import application.bookstoremanager.classdb.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -49,6 +47,9 @@ public class InventoryReport implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        InitData();
+        LoadDataTon(LocalDate.now().getMonthValue(), LocalDate.now().getYear());
+        LoadDataNhapSach(LocalDate.now().getMonthValue(), LocalDate.now().getYear());
     }
 
     private void InitData() {
@@ -68,20 +69,80 @@ public class InventoryReport implements Initializable {
             CBNam2.getItems().add(String.valueOf(i));
         }
         CBThang1.setOnAction(event -> {
+            LoadDataTon(getMonthNumber(CBThang1.getValue()),Integer.parseInt(CBNam1.getValue()));
         });
         CBNam1.setOnAction(event -> {
+            LoadDataTon(getMonthNumber(CBThang1.getValue()),Integer.parseInt(CBNam1.getValue()));
         });
         CBThang2.setOnAction(event -> {
+            LoadDataNhapSach(getMonthNumber(CBThang2.getValue()),Integer.parseInt(CBNam2.getValue()));
         });
         CBNam2.setOnAction(event -> {
+            LoadDataNhapSach(getMonthNumber(CBThang2.getValue()),Integer.parseInt(CBNam2.getValue()));
         });
     }
 
     private void LoadDataTon(int month, int year) {
+        System.out.println("LoadDataTon: " + month + ", " + year);
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
+                List<Baocaoton> bcList = DatabaseUtil.getBaocaotonByIdThangNam(conn, month, year);
+                System.out.println(bcList.size());
+                Integer stt = 0;
+                for (Baocaoton bc : bcList) {
+                    Sach sach = DatabaseUtil.getSachById(conn, bc.getMaSach());
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/ReportWindow/ReportBookRow.fxml"));
+                    Parent newContent3 = loader.load();
+                    ReportRowTable book = loader.getController();
+                    book.setData((++stt).toString(), sach.getTenSach(), sach.getTacGia(), sach.getTheLoai().getTenTheLoai(), bc.getTonDau().toString(), bc.getTonCuoi().toString());
+                    TonContainer.getChildren().add(newContent3);
+                }
+            }
+            assert conn != null;
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
+    private void LoadDataNhapSach(int month, int year) {
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                Map<Integer, Integer> mapSL = new TreeMap<>();
+                Map<Integer, Double> mapDT = new TreeMap<>(java.util.Comparator.reverseOrder());
+                List<Phieunhapsach> pnsList = DatabaseUtil.getAllPhieunhapsach(conn);
+                List<Integer> idPNS = new ArrayList<>();
+                for (Phieunhapsach pns : pnsList) {
+                    if(pns.getNgayNhap().getMonthValue() == month && pns.getNgayNhap().getYear() == year) {
+                        idPNS.add(pns.getMaPhieuNhap());
+                    }
+                }
+                for (Integer id : idPNS) {
+                    List<CtPhieunhapsach> ctList = DatabaseUtil.getCtPhieunhapsachByIdPhieunhapsach(conn,id);
+                    for (CtPhieunhapsach cts : ctList) {
+                        int idSach = cts.getMaSach();
+                        int soLuong = mapSL.getOrDefault(idSach, 0);
+                        double doanhThu = mapDT.getOrDefault(idSach, 0.0);
+                        mapSL.put(idSach, soLuong + cts.getSoLuongNhap());
+                        mapDT.put(idSach, doanhThu + cts.getDonGiaNhap() * cts.getSoLuongNhap());
+                    }
+                }
+                Integer stt = 0;
+                List<Map.Entry<Integer, Double>> list = new ArrayList<>(mapDT.entrySet());
+                // Sắp xếp List theo giá trị value giảm dần
+                Collections.sort(list, (entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+                NhapContainer.getChildren().clear();
+                for (Map.Entry<Integer, Double> entry : list) {
+                    System.out.println(entry.getValue());
+                    Sach sach = DatabaseUtil.getSachById(conn, entry.getKey());
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/ReportWindow/ReportBookRow.fxml"));
+                    Parent newContent3 = loader.load();
+                    ReportRowTable book = loader.getController();
+                    book.setData((++stt).toString(), sach.getTenSach(), sach.getTacGia(), sach.getTheLoai().getTenTheLoai(), mapSL.get(entry.getKey()).toString(), formatCurrency(entry.getValue()));
+                    NhapContainer.getChildren().add(newContent3);
+                }
             }
             assert conn != null;
             conn.close();
