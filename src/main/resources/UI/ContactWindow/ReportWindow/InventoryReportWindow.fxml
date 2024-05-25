@@ -79,7 +79,7 @@
       </AnchorPane>
       <ScrollPane prefHeight="244.0" prefWidth="972.0" style="-fx-background-color: #fff;" styleClass="light-border">
          <content>
-            <VBox fx:id="TonContainer" prefWidth="962.0" style="-fx-background-color: #fff;" />
+            <VBox fx:id="TonContainer" prefHeight="223.0" prefWidth="960.0" style="-fx-background-color: #fff;" />
          </content>
       </ScrollPane>
       <HBox prefHeight="31.0" prefWidth="972.0">
