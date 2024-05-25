@@ -809,4 +809,93 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
     }
+
+    public static List<Thangnam> getAllThangnam (Connection conn){
+        List<Thangnam> list = new ArrayList<Thangnam>();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM thangnam");
+
+            while (resultSet.next()) {
+                int maThangNam = resultSet.getInt(1);
+                int thang = resultSet.getInt(2);
+                int nam = resultSet.getInt(3);
+                Thangnam thangNam = new Thangnam(maThangNam,thang,nam);
+                list.add(thangNam);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public static int createThangNam(Connection conn, int thang, int nam){
+        int idThangNam = 0;
+        try{
+            String sql = "INSERT INTO thangnam(Thang, Nam) VALUES (?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            pstmt.setInt(1, thang);
+            pstmt.setInt(2, nam);
+            pstmt.executeUpdate();
+
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()){
+                idThangNam = rs.getInt(1);
+            }
+            System.out.println("Thêm mới ngày tháng thành công! id:" + idThangNam);
+            rs.close();
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return idThangNam;
+    }
+
+    public static List<Baocaoton> getAllBaocaoton(Connection conn){
+        List<Baocaoton> baoCaoList = new ArrayList<Baocaoton>();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM baocaoton");
+
+            while (resultSet.next()) {
+                int maBaocaoton = resultSet.getInt(1);
+                int maSach = resultSet.getInt(2);
+                int tonDau = resultSet.getInt(3);
+                int tonCuoi = resultSet.getInt(4);
+                int maThang = resultSet.getInt(5);
+                List<Thangnam> list = getAllThangnam(conn);
+                Thangnam thangNam = null;
+                for(Thangnam item : list){
+                    if(item.getMaThangNam() == maThang){
+                        thangNam = item;
+                        break;
+                    }
+                }
+                Baocaoton baocaoton = new Baocaoton(maBaocaoton,maSach,tonDau,tonCuoi,maThang,thangNam);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return baoCaoList;
+    }
+
+    public static void createBaocaoton(Connection conn, int maSach, int tonDau,int tonCuoi, int maNamThang){
+        try{
+            String sql = "INSERT INTO baocaoton(MaSach, TonDau, TonCuoi, MaThangNam) VALUES (?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, maSach);
+            pstmt.setInt(2, tonDau);
+            pstmt.setInt(3, tonCuoi);
+            pstmt.setInt(4, maNamThang);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
