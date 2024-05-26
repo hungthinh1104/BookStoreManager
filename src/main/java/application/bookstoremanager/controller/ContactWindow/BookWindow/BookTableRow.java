@@ -1,8 +1,11 @@
 package application.bookstoremanager.controller.ContactWindow.BookWindow;
 
+import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Sach;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -14,9 +17,12 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class BookTableRow implements Initializable {
@@ -56,7 +62,17 @@ public class BookTableRow implements Initializable {
         } else {
             System.err.println("Error: Image data is null or empty.");
         }
-        DonGia.setText(formatCurrency(book.getDonGia()));
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                DonGia.setText(formatCurrency(book.getDonGia() * DatabaseUtil.getThamso(conn).getTiLeTinhDonGiaBan()));
+            }
+            assert conn != null;
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         TenSach.setText(book.getTenSach());
         SoLuong.setText(book.getSoLuongTon().toString());
         TacGia.setText(book.getTacGia());

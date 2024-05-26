@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/Sidebar/Sidebar.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/LoginWindow.fxml"));
             Scene scene = new Scene(loader.load());
             stage.setTitle("Bookstore Manager");
             stage.setScene(scene);

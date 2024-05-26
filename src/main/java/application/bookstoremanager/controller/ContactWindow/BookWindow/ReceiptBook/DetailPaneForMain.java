@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import java.sql.Connection;
 import java.util.List;
 
+import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
+
 public class DetailPaneForMain {
 
     @FXML
@@ -31,7 +33,7 @@ public class DetailPaneForMain {
 
     public void setData(CtPhieunhapsach PNS) {
         SoLuong.setText("Số lượng: " + PNS.getSoLuongNhap().toString());
-        DonGia.setText("Đơn giá: " + PNS.getDonGiaNhap().toString());
+        DonGia.setText("Đơn giá: " + formatCurrency(PNS.getDonGiaNhap()));
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {

@@ -138,6 +138,7 @@ public class BookInput implements Initializable {
             showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập số lượng");
             return;
         }
+
         if(DonGia == null || Objects.equals(DonGia.getText(), "")) {
             showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập đơn giá");
             return;
@@ -146,6 +147,14 @@ public class BookInput implements Initializable {
             try{
                 Connection conn = DatabaseUtil.getConnection();
                 if (conn != null) {
+                    if(Integer.parseInt(SoLuong.getText()) < DatabaseUtil.getThamso(conn).getSoLuongNhapToiThieu()) {
+                        showErrorDialog("Thông tin không hợp lệ", "Số lượng không đủ lượng nhập tối thiểu");
+                        return;
+                    }
+                    if(Integer.parseInt(SoLuong.getText()) +  DatabaseUtil.getSachById(conn, SelectedBook).getSoLuongTon() > DatabaseUtil.getThamso(conn).getSoLuongNhapToiThieu()) {
+                        showErrorDialog("Thông tin không hợp lệ", "Số lượng vượt quá số lượng tồn cho phép");
+                        return;
+                    }
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/ReceiptBookWindow/DetailPane/DetailPane.fxml"));
                     Parent newContent3 = loader.load();
                     DetailPane book = loader.getController();

@@ -1,6 +1,7 @@
 package application.bookstoremanager.controller.LoginWindow;
 
 import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.GlobalVariable;
 import application.bookstoremanager.classdb.Nguoidung;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,9 +66,29 @@ public class LoginWindow implements Initializable {
     @FXML
     protected void LoginSuccess() {
         try {
+
+
+            try{
+                Connection conn = DatabaseUtil.getConnection();
+                if (conn != null) {
+                    List<Nguoidung> user = DatabaseUtil.getAllNguoidung(conn);
+                    for (Nguoidung nguoidung : user) {
+                        if(nguoidung.getTenDangNhap().equals(username.getText())){
+                            GlobalVariable.SetUser(nguoidung);
+                            break;
+                        }
+                    }
+                }
+                assert conn != null;
+                conn.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/Sidebar/Sidebar.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage) MainPane.getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Bookstore Manager");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
