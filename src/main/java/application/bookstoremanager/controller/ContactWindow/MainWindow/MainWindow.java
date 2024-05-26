@@ -87,7 +87,7 @@ public class MainWindow implements Initializable {
                 SachTHContainer.getChildren().clear();
                 for (Map.Entry<Integer, Integer> entry : list) {
                     stt++;
-                    if(stt > 5) break;
+                    if(stt > 8) break;
                     Sach sach = DatabaseUtil.getSachById(conn, entry.getKey());
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card2/Card.fxml"));
                     Parent newContent3 = loader.load();

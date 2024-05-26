@@ -1,5 +1,6 @@
 package application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard;
 
+import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Sach;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -7,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.ByteArrayInputStream;
+import java.sql.Connection;
 
 import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
 
@@ -33,7 +35,16 @@ public class SachThinhHanh {
         } else {
             System.err.println("Error: Image data is null or empty.");
         }
-        GiaBan.setText("Giá bán: " + formatCurrency(book.getDonGia()));
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                GiaBan.setText("Giá bán: " + formatCurrency(book.getDonGia() * DatabaseUtil.getThamso(conn).getTiLeTinhDonGiaBan()));
+            }
+            assert conn != null;
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         TenSach.setText(book.getTenSach());
         DaBan.setText("Bán được: " + SoLuongBan);
     }

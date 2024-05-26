@@ -39,17 +39,17 @@
                 <Label styleClass="choose-text" text="Nhập lại mật khẩu mới:" />
             </VBox>
             <VBox alignment="CENTER" prefHeight="145.0" prefWidth="190.0" spacing="15.0">
-                <PasswordField promptText="Mật khẩu cũ" styleClass="information-text" />
-                <PasswordField promptText="Mật khẩu mới" styleClass="information-text" />
-                <PasswordField promptText="Nhập lại mật khẩu mới" styleClass="information-text" />
+                <PasswordField fx:id="MKCu" promptText="Mật khẩu cũ" styleClass="information-text" />
+                <PasswordField fx:id="MKMoi" promptText="Mật khẩu mới" styleClass="information-text" />
+                <PasswordField fx:id="NLMKMoi" promptText="Nhập lại mật khẩu mới" styleClass="information-text" />
             </VBox>
         </HBox>
         <HBox prefHeight="43.0" prefWidth="938.0" spacing="10.0">
-            <Button prefHeight="37.0" prefWidth="105.0" styleClass="button-modify" text="Sửa Đổi" />
-            <Button prefHeight="50.0" prefWidth="95.0" styleClass="button-modify" text="Xác Nhận" />
+            <Button fx:id="SuaDoi" onAction="#btnEdit_OnAction" prefHeight="37.0" prefWidth="105.0" styleClass="button-modify" text="Đổi mật khẩu" />
+            <Button fx:id="XacNhan" onAction="#btnconfirmOnAction" prefHeight="50.0" prefWidth="95.0" styleClass="button-modify" text="Xác Nhận" />
         </HBox>
     </VBox>
-   <Button fx:id="btnThemTaiKhoan" mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" text="Thêm tài khoản">
+   <Button fx:id="btnThemTaiKhoan" mnemonicParsing="false" onAction="#btnTaoTaiKhoan_OnAction" prefHeight="40.0" prefWidth="146.0" text="Thêm tài khoản">
       <styleClass>
          <String fx:value="add-button" />
          <String fx:value="drop-shadow" />

@@ -140,7 +140,7 @@ public class BillAdd implements Initializable {
                 DungTichDiem.setValue("Không");
                 for(Khachhang khachhang : KHList){
                     if(khachhang.getSoDienThoai().equals(SDTKH.getText()) && khachhang.getHoTen().equals(newValue)){
-                        DungTichDiem.getItems().add(khachhang.getTichDiem().toString());
+                        DungTichDiem.getItems().add(formatCurrency(khachhang.getTichDiem()));
                         break;
                     }
                 }
@@ -343,11 +343,11 @@ public class BillAdd implements Initializable {
                     }
                     int idHD = DatabaseUtil.createHoadon(NgayLap.getValue(),kh.getMaKhachHang(),parseCurrency(GiamGia.getText()), conn);
                     double tichDiem = kh.getTichDiem();
-                    if((int)parseCurrency(GiamGia.getText()) == 0) {
-                        tichDiem += (int)(parseCurrency(TongTien.getText()) * 0.01);
+                    if(parseCurrency(GiamGia.getText()) == 0.0) {
+                        tichDiem += parseCurrency(TongTien.getText()) * DatabaseUtil.getThamso(conn).getTichDiem();
                     }
                     else {
-                        tichDiem -= (int)parseCurrency(GiamGia.getText());
+                        tichDiem -= parseCurrency(GiamGia.getText());
                     }
                     System.out.println("Giam gia: " + GiamGia.getText());
                     System.out.println("Giam gia DK: " + (int)parseCurrency(GiamGia.getText()));

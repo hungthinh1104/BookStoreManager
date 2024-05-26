@@ -69,4 +69,10 @@ public class AddCustomer implements Initializable {
         Stage stage = (Stage) TenKH.getScene().getWindow();
         stage.close();
     }
+
+    @FXML
+    private void btnHuyOnAction(ActionEvent event) {
+        Stage stage = (Stage) TenKH.getScene().getWindow();
+        stage.close();
+    }
 }

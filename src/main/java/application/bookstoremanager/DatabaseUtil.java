@@ -538,6 +538,22 @@ public class DatabaseUtil {
         return idHoaDon;
     }
 
+    public static void createNguoidung(Connection conn, String tenDangNhap, String matKhau, String hoTen, int maPhanQuyen){
+        try{
+            String sql = "INSERT INTO nguoidung(TenDangNhap, MatKhau, HoTen, MaPhanQuyen) VALUES (?,?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, tenDangNhap);
+            pstmt.setString(2, matKhau);
+            pstmt.setString(3, hoTen);
+            pstmt.setInt(4, maPhanQuyen);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public static boolean deleteHoadonById(Connection conn, int idHoadon ){
         try{
             String deleteSqlct = "DELETE FROM ct_hoadon WHERE MaHoaDon = ?";
