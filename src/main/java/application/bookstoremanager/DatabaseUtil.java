@@ -305,10 +305,13 @@ public class DatabaseUtil {
                 int tonToiThieu = resultSet.getInt(3);
                 float tiLe = resultSet.getFloat(4);
                 double tienCoc = resultSet.getDouble(5);
-                Thamso ts = new Thamso(nhapToiThieu,tonToiDa, tonToiThieu, tiLe, tienCoc);
+                Float tichDiem = resultSet.getFloat(6);
+                Thamso ts = new Thamso(nhapToiThieu,tonToiDa, tonToiThieu, tiLe, tienCoc, tichDiem);
                 tss.add(ts);
             }
             thamso = tss.getFirst();
+            resultSet.close();
+            statement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -318,14 +321,16 @@ public class DatabaseUtil {
     public static void updateThamso(Connection conn, Thamso thamso){
         try{
             String updateQuery = "UPDATE thamso SET SoLuongNhapToiThieu = ?, SoLuongTonToiDa = ?," +
-                    "SoLuongTonToiThieu = ?, TiLeTinhDonGiaBan = ?, TienCoc = ? ";
+                    "SoLuongTonToiThieu = ?, TiLeTinhDonGiaBan = ?, TienCoc = ?, TiLeTichDiem = ? ";
             PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
             preparedStatement.setInt(1, thamso.getSoLuongNhapToiThieu());
             preparedStatement.setInt(2, thamso.getSoLuongTonToiDa());
             preparedStatement.setInt(3, thamso.getSoLuongTonToiThieu());
             preparedStatement.setFloat(4, thamso.getTiLeTinhDonGiaBan());
             preparedStatement.setDouble(5, thamso.getTienCoc());
+            preparedStatement.setFloat(6, thamso.getTichDiem());
             preparedStatement.executeUpdate();
+            preparedStatement.close();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -781,6 +786,7 @@ public class DatabaseUtil {
                 String tenDangNhap = resultSet.getString(1);
                 String matKhau = resultSet.getString(2);
                 int maPhanQuyen = resultSet.getInt(3);
+                String hoTen = resultSet.getString(4);
                 List<Phanquyen> phanquyenList = getAllPhanquyen(conn);
                 Phanquyen phanquyen = null;
                 for(Phanquyen item : phanquyenList){
@@ -789,9 +795,11 @@ public class DatabaseUtil {
                         break;
                     }
                 }
-                Nguoidung nguoidung = new Nguoidung(tenDangNhap,matKhau,maPhanQuyen,phanquyen);
+                Nguoidung nguoidung = new Nguoidung(tenDangNhap,matKhau,maPhanQuyen,phanquyen, hoTen);
                 nguoidungList.add(nguoidung);
             }
+            resultSet.close();
+            statement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -800,10 +808,11 @@ public class DatabaseUtil {
 
     public static void updateNguoidung(Connection conn, Nguoidung nguoidung){
         try{
-            String updateQuery = "UPDATE nguoidung SET MatKhau = ? WHERE TenDangNhap = ?";
+            String updateQuery = "UPDATE nguoidung SET MatKhau = ?, HoTen = ? WHERE TenDangNhap = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(updateQuery);
             preparedStatement.setString(1, nguoidung.getMatKhau());
-            preparedStatement.setString(2, nguoidung.getTenDangNhap());
+            preparedStatement.setString(2, nguoidung.getHoTen());
+            preparedStatement.setString(3, nguoidung.getTenDangNhap());
             preparedStatement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
