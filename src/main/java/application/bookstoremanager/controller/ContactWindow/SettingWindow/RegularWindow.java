@@ -118,7 +118,7 @@ public class RegularWindow implements Initializable {
                                            Integer.parseInt(maxStockInput.getText()),
                                            Integer.parseInt(maxStockInput.getText()),
                                            Float.parseFloat(priceRateInput.getText()),
-                                           Double.parseDouble(depositInput.getText()));
+                                           Double.parseDouble(depositInput.getText()), 0.01f);
                     System.out.println(ts.getSoLuongNhapToiThieu().toString());
                     DatabaseUtil.updateThamso(conn, ts);
                 }

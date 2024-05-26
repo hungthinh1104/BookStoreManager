@@ -467,10 +467,21 @@ public class DatabaseUtil {
                 int maKhachHang = resultSet.getInt(3);
                 double tongTien = resultSet.getDouble(4);
                 int giamGia = resultSet.getInt(5);
+                String tenDangNhap = resultSet.getString(6);
                 Khachhang kh = getKhachhangById(conn,maKhachHang);
-                Hoadon hoadon = new Hoadon(id,ngayLap,maKhachHang,tongTien,kh,giamGia);
+                List<Nguoidung> all = getAllNguoidung(conn);
+                Nguoidung user = null;
+                for(Nguoidung item : all){
+                    if(item.getTenDangNhap().equals(tenDangNhap)){
+                        user = item;
+                        break;
+                    }
+                }
+                Hoadon hoadon = new Hoadon(id,ngayLap,maKhachHang,tongTien,kh,giamGia, tenDangNhap,user);
                 hoadons.add(hoadon);
             }
+            resultSet.close();
+            statement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
