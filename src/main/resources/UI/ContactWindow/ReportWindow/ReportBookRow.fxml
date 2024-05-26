@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="40.0" prefWidth="960.0" stylesheets="@ReportBookRow.css" xmlns="http://javafx.com/javafx/22"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportRowTable">
    <styleClass>
       <String fx:value="light-radius-box"/>
       <String fx:value="drop-shadow"/>

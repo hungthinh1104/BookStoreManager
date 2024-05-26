@@ -1,48 +1,110 @@
 package application.bookstoremanager.controller.ContactWindow.MainWindow;
 
-import application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard.Card1;
+import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.classdb.CtHoadon;
+import application.bookstoremanager.classdb.Hoadon;
+import application.bookstoremanager.classdb.Sach;
+import application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow;
+import application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard.SachMoi;
+import application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard.SachThinhHanh;
+import application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportRowTable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.sql.Connection;
+import java.time.LocalDate;
+import java.util.*;
+
+import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
 
 public class MainWindow implements Initializable {
 
     @FXML
-    private HBox newFeedArea;
+    private HBox SachMoiContainer;
+
+    @FXML
+    private GridPane SachTHContainer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        try {
-//            Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card1/Card.fxml")));
-//            AnchorPane newItem = (AnchorPane) newContent;
-//            newFeedArea.getChildren().add(newItem);
-//            Parent newContent2 = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card1/Card.fxml")));
-//            AnchorPane newItem2 = (AnchorPane) newContent2;
-//            newFeedArea.getChildren().add(newItem2);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        for(Integer i = 0; i <= 10; i++){
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card1/Card.fxml"));
-                Parent newContent3 = loader.load();
-                Card1 card = loader.getController();
-                card.setRate(i.toString());
-                newFeedArea.getChildren().add(newContent3);
-            } catch (IOException e) {
-                e.printStackTrace();
+        LoadDataForNewFeed();
+        LoadDataForBestSeller();
+    }
+    public void LoadDataForNewFeed() {
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                int stt = 0;
+                List<Sach> bookList = DatabaseUtil.getAllSach(conn);
+                Collections.reverse(bookList);
+                SachMoiContainer.getChildren().clear();
+                int cnt = 1;
+                for(Sach sach : bookList) {
+                    cnt++;
+                    if(cnt > 5) break;
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card1/Card.fxml"));
+                    Parent newContent3 = loader.load();
+                    SachMoi book = loader.getController();
+                    book.setData(sach);
+                    SachMoiContainer.getChildren().add(newContent3);
+                }
             }
+            assert conn != null;
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
+    public void LoadDataForBestSeller() {
+        try{
+            Connection conn = DatabaseUtil.getConnection();
+            if (conn != null) {
+                Map<Integer, Integer> mapSL = new TreeMap<>();
+                List<Hoadon> hdList = DatabaseUtil.getAllHoadon(conn);
+                List<Integer> idHD = new ArrayList<>();
+                for(Hoadon hoadon : hdList) {
+                    idHD.add(hoadon.getMaHoaDon());
+                }
+                for(Integer id : idHD) {
+                    List<CtHoadon> ctList = DatabaseUtil.getCtHoaDonByIdHoadon(conn,id);
+                    for(CtHoadon ct : ctList) {
+                        int idSach = ct.getMaSach();
+                        int soLuong = mapSL.getOrDefault(idSach, 0);
+                        mapSL.put(idSach, soLuong + ct.getSoLuong());
+                    }
+                }
+                Integer stt = 0;
+                int col = 0, row = 0;
+                List<Map.Entry<Integer, Integer>> list = new ArrayList<>(mapSL.entrySet());
+                Collections.sort(list, (entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+                SachTHContainer.getChildren().clear();
+                for (Map.Entry<Integer, Integer> entry : list) {
+                    stt++;
+                    if(stt > 5) break;
+                    Sach sach = DatabaseUtil.getSachById(conn, entry.getKey());
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/MainWindow/BookCard/Card2/Card.fxml"));
+                    Parent newContent3 = loader.load();
+                    SachThinhHanh book = loader.getController();
+                    book.setData(sach, entry.getValue().toString());
+                    SachTHContainer.add(newContent3, col, row);
+                    col++;
+                    if(col > 3) {
+                        col = 0;
+                        row++;
+                    }
+                }
+            }
+            assert conn != null;
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

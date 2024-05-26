@@ -49,7 +49,7 @@
             <Button prefHeight="50.0" prefWidth="95.0" styleClass="button-modify" text="Xác Nhận" />
         </HBox>
     </VBox>
-   <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#btnAddBook_OnAction" prefHeight="40.0" prefWidth="146.0" text="Thêm tài khoản">
+   <Button fx:id="btnThemTaiKhoan" mnemonicParsing="false" prefHeight="40.0" prefWidth="146.0" text="Thêm tài khoản">
       <styleClass>
          <String fx:value="add-button" />
          <String fx:value="drop-shadow" />

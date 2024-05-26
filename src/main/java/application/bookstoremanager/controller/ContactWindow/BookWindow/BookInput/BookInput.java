@@ -72,6 +72,7 @@ public class BookInput implements Initializable {
                 LoadData(newValue);
             }
         });
+        datePicker.setPromptText("d/M/y");
         datePicker.setValue(LocalDate.now());
         SoLuong.setTextFormatter(new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -129,6 +130,18 @@ public class BookInput implements Initializable {
 
     @FXML
     private void setBtnThemSach_OnAction(ActionEvent event) {
+        if(SelectedBook == -1) {
+            showErrorDialog("Thông tin không hợp lệ", "Vui lòng chọn sách");
+            return;
+        }
+        if(SoLuong == null || Objects.equals(SoLuong.getText(), "")) {
+            showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập số lượng");
+            return;
+        }
+        if(DonGia == null || Objects.equals(DonGia.getText(), "")) {
+            showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập đơn giá");
+            return;
+        }
         if(SelectedBook != -1 && SoLuong != null && !Objects.equals(SoLuong.getText(), "") && DonGia != null && !Objects.equals(DonGia.getText(), "")) {
             try{
                 Connection conn = DatabaseUtil.getConnection();
@@ -162,7 +175,7 @@ public class BookInput implements Initializable {
 
     @FXML
     private void btnThemPhieu_OnAction(ActionEvent event) {
-        if(datePicker == null || Objects.equals(datePicker.toString(), "")) {
+        if(datePicker.getValue() == null || Objects.equals(datePicker.getValue().toString(), "")) {
             showErrorDialog("Thông tin không hợp lệ", "Vui lòng chọn ngày lập phù hợp");
             return;
         }
