@@ -6,7 +6,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <AnchorPane prefHeight="42.0" prefWidth="950.0" styleClass="light-radius-box-border" stylesheets="@OrderRowWindow.css"
-            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderRow">
    <Label fx:id="MaDH" alignment="CENTER" layoutX="15.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0"
           styleClass="information-text" text="Label" textAlignment="CENTER">
       <padding>

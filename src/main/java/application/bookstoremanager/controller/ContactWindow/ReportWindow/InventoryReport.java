@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.apache.poi.ss.usermodel.*;
@@ -52,19 +53,23 @@ public class InventoryReport implements Initializable {
     @FXML
     private VBox MainContainer;
 
+    @FXML
+    private Label TChiPhi;
+
+
     private List<Map.Entry<Integer, Double>> ChiPhiNhap = new ArrayList<>();
     Map<Integer, Integer> SoLuongNhap = new TreeMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         InitData();
-        LoadDataTon(LocalDate.now().getMonthValue(), LocalDate.now().getYear());
+        LoadDataTon(LocalDate.now().minusMonths(1).getMonthValue(), LocalDate.now().getYear());
         LoadDataNhapSach(LocalDate.now().getMonthValue(), LocalDate.now().getYear());
     }
 
     private void InitData() {
         LocalDate dateNow = LocalDate.now();
-        CBThang1.setValue("Tháng " + LocalDate.now().getMonthValue());
+        CBThang1.setValue("Tháng " + LocalDate.now().minusMonths(1).getMonthValue());
         CBThang2.setValue("Tháng " + LocalDate.now().getMonthValue());
         CBNam1.setValue(String.valueOf(LocalDate.now().getYear()));
         CBNam2.setValue(String.valueOf(LocalDate.now().getYear()));
@@ -127,6 +132,7 @@ public class InventoryReport implements Initializable {
                         idPNS.add(pns.getMaPhieuNhap());
                     }
                 }
+                Double TChiPhii = 0.0;
                 for (Integer id : idPNS) {
                     List<CtPhieunhapsach> ctList = DatabaseUtil.getCtPhieunhapsachByIdPhieunhapsach(conn,id);
                     for (CtPhieunhapsach cts : ctList) {
@@ -135,8 +141,10 @@ public class InventoryReport implements Initializable {
                         double doanhThu = mapDT.getOrDefault(idSach, 0.0);
                         mapSL.put(idSach, soLuong + cts.getSoLuongNhap());
                         mapDT.put(idSach, doanhThu + cts.getDonGiaNhap() * cts.getSoLuongNhap());
+                        TChiPhii += cts.getDonGiaNhap() * cts.getSoLuongNhap();
                     }
                 }
+                TChiPhi.setText("Tổng chi phí: " + formatCurrency(TChiPhii));
                 Integer stt = 0;
                 List<Map.Entry<Integer, Double>> list = new ArrayList<>(mapDT.entrySet());
                 ChiPhiNhap = list;

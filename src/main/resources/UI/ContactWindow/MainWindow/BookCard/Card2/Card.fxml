@@ -8,21 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="208.0" prefWidth="219.0" styleClass="outside-pane" stylesheets="@Card.css"
-            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="208.0" prefWidth="219.0" styleClass="outside-pane" stylesheets="@Card.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.MainWindow.BookCard.SachThinhHanh">
    <cursor>
-      <Cursor fx:constant="HAND"/>
+      <Cursor fx:constant="HAND" />
    </cursor>
    <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
-   <ImageView fitHeight="124.0" fitWidth="84.0" layoutX="18.0" layoutY="14.0" pickOnBounds="true"
-              preserveRatio="true" styleClass="drop-shadow">
-      <Image url="@Image/1.jpg"/>
+   <ImageView fx:id="AnhSach" fitHeight="124.0" fitWidth="84.0" layoutX="18.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="drop-shadow">
+      <Image url="@Image/1.jpg" />
    </ImageView>
-   <Label layoutX="30.0" layoutY="146.0" lineSpacing="2.0" prefHeight="57.0" prefWidth="164.0" styleClass="book-text"
-          text="Mom's Story: A Memory and Keepsake Journal for My Family" textAlignment="CENTER" wrapText="true"/>
-   <Line endX="33.0" layoutX="167.0" layoutY="146.0" startX="-143.0" styleClass="line"/>
-   <Label layoutX="112.0" layoutY="76.0" prefHeight="27.0" prefWidth="98.0" styleClass="default-text" text="Giá bán:"/>
-   <Label layoutX="112.0" layoutY="28.0" prefHeight="27.0" prefWidth="98.0" styleClass="default-text" text="Đã bán:"/>
+   <Label fx:id="TenSach" layoutX="30.0" layoutY="146.0" lineSpacing="2.0" prefHeight="57.0" prefWidth="164.0" styleClass="book-text" text="Mom's Story: A Memory and Keepsake Journal for My Family" textAlignment="CENTER" wrapText="true" />
+   <Line endX="33.0" layoutX="167.0" layoutY="146.0" startX="-143.0" styleClass="line" />
+   <Label fx:id="GiaBan" layoutX="112.0" layoutY="76.0" prefHeight="27.0" prefWidth="98.0" styleClass="default-text" text="Giá bán:" />
+   <Label fx:id="DaBan" layoutX="112.0" layoutY="28.0" prefHeight="27.0" prefWidth="98.0" styleClass="default-text" text="Đã bán:" />
 </AnchorPane>

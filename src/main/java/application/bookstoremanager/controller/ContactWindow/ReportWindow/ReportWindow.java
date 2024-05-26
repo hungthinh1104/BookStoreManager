@@ -13,6 +13,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -51,6 +52,9 @@ public class ReportWindow implements Initializable {
 
     @FXML
     private ComboBox<String> CBTuan2;
+
+    @FXML
+    private Label TDoanhThu;
 
     @FXML
     private VBox MainContainer;
@@ -136,6 +140,7 @@ public class ReportWindow implements Initializable {
                 // Sắp xếp List theo giá trị value giảm dần
                 Collections.sort(list, (entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
                 BookContainer.getChildren().clear();
+                Double TongDT = 0.0;
                 for (Map.Entry<Integer, Double> entry : list) {
                     System.out.println(entry.getValue());
                     Sach sach = DatabaseUtil.getSachById(conn, entry.getKey());
@@ -144,7 +149,9 @@ public class ReportWindow implements Initializable {
                     ReportRowTable book = loader.getController();
                     book.setData((++stt).toString(), sach.getTenSach(), sach.getTacGia(), sach.getTheLoai().getTenTheLoai(), mapSL.get(entry.getKey()).toString(), formatCurrency(entry.getValue()));
                     BookContainer.getChildren().add(newContent3);
+                    TongDT += entry.getValue();
                 }
+                TDoanhThu.setText("Tổng doanh thu: " + formatCurrency(TongDT));
             }
             assert conn != null;
             conn.close();
