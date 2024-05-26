@@ -18,7 +18,7 @@
 .title {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-text-fill: #E78895;
+    -fx-text-fill: #42A5F5;
     -fx-font-size: 22;
 }
 
@@ -45,6 +45,7 @@
     -fx-background-color: #4CAF50;
     -fx-background-radius: 20;
     -fx-text-fill: white;
+    -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
     -fx-padding: 8 16;
     -fx-font-size: 14;
@@ -75,6 +76,6 @@
 .information-text {
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-text-fill: Black;
-    -fx-font-size: 12;
+    -fx-text-fill: #4B5563;
+    -fx-font-size: 13;
 }
