@@ -37,32 +37,32 @@
       </Button>
    </HBox>
    <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">
-      <Label alignment="CENTER" layoutX="26.0" styleClass="header-table-text" text="STT">
+      <Label alignment="CENTER" layoutX="27.0" styleClass="header-table-text" text="STT">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="118.0" prefHeight="31.0" prefWidth="178.0" styleClass="header-table-text" text="Tên sách">
+      <Label alignment="CENTER" layoutX="129.0" prefHeight="31.0" prefWidth="178.0" styleClass="header-table-text" text="Tên sách">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="309.0" prefHeight="31.0" prefWidth="158.0" styleClass="header-table-text" text="Tác giả">
+      <Label alignment="CENTER" layoutX="344.0" prefHeight="31.0" prefWidth="158.0" styleClass="header-table-text" text="Tác giả">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="486.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Thể loại">
+      <Label alignment="CENTER" layoutX="536.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Thể loại">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="646.0" styleClass="header-table-text" text="Đầu tháng">
+      <Label alignment="CENTER" layoutX="685.0" styleClass="header-table-text" text="Đầu tháng">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="816.0" styleClass="header-table-text" text="Cuối Tháng">
+      <Label alignment="CENTER" layoutX="813.0" prefHeight="29.0" prefWidth="126.0" styleClass="header-table-text" text="Cuối Tháng">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
@@ -90,27 +90,27 @@
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="118.0" prefHeight="31.0" prefWidth="178.0" styleClass="header-table-text" text="Tên sách">
+      <Label alignment="CENTER" layoutX="129.0" prefHeight="31.0" prefWidth="178.0" styleClass="header-table-text" text="Tên sách">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="309.0" prefHeight="31.0" prefWidth="158.0" styleClass="header-table-text" text="Tác giả">
+      <Label alignment="CENTER" layoutX="341.0" prefHeight="31.0" prefWidth="158.0" styleClass="header-table-text" text="Tác giả">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="486.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Thể loại">
+      <Label alignment="CENTER" layoutX="535.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Thể loại">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="646.0" prefHeight="31.0" prefWidth="144.0" styleClass="header-table-text" text="Số lượng nhập">
+      <Label alignment="CENTER" layoutX="668.0" prefHeight="31.0" prefWidth="144.0" styleClass="header-table-text" text="Số lượng nhập">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Label>
-      <Label alignment="CENTER" layoutX="816.0" styleClass="header-table-text" text="Chi phí">
+      <Label alignment="CENTER" layoutX="835.0" styleClass="header-table-text" text="Chi phí">
          <padding>
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>

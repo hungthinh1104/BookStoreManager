@@ -6,8 +6,6 @@
 }
 
 .default-text {
-    -fx-background-color: white;
-    -fx-background-radius: white;
     -fx-text-fill: #4B5563;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 300;
