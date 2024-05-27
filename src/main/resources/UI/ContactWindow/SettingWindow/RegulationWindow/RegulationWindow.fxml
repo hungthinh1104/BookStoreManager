@@ -1,59 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
-
-<VBox fx:id="MainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@RegulationWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.SettingWindow.RegularWindow">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="MainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane"
+      stylesheets="@RegulationWindow.css" xmlns="http://javafx.com/javafx/22"
+      fx:controller="application.bookstoremanager.controller.ContactWindow.SettingWindow.RegularWindow">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <VBox prefHeight="35.0" prefWidth="1001.0">
         <VBox.margin>
-            <Insets />
+            <Insets/>
         </VBox.margin>
         <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
-            <Label onMouseClicked="#btnChangeToOtherPage_OnAction" styleClass="header-text" text="Tài khoản" />
-            <Label styleClass="header-text-selected" text="Thay đổi quy định" />
+            <Label onMouseClicked="#btnChangeToOtherPage_OnAction" styleClass="header-text" text="Tài khoản"/>
+            <Label styleClass="header-text-selected" text="Thay đổi quy định"/>
         </HBox>
         <Line endX="48.185733795166016" endY="3.075599579460686E-6" startX="-100.0" styleClass="line-selected">
             <VBox.margin>
-                <Insets left="104.0" />
+                <Insets left="104.0"/>
             </VBox.margin>
         </Line>
-        <Line endX="856.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />
+        <Line endX="856.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line"/>
     </VBox>
 
     <!-- Form Section -->
     <VBox spacing="10.0" styleClass="light-border">
         <HBox alignment="CENTER">
             <VBox alignment="CENTER_LEFT" prefHeight="328.0" prefWidth="183.0" spacing="20.0">
-                <Label prefHeight="28.0" styleClass="choose-text" text="Số lượng nhập tối thiểu:" />
-                <Label prefHeight="28.0" styleClass="choose-text" text="Số lượng tồn tối đa:" />
-                <Label prefHeight="28.0" styleClass="choose-text" text="Số lượng tồn tối thiểu:" />
-                <Label prefHeight="28.0" styleClass="choose-text" text="Tỷ lệ tính đơn giá bán:" />
-                <Label prefHeight="28.0" styleClass="choose-text" text="Tiền cọc:" />
-            <Label prefHeight="28.0" styleClass="choose-text" text="Tỉ lệ tích điểm:" />
+                <Label prefHeight="28.0" styleClass="choose-text" text="Số lượng nhập tối thiểu:"/>
+                <Label prefHeight="28.0" styleClass="choose-text" text="Số lượng tồn tối đa:"/>
+                <Label prefHeight="28.0" styleClass="choose-text" text="Số lượng tồn tối thiểu:"/>
+                <Label prefHeight="28.0" styleClass="choose-text" text="Tỷ lệ tính đơn giá bán:"/>
+                <Label prefHeight="28.0" styleClass="choose-text" text="Tiền cọc:"/>
+                <Label prefHeight="28.0" styleClass="choose-text" text="Tỉ lệ tích điểm:"/>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="15.0">
-                <TextField fx:id="minQuantityInput" editable="false" prefWidth="400.0" promptText="Số lượng nhập tối thiểu" styleClass="information-text" />
-                <TextField fx:id="maxStockInput" editable="false" promptText="Số lượng tồn tối đa" styleClass="information-text" />
-                <TextField fx:id="minStockInput" editable="false" promptText="Số lượng tồn tối thiểu" styleClass="information-text" />
-                <TextField fx:id="priceRateInput" editable="false" promptText="Tỷ lệ tính đơn giá bán" styleClass="information-text" />
-                <TextField fx:id="depositInput" editable="false" promptText="Tiền cọc" styleClass="information-text" />
-            <TextField fx:id="depositInput1" editable="false" promptText="Tỉ lệ tích điểm" styleClass="information-text" />
+                <TextField fx:id="minQuantityInput" editable="false" prefWidth="400.0"
+                           promptText="Số lượng nhập tối thiểu" styleClass="information-text"/>
+                <TextField fx:id="maxStockInput" editable="false" promptText="Số lượng tồn tối đa"
+                           styleClass="information-text"/>
+                <TextField fx:id="minStockInput" editable="false" promptText="Số lượng tồn tối thiểu"
+                           styleClass="information-text"/>
+                <TextField fx:id="priceRateInput" editable="false" promptText="Tỷ lệ tính đơn giá bán"
+                           styleClass="information-text"/>
+                <TextField fx:id="depositInput" editable="false" promptText="Tiền cọc" styleClass="information-text"/>
+                <TextField fx:id="depositInput1" editable="false" promptText="Tỉ lệ tích điểm"
+                           styleClass="information-text"/>
             </VBox>
         </HBox>
         <HBox spacing="10.0">
-            <Button fx:id="btnedit" onAction="#btnEdit_OnAction" prefHeight="33.0" prefWidth="100.0" styleClass="drop-shadow" text="Cập Nhật" />
-            <Button fx:id="btnconfirm" onAction="#btnconfirmOnAction" prefHeight="33.0" prefWidth="100.0" styleClass="drop-shadow" text="Xác Nhận" />
+            <Button fx:id="btnedit" onAction="#btnEdit_OnAction" prefHeight="33.0" prefWidth="100.0"
+                    styleClass="drop-shadow" text="Cập Nhật"/>
+            <Button fx:id="btnconfirm" onAction="#btnconfirmOnAction" prefHeight="33.0" prefWidth="100.0"
+                    styleClass="drop-shadow" text="Xác Nhận"/>
         </HBox>
         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
         </padding>
     </VBox>
 </VBox>

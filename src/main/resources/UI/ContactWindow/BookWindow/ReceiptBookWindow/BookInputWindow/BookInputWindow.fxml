@@ -1,85 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-
-<AnchorPane prefHeight="658.0" prefWidth="1029.0" styleClass="outside-pane" stylesheets="@BookInputWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput.BookInput">
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="658.0" prefWidth="1029.0" styleClass="outside-pane"
+            stylesheets="@BookInputWindow.css" xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput.BookInput">
     <VBox layoutX="14.0" layoutY="17.0" prefHeight="621.0" prefWidth="646.0">
         <HBox alignment="TOP_CENTER" prefHeight="27.0" prefWidth="340.0" spacing="10.0">
-            <Label alignment="CENTER" prefHeight="36.0" prefWidth="106.0" text="Ngày lập:" />
-            <DatePicker fx:id="datePicker" prefHeight="34.0" prefWidth="145.0" styleClass="datePicker" />
+            <Label alignment="CENTER" prefHeight="36.0" prefWidth="106.0" text="Ngày lập:"/>
+            <DatePicker fx:id="datePicker" prefHeight="34.0" prefWidth="145.0" styleClass="datePicker"/>
         </HBox>
-        <Line endX="518.8928833007812" endY="6.878376098029548E-6" startX="-100.0" styleClass="line" />
+        <Line endX="518.8928833007812" endY="6.878376098029548E-6" startX="-100.0" styleClass="line"/>
         <Pane prefHeight="46.0" prefWidth="624.0">
-            <HBox alignment="CENTER" layoutX="206.0" layoutY="-5.0" prefHeight="43.0" prefWidth="252.0" spacing="10.0" styleClass="light-radius-box-square">
+            <HBox alignment="CENTER" layoutX="206.0" layoutY="-5.0" prefHeight="43.0" prefWidth="252.0" spacing="10.0"
+                  styleClass="light-radius-box-square">
                 <padding>
-                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0"/>
                 </padding>
-                <FontIcon iconLiteral="fas-search" strokeWidth="0.0" styleClass="icon" />
-                <TextField fx:id="searchBook" prefHeight="30.0" prefWidth="278.0" promptText="Tìm kiếm" styleClass="search-side" />
+                <FontIcon iconLiteral="fas-search" strokeWidth="0.0" styleClass="icon"/>
+                <TextField fx:id="searchBook" prefHeight="30.0" prefWidth="278.0" promptText="Tìm kiếm"
+                           styleClass="search-side"/>
             </HBox>
         </Pane>
         <HBox alignment="CENTER_LEFT" prefHeight="375.0" prefWidth="624.0" spacing="10.0">
-            <Label text="Chọn sách:" />
-            <ScrollPane prefHeight="362.0" prefWidth="543.0" style="-fx-background-color: transparent;" styleClass="light-border">
-                <VBox fx:id="BookContainer" maxHeight="12000.0" minHeight="287.0" minWidth="526.0" prefHeight="358.0" prefWidth="526.0" spacing="5.0" style="-fx-background-color: transparent; -fx-border-radius: 10;">
+            <Label text="Chọn sách:"/>
+            <ScrollPane prefHeight="362.0" prefWidth="543.0" style="-fx-background-color: transparent;"
+                        styleClass="light-border">
+                <VBox fx:id="BookContainer" maxHeight="12000.0" minHeight="287.0" minWidth="526.0" prefHeight="358.0"
+                      prefWidth="526.0" spacing="5.0" style="-fx-background-color: transparent; -fx-border-radius: 10;">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </padding>
                 </VBox>
             </ScrollPane>
             <VBox.margin>
-                <Insets />
+                <Insets/>
             </VBox.margin>
         </HBox>
         <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="474.0" spacing="16.0">
-            <Label prefHeight="17.0" prefWidth="60.0" text="Số lượng:" />
-            <TextField fx:id="SoLuong" prefHeight="30.0" prefWidth="245.0" styleClass="textField" />
+            <Label prefHeight="17.0" prefWidth="60.0" text="Số lượng:"/>
+            <TextField fx:id="SoLuong" prefHeight="30.0" prefWidth="245.0" styleClass="textField"/>
             <Label prefHeight="43.0" prefWidth="89.0" text="Đơn giá nhập:" textAlignment="CENTER" wrapText="true">
                 <HBox.margin>
-                    <Insets left="121.0" />
+                    <Insets left="121.0"/>
                 </HBox.margin>
             </Label>
-            <TextField fx:id="DonGia" prefHeight="30.0" prefWidth="152.0" styleClass="textField" />
+            <TextField fx:id="DonGia" prefHeight="30.0" prefWidth="152.0" styleClass="textField"/>
         </HBox>
-      <Label styleClass="error-text" text="ERROR">
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Label>
+        <Label styleClass="error-text" text="ERROR">
+            <VBox.margin>
+                <Insets left="20.0"/>
+            </VBox.margin>
+        </Label>
         <HBox alignment="CENTER" prefHeight="46.0" prefWidth="356.0" spacing="10.0">
-            <Button fx:id="btnThemSach" onAction="#setBtnThemSach_OnAction" prefHeight="25.0" prefWidth="100.0" styleClass="add" text="Thêm" />
+            <Button fx:id="btnThemSach" onAction="#setBtnThemSach_OnAction" prefHeight="25.0" prefWidth="100.0"
+                    styleClass="add" text="Thêm"/>
         </HBox>
         <styleClass>
-            <String fx:value="light-radius-box-square" />
-            <String fx:value="outside-pane" />
+            <String fx:value="light-radius-box-square"/>
+            <String fx:value="outside-pane"/>
         </styleClass>
     </VBox>
-    <ScrollPane layoutX="684.0" layoutY="15.0" prefHeight="578.0" prefWidth="358.0" styleClass="light-radius-box-square">
-        <VBox fx:id="DanhSachNhap" alignment="TOP_CENTER" minHeight="516.0" minWidth="330.0" prefHeight="569.0" prefWidth="330.0" spacing="5.0" style="-fx-background-color: transparent;" styleClass="inside">
+    <ScrollPane layoutX="684.0" layoutY="15.0" prefHeight="578.0" prefWidth="358.0"
+                styleClass="light-radius-box-square">
+        <VBox fx:id="DanhSachNhap" alignment="TOP_CENTER" minHeight="516.0" minWidth="330.0" prefHeight="569.0"
+              prefWidth="330.0" spacing="5.0" style="-fx-background-color: transparent;" styleClass="inside">
             <padding>
-                <Insets top="2.0" />
+                <Insets top="2.0"/>
             </padding>
         </VBox>
         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
         </padding>
     </ScrollPane>
-    <Label layoutX="716.0" layoutY="6.0" styleClass="default-text" text="Danh sách nhập" />
-    <Button fx:id="btnThemPhieu" layoutX="704.0" layoutY="602.0" onAction="#btnThemPhieu_OnAction" prefHeight="34.0" prefWidth="138.0" styleClass="add" text="Thêm phiếu nhập" />
-    <Button fx:id="btnHuy" layoutX="910.0" layoutY="602.0" prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy" />
+    <Label layoutX="716.0" layoutY="6.0" styleClass="default-text" text="Danh sách nhập"/>
+    <Button fx:id="btnThemPhieu" layoutX="704.0" layoutY="602.0" onAction="#btnThemPhieu_OnAction" prefHeight="34.0"
+            prefWidth="138.0" styleClass="add" text="Thêm phiếu nhập"/>
+    <Button fx:id="btnHuy" layoutX="910.0" layoutY="602.0" prefHeight="25.0" prefWidth="100.0" styleClass="cancel"
+            text="Hủy"/>
     <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
     </padding>
 </AnchorPane>
