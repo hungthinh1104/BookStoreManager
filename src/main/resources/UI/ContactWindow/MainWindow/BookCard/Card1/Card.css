@@ -10,16 +10,7 @@
     -fx-text-fill: #4B5563;
     -fx-font-family: "Inter Medium";
     -fx-font-weight: 400;
-    -fx-font-size: 13;
-}
-
-.star-empty {
-    -fx-fill: white;
-
-}
-
-.star-fill {
-    -fx-fill: #E0D777;
+    -fx-font-size: 14;
 }
 
 .price {
