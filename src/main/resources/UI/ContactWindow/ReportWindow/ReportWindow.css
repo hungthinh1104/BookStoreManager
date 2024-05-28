@@ -1,12 +1,16 @@
-/* Importing Inter Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* General Styling */
 .root {
     -fx-background-color: #f5f5f5;
     -fx-padding: 20;
     -fx-spacing: 10;
-    -fx-font-family: 'Inter', sans-serif;
+    -fx-font-weight: 400;
+    -fx-font-family: 'Inter';
+}
+
+.light-border {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 10;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
 }
 
 .label {
@@ -33,7 +37,7 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-font-size: 14px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.5, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 0);
 }
 
 .button:hover {
@@ -46,8 +50,8 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-background-color: white;
-    -fx-font-size: 14px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.5, 0, 0);
+    -fx-font-size: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 0);
 }
 
 .table-column {
@@ -62,10 +66,9 @@
     -fx-border-width: 1;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.5, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 0);
 }
 
-/* Specific Styling for Sections */
 .label-section {
     -fx-font-size: 18px;
     -fx-font-weight: 600;
@@ -83,6 +86,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-color: #f0f0f0;
+    -fx-font-size: 13px; /* Reduced font size for table headers */
 }
 
 .table-view .table-row-cell:filled:selected {
@@ -108,7 +112,6 @@
     -fx-background-insets: 0;
 }
 
-/* Additional Hover Effects */
 .table-view .table-cell {
     -fx-padding: 5 10;
 }
@@ -117,7 +120,6 @@
     -fx-background-color: #f1f1f1;
 }
 
-/* Button Focus */
 .button:focused {
     -fx-border-color: #666;
     -fx-border-width: 2;
@@ -133,4 +135,42 @@
     -fx-border-color: #ddd;
     -fx-border-width: 1;
     -fx-padding: 10;
+}
+
+
+.header-text {
+    -fx-text-fill: #42A5F5;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 18px;
+}
+
+.header-text-selected {
+    -fx-text-fill: #0D47A1;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-font-size: 18px;
+}
+
+.line-selected {
+    -fx-stroke: #0D47A1;
+    -fx-stroke-width: 2;
+}
+
+.line {
+    -fx-stroke: #BBDEFB;
+    -fx-stroke-width: 2;
+}
+
+.header-table-text {
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-font-size: 15;
+}
+
+.header-table-contain {
+    -fx-background-radius: 10;
+    -fx-background-color: #52A198;
+    -fx-font-size: 15px;
 }

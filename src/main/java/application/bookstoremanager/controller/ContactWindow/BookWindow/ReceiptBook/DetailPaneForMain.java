@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import java.sql.Connection;
 import java.util.List;
 
+import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
+
 public class DetailPaneForMain {
 
     @FXML
@@ -23,9 +25,15 @@ public class DetailPaneForMain {
     @FXML
     private Label TenSach;
 
+    @FXML
+    private Label TacGia;
+
+    @FXML
+    private Label TheLoai;
+
     public void setData(CtPhieunhapsach PNS) {
         SoLuong.setText("Số lượng: " + PNS.getSoLuongNhap().toString());
-        DonGia.setText("Đơn giá: " + PNS.getDonGiaNhap().toString());
+        DonGia.setText("Đơn giá: " + formatCurrency(PNS.getDonGiaNhap()));
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
@@ -33,6 +41,8 @@ public class DetailPaneForMain {
                 for (Sach sach : SachList) {
                     if(sach.getMaSach().equals(PNS.getMaSach())){
                         TenSach.setText(sach.getTenSach());
+                        TacGia.setText(sach.getTacGia());
+                        TheLoai.setText(sach.getTheLoai().getTenTheLoai());
                         break;
                     }
                 }

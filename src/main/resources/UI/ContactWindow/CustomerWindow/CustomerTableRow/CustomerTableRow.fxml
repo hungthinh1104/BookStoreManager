@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="26.0" prefWidth="937.0" styleClass="light-border"
+            stylesheets="@CustomerTableRow.css" xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.CustomerTableRow">
+    <Label fx:id="MaKhachHang" alignment="CENTER" layoutX="19.0" layoutY="2.0" prefHeight="38.0" prefWidth="189.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+    <Label fx:id="TenKhachHang" alignment="CENTER" layoutX="227.0" layoutY="2.0" prefHeight="38.0" prefWidth="241.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+    <Label fx:id="SoDienThoai" alignment="CENTER" layoutX="487.0" layoutY="2.0" prefHeight="38.0" prefWidth="227.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+    <FontIcon iconLiteral="fas-ellipsis-h" layoutX="906.0" layoutY="23.0" strokeWidth="0.0"/>
+    <Label fx:id="TichDiem" alignment="CENTER" layoutX="731.0" layoutY="2.0" prefHeight="38.0" prefWidth="145.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER"/>
+</AnchorPane>

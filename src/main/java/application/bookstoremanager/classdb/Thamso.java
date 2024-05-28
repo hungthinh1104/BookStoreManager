@@ -6,13 +6,15 @@ public class Thamso {
     private final Integer soLuongTonToiThieu;
     private final Float tiLeTinhDonGiaBan;
     private final Double tienCoc;
+    private final Float tichDiem;
 
-    public Thamso(Integer soLuongNhapToiThieu, Integer soLuongTonToiDa, Integer soLuongTonToiThieu, Float tileDonGiaBan, Double tienCoc) {
+    public Thamso(Integer soLuongNhapToiThieu, Integer soLuongTonToiDa, Integer soLuongTonToiThieu, Float tileDonGiaBan, Double tienCoc, Float tichDiem) {
         this.soLuongNhapToiThieu = soLuongNhapToiThieu;
         this.soLuongTonToiDa = soLuongTonToiDa;
         this.soLuongTonToiThieu = soLuongTonToiThieu;
         this.tiLeTinhDonGiaBan = tileDonGiaBan;
         this.tienCoc = tienCoc;
+        this.tichDiem = tichDiem;
     }
 
     public Integer getSoLuongNhapToiThieu() {
@@ -34,4 +36,6 @@ public class Thamso {
     public Double getTienCoc() {
         return this.tienCoc;
     }
+
+    public Float getTichDiem() {return this.tichDiem;}
 }

@@ -112,6 +112,7 @@
 .header-table-contain {
     -fx-background-radius: 10;
     -fx-background-color: #52A198;
+    -fx-font-size: 15px;
 }
 
 .inside-table {
@@ -122,7 +123,7 @@
     -fx-font-weight: 400;
     -fx-font-size: 13;
     -fx-font-family: Inter;
-    -fx-text-fill: #616161;
+    /*-fx-text-fill: #616161;*/
 }
 
 .list-view {

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<HBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="48.0" prefWidth="782.0" spacing="20.0"
-      styleClass="into-side-pane" stylesheets="@../BillAddedWindow.css" xmlns="http://javafx.com/javafx/22">
-    <TextField prefHeight="26.0" prefWidth="137.0" styleClass="input-side"/>
-    <ComboBox prefHeight="26.0" prefWidth="134.0" styleClass="input-side"/>
-    <TextField prefHeight="26.0" prefWidth="172.0" styleClass="input-side"/>
-    <TextField prefHeight="26.0" prefWidth="80.0" styleClass="input-side"/>
-    <Label alignment="CENTER" prefHeight="18.0" prefWidth="83.0" text="Money" textAlignment="CENTER"/>
-    <FontIcon iconLiteral="far-trash-alt" iconSize="12" styleClass="trash-icon" tabSize="0">
-        <HBox.margin>
-            <Insets left="30.0"/>
-        </HBox.margin>
-    </FontIcon>
-</HBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="40.0" prefWidth="408.0" styleClass="light-border"
+            stylesheets="@BillInformationWindow.css" xmlns="http://javafx.com/javafx/22">
+    <FontIcon iconLiteral="far-trash-alt" iconSize="12" layoutX="383.0" layoutY="24.0" styleClass="trash-icon"
+              tabSize="0"/>
+    <Label layoutX="5.0" layoutY="1.0" prefHeight="40.0" prefWidth="158.0" text="Tên sách"/>
+    <Label layoutX="176.0" prefHeight="40.0" prefWidth="62.0" text="Số lượng"/>
+    <Label layoutX="256.0" prefHeight="40.0" prefWidth="82.0" text="Đơn giá bán"/>
+</AnchorPane>

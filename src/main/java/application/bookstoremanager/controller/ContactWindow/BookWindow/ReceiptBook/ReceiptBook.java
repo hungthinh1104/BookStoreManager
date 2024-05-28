@@ -157,6 +157,7 @@ public class ReceiptBook implements Initializable {
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner((Stage) btnNhanSach.getScene().getWindow());
             stage.showAndWait();
+            LoadData(searchDate.getValue());
             System.out.println("load data");
         } catch (IOException e) {
             e.printStackTrace();

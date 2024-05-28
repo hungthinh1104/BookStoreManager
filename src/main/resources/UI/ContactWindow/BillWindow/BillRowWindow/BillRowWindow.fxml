@@ -4,40 +4,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="32.0" prefWidth="932.0" styleClass="light-radius-box-border"
-            stylesheets="@BillRowWindow.css" xmlns="http://javafx.com/javafx/22">
-    <children>
-        <Label alignment="CENTER" layoutX="15.0" prefHeight="30.0" prefWidth="103.0" styleClass="information-text"
-               text="Label" textAlignment="CENTER">
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </Label>
-        <Label alignment="CENTER" layoutX="159.0" prefHeight="30.0" prefWidth="119.0" styleClass="information-text"
-               text="Label" textAlignment="CENTER">
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </Label>
-        <Label alignment="CENTER" layoutX="318.0" prefHeight="30.0" prefWidth="200.0" styleClass="information-text"
-               text="Label" textAlignment="CENTER">
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </Label>
-        <FontIcon iconLiteral="fas-trash-alt" layoutX="897.0" layoutY="21.0" strokeWidth="0.0" styleClass="icon"/>
-        <FontIcon iconLiteral="fas-pen" layoutX="869.0" layoutY="21.0" strokeWidth="0.0" styleClass="icon"/>
-        <Label alignment="CENTER" layoutX="694.0" prefHeight="30.0" prefWidth="125.0" styleClass="information-text"
-               text="Label" textAlignment="CENTER">
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </Label>
-        <Label alignment="CENTER" layoutX="547.0" prefHeight="30.0" prefWidth="109.0" styleClass="information-text"
-               text="Label" textAlignment="CENTER">
-            <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </padding>
-        </Label>
-    </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="42.0" prefWidth="931.0" styleClass="light-radius-box-border"
+            stylesheets="@BillRowWindow.css" xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillRowTable">
+    <Label fx:id="MaHD" alignment="CENTER" layoutX="15.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TenKH" alignment="CENTER" layoutX="160.0" layoutY="6.0" prefHeight="30.0" prefWidth="178.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="SDT" alignment="CENTER" layoutX="356.0" layoutY="6.0" prefHeight="30.0" prefWidth="195.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TongTien" alignment="CENTER" layoutX="728.0" layoutY="6.0" prefHeight="30.0" prefWidth="142.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="NgayLap" alignment="CENTER" layoutX="572.0" layoutY="6.0" prefHeight="30.0" prefWidth="136.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <FontIcon iconLiteral="fas-ellipsis-h" layoutX="888.0" layoutY="26.0" strokeWidth="0.0" styleClass="icon"/>
 </AnchorPane>

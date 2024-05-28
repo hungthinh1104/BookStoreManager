@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" stylesheets="@AddAccountWindow.css" xmlns="http://javafx.com/javafx/22"
+      fx:controller="application.bookstoremanager.controller.ContactWindow.SettingWindow.CreateAccount">
+    <GridPane hgap="10" prefHeight="181.0" prefWidth="321.0" vgap="10">
+        <Label styleClass="choose-text" text="Tên đăng nhập:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="TenDN" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label styleClass="choose-text" text="Mật khẩu:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+        <Label styleClass="choose-text" text="Nhập lại mật khẩu:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+        <Label styleClass="choose-text" text="Họ và tên:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="HoTen" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label styleClass="choose-text" text="Vai trò:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="Vaitro" maxHeight="30.0" prefHeight="16.0" prefWidth="178.0" styleClass="combo-box"
+                  GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <PasswordField fx:id="MK" styleClass="password-field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="NhapLaiMK" styleClass="password-field" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <columnConstraints>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints prefHeight="30.0"/>
+        </rowConstraints>
+    </GridPane>
+    <HBox alignment="CENTER" prefHeight="39.0" prefWidth="272.0" spacing="10.0">
+        <Button fx:id="btnHuy" mnemonicParsing="false" onAction="#btnHuyOnAction" prefHeight="38.0" prefWidth="79.0"
+                styleClass="cancel-button" text="Hủy"/>
+
+        <Button fx:id="btnThemTaiKhoan" onAction="#btnThemTaiKhoanOnAction" styleClass="add-button"
+                text="Thêm tài khoản"/>
+        <VBox.margin>
+            <Insets top="10.0"/>
+        </VBox.margin>
+    </HBox>
+</VBox>

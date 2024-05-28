@@ -12,6 +12,8 @@ module com.bookstoremanager {
     requires java.sql;
     requires java.desktop;
     requires javafx.swing;
+    requires org.apache.poi.poi;
+    requires org.apache.poi.ooxml;
 
     opens application.bookstoremanager to javafx.fxml;
     exports application.bookstoremanager;
@@ -29,6 +31,17 @@ module com.bookstoremanager {
     opens application.bookstoremanager.controller.ContactWindow.BookWindow.ReceiptBook to javafx.fxml;
     exports application.bookstoremanager.controller.ContactWindow.SettingWindow;
     opens application.bookstoremanager.controller.ContactWindow.SettingWindow to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput;
+    opens application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.ReportWindow;
+    opens application.bookstoremanager.controller.ContactWindow.ReportWindow to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.CustomerWindow;
+    opens application.bookstoremanager.controller.ContactWindow.CustomerWindow to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.BillWindow;
+    opens application.bookstoremanager.controller.ContactWindow.BillWindow to javafx.fxml;
+    exports application.bookstoremanager.controller.ContactWindow.OrderWindow;
+    opens application.bookstoremanager.controller.ContactWindow.OrderWindow to javafx.fxml;
+
     exports application.bookstoremanager.classdb;
     opens application.bookstoremanager.classdb to javafx.fxml;
 }

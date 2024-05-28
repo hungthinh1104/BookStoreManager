@@ -3,7 +3,8 @@
     -fx-border-color: lightgrey;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.2, 0, 0);
+    -fx-margin: 5;
 }
 
 .book-text {
@@ -27,5 +28,5 @@
 }
 
 .drop-shadow {
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 1);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.2, 0, 0);
 }

@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.HBox?>
-<HBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="23.0" prefWidth="800.0" spacing="30.0"
-      styleClass="into-side-pane" stylesheets="@OrderInformationWindow.css" xmlns="http://javafx.com/javafx/22">
-    <Label alignment="CENTER" prefHeight="18.0" prefWidth="155.0" styleClass="default-text" text="Label"/>
-    <Label alignment="CENTER" prefHeight="18.0" prefWidth="106.0" styleClass="default-text" text="Label"/>
-    <Label alignment="CENTER" prefHeight="18.0" prefWidth="145.0" styleClass="default-text" text="Label"/>
-    <Label alignment="CENTER" prefHeight="18.0" prefWidth="99.0" styleClass="default-text" text="Label"/>
-    <Label alignment="CENTER" prefHeight="18.0" prefWidth="83.0" styleClass="default-text" text="Money"
-           textAlignment="CENTER"/>
-</HBox>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="40.0" prefWidth="840.0"
+            styleClass="light-radius-box-border" stylesheets="@../../OrderRowWindow/OrderRowWindow.css"
+            xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderInfor">
+    <Label fx:id="TenSach" alignment="CENTER" layoutX="21.0" layoutY="6.0" prefHeight="30.0" prefWidth="230.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TheLoai" alignment="CENTER" layoutX="250.0" layoutY="6.0" prefHeight="30.0" prefWidth="147.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TacGia" alignment="CENTER" layoutX="420.0" layoutY="6.0" prefHeight="30.0" prefWidth="149.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="SoLuong" alignment="CENTER" layoutX="575.0" layoutY="6.0" prefHeight="30.0" prefWidth="109.0"
+           styleClass="information-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TrangThai" alignment="CENTER" layoutX="700.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0"
+           styleClass="not-enough" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+</AnchorPane>

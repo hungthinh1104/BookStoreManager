@@ -1,5 +1,6 @@
 package application.bookstoremanager.controller.Sidebar;
 
+import application.bookstoremanager.GlobalVariable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -42,6 +43,7 @@ public class Sidebar implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("USer: " + GlobalVariable.User.getHoTen());
         preButton = btnHome;
         try {
             Parent newContent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/UI/ContactWindow/MainWindow/MainWindow.fxml")));

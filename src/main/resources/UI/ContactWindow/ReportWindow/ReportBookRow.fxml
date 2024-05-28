@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="40.0" prefWidth="960.0" stylesheets="@ReportBookRow.css"
+            xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.ReportWindow.ReportRowTable">
+    <styleClass>
+        <String fx:value="light-radius-box"/>
+        <String fx:value="drop-shadow"/>
+    </styleClass>
+    <Label fx:id="Cot1" alignment="CENTER" layoutX="14.0" layoutY="4.0" prefHeight="32.0" prefWidth="91.0"
+           styleClass="default-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="Cot2" alignment="CENTER" layoutX="114.0" layoutY="4.0" prefHeight="30.0" prefWidth="205.0"
+           styleClass="default-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="Cot3" alignment="CENTER" layoutX="330.0" layoutY="4.0" prefHeight="30.0" prefWidth="182.0"
+           styleClass="default-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="Cot5" alignment="CENTER" layoutX="676.0" layoutY="4.0" prefHeight="30.0" prefWidth="125.0"
+           styleClass="default-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="Cot4" alignment="CENTER" layoutX="527.0" layoutY="4.0" prefHeight="32.0" prefWidth="135.0"
+           styleClass="default-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="Cot6" alignment="CENTER" layoutX="815.0" layoutY="4.0" prefHeight="30.0" prefWidth="125.0"
+           styleClass="default-text" text="Label" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+</AnchorPane>

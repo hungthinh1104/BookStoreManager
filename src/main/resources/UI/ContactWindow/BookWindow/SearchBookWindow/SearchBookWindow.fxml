@@ -1,63 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-
-<VBox fx:id="MainBookConTainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btnChangeToPNS_OnAction" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@SearchBookWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow">
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="MainBookConTainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane"
+      stylesheets="@SearchBookWindow.css" xmlns="http://javafx.com/javafx/22"
+      fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow">
     <padding>
-        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
     </padding>
     <VBox prefHeight="35.0" prefWidth="1001.0">
         <VBox.margin>
-            <Insets />
+            <Insets/>
         </VBox.margin>
         <HBox prefHeight="26.0" prefWidth="1022.0" spacing="20.0">
-            <Label styleClass="header-text-selected" text="Tìm kiếm sách" />
-            <Label styleClass="header-text" text="Phiếu nhập sách" />
+            <Label styleClass="header-text-selected" text="Tìm kiếm sách"/>
+            <Label onMouseClicked="#btnChangeToPNS_OnAction" styleClass="header-text" text="Phiếu nhập sách"/>
         </HBox>
-        <Line endX="26.492889404296875" endY="2.300739197380608E-6" startX="-100.0" styleClass="line-selected" />
-        <Line endX="865.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line" />
+        <Line endX="19.585784912109375" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line-selected"/>
+        <Line endX="865.5858154296875" endY="1.5497207641601562E-6" startX="-100.0" styleClass="line"/>
     </VBox>
     <HBox prefHeight="110.0" prefWidth="991.0" spacing="250.0">
         <HBox alignment="CENTER" prefHeight="148.0" prefWidth="410.0" spacing="30.0">
             <AnchorPane>
                 <HBox layoutX="6.0" layoutY="60.0" spacing="10.0">
-                    <ComboBox fx:id="cbTheLoai" prefHeight="30.0" prefWidth="160.0" promptText="Thể loại" styleClass="filter-side" />
-               <TextField fx:id="searchTG" alignment="CENTER" prefHeight="30.0" prefWidth="160.0" promptText="Tác giả" styleClass="search-side" />
+                    <ComboBox fx:id="cbTheLoai" prefHeight="30.0" prefWidth="160.0" promptText="Thể loại"
+                              styleClass="filter-side"/>
+                    <TextField fx:id="searchTG" alignment="CENTER" prefHeight="30.0" prefWidth="160.0"
+                               promptText="Tác giả" styleClass="search-side"/>
                 </HBox>
-                <TextField fx:id="searchText" alignment="CENTER" layoutX="7.0" layoutY="18.0" prefHeight="30.0" prefWidth="327.0" promptText="Tìm kiếm " styleClass="search-side" />
-                <FontIcon fill="#393b3ea3" iconLiteral="fas-search" iconSize="18" layoutX="24.0" layoutY="41.0" strokeWidth="0.0" styleClass="icon" tabSize="0" />
+                <TextField fx:id="searchText" alignment="CENTER" layoutX="7.0" layoutY="18.0" prefHeight="30.0"
+                           prefWidth="327.0" promptText="Tìm kiếm " styleClass="search-side"/>
+                <FontIcon fill="#393b3ea3" iconLiteral="fas-search" iconSize="18" layoutX="24.0" layoutY="41.0"
+                          strokeWidth="0.0" styleClass="icon" tabSize="0"/>
             </AnchorPane>
         </HBox>
         <HBox alignment="CENTER" prefHeight="146.0" prefWidth="283.0" spacing="30.0">
-            <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#btnAddBook_OnAction" prefHeight="40.0" prefWidth="146.0" text="Thêm sách">
+            <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#btnAddBook_OnAction" prefHeight="40.0"
+                    prefWidth="146.0" text="Thêm sách">
                 <styleClass>
-                    <String fx:value="add-button" />
-                    <String fx:value="drop-shadow" />
+                    <String fx:value="add-button"/>
+                    <String fx:value="drop-shadow"/>
                 </styleClass>
             </Button>
         </HBox>
     </HBox>
-    <Label styleClass="book-text" text="Danh sách sách" />
+    <Label styleClass="book-text" text="Danh sách sách"/>
     <ScrollPane prefHeight="569.0" prefWidth="991.0">
-        <VBox fx:id="BookContainer" alignment="TOP_CENTER" maxHeight="12000.0" maxWidth="953.0" minHeight="558.0" minWidth="953.0" spacing="5.0" styleClass="inside-table">
+        <VBox fx:id="BookContainer" alignment="TOP_CENTER" fillWidth="false" maxHeight="12000.0" minHeight="558.0"
+              prefWidth="953.0" spacing="5.0" styleClass="inside-table">
             <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
+            <AnchorPane prefHeight="174.0" prefWidth="948.0" stylesheets="@BookTableRow/BookTableRow.css">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+                <styleClass>
+                    <String fx:value="light-border"/>
+                    <String fx:value="drop-shadow"/>
+                    <String fx:value="inside-table"/>
+                </styleClass>
+                <GridPane layoutX="133.0" layoutY="25.0" prefHeight="125.0" prefWidth="766.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <TextField fx:id="TenSach" editable="false" layoutX="14.0" layoutY="13.0"
+                                   prefHeight="40.0" prefWidth="483.0" styleClass="information-text"/>
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0"
+                               prefWidth="62.0" styleClass="header-table-text" text="Tên sách"
+                               textAlignment="CENTER"/>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                        <TextField fx:id="TacGia" editable="false" layoutX="14.0" layoutY="12.0"
+                                   prefHeight="40.0" prefWidth="228.0" styleClass="information-text"/>
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0"
+                               prefWidth="53.0" styleClass="header-table-text" text="Tác giả"
+                               textAlignment="CENTER"/>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"/>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"
+                                GridPane.rowIndex="1">
+                        <TextField fx:id="TheLoai" editable="false" layoutX="14.0" layoutY="12.0"
+                                   prefHeight="40.0" prefWidth="228.0" styleClass="information-text"/>
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0"
+                               prefWidth="53.0" styleClass="header-table-text" text="Thể loại"
+                               textAlignment="CENTER"/>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                        <TextField fx:id="SoLuong" editable="false" layoutX="14.0" layoutY="12.0"
+                                   prefHeight="40.0" prefWidth="228.0" styleClass="information-text"/>
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0"
+                               prefWidth="80.0" styleClass="header-table-text" text="Số lượng tồn"
+                               textAlignment="CENTER"/>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2"
+                                GridPane.rowIndex="1">
+                        <TextField fx:id="DonGia" editable="false" layoutX="14.0" layoutY="12.0"
+                                   prefHeight="40.0" prefWidth="228.0" styleClass="information-text"/>
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0"
+                               prefWidth="53.0" styleClass="header-table-text" text="Đơn giá"
+                               textAlignment="CENTER"/>
+                    </AnchorPane>
+                </GridPane>
+                <VBox alignment="CENTER" layoutX="14.0" layoutY="18.0" prefHeight="138.0" prefWidth="108.0"
+                      styleClass="book-contain">
+                    <ImageView fx:id="AnhSach" fitHeight="125.0" fitWidth="84.0" pickOnBounds="true"
+                               preserveRatio="true" styleClass="drop-shadow">
+                        <Image url="@../../MainWindow/BookCard/Card1/Image/1.jpg"/>
+                    </ImageView>
+                </VBox>
+                <FontIcon fx:id="Edit" iconLiteral="fas-pen" layoutX="910.0" layoutY="91.0" strokeWidth="0.0"
+                          styleClass="icon" text=""/>
+            </AnchorPane>
         </VBox>
-      <styleClass>
-         <String fx:value="light-border" />
-         <String fx:value="inside-table" />
-      </styleClass>
+        <styleClass>
+            <String fx:value="light-border"/>
+            <String fx:value="inside-table"/>
+        </styleClass>
     </ScrollPane>
 </VBox>

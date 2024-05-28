@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane" prefHeight="30.0" prefWidth="516.0"
+            styleClass="light-border" stylesheets="@../ReceiptBookWindow.css"
+            xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookInput.BookInputTableRow">
+    <Label fx:id="TenSach" alignment="CENTER" layoutX="5.0" prefHeight="30.0" prefWidth="240.0"
+           styleClass="information-text" text="Tên sách" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TacGia" alignment="CENTER" layoutX="252.0" prefHeight="30.0" prefWidth="132.0"
+           styleClass="information-text" text="Tác giả" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="TheLoai" alignment="CENTER" layoutX="391.0" prefHeight="30.0" prefWidth="118.0"
+           styleClass="information-text" text="Thể loại" textAlignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </Label>
+</AnchorPane>

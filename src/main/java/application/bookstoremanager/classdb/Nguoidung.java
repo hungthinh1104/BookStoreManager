@@ -5,12 +5,14 @@ public class Nguoidung {
     private final String matKhau;
     private final Integer maPhanQuyen;
     private final Phanquyen phanQuyen;
+    private final String hoTen;
 
-    public Nguoidung(String tenDangNhap, String matKhau, Integer maPhanQuyen, Phanquyen phanQuyen) {
+    public Nguoidung(String tenDangNhap, String matKhau, Integer maPhanQuyen, Phanquyen phanQuyen, String hoTen) {
         this.tenDangNhap = tenDangNhap;
         this.matKhau = matKhau;
         this.maPhanQuyen = maPhanQuyen;
         this.phanQuyen = phanQuyen;
+        this.hoTen = hoTen;
     }
 
     public String getTenDangNhap() {
@@ -28,4 +30,5 @@ public class Nguoidung {
     public Phanquyen getPhanQuyen() {
         return this.phanQuyen;
     }
+    public String getHoTen() {return this.hoTen;}
 }

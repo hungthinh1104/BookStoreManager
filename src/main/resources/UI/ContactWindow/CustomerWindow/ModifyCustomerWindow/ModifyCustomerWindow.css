@@ -1,14 +1,8 @@
-#root {
-    -fx-alignment: center;
-    -fx-spacing: 10;
-    -fx-padding: 20;
-    -fx-background-color: #f5f5f5;
-}
-
-/* Label */
-.label {
+.header {
     -fx-font-size: 18px;
-    -fx-font-weight: bold;
+    -fx-font-weight: 400;
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
 }
 
 .text-field {
@@ -18,24 +12,64 @@
     -fx-border-radius: 10;
     -fx-font-size: 14px;
     -fx-padding: 5;
+    -fx-text-fill: #4B5563;
+    -fx-font-family: "Inter Medium";
+    -fx-font-weight: 400;
 }
 
-/* Button */
-.button {
+.modify-button {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #2196F3;
     -fx-text-fill: white;
     -fx-padding: 8 16;
-
-
-    -fx-background-radius: 5;
+    -fx-background-radius: 20;
 }
 
-.button:hover {
-    -fx-background-color: #45a049;
+.modify-button:hover {
+    -fx-background-color: #1976D2;
 }
 
-.button:pressed {
-    -fx-background-color: #388E3C;
+.modify-button:pressed {
+    -fx-background-color: #1565C0;
 }
+
+.outside-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-alignment: center;
+    -fx-spacing: 15;
+    -fx-padding: 20;
+}
+
+.error-text {
+    -fx-background-color: white;
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+    -fx-font-family: "Inter";
+    -fx-font-weight: 300;
+}
+
+.cancel-button {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: red;
+    -fx-border-radius: 20;
+    -fx-text-fill: red;
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13;
+    -fx-font-weight: 300;
+}
+
+.cancel-button:hover {
+    -fx-background-color: lightgray;
+    -fx-text-fill: darkred /* Change text color on hover */
+}
+
+.cancel-button:pressed {
+    -fx-background-color: darkgray;
+    -fx-text-fill: darkred;
+}
+
+
+
