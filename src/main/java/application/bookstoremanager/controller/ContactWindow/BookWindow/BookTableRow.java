@@ -2,14 +2,18 @@ package application.bookstoremanager.controller.ContactWindow.BookWindow;
 
 import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Sach;
+import application.bookstoremanager.controller.ContactWindow.CustomerWindow.EditCustomer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import javax.imageio.ImageIO;
@@ -34,7 +38,7 @@ public class BookTableRow implements Initializable {
     private TextField DonGia;
 
     @FXML
-    private FontIcon Edit;
+    private FontIcon btnEdit;
 
     @FXML
     private TextField SoLuong;
@@ -48,13 +52,32 @@ public class BookTableRow implements Initializable {
     @FXML
     private TextField TheLoai;
 
+    private Sach sach;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        btnEdit.setOnMouseClicked(event -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/SearchBookWindow/BookAddedWindow/BookEditWindow.fxml"));
+                Parent parent = loader.load();
+                BookEdit customer = loader.getController();
+                customer.SetInitData(sach.getMaSach());
+                Stage stage = new Stage();
+                Scene scene = new Scene(parent);
+                stage.setScene(scene);
+                stage.initModality(Modality.WINDOW_MODAL);
+                stage.initOwner((Stage)btnEdit.getScene().getWindow());
+                stage.showAndWait();
+                System.out.println("load data");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public void setData(Integer _STT, Sach book) {
         byte[] imageBytes = book.getHinhAnh();
+        sach = book;
         if (imageBytes != null && imageBytes.length > 0) {
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(imageBytes);
             Image img = new Image(byteArrayInputStream);

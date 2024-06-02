@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -102,6 +104,7 @@ public class BookSearchWindow implements Initializable {
                     if(tacGia != null && !tacGia.isEmpty() && !tacGia.equals("Tất cả") && !removeDiacritics(sach.getTacGia().toLowerCase()).contains(removeDiacritics(tacGia.toLowerCase()))) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/SearchBookWindow/BookTableRow/BookTableRow.fxml"));
                     Parent newContent3 = loader.load();
+                    newContent3.setOnMouseClicked(this::handleAnchorPaneClick);
                     BookTableRow book = loader.getController();
                     book.setData(++stt, sach);
                     BookContainer.getChildren().add(newContent3);
@@ -112,6 +115,9 @@ public class BookSearchWindow implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    private void handleAnchorPaneClick(MouseEvent event) {
+        LoadData(searchText.getText(), selectedTL, searchTG.getText());
     }
 
     public static String removeDiacritics(String str) {

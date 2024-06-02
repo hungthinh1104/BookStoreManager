@@ -35,6 +35,8 @@ public class MainWindow implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         LoadDataForNewFeed();
         LoadDataForBestSeller();
+        SachTHContainer.setHgap(10); // Thiết lập khoảng cách ngang giữa các cột
+        SachTHContainer.setVgap(10);
     }
     public void LoadDataForNewFeed() {
         try{

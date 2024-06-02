@@ -58,4 +58,5 @@
             <Image url="@../../../MainWindow/BookCard/Card1/Image/1.jpg" />
         </ImageView>
     </VBox>
+    <FontIcon fx:id="btnEdit" iconLiteral="fas-pen" layoutX="910.0" layoutY="91.0" strokeWidth="0.0" styleClass="icon" text="" />
 </AnchorPane>

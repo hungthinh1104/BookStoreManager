@@ -3,16 +3,20 @@ package application.bookstoremanager.controller.ContactWindow.MainWindow.BookCar
 import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Sach;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.ByteArrayInputStream;
+import java.net.URL;
 import java.sql.Connection;
+import java.util.ResourceBundle;
 
 import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
 
-public class SachThinhHanh {
+public class SachThinhHanh implements Initializable {
 
     @FXML
     private ImageView AnhSach;
@@ -24,7 +28,15 @@ public class SachThinhHanh {
     private Label GiaBan;
 
     @FXML
+    private AnchorPane MainAnchorPane;
+
+    @FXML
     private Label TenSach;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 
     public void setData(Sach book, String SoLuongBan) {
         byte[] imageBytes = book.getHinhAnh();
