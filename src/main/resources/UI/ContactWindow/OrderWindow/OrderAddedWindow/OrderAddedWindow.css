@@ -61,7 +61,7 @@
 .outside-pane {
     -fx-background-color: white;
     -fx-padding: 10 10 10 10;
-    -fx-spacing: 15px;
+    -fx-spacing: 20px;
 }
 
 .button.cancel {

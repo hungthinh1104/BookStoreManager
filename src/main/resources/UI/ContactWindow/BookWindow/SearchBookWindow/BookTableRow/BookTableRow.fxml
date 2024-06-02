@@ -11,9 +11,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="174.0" prefWidth="948.0" stylesheets="@BookTableRow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow">
+<AnchorPane prefHeight="174.0" prefWidth="941.0" stylesheets="@BookTableRow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow">
     <padding>
         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
     </padding>
@@ -22,7 +21,7 @@
         <String fx:value="drop-shadow" />
         <String fx:value="inside-table" />
     </styleClass>
-    <GridPane layoutX="133.0" layoutY="25.0" prefHeight="125.0" prefWidth="766.0">
+    <GridPane layoutX="145.0" layoutY="24.0" prefHeight="125.0" prefWidth="766.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,10 +40,10 @@
             <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Tác giả" textAlignment="CENTER" />
         </AnchorPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-          <TextField fx:id="TheLoai" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
-          <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Thể loại" textAlignment="CENTER" />
-       </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="TheLoai" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
+            <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="53.0" styleClass="header-table-text" text="Thể loại" textAlignment="CENTER" />
+        </AnchorPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
             <TextField fx:id="SoLuong" editable="false" layoutX="14.0" layoutY="12.0" prefHeight="40.0" prefWidth="228.0" styleClass="information-text" />
             <Label alignment="CENTER" layoutX="25.0" layoutY="3.0" prefHeight="18.0" prefWidth="80.0" styleClass="header-table-text" text="Số lượng tồn" textAlignment="CENTER" />

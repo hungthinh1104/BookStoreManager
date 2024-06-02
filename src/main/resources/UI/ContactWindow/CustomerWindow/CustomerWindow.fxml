@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-
-<BorderPane prefHeight="780" prefWidth="1000" styleClass="background" stylesheets="@CustomerWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.CustomerWindow">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="780" prefWidth="1000" styleClass="background"
+            stylesheets="@CustomerWindow.css" xmlns="http://javafx.com/javafx/22"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.CustomerWindow">
 
     <top>
         <VBox prefHeight="65.0" prefWidth="970.0" spacing="10.0">
-            <Label styleClass="title" text="Khách hàng" />
+            <Label styleClass="title" text="Khách hàng"/>
             <HBox alignment="CENTER" spacing="20.0">
                 <TextField fx:id="searchTKH" focusTraversable="false" prefWidth="200" promptText="Tên khách hàng" styleClass="default-text" />
                 <TextField fx:id="searchSDT" prefWidth="200" promptText="Số điện thoại" styleClass="default-text" />
@@ -63,23 +58,24 @@
         <HBox prefHeight="36.0" prefWidth="970.0" spacing="10.0" />
     </bottom>
     <padding>
-        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
     </padding>
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
             <BorderPane.margin>
-                <Insets bottom="10.0" top="10.0" />
+                <Insets bottom="10.0" top="10.0"/>
             </BorderPane.margin>
             <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
             <ScrollPane prefHeight="611.0" prefWidth="960.0" styleClass="light-border">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                 </padding>
-                <VBox fx:id="CustomerContainer" maxHeight="12000.0" maxWidth="949.0" minHeight="560.0" minWidth="924.0" prefWidth="937.0" spacing="5.0" styleClass="background">
+                <VBox fx:id="CustomerContainer" maxHeight="12000.0" maxWidth="949.0" minHeight="560.0" minWidth="924.0"
+                      prefWidth="937.0" spacing="5.0" styleClass="background">
                     <padding>
-                        <Insets top="2.0" />
+                        <Insets top="2.0"/>
                     </padding>
                 </VBox>
             </ScrollPane>
