@@ -27,6 +27,9 @@ public class RegularWindow implements Initializable {
     private VBox MainContainer;
 
     @FXML
+    private TextField TichDiem;
+
+    @FXML
     private TextField depositInput;
 
     @FXML
@@ -56,6 +59,8 @@ public class RegularWindow implements Initializable {
         minQuantityInput.setEditable(false);
         minStockInput.setEditable(false);
         priceRateInput.setEditable(false);
+        TichDiem.setEditable(false);
+        btnconfirm.setVisible(false);
         btnedit.setStyle("-fx-background-color: #1e77fc;");
         LoadData();
     }
@@ -71,6 +76,7 @@ public class RegularWindow implements Initializable {
                     minStockInput.setText(ts.getSoLuongTonToiThieu().toString());
                     minQuantityInput.setText(ts.getSoLuongNhapToiThieu().toString());
                     priceRateInput.setText(ts.getTiLeTinhDonGiaBan().toString());
+                    TichDiem.setText(ts.getTichDiem().toString());
                 }
             }
             assert conn != null;
@@ -88,6 +94,8 @@ public class RegularWindow implements Initializable {
             minQuantityInput.setEditable(true);
             minStockInput.setEditable(true);
             priceRateInput.setEditable(true);
+            TichDiem.setEditable(true);
+            btnconfirm.setVisible(true);
             isEdit = false;
             btnedit.setText("Hủy");
             btnedit.setStyle("-fx-background-color: #f55442;");
@@ -102,14 +110,15 @@ public class RegularWindow implements Initializable {
             minQuantityInput.setEditable(false);
             minStockInput.setEditable(false);
             priceRateInput.setEditable(false);
+            TichDiem.setEditable(false);
+            btnconfirm.setVisible(false);
         }
     }
 
     @FXML
     private void btnconfirmOnAction() {
         if(!isEdit) {
-            btnedit.setText("Cập nhật");
-            btnedit.setStyle("-fx-background-color: #1e77fc;");
+
             isEdit = true;
             try{
                 Connection conn = DatabaseUtil.getConnection();
@@ -118,7 +127,8 @@ public class RegularWindow implements Initializable {
                                            Integer.parseInt(maxStockInput.getText()),
                                            Integer.parseInt(maxStockInput.getText()),
                                            Float.parseFloat(priceRateInput.getText()),
-                                           Double.parseDouble(depositInput.getText()), 0.01f);
+                                           Double.parseDouble(depositInput.getText()),
+                                           Float.parseFloat(TichDiem.getText()));
                     System.out.println(ts.getSoLuongNhapToiThieu().toString());
                     DatabaseUtil.updateThamso(conn, ts);
                 }
@@ -133,7 +143,10 @@ public class RegularWindow implements Initializable {
             minQuantityInput.setEditable(false);
             minStockInput.setEditable(false);
             priceRateInput.setEditable(false);
-
+            TichDiem.setEditable(false);
+            btnconfirm.setVisible(false);
+            btnedit.setText("Cập nhật");
+            btnedit.setStyle("-fx-background-color: #1e77fc;");
         }
     }
 

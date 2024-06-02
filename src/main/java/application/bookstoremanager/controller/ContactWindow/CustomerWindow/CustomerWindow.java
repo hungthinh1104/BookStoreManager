@@ -3,6 +3,7 @@ package application.bookstoremanager.controller.ContactWindow.CustomerWindow;
 import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.classdb.Khachhang;
 import application.bookstoremanager.classdb.Sach;
+import application.bookstoremanager.controller.ContactWindow.BillWindow.BillProperties;
 import application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -13,7 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -60,6 +64,7 @@ public class CustomerWindow implements Initializable {
                     if(!searchSDT.isEmpty() && !kh.getSoDienThoai().contains(searchSDT)) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/CustomerWindow/CustomerTableRow/CustomerTableRow.fxml"));
                     Parent newContent3 = loader.load();
+                    newContent3.setOnMouseClicked(this::handleAnchorPaneClick);
                     CustomerTableRow book = loader.getController();
                     book.setData(kh);
                     CustomerContainer.getChildren().add(newContent3);
@@ -93,5 +98,26 @@ public class CustomerWindow implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private void handleAnchorPaneClick(MouseEvent event) {
+        AnchorPane clickedAnchorPane = (AnchorPane) event.getSource();
+        Label label = (Label) clickedAnchorPane.lookup("#MaKhachHang");
+        System.out.println("AnchorPane được nhấp vào: " + label.getText());
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/CustomerWindow/ModifyCustomerWindow/ModifyCustomerWindow.fxml"));
+//            Parent parent = loader.load();
+//            EditCustomer customer = loader.getController();
+//            customer.SetInitData(Integer.parseInt(label.getText()));
+//            Stage stage = new Stage();
+//            Scene scene = new Scene(parent);
+//            stage.setScene(scene);
+//            stage.initModality(Modality.WINDOW_MODAL);
+//            stage.initOwner((Stage)btnTimKiem.getScene().getWindow());
+//            stage.showAndWait();
+//            System.out.println("load data");
+            LoadData(searchTKH.getText(),searchSDT.getText());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

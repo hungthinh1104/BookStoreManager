@@ -39,13 +39,13 @@
                 <Label prefHeight="28.0" styleClass="choose-text" text="Tiền cọc:" />
             <Label prefHeight="28.0" styleClass="choose-text" text="Tỉ lệ tích điểm:" />
             </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="15.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="20.0">
                 <TextField fx:id="minQuantityInput" editable="false" prefWidth="400.0" promptText="Số lượng nhập tối thiểu" styleClass="information-text" />
                 <TextField fx:id="maxStockInput" editable="false" promptText="Số lượng tồn tối đa" styleClass="information-text" />
                 <TextField fx:id="minStockInput" editable="false" promptText="Số lượng tồn tối thiểu" styleClass="information-text" />
                 <TextField fx:id="priceRateInput" editable="false" promptText="Tỷ lệ tính đơn giá bán" styleClass="information-text" />
                 <TextField fx:id="depositInput" editable="false" promptText="Tiền cọc" styleClass="information-text" />
-            <TextField fx:id="depositInput1" editable="false" promptText="Tỉ lệ tích điểm" styleClass="information-text" />
+            <TextField fx:id="TichDiem" editable="false" promptText="Tỉ lệ tích điểm" styleClass="information-text" />
             </VBox>
         </HBox>
         <HBox spacing="10.0">

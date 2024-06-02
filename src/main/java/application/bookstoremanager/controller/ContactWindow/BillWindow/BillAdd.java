@@ -104,6 +104,20 @@ public class BillAdd implements Initializable {
             }
             return null; // Otherwise, reject the change
         }));
+        SDTKH.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change; // If the new text is numeric, accept the change
+            }
+            return null; // Otherwise, reject the change
+        }));
+        SoLuong.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change; // If the new text is numeric, accept the change
+            }
+            return null; // Otherwise, reject the change
+        }));
         searchSDT.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -344,14 +358,17 @@ public class BillAdd implements Initializable {
                     int idHD = DatabaseUtil.createHoadon(NgayLap.getValue(),kh.getMaKhachHang(),parseCurrency(GiamGia.getText()), conn);
                     double tichDiem = kh.getTichDiem();
                     if(parseCurrency(GiamGia.getText()) == 0.0) {
-                        tichDiem += parseCurrency(TongTien.getText()) * DatabaseUtil.getThamso(conn).getTichDiem();
+                        tichDiem += parseCurrency(TongTien.getText()) * (double)DatabaseUtil.getThamso(conn).getTichDiem();
                     }
                     else {
                         tichDiem -= parseCurrency(GiamGia.getText());
                     }
-                    System.out.println("Giam gia: " + GiamGia.getText());
-                    System.out.println("Giam gia DK: " + (int)parseCurrency(GiamGia.getText()));
-                    System.out.println("Tich diem: " + tichDiem);
+                    tichDiem = Math.ceil(tichDiem);
+//                    System.out.println("Parse: " + parseCurrency(TongTien.getText()) + " " + TongTien.getText());
+//                    System.out.println("Tong: " + parseCurrency(TongTien.getText()) * (double)DatabaseUtil.getThamso(conn).getTichDiem() + " " + DatabaseUtil.getThamso(conn).getTichDiem());
+//                    System.out.println("Giam gia: " + GiamGia.getText());
+//                    System.out.println("Giam gia DK: " + (int)parseCurrency(GiamGia.getText()));
+//                    System.out.println("Tich diem: " + tichDiem);
                     Khachhang newkh = new Khachhang(kh.getMaKhachHang(), kh.getHoTen(), kh.getSoDienThoai(), tichDiem);
                     DatabaseUtil.updateKhachhang(conn,newkh);
                     ObservableList<Node> children = DanhSachNhap.getChildren();
