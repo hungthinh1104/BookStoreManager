@@ -86,7 +86,7 @@
     -fx-background-color: #FF6B6B;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-background-radius: 5;
+    -fx-background-radius: 10;
     -fx-padding: 8 16;
 }
 
@@ -126,4 +126,11 @@
 
 .icon-enough {
     -fx-fill: #9AD5CF;
+}
+
+.light-radius-box-border {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 15;
+    -fx-background-color: white;
+    -fx-background-radius: 15;
 }

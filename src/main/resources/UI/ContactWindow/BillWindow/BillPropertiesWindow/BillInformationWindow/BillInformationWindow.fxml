@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="42.0" prefWidth="823.0"
-            styleClass="light-radius-box-border" stylesheets="@../../BillRowWindow/BillRowWindow.css"
-            xmlns="http://javafx.com/javafx/22"
-            fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillInformation">
-    <Label fx:id="TenSach" alignment="CENTER" layoutX="16.0" layoutY="6.0" prefHeight="30.0" prefWidth="213.0"
-           styleClass="information-text" text="Label" textAlignment="CENTER">
-        <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-        </padding>
-    </Label>
-    <Label fx:id="TheLoai" alignment="CENTER" layoutX="224.0" layoutY="6.0" prefHeight="30.0" prefWidth="138.0"
-           styleClass="information-text" text="Label" textAlignment="CENTER">
-        <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-        </padding>
-    </Label>
-    <Label fx:id="TacGia" alignment="CENTER" layoutX="360.0" layoutY="6.0" prefHeight="30.0" prefWidth="119.0"
-           styleClass="information-text" text="Label" textAlignment="CENTER">
-        <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-        </padding>
-    </Label>
-    <Label fx:id="DonGia" alignment="CENTER" layoutX="597.0" layoutY="6.0" prefHeight="30.0" prefWidth="102.0"
-           styleClass="information-text" text="Label" textAlignment="CENTER">
-        <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-        </padding>
-    </Label>
-    <Label fx:id="SoLuong" alignment="CENTER" layoutX="480.0" layoutY="6.0" prefHeight="30.0" prefWidth="111.0"
-           styleClass="information-text" text="Label" textAlignment="CENTER">
-        <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-        </padding>
-    </Label>
-    <Label fx:id="ThanhTien" alignment="CENTER" layoutX="703.0" layoutY="6.0" prefHeight="30.0" prefWidth="102.0"
-           styleClass="information-text" text="Label" textAlignment="CENTER">
-        <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-        </padding>
-    </Label>
+
+<AnchorPane prefHeight="42.0" prefWidth="823.0" styleClass="light-radius-box-border" xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@../../BillRowWindow/BillRowWindow.css"/>
+      <URL value="@BillInformationWindow.css"/>
+   </stylesheets>
+   <Label fx:id="TenSach" alignment="CENTER" layoutX="9.0" layoutY="6.0" prefHeight="30.0" prefWidth="204.0"
+          styleClass="default-text" text="Label" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <Label fx:id="TheLoai" alignment="CENTER" layoutX="217.0" layoutY="6.0" prefHeight="30.0" prefWidth="132.0"
+          styleClass="default-text" text="Label" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <Label fx:id="TacGia" alignment="CENTER" layoutX="353.0" layoutY="6.0" prefHeight="30.0" prefWidth="116.0"
+          styleClass="default-text" text="Label" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <Label fx:id="DonGia" alignment="CENTER" layoutX="589.0" layoutY="6.0" prefHeight="30.0" prefWidth="102.0"
+          styleClass="default-text" text="Label" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <Label fx:id="SoLuong" alignment="CENTER" layoutX="473.0" layoutY="6.0" prefHeight="30.0" prefWidth="111.0"
+          styleClass="default-text" text="Label" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <Label fx:id="ThanhTien" alignment="CENTER" layoutX="696.0" layoutY="6.0" prefHeight="30.0" prefWidth="116.0"
+          styleClass="default-text" text="Label" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
 </AnchorPane>

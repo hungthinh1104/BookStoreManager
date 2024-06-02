@@ -1,120 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="700.0" prefWidth="900.0" spacing="10.0" styleClass="outside-pane"
-      stylesheets="@BillPropertiesWindow.css" xmlns="http://javafx.com/javafx/22"
-      fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillProperties">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" spacing="10.0" styleClass="outside-pane" stylesheets="@BillPropertiesWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillProperties">
     <HBox alignment="CENTER" prefHeight="40.0" prefWidth="860.0" spacing="10.0">
         <Label styleClass="header-text" text="Thông tin hóa đơn">
             <HBox.margin>
-                <Insets/>
+                <Insets />
             </HBox.margin>
         </Label>
-        <Pane prefHeight="34.0" prefWidth="510.0"/>
-        <Button fx:id="btnExit" mnemonicParsing="false" onAction="#btnHuy_OnAction" prefHeight="34.0" prefWidth="109.0"
-                styleClass="cancel" text="Thoát">
+        <Pane prefHeight="34.0" prefWidth="510.0" />
+        <Button fx:id="btnExit" mnemonicParsing="false" onAction="#btnHuy_OnAction" prefHeight="34.0" prefWidth="109.0" styleClass="cancel" text="Thoát">
             <HBox.margin>
-                <Insets/>
+                <Insets />
             </HBox.margin>
         </Button>
     </HBox>
-    <VBox spacing="5.0" styleClass="inside-pane">
+    <VBox prefHeight="106.0" prefWidth="871.0" spacing="5.0" styleClass="inside-pane">
         <HBox prefHeight="6.0" prefWidth="818.0">
             <Label styleClass="inside-header-text" text="Thông tin cơ bản">
                 <HBox.margin>
-                    <Insets left="10.0"/>
+                    <Insets left="10.0" />
                 </HBox.margin>
             </Label>
         </HBox>
         <VBox prefHeight="94.0" prefWidth="847.0">
             <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">
-                <Label alignment="CENTER" layoutX="2.0" prefHeight="31.0" prefWidth="130.0"
-                       styleClass="header-table-text" text="Mã hóa đơn">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
-                <Label alignment="CENTER" layoutX="99.0" prefHeight="31.0" prefWidth="178.0"
-                       styleClass="header-table-text" text="Tên khách hàng">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
-                <Label alignment="CENTER" layoutX="250.0" prefHeight="31.0" prefWidth="158.0"
-                       styleClass="header-table-text" text="Số điện thoại">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
-                <Label alignment="CENTER" layoutX="383.0" prefHeight="31.0" prefWidth="119.0"
-                       styleClass="header-table-text" text="Ngày lập">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
-                <Label alignment="CENTER" layoutX="504.0" prefHeight="31.0" prefWidth="116.0"
-                       styleClass="header-table-text" text="Tổng tiền">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
-                <Label alignment="CENTER" layoutX="621.0" prefHeight="31.0" prefWidth="116.0"
-                       styleClass="header-table-text" text="Giảm giá">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
-                <Label alignment="CENTER" layoutX="730.0" prefHeight="31.0" prefWidth="116.0"
-                       styleClass="header-table-text" text="Thanh toán">
-                    <padding>
-                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
-                    </padding>
-                </Label>
+                <Label alignment="CENTER" layoutX="12.0" prefHeight="31.0" prefWidth="88.0" styleClass="header-table-text" text="Mã hóa đơn" />
+                <Label alignment="CENTER" layoutX="132.0" prefHeight="31.0" prefWidth="119.0" styleClass="header-table-text" text="Tên khách hàng" />
+                <Label alignment="CENTER" layoutX="283.0" prefHeight="31.0" prefWidth="102.0" styleClass="header-table-text" text="Số điện thoại" />
+                <Label alignment="CENTER" layoutX="419.0" prefHeight="31.0" prefWidth="70.0" styleClass="header-table-text" text="Ngày lập" />
+                <Label alignment="CENTER" layoutX="547.0" prefHeight="31.0" prefWidth="70.0" styleClass="header-table-text" text="Tổng tiền" />
+                <Label alignment="CENTER" layoutX="656.0" prefHeight="31.0" prefWidth="64.0" styleClass="header-table-text" text="Giảm giá" />
+                <Label alignment="CENTER" layoutX="747.0" prefHeight="31.0" prefWidth="88.0" styleClass="header-table-text" text="Thanh toán" />
             </AnchorPane>
             <AnchorPane prefHeight="18.0" prefWidth="834.0">
-                <Label fx:id="MaHD" alignment="CENTER" layoutY="6.0" prefHeight="30.0" prefWidth="95.0"
-                       styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="MaHD" alignment="CENTER" layoutX="1.0" layoutY="3.0" prefHeight="30.0" prefWidth="106.0" styleClass="default-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="TenKH" alignment="CENTER" layoutX="99.0" layoutY="6.0" prefHeight="30.0"
-                       prefWidth="166.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="TenKH" alignment="CENTER" layoutX="114.0" layoutY="3.0" prefHeight="30.0" prefWidth="156.0" styleClass="default-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="SDT" alignment="CENTER" layoutX="268.0" layoutY="6.0" prefHeight="30.0"
-                       prefWidth="121.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="SDT" alignment="CENTER" layoutX="276.0" layoutY="3.0" prefHeight="30.0" prefWidth="117.0" styleClass="default-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="TongTien" alignment="CENTER" layoutX="497.0" layoutY="6.0" prefHeight="30.0"
-                       prefWidth="130.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="TongTien" alignment="CENTER" layoutX="519.0" layoutY="3.0" prefHeight="30.0" prefWidth="128.0" styleClass="default-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="NgayLap" alignment="CENTER" layoutX="387.0" layoutY="6.0" prefHeight="30.0"
-                       prefWidth="116.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="NgayLap" alignment="CENTER" layoutX="401.0" layoutY="3.0" prefHeight="30.0" prefWidth="114.0" styleClass="default-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="GiamGia" alignment="CENTER" layoutX="621.0" layoutY="6.0" prefHeight="30.0"
-                       prefWidth="116.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="GiamGia" alignment="CENTER" layoutX="651.0" layoutY="3.0" prefHeight="30.0" prefWidth="78.0" styleClass="default-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="ThanhToan" alignment="CENTER" layoutX="733.0" layoutY="6.0" prefHeight="30.0"
-                       prefWidth="116.0" styleClass="information-text" text="Label" textAlignment="CENTER">
+                <Label fx:id="ThanhToan" alignment="CENTER" layoutX="733.0" layoutY="3.0" prefHeight="30.0" prefWidth="116.0" styleClass="payment-text" text="Label" textAlignment="CENTER">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                 </Label>
             </AnchorPane>
@@ -123,20 +83,19 @@
     <VBox prefHeight="519.0" prefWidth="870.0" spacing="10.0" styleClass="inside-pane">
         <Label styleClass="inside-header-text" text="Thông tin chi tiết">
             <VBox.margin>
-                <Insets left="10.0"/>
+                <Insets left="10.0" />
             </VBox.margin>
         </Label>
-        <AnchorPane prefHeight="46.0" prefWidth="847.0" styleClass="header-table-contain">
-            <Label layoutX="95.0" prefHeight="30.0" prefWidth="58.0" styleClass="header-table-text" text="Tên sách"/>
-            <Label layoutX="267.0" prefHeight="30.0" prefWidth="52.0" styleClass="header-table-text" text="Thể loại"/>
-            <Label layoutX="615.0" prefHeight="30.0" prefWidth="53.0" styleClass="header-table-text" text="Đơn giá"/>
-            <Label layoutX="501.0" prefHeight="30.0" prefWidth="60.0" styleClass="header-table-text" text="Số lượng"/>
-            <Label layoutX="393.0" prefHeight="30.0" prefWidth="47.0" styleClass="header-table-text" text="Tác giả"/>
-            <Label layoutX="726.0" prefHeight="30.0" prefWidth="70.0" styleClass="header-table-text" text="Thành tiền"/>
+        <AnchorPane prefHeight="28.0" prefWidth="848.0" styleClass="header-table-contain">
+            <Label layoutX="81.0" prefHeight="30.0" prefWidth="67.0" styleClass="header-table-text" text="Tên sách" />
+            <Label layoutX="257.0" prefHeight="30.0" prefWidth="59.0" styleClass="header-table-text" text="Thể loại" />
+            <Label layoutX="610.0" prefHeight="30.0" prefWidth="55.0" styleClass="header-table-text" text="Đơn giá" />
+            <Label layoutX="496.0" prefHeight="30.0" prefWidth="64.0" styleClass="header-table-text" text="Số lượng" />
+            <Label layoutX="384.0" prefHeight="30.0" prefWidth="53.0" styleClass="header-table-text" text="Tác giả" />
+            <Label layoutX="716.0" prefHeight="30.0" prefWidth="77.0" styleClass="header-table-text" text="Thành tiền" />
         </AnchorPane>
-        <ScrollPane prefHeight="418.0" prefWidth="847.0" styleClass="into-side-pane">
-            <VBox fx:id="BillDTContainer" maxHeight="12000.0" minHeight="304.0" minWidth="500.0" prefHeight="510.0"
-                  prefWidth="823.0" style="-fx-background-color: white;"/>
+        <ScrollPane prefHeight="445.0" prefWidth="848.0" styleClass="into-side-pane">
+            <VBox fx:id="BillDTContainer" maxHeight="12000.0" minHeight="405.0" prefWidth="823.0" style="-fx-background-color: white;" />
         </ScrollPane>
     </VBox>
 </VBox>

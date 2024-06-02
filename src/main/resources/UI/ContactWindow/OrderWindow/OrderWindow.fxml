@@ -1,85 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane"
-      stylesheets="@OrderWindow.css" xmlns="http://javafx.com/javafx/22"
-      fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderWindow">
-    <HBox alignment="CENTER" prefHeight="86.0" prefWidth="960.0" spacing="20.0" styleClass="light-radius-box-border">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="780.0" prefWidth="1000.0" spacing="10.0" styleClass="outside-pane" stylesheets="@OrderWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderWindow">
+    <HBox alignment="CENTER" prefHeight="93.0" prefWidth="960.0" spacing="20.0" styleClass="light-radius-box-border">
         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
         </padding>
         <VBox spacing="10.0">
             <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="687.0" spacing="5.0">
-                <Label styleClass="choose-text" text="Tên khách hàng:"/>
-                <TextField fx:id="searchTenKH" prefHeight="25.0" prefWidth="201.0"
-                           styleClass="light-radius-box-square"/>
-                <Label styleClass="choose-text" text="Số điện thoại:"/>
-                <TextField fx:id="searchSDT" prefHeight="25.0" prefWidth="201.0" styleClass="light-radius-box-square"/>
+                <Label styleClass="choose-text" text="Tên khách hàng:" />
+                <TextField fx:id="searchTenKH" prefHeight="25.0" prefWidth="201.0" styleClass="light-radius-box-square" />
+                <Label styleClass="choose-text" text="Số điện thoại:" />
+                <TextField fx:id="searchSDT" prefHeight="25.0" prefWidth="201.0" styleClass="light-radius-box-square" />
             </HBox>
             <HBox spacing="10.0">
                 <HBox alignment="CENTER" prefHeight="27.0" prefWidth="646.0" spacing="10.0">
-                    <Label styleClass="choose-text" text="Ngày lập:"/>
-                    <DatePicker fx:id="searchDate" prefHeight="27.0" prefWidth="246.0"
-                                styleClass="light-radius-box-square" HBox.hgrow="ALWAYS"/>
+                    <Label styleClass="choose-text" text="Ngày lập:" />
+                    <DatePicker fx:id="searchDate" prefHeight="27.0" prefWidth="246.0" styleClass="light-radius-box-square" HBox.hgrow="ALWAYS" />
                 </HBox>
             </HBox>
         </VBox>
-        <Button fx:id="btnTaoDHg" onAction="#btnTaoHoaDonOnAction" prefHeight="37.0" prefWidth="142.0"
-                text="Tạo đặt hàng">
+        <Button fx:id="btnTaoDHg" onAction="#btnTaoHoaDonOnAction" prefHeight="37.0" prefWidth="142.0" text="Tạo đặt hàng">
             <styleClass>
-                <String fx:value="add-button"/>
-                <String fx:value="drop-shadow"/>
+                <String fx:value="add-button" />
+                <String fx:value="drop-shadow" />
             </styleClass>
         </Button>
     </HBox>
-    <VBox prefHeight="612.0" prefWidth="528.0" spacing="5.0">
+    <VBox prefHeight="29.0" prefWidth="960.0" spacing="5.0">
         <AnchorPane prefHeight="30.0" prefWidth="528.0" styleClass="header-table-contain">
             <Label alignment="CENTER" layoutX="21.0" styleClass="header-table-text" text="Mã đặt hàng">
                 <padding>
-                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
             <Label alignment="CENTER" layoutX="165.0" styleClass="header-table-text" text="Tên khách hàng">
                 <padding>
-                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="337.0" prefHeight="29.0" prefWidth="176.0" styleClass="header-table-text"
-                   text="Số điện thoại">
+            <Label alignment="CENTER" layoutX="337.0" prefHeight="29.0" prefWidth="176.0" styleClass="header-table-text" text="Số điện thoại">
                 <padding>
-                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="541.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text"
-                   text="Ngày lập">
+            <Label alignment="CENTER" layoutX="541.0" prefHeight="29.0" prefWidth="119.0" styleClass="header-table-text" text="Ngày lập">
                 <padding>
-                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
-            <Label alignment="CENTER" layoutX="814.0" layoutY="1.0" prefWidth="114.0" styleClass="header-table-text"
-                   text="Trạng thái">
+            <Label alignment="CENTER" layoutX="814.0" layoutY="1.0" prefWidth="114.0" styleClass="header-table-text" text="Trạng thái">
                 <padding>
-                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
             <Label alignment="CENTER" layoutX="681.0" layoutY="1.0" styleClass="header-table-text" text="Tổng tiền cọc">
                 <padding>
-                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                 </padding>
             </Label>
         </AnchorPane>
-        <ScrollPane prefHeight="634.0" prefWidth="960.0" styleClass="light-radius-box-square">
-            <VBox fx:id="OrderContainer" alignment="TOP_CENTER" spacing="5.0" styleClass="outside-pane">
-                <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                </padding>
-            </VBox>
-        </ScrollPane>
     </VBox>
+     <ScrollPane prefHeight="597.0" prefWidth="960.0" styleClass="light-radius-box-square">
+         <VBox fx:id="OrderContainer" alignment="TOP_CENTER" maxHeight="12000.0" minHeight="596.0" prefHeight="595.0" prefWidth="943.0" spacing="5.0" styleClass="outside-pane">
+             <padding>
+                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+             </padding>
+         </VBox>
+     </ScrollPane>
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 </VBox>
