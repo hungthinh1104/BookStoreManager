@@ -86,8 +86,11 @@
         </VBox>
         <VBox alignment="CENTER" spacing="10.0">
             <Label styleClass="book-text" text="Chi tiết phiếu nhập " />
-            <ScrollPane prefHeight="690.0" prefWidth="550.0" styleClass="light-border">
-                <VBox fx:id="CTPNS" maxHeight="12000.0" minHeight="592.0" prefWidth="523.0" style="-fx-background-color: white;" />
+            <ScrollPane prefHeight="604.0" prefWidth="572.0" styleClass="light-border">
+                <VBox fx:id="CTPNS" alignment="TOP_CENTER" maxHeight="12000.0" minHeight="592.0" prefWidth="545.0" spacing="5.0" style="-fx-background-color: white;">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></VBox>
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>

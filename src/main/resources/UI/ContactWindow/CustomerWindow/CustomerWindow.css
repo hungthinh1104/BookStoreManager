@@ -74,10 +74,10 @@
 }
 
 .information-text {
-    -fx-font-family: "Inter Medium";
+    -fx-text-fill: black;
+    -fx-font-family: "Inter";
     -fx-font-weight: 400;
-    -fx-text-fill: #4B5563;
-    -fx-font-size: 13;
+    -fx-font-size: 12px;
 }
 
 .light-border {

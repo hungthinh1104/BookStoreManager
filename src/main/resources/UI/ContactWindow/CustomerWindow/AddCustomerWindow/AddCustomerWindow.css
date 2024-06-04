@@ -43,14 +43,6 @@
     -fx-padding: 20;
 }
 
-.error-text {
-    -fx-background-color: white;
-    -fx-font-size: 12px;
-    -fx-text-fill: red;
-    -fx-font-family: "Inter";
-    -fx-font-weight: 300;
-}
-
 .cancel-button {
     -fx-background-color: white;
     -fx-background-radius: 20;

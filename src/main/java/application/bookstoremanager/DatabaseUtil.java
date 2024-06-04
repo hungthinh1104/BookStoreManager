@@ -24,7 +24,7 @@ import java.util.List;
 public class DatabaseUtil {
     public static Connection getConnection() {
         try{
-            var url = "jdbc:mysql://localhost:3306/quanlynhasach";
+            var url = "jdbc:mysql://localhost:3307/quanlynhasach";
             var user = "root";
             var pass = "";
             return DriverManager.getConnection(url,user,pass);

@@ -50,12 +50,10 @@
 }
 
 .default-text {
-    -fx-background-color: white;
-    -fx-background-radius: white;
-    -fx-text-fill: #4B5563;
-    -fx-font-family: "Inter Medium";
-    -fx-font-weight: 300;
-    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-font-family: "Inter";
+    -fx-font-weight: 400;
+    -fx-font-size: 12px;
 }
 
 .outside-pane {

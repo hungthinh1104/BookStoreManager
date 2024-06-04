@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="40.0" prefWidth="840.0" styleClass="light-radius-box-border"
-            stylesheets="@../../OrderRowWindow/OrderRowWindow.css" xmlns="http://javafx.com/javafx/22"
-            xmlns:fx="http://javafx.com/fxml/1">
-    <Label fx:id="TenSach" alignment="CENTER" layoutX="9.0" layoutY="6.0" prefHeight="30.0" prefWidth="230.0"
-           styleClass="default-text" text="Label" textAlignment="CENTER">
+<AnchorPane prefHeight="40.0" prefWidth="820.0" stylesheets="@OrderInformationWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderInfor">
+    <Label fx:id="TenSach" alignment="CENTER" layoutX="8.0" layoutY="5.0" prefHeight="30.0" prefWidth="230.0" styleClass="default-text" text="Label" textAlignment="CENTER">
         <padding>
-          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label fx:id="TheLoai" alignment="CENTER" layoutX="253.0" layoutY="6.0" prefHeight="30.0" prefWidth="136.0"
-           styleClass="default-text" text="Label" textAlignment="CENTER">
+    <Label fx:id="TheLoai" alignment="CENTER" layoutX="252.0" layoutY="5.0" prefHeight="30.0" prefWidth="136.0" styleClass="default-text" text="Label" textAlignment="CENTER">
         <padding>
-          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label fx:id="TacGia" alignment="CENTER" layoutX="405.0" layoutY="6.0" prefHeight="30.0" prefWidth="149.0"
-           styleClass="default-text" text="Label" textAlignment="CENTER">
+    <Label fx:id="TacGia" alignment="CENTER" layoutX="403.0" layoutY="5.0" prefHeight="30.0" prefWidth="149.0" styleClass="default-text" text="Label" textAlignment="CENTER">
         <padding>
-          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label fx:id="SoLuong" alignment="CENTER" layoutX="568.0" layoutY="6.0" prefHeight="30.0" prefWidth="109.0"
-           styleClass="default-text" text="Label" textAlignment="CENTER">
+    <Label fx:id="SoLuong" alignment="CENTER" layoutX="566.0" layoutY="5.0" prefHeight="30.0" prefWidth="109.0" styleClass="default-text" text="Label" textAlignment="CENTER">
         <padding>
-          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
-    <Label fx:id="TrangThai1" alignment="CENTER" layoutX="692.0" layoutY="6.0" prefHeight="30.0" prefWidth="125.0"
-           styleClass="not-enough" text="Label" textAlignment="CENTER">
+    <Label fx:id="TrangThai" alignment="CENTER" layoutX="690.0" layoutY="4.0" prefHeight="30.0" prefWidth="130.0" styleClass="moment-text" text="Label" textAlignment="CENTER">
         <padding>
-          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </Label>
+   <styleClass>
+      <String fx:value="light-radius-box-border" />
+      <String fx:value="drop-shadow" />
+   </styleClass>
 </AnchorPane>

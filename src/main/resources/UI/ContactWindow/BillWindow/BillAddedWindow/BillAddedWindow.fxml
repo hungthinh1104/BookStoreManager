@@ -98,17 +98,17 @@
             </ComboBox>
         </HBox>
     </VBox>
-    <ScrollPane layoutX="684.0" layoutY="15.0" prefHeight="450.0" prefWidth="434.0" styleClass="light-radius-box-square">
+    <ScrollPane layoutX="684.0" layoutY="15.0" minHeight="456.0" prefHeight="0.0" prefWidth="434.0" styleClass="light-radius-box-square">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
-        <VBox fx:id="DanhSachNhap" alignment="TOP_CENTER" minWidth="330.0" prefWidth="408.0" spacing="5.0" style="-fx-background-color: transparent;" styleClass="inside">
+        <VBox fx:id="DanhSachNhap" alignment="TOP_CENTER" minHeight="446.0" prefWidth="408.0" spacing="5.0" style="-fx-background-color: white;" styleClass="inside">
             <padding>
                 <Insets top="2.0" />
             </padding>
         </VBox>
     </ScrollPane>
-    <Label layoutX="716.0" layoutY="6.0" styleClass="default-text" text="Danh sách bán" />
+    <Label layoutX="716.0" layoutY="8.0" styleClass="default-text" text="Danh sách bán" />
     <Button fx:id="btnThemHD" layoutX="715.0" layoutY="594.0" onAction="#setBtnThemHD_OnAction" prefHeight="34.0" prefWidth="138.0" styleClass="add" text="Tạo hóa đơn" />
     <Button fx:id="btnThemHD_OnAction" layoutX="982.0" layoutY="594.0" onAction="#btnThemHD_OnAction" prefHeight="25.0" prefWidth="100.0" styleClass="cancel" text="Hủy" />
     <Label layoutX="910.0" layoutY="541.0" prefHeight="30.0" prefWidth="84.0" text="Thanh toán: " />

@@ -47,8 +47,5 @@ public class OrderRow {
             case "Đã thanh toán" -> TrangThai.setStyle("-fx-background-color: #287a02;");
             case null, default -> TrangThai.setStyle("-fx-background-color: #b00d02;");
         }
-
-
     }
-
 }
