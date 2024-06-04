@@ -5,13 +5,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <HBox fx:id="MainContainer" prefWidth="1270.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.Sidebar.Sidebar">
     <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="270.0" styleClass="box-outside">
         <VBox alignment="TOP_CENTER" prefHeight="780.0" prefWidth="270.0" styleClass="border-right">
             <AnchorPane prefHeight="113.0" prefWidth="267.0" styleClass="border-bottom">
-                <Label layoutX="21.0" layoutY="17.0" styleClass="book-logo" text="BOOKSTORE"/>
+                <Label layoutX="21.0" layoutY="17.0" styleClass="book-logo" text="BOOKSTORE" />
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
                 <AnchorPane fx:id="btnHome" layoutX="27.0" layoutY="14.0" onMouseClicked="#btnHomeOnClick" prefHeight="37.0" prefWidth="211.0" styleClass="selected-pane">
@@ -45,7 +46,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="65.0" prefWidth="175.0">
                 <AnchorPane fx:id="btnThongKe" layoutX="27.0" layoutY="14.0" onMouseClicked="#btnThongKeOnClick" prefHeight="37.0" prefWidth="211.0" styleClass="default-pane">
-                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Thống kê" />
+                    <Label layoutX="72.0" layoutY="8.0" styleClass="default-text" text="Báo cáo" />
                     <FontIcon iconLiteral="fas-chart-pie" iconSize="17" layoutX="20.0" layoutY="25.0" styleClass="default-icon" />
                 </AnchorPane>
             </AnchorPane>
@@ -56,7 +57,12 @@
                 </AnchorPane>
             </AnchorPane>
             <AnchorPane prefHeight="238.0" prefWidth="268.0">
-                <FontIcon iconLiteral="fas-sign-out-alt" iconSize="30" layoutX="14.0" layoutY="220.0" rotate="180.0" strokeWidth="0.0" styleClass="default-icon" />
+                <FontIcon iconLiteral="fas-sign-out-alt" iconSize="30" layoutX="45.0" layoutY="217.0" onMouseClicked="#btnLogoutOnClick" rotate="180.0" strokeWidth="0.0" styleClass="default-icon" text="" />
+            <Label layoutX="90.0" layoutY="195.0" onMouseClicked="#btnLogoutOnClick" text="Đăng xuất">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
             </AnchorPane>
         </VBox>
         <stylesheets>

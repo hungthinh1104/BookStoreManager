@@ -243,4 +243,9 @@ public class BookInput implements Initializable {
         stage.close();
     }
 
+    @FXML
+    private void btnHuyOnAction(ActionEvent event) {
+        Stage stage = (Stage) btnThemPhieu.getScene().getWindow();
+        stage.close();
+    }
 }

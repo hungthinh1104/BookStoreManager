@@ -74,6 +74,7 @@
         </dependency>
 
         <!--icon added-->
+
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
