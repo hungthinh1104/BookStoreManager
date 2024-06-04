@@ -1,6 +1,7 @@
 package application.bookstoremanager.controller.ContactWindow.SettingWindow;
 
 import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.GlobalVariable;
 import application.bookstoremanager.classdb.Sach;
 import application.bookstoremanager.classdb.Thamso;
 import application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow;
@@ -62,6 +63,7 @@ public class RegularWindow implements Initializable {
         TichDiem.setEditable(false);
         btnconfirm.setVisible(false);
         btnedit.setStyle("-fx-background-color: #1e77fc;");
+        btnedit.setVisible(GlobalVariable.User.getMaPhanQuyen() == 1);
         LoadData();
     }
 

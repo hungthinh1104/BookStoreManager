@@ -1,6 +1,7 @@
 package application.bookstoremanager.controller.ContactWindow.BookWindow.ReceiptBook;
 
 import application.bookstoremanager.DatabaseUtil;
+import application.bookstoremanager.GlobalVariable;
 import application.bookstoremanager.classdb.CtPhieunhapsach;
 import application.bookstoremanager.classdb.Phieunhapsach;
 import application.bookstoremanager.classdb.Sach;
@@ -55,6 +56,7 @@ public class ReceiptBook implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         LoadData(null);
+        btnNhanSach.setVisible(GlobalVariable.User.getMaPhanQuyen() == 1);
         searchDate.valueProperty().addListener(new ChangeListener<LocalDate>() {
             @Override
             public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue) {

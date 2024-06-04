@@ -6,9 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="150.0" prefWidth="400.0" spacing="15.0"
       styleClass="outside-pane" stylesheets="@ModifyCustomerWindow.css" xmlns="http://javafx.com/javafx/22"
-      fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.AddCustomer">
-
-<VBox alignment="CENTER" prefHeight="150.0" prefWidth="400.0" spacing="15.0" styleClass="outside-pane" stylesheets="@ModifyCustomerWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.EditCustomer">
+      fx:controller="application.bookstoremanager.controller.ContactWindow.CustomerWindow.EditCustomer">
 
     <Label styleClass="header" text="Sửa thông tin khách hàng" />
 

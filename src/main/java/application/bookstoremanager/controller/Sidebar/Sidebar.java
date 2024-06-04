@@ -5,8 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -148,6 +150,21 @@ public class Sidebar implements Initializable {
             preButton = btnSetting;
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void btnLogoutOnClick() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/LoginWindow/LoginWindow.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) btnSetting.getScene().getWindow();
+            stage.setTitle("Bookstore Manager");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error loading FXML file: " + e.getMessage());
         }
     }
 }

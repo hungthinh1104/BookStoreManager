@@ -76,7 +76,6 @@ public class ReportWindow implements Initializable {
     private void InitData() {
         LocalDate dateNow = LocalDate.now();
         CBThang1.getItems().add("Tất cả");
-        CBThang2.getItems().add("Tất cả");
         CBThang1.setValue("Tháng " + LocalDate.now().getMonthValue());
         CBThang2.setValue("Tháng " + LocalDate.now().getMonthValue());
         CBNam1.setValue(String.valueOf(LocalDate.now().getYear()));
