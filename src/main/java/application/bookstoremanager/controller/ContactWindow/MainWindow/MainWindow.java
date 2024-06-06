@@ -19,9 +19,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookTableRow.formatCurrency;
+import static application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderWindow.isWithinLast7Days;
 
 public class MainWindow implements Initializable {
 
@@ -69,9 +71,13 @@ public class MainWindow implements Initializable {
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
                 Map<Integer, Integer> mapSL = new TreeMap<>();
-                List<Hoadon> hdList = DatabaseUtil.getAllHoadon(conn);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate today = LocalDate.now().minusDays(7);
+                List<Hoadon> hdList = DatabaseUtil.getHoadonByNL(today,conn);
                 List<Integer> idHD = new ArrayList<>();
+                System.out.println("hdList size: " + hdList.size());
                 for(Hoadon hoadon : hdList) {
+                    if(!isWithinLast7Days( hoadon.getNgayLap(), LocalDate.now())) continue;
                     idHD.add(hoadon.getMaHoaDon());
                 }
                 for(Integer id : idHD) {

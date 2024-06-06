@@ -41,6 +41,9 @@ public class BillProperties implements Initializable {
     private Label MaHD;
 
     @FXML
+    private Label TenNV;
+
+    @FXML
     private Label NgayLap;
 
     @FXML
@@ -94,6 +97,7 @@ public class BillProperties implements Initializable {
                 GiamGia.setText(formatCurrency(HD.getGiamGia()));
                 TongTien.setText(formatCurrency(HD.getTongTien()));
                 ThanhToan.setText(formatCurrency(HD.getTongTien() - HD.getGiamGia()));
+                TenNV.setText("Tên nhân viên: " + HD.getUser().getHoTen());
                 LoadData(maHD);
             }
             assert conn != null;
