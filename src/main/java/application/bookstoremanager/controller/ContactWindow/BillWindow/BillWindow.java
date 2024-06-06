@@ -33,6 +33,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static application.bookstoremanager.controller.ContactWindow.BookWindow.BookSearchWindow.removeDiacritics;
+import static application.bookstoremanager.controller.ContactWindow.OrderWindow.OrderWindow.isWithinLast7Days;
 
 public class BillWindow implements Initializable {
 
@@ -89,6 +90,7 @@ public class BillWindow implements Initializable {
                     if( searchTen != null && !searchTen.isEmpty() && (kh == null || !removeDiacritics(kh.getHoTen().toLowerCase()).contains(removeDiacritics(searchTen.toLowerCase())))) continue;
                     if(searchSDT != null && !searchSDT.isEmpty() && (kh == null || !removeDiacritics(kh.getSoDienThoai().toLowerCase()).contains(removeDiacritics(searchSDT.toLowerCase())))) continue;
                     if(searchDate != null && !searchDate.isEmpty() && !hd.getNgayLap().toString().equals(searchDate)) continue;
+                    if((searchDate == null || searchDate.isEmpty()) && !isWithinLast7Days( hd.getNgayLap(), LocalDate.now())) continue;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BillWindow/BillRowWindow/BillRowWindow.fxml"));
                     Parent newContent3 = loader.load();
                     newContent3.setOnMouseClicked(this::handleAnchorPaneClick);

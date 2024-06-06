@@ -24,7 +24,7 @@ import java.util.List;
 public class DatabaseUtil {
     public static Connection getConnection() {
         try{
-            var url = "jdbc:mysql://localhost:3307/quanlynhasach";
+            var url = "jdbc:mysql://localhost:3306/quanlynhasach";
             var user = "root";
             var pass = "";
             return DriverManager.getConnection(url,user,pass);
@@ -487,18 +487,56 @@ public class DatabaseUtil {
         }
         return hoadons;
     }
+    public static List<Hoadon> getHoadonByNL(LocalDate date1 ,Connection conn){
+        List<Hoadon> hoadons = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM hoadon WHERE NgayLap > ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setDate(1, java.sql.Date.valueOf(date1));
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                LocalDate ngayLap = resultSet.getDate(2).toLocalDate();
+                int maKhachHang = resultSet.getInt(3);
+                double tongTien = resultSet.getDouble(4);
+                int giamGia = resultSet.getInt(5);
+                String tenDangNhap = resultSet.getString(6);
+
+                Khachhang kh = getKhachhangById(conn, maKhachHang);
+                List<Nguoidung> all = getAllNguoidung(conn);
+                Nguoidung user = null;
+                for (Nguoidung item : all) {
+                    if (item.getTenDangNhap().equals(tenDangNhap)) {
+                        user = item;
+                        break;
+                    }
+                }
+
+                Hoadon hoadon = new Hoadon(id, ngayLap, maKhachHang, tongTien, kh, giamGia, tenDangNhap, user);
+                hoadons.add(hoadon);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return hoadons;
+    }
 
     public static int createHoadon(LocalDate ngayLap, int maKhachHang, double giamGia, Connection conn){
         int idHoaDon = 0;
         try{
-            String sql = "INSERT INTO hoadon(NgayLap, MaKhachHang, GiamGia) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO hoadon(NgayLap, MaKhachHang, GiamGia, TenDangNhap) VALUES (?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             java.sql.Date sqlDate = java.sql.Date.valueOf(ngayLap);
             pstmt.setDate(1, sqlDate);
             pstmt.setInt(2, maKhachHang);
             pstmt.setDouble(3, giamGia);
-
+            pstmt.setString(4, GlobalVariable.User.getTenDangNhap());
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();
@@ -517,12 +555,12 @@ public class DatabaseUtil {
     public static int createHoadonForNull(LocalDate ngayLap, Connection conn){
         int idHoaDon = 0;
         try{
-            String sql = "INSERT INTO hoadon(NgayLap) VALUES (?)";
+            String sql = "INSERT INTO hoadon(NgayLap, TenDangNhap) VALUES (?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             java.sql.Date sqlDate = java.sql.Date.valueOf(ngayLap);
             pstmt.setDate(1, sqlDate);
-
+            pstmt.setString(2, GlobalVariable.User.getTenDangNhap());
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();

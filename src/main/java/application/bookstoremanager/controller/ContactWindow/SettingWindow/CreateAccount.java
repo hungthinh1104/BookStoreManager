@@ -3,6 +3,7 @@ package application.bookstoremanager.controller.ContactWindow.SettingWindow;
 import application.bookstoremanager.DatabaseUtil;
 import application.bookstoremanager.GlobalVariable;
 import application.bookstoremanager.classdb.Khachhang;
+import application.bookstoremanager.classdb.Nguoidung;
 import application.bookstoremanager.controller.ContactWindow.BillWindow.DetailPaneBill;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.util.Base64;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -58,6 +60,7 @@ public class CreateAccount implements Initializable {
 
     @FXML
     void btnThemTaiKhoanOnAction(ActionEvent event) {
+        TenDN.setText(TenDN.getText().trim());
         if(TenDN.getText().isEmpty() || TenDN.getText() == null) {
             showErrorDialog("Thông tin không hợp lệ", "Vui lòng nhập tên tài khoản");
             return;
@@ -85,7 +88,14 @@ public class CreateAccount implements Initializable {
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
-                DatabaseUtil.createNguoidung(conn, TenDN.getText(), HashPassword(MK.getText()), HoTen.getText(), Vaitro.getValue().equals("Admin") ? 1 : 2);
+                List<Nguoidung> ndList = DatabaseUtil.getAllNguoidung(conn);
+                for(Nguoidung nguoidung : ndList) {
+                    if(nguoidung.getTenDangNhap().equals(TenDN.getText())) {
+                        showErrorDialog("Thông tin không hợp lệ", "Tài khoản đã tồn tại");
+                        return;
+                    }
+                }
+                DatabaseUtil.createNguoidung(conn, TenDN.getText(), HashPassword(MK.getText()), HoTen.getText(), Vaitro.getValue().equals("Quản lý") ? 1 : 2);
             }
             assert conn != null;
             conn.close();
