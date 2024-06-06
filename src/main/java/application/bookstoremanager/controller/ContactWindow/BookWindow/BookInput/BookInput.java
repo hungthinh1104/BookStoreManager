@@ -151,8 +151,8 @@ public class BookInput implements Initializable {
                         showErrorDialog("Thông tin không hợp lệ", "Số lượng không đủ lượng nhập tối thiểu");
                         return;
                     }
-                    if(Integer.parseInt(SoLuong.getText()) +  DatabaseUtil.getSachById(conn, SelectedBook).getSoLuongTon() > DatabaseUtil.getThamso(conn).getSoLuongNhapToiThieu()) {
-                        showErrorDialog("Thông tin không hợp lệ", "Số lượng vượt quá số lượng tồn cho phép");
+                    if(DatabaseUtil.getSachById(conn, SelectedBook).getSoLuongTon() > DatabaseUtil.getThamso(conn).getSoLuongTonToiDa()) {
+                        showErrorDialog("Thông tin không hợp lệ", "Số lượng vẫn còn nhiều hơn hoặc bằng " + DatabaseUtil.getThamso(conn).getSoLuongTonToiDa() + ", không thể nhập thêm");
                         return;
                     }
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/UI/ContactWindow/BookWindow/ReceiptBookWindow/DetailPane/DetailPane.fxml"));
