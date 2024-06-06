@@ -30,8 +30,8 @@ public class DetailPaneBill {
 
     public void setData(Sach book, String _SoLuong, String _DonGia, BillAdd _bookInput) {
         TenSach.setText(book.getTenSach());
-        SoLuong.setText("Số lượng: " + _SoLuong);
-        DonGia.setText("Đơn giá: " + formatCurrency(Double.parseDouble(_DonGia)));
+        SoLuong.setText(_SoLuong);
+        DonGia.setText(formatCurrency(Double.parseDouble(_DonGia)));
         bookInput = _bookInput;
         id = book.getMaSach();
     }

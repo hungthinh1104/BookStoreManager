@@ -35,8 +35,8 @@ public class DetailPane {
 
     public void setData(Sach book, String _SoLuong, String _DonGia, BookInput _bookInput) {
         TenSach.setText(book.getTenSach());
-        SoLuong.setText("Số lượng: " + _SoLuong);
-        DonGia.setText("Đơn giá: " + _DonGia);
+        SoLuong.setText(_SoLuong);
+        DonGia.setText(_DonGia);
         bookInput = _bookInput;
         id = book.getMaSach();
     }

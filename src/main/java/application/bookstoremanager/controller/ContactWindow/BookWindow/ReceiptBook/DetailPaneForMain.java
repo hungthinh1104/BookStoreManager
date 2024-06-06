@@ -32,8 +32,8 @@ public class DetailPaneForMain {
     private Label TheLoai;
 
     public void setData(CtPhieunhapsach PNS) {
-        SoLuong.setText("Số lượng: " + PNS.getSoLuongNhap().toString());
-        DonGia.setText("Đơn giá: " + formatCurrency(PNS.getDonGiaNhap()));
+        SoLuong.setText(PNS.getSoLuongNhap().toString());
+        DonGia.setText(formatCurrency(PNS.getDonGiaNhap()));
         try{
             Connection conn = DatabaseUtil.getConnection();
             if (conn != null) {
