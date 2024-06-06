@@ -185,6 +185,7 @@ public class OrderAdd implements Initializable {
                     isUsed.put(SelectedBook, true);
                     LoadData(searchSach.getText());
                     SoLuong.setText("");
+                    SelectedBook = -1;
                 }
                 assert conn != null;
                 conn.close();

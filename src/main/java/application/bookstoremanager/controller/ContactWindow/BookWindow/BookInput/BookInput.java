@@ -165,6 +165,7 @@ public class BookInput implements Initializable {
                     LoadData(searchBook.getText());
                     SoLuong.setText("");
                     DonGia.setText("");
+                    SelectedBook = -1;
                 }
                 assert conn != null;
                 conn.close();

@@ -279,6 +279,7 @@ public class BillAdd implements Initializable {
                     LoadData(searchSach.getText());
                     SoLuong.setText("");
                     DonGia.setText("");
+                    SelectedBook = -1;
                 }
                 assert conn != null;
                 conn.close();
