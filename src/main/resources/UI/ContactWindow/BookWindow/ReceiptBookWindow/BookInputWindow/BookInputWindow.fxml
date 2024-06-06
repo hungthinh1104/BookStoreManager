@@ -33,7 +33,7 @@
         <HBox alignment="CENTER_LEFT" prefHeight="375.0" prefWidth="624.0" spacing="10.0">
             <Label text="Chọn sách:" />
             <ScrollPane prefHeight="362.0" prefWidth="543.0" style="-fx-background-color: transparent;" styleClass="light-border">
-                <VBox fx:id="BookContainer" maxHeight="12000.0" minHeight="287.0" minWidth="526.0" prefHeight="358.0" prefWidth="526.0" spacing="5.0" style="-fx-background-color: transparent; -fx-border-radius: 10;">
+                <VBox fx:id="BookContainer" maxHeight="12000.0" minHeight="365.0" minWidth="524.0" spacing="5.0" style="-fx-background-color: transparent; -fx-border-radius: 10;">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
@@ -53,11 +53,6 @@
             </Label>
             <TextField fx:id="DonGia" prefHeight="30.0" prefWidth="152.0" styleClass="textField" />
         </HBox>
-        <Label styleClass="error-text" text="ERROR">
-            <VBox.margin>
-                <Insets left="20.0" />
-            </VBox.margin>
-        </Label>
         <HBox alignment="CENTER" prefHeight="46.0" prefWidth="356.0" spacing="10.0">
             <Button fx:id="btnThemSach" onAction="#setBtnThemSach_OnAction" prefHeight="25.0" prefWidth="100.0" styleClass="add" text="Thêm" />
         </HBox>

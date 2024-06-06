@@ -9,14 +9,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" spacing="10.0" styleClass="outside-pane" stylesheets="@BillPropertiesWindow.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillProperties">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" spacing="10.0" styleClass="outside-pane" stylesheets="@BillPropertiesWindow.css" xmlns="http://javafx.com/javafx/22"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillProperties">
     <HBox alignment="CENTER" prefHeight="40.0" prefWidth="860.0" spacing="10.0">
-        <Label styleClass="header-text" text="Thông tin hóa đơn">
+        <Label prefHeight="26.0" prefWidth="179.0" styleClass="header-text" text="Thông tin hóa đơn">
             <HBox.margin>
                 <Insets />
             </HBox.margin>
         </Label>
-        <Pane prefHeight="34.0" prefWidth="510.0" />
+        <Pane prefHeight="34.0" prefWidth="566.0">
+            <Label layoutX="96.0" layoutY="8.0" styleClass="staff-name" text="Tên nhân viên"/>
+        </Pane>
         <Button fx:id="btnExit" mnemonicParsing="false" onAction="#btnHuy_OnAction" prefHeight="34.0" prefWidth="109.0" styleClass="cancel" text="Thoát">
             <HBox.margin>
                 <Insets />
@@ -95,7 +98,10 @@
             <Label layoutX="716.0" prefHeight="30.0" prefWidth="77.0" styleClass="header-table-text" text="Thành tiền" />
         </AnchorPane>
         <ScrollPane prefHeight="445.0" prefWidth="848.0" styleClass="into-side-pane">
-            <VBox fx:id="BillDTContainer" maxHeight="12000.0" minHeight="405.0" prefWidth="823.0" style="-fx-background-color: white;" />
+            <VBox fx:id="BillDTContainer" maxHeight="12000.0" minHeight="405.0" prefWidth="820.0" spacing="5.0" style="-fx-background-color: white;">
+            <padding>
+               <Insets top="2.0" />
+            </padding></VBox>
         </ScrollPane>
     </VBox>
 </VBox>

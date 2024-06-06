@@ -5,33 +5,21 @@
     -fx-background-radius: 15;
 }
 
-.icon {
-    -fx-fill: #757575;
-}
-
 .default-text {
-    -fx-background-color: white;
-    -fx-background-radius: white;
-    -fx-text-fill: #4B5563;
-    -fx-font-family: "Inter Medium";
-    -fx-font-weight: 300;
-    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-font-family: "Inter";
+    -fx-font-weight: 400;
+    -fx-font-size: 12px;
 }
 
-.not-enough {
-    -fx-background-color: #F9A9A3;
+.moment-text {
     -fx-background-radius: 20;
     -fx-text-fill: white;
     -fx-font-family: "Inter Medium";
+    -fx-font-size: 13;
     -fx-font-weight: 400;
-    -fx-font-size: 14px;
 }
 
-.enough {
-    -fx-background-color: #9AD5CF;
-    -fx-background-radius: 20;
-    -fx-text-fill: white;
-    -fx-font-family: "Inter Medium";
-    -fx-font-weight: 400;
-    -fx-font-size: 14px;
+.drop-shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.2, 0, 0);
 }

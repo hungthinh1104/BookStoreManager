@@ -69,7 +69,7 @@
             </Label>
         </AnchorPane>
         <ScrollPane prefHeight="606.0" prefWidth="527.0" styleClass="light-radius-box-square">
-            <VBox fx:id="BillContainer" alignment="TOP_CENTER" maxHeight="12000.0" minHeight="574.0" prefHeight="593.0" prefWidth="941.0" spacing="5.0" styleClass="outside-pane">
+            <VBox fx:id="BillContainer" alignment="TOP_CENTER" maxHeight="12000.0" minHeight="590.0" prefWidth="941.0" spacing="5.0" styleClass="outside-pane">
                 <padding>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>

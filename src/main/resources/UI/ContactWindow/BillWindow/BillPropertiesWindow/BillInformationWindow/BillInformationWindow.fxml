@@ -5,8 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="42.0" prefWidth="823.0" styleClass="light-radius-box-border" xmlns="http://javafx.com/javafx/22"
-            xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="42.0" prefWidth="823.0" styleClass="light-radius-box-border"
+            xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.bookstoremanager.controller.ContactWindow.BillWindow.BillInformation">
    <stylesheets>
       <URL value="@../../BillRowWindow/BillRowWindow.css"/>
       <URL value="@BillInformationWindow.css"/>
